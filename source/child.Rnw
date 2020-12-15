@@ -1,0 +1,8 @@
+% !Rnw root = dis.Rnw
+
+\chapter{Analysis}
+This is the analysis.
+
+<<analysis>>=
+summary(cars)
+@

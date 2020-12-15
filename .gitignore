@@ -1,0 +1,10 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+/github.com-tohecz-ctuthesis
+# Ignore everything in the source folder
+/source/*
+# But not these files...
+!/source/*.Rnw
+!/source/dis.pdf

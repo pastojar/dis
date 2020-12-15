@@ -1,0 +1,71 @@
+\documentclass{ctuthesis}
+
+\usepackage{csquotes}    % robust quoting functions
+\usepackage[all]{nowidow} % no widow / orphan lines
+
+\ctusetup{
+    xdoctype = D,
+    xfaculty = F1,
+    mainlanguage = english,
+    titlelanguage = english,
+    title-english = {CML R-R modelling},
+    title-czech = {nejaky cesky text},
+    department-english = {Department of Hydraulics and Hydrology},
+    author = {Ing. Jaroslav Pastorek},
+    fieldofstudy-english = {Stavební inženýrství}, 
+    subfieldofstudy-english = {Vodní hospodářství a vodní stavby},
+    supervisor = {Ing. Vojtěch Bareš, Ph.D.},
+    month = 1,
+    year = 2021,
+}
+
+
+% please excuse this lame approach
+\newcommand{\fieldofstudyRealEngl} {\mbox{{| Civil Engineering}} }
+\newcommand{\subfieldofstudyRealEngl} {\mbox{{| Water Engineering and Water Management}} }
+
+
+\ctuprocess
+
+
+% odstavce
+\setlength{\parindent}{0pt}
+% \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+\setlength{\parskip}{\baselineskip}
+
+
+%------------------------------------------------------ acknowledgment, declaration, abstract
+<<0, child='0.Rnw'>>=
+@        
+
+\setcounter{tocdepth}{1}  % to which depth down the entries appear in the ToC
+
+%------------------------------------------------------ the main body
+\begin{document}
+
+        \maketitle
+        
+        %------------------------------------------------------ 1. Introduction
+        \chapter{Introduction}
+        Foo bar
+        
+        %------------------------------------------------------ 2. Paper I. (JoEM)
+        
+        <<paperI, child='02paperI.Rnw'>>=
+        @
+        
+        <<test, child='Child.Rnw'>>=
+        @
+        
+        
+        
+        \chapter{Conclusion}
+        Lorep ipsum \cite{doe}
+        
+        
+        \begin{thebibliography}{1}
+        \bibitem{doe} J. Doe. \emph{Book on foobar.} Publisher X, 2300.
+        \end{thebibliography}
+        
+    
+\end{document}
