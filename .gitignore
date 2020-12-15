@@ -7,4 +7,6 @@
 /source/*
 # But not these files...
 !/source/*.Rnw
+!/source/*.tex
+!/source/*.cls
 !/source/dis.pdf
