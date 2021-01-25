@@ -48,13 +48,26 @@
         \maketitle
         
         %------------------------------------------------------ 1. Introduction
-        \chapter{Introduction}
-        Foo bar
         
-        %------------------------------------------------------ 2. Paper I. (JoEM)
-        
-        <<paperI, child='02paperI.Rnw'>>=
+        <<material, child='01intro.Rnw'>>=
         @
+        
+        %------------------------------------------------------ 2. Material
+        
+        <<material, child='02material.Rnw'>>=
+        @
+        
+        %------------------------------------------------------ 3. Pilot (Sovak + ICUD)
+        
+        <<paperI, child='03pilot.Rnw'>>=
+        @
+        
+        %------------------------------------------------------ 3. Paper I. (JoEM)
+        
+        <<paperI, child='04paperI.Rnw'>>=
+        @
+        
+        
         
         <<test, child='Child.Rnw'>>=
         @

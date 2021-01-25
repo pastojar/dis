@@ -1,0 +1,115 @@
+% !Rnw root = dis.Rnw
+
+\chapter{Material} \label{chap2}
+
+\rule{\textwidth}{0.4pt}
+This chapter is about the material. \newline
+\rule[0.2cm]{\textwidth}{0.4pt}
+
+
+
+\section{Material and Methods}
+
+QPEs from real-world CMLs are used as inputs for a calibrated urban drainage model which reproduces rainfall runoff very well. Then the model performance is evaluated for CML QPEs from various observation layouts by comparing the simulated runoffs with stormwater discharges observed at the drainage system outlet. We then perform exploratory data analysis on CML attributes to better understand their influence on volumes and temporal dynamics of the simulated rainfall runoff. This is a common approach when evaluating rainfall data sets for the purposes of hydrological modelling (Goormans and Willems, 2013, Wang et al., 2015). Moreover, stormwater runoff can be considered as a proxy variable of catchment areal rainfall, which can be especially useful in the case of convective precipitation, when the true incident rainfall over a given area is often difficult to estimate using traditional reference rainfall measurements.
+
+\subsection{Experimental catchment}
+
+The experimental urban catchment (Fig. \ref{2fig1}) with an area of 1.3 km\textsuperscript{2} lies in Prague-Letňany, Czech Republic, and it is drained by a separate stormwater sewer system. Approximately 35\% of the catchment area is covered by impervious surfaces. The catchment is slightly inclined to the north, with the altitude gradually declining from roughly 280 to 250 m above sea level (Baltic 1957 height, EPSG:8357). The lag time between rainfall peak and runoff peak observed at the outlet from the catchment is approximately 20 minutes.
+
+
+\begin{figure}[p]
+\begin{center}
+\includegraphics[width=13cm]{02paperI/Fig 1.jpg}
+\caption{Left: Schematic layout of the urban catchment studied and the local rain gauges used for model calibration. Right: Location of the CMLs (with IDs denoted) and municipal rain gauges.} \label{2fig1}
+\end{center}
+% \FloatBarrier
+\end{figure}
+
+\begin{table}[p]
+\begin{ctucolortab}
+\centering
+\begin{tabular}{ c | c  c  c  c }
+	\bfseries ID    &       \textbf{FreqA [GHz]}   &  \bfseries FreqB [GHz]  &  \bfseries  Polarization  & \bfseries Length [m]   \\ \Midrule
+        1  &	31.82 &	32.63 &	V  &	611     \\
+        2  &	32.63 &	NA    &	H  &	645     \\
+        3  &	NA    &	32.63 &	V  &	816     \\      
+        4  &	38.88 &	38.60 &	V  &	911     \\
+        5  &	24.55 &	25.56 &	V  &	1022    \\
+        6  &	37.62 &	37.62 &	V  &	1086    \\         
+        7  &	37.62 &	38.88 &	V  &	1396    \\
+        8  &	37.62 &	38.88 &	V  &	1584    \\
+        9  &	31.82 &	32.63 &	V  &	1858    \\
+        10  &	24.55 &	25.56 &	H  &	1953    \\
+        11  &	38.88 &	NA    &	V  &	1979    \\
+        12  &	31.82 &	32.63 &	V  &	2611    \\
+        13  &	24.55 &	25.56 &	V  &	2957    \\
+        14  &	24.55 &	25.56 &	V  &	3000    \\
+        15  &	24.55 &	25.56 &	V  &	3195    \\
+        16  &	24.55 &	25.56 &	V  &	3432    \\
+        17  &	25.56 &	24.55 &	V  &	4253    \\
+        18  &	24.55 &	25.56 &	V  &	4523    \\
+        19  &	24.55 &	25.56 &	V  &	5795
+\end{tabular}
+\caption{Characteristics of CMLs. FreqA and FreqB are CML frequencies for both directions. The NA value indicates that records in respective directions are not available. Polarization (Vertical/Horizontal) is the same for both directions.}
+\label{2tab1}
+\end{ctucolortab}
+\end{table}
+ 
+\subsection{Data retrieval and availability} \label{DatAva}
+
+We monitored 19 CMLs (Table \ref{2tab1}) located in the catchment and its surroundings (Fig. \ref{2fig1}, right) from the period between July 2014 and October 2016, excluding the winter months (December--March). The CMLs broadcast at frequencies from 25 to 39 GHz, their lengths are between 611 and 5795 m, and they are operated by a major telecommunication service provider. Long CMLs extend out of the catchment for several kilometers. Data from CMLs were retrieved at a 10-s resolution with a custom-made logging script (for details, see Fencl et al., 2015) and aggregated to a 1-min resolution.
+
+Observations from three tipping bucket rain gauges (MR3, Meteoservis; Fig. \ref{2fig1}, right), were collected at a 1-min resolution during the same period. The rain gauges are located roughly 2.5 km outside of the catchment. They are operated and maintained by the municipal sewer authority and dynamically calibrated (Humphrey et al., 1997) every year. They have a funnel area of 500 cm$^2$, a bucket volume of 5 ml, and their single tip corresponds to 0.1 mm of rainfall. Moreover, three rain gauges with the same characteristics were temporarily installed within or close to the catchment boundaries (Fig. \ref{2fig1}, left; see \textcolor{red}{Supplementary material} for more details).
+
+In addition, we measured discharges at the stormwater drainage system outlet using an area-velocity flow meter (Triton, ADS). The flow meter was calibrated in a standard way using stream gaging and the velocity-area method employing an electromagnetic velocity probe. The temporal resolution of the discharge measurements is 2 min for wet periods and 10 min for dry periods. Observed discharge values range from approximately 2 to 2000 l/s (see Supplementary material for details).
+
+During the monitoring period, we observed 105 relevant rainfall events with depths exceeding 2 mm. However, due to outages in observations from rain gauges, flow meters, and CML data acquisition system, it was possible to perform and evaluate rainfall-runoff simulations for only 71 of these events. Data from each CML were available on average during 80\% of these events. Six CMLs had data availability higher than 95\% and only two of them lower than 50\%. For each of the events, there were data available from between 9 and 17 CMLs (47\%--89\%). To improve the robustness of the statistical evaluation, we have excluded from the analysis 12 rainfall events with less than two thirds of the CMLs available. Also, we excluded three extreme rainfall events, for which runoff predictions were unsatisfactory, i.e. maximal discharges were overestimated by more than 100\% when modelled using high-quality rainfall data from the three local rain gauges (Fig. \ref{2fig1}, left), which were previously used to calibrate the rainfall-runoff model (see section \ref{RRmodel}). Similarly, three CMLs (\#1, \#2, \#10), which experienced long outages during the experimental period, are not analyzed in the study. The overall availability of CML data is shown in Fig. S2 in the Supplementary material. In summary, after rigorous quality control, the analysis is performed for 16 CMLs and 56 events. All details on rainfall event characteristics are provided in Table S1 in the Supplementary material.
+
+\subsection{Deriving CML QPEs} \label{DerCML}
+
+Although we deliberately chose a pragmatic approach to derive CML QPEs, several steps are necessary to estimate precipitation-induced attenuation for a given CML and to derive the associated precipitation rates:
+
+\begin{enumerate}
+        \item Total radio wave attenuation is calculated for each of two CML channels as the difference between the transmitted and received signal level. 
+        \item A quality check is performed to identify erratic CML behavior which has to be filtered out. The following behavior is regarded as erratic: \emph{i)}~sudden peaks where, within two time steps, the signal level increases and then decreases (or vice versa) by more than 5 dB, \emph{ii)} longer periods (days) with no signal fluctuation, and \emph{iii)} periods with random noise larger than 2 dB. 
+        \item Attenuation data are aggregated to regular 1-min time series by averaging attenuation values within 1-min intervals. 
+        \item Attenuation time series from both CML channels are averaged. 
+        \item Baseline attenuation is estimated with a low-pass filter parameter m = 0.00145 (as suggested by Fenicia et al., 2012) and separated from the measured attenuation.
+\end{enumerate}
+
+After the baseline separation, we proceed by deriving CML QPEs in two different ways: \emph{i)} by using the model described in Eq. \ref{2eq1} and \ref{2eq2} with parameters taken from the literature, and \emph{ii)} by a simplified linear attenuation-rainfall model adjusted to rain gauges (according to Fencl et al., 2017). In the first approach, we apply a wet antenna correction ($A_w$ from Eq. \ref{2eq2}) as a constant offset with values suggested by Overeem et al. (2011). Parameters $\alpha$ and $\beta$ from Eq. \ref{2eq1} are chosen as recommended by the ITU Radiocommunication Sector (2005). In the second method, the mean of the instantaneous values of the three municipal rain gauges (Fig. \ref{2fig1}, right), aggregated to 15-min time steps, is used for adjusting wet antenna attenuation $A_w$ and parameter $\alpha$, while keeping $\beta$ equal to one, as proposed by Fencl et al. (2017).
+
+\subsection{Instrumental errors} \label{InstErr}
+
+To interpret correctly the results of this study, it is crucial to estimate expected errors of both CML QPEs and discharge measurements. The uncertainties in the process of deriving CML QPEs can lead to considerable errors in the estimated QPEs (e.g. Leijnse et al., 2008). This problem is illustrated with a brief didactical example: For a 1-km-long CML working at a frequency of 32 GHz, the attenuation caused by rainfall ($A_r$) of 20 mm/h is about 4 dB. However, for a CML with the same frequency and a path length of 4 km, $A_r$ equals roughly 15 dB. If $A_r$ is overestimated by 1 dB, a common value due to the uncertainties associated with $A_w$, the derived precipitation rate is overestimated by approximately 30\% for the 1-km CML, and by 10\% for the 4-km one (see Fig. \ref{2fig2}). This becomes worse if the rainfall intensity is only 3 mm/h, because the relative errors in CML QPEs rise to 175\% and 40\% for the 1-km and 4-km CMLs respectively. Furthermore, for low precipitation rates, the derived rainfall is very sensitive to the CML frequency, and thus higher errors are associated with lower frequencies.
+
+Moreover, commonly used quantization levels of the records of transmitted and received radio signal power, used to calculate total observed attenuation $A$, are 1 dB and 0.33 dB respectively. Therefore, these quantization levels can have a similar effect on the errors in CML QPEs as an imprecise estimation of the attenuation due to antenna wetting.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=8cm]{02paperI/Fig 2.jpg}
+\caption{The relative error in QPEs from CMLs, with vertical polarization in relation to CML path length, for two rainfall intensities (3 and 20 mm/h) and three CML frequencies (26, 32, 38 GHz), as caused by an error of 1 dB in the estimate of wet antenna attenuation.} \label{2fig2}
+\end{center}
+% \FloatBarrier
+\end{figure}
+
+Following the suggestions of Muste et al. (2012), we estimate the uncertainty of the measured discharges at the outlet of the catchment. The discharge is computed from pipe radius $R$ [m], measured flow depth $h$ [m], and measured cross sectional velocity $V$ [m/s], which are assumed to have uncorrelated errors. The following values of input variables are propagated: $R$ = 0.75 m with a standard uncertainty (at a 68\% level of confidence) $u(R)$ = 0.0015~m. The discharge uncertainty is estimated only for periods with stormwater runoff, therefore, we assume that the standard uncertainty of measured flow depth $h$ is $u(h)$ = 0.015 m. The standard uncertainty of the flow velocity $V$ in the cross section is estimated as $u(V)$ = 0.05$V$. Finally, the expanded uncertainty (at a 95\% level of confidence) of measured discharge $U(Q)$ is estimated for all discharge measurements. The expanded uncertainty $U(Q)$ varies for different flow depths, e.g. for 10\% pipe filling, $U(Q)$ = ± 0.0282 m$^3$/s, what is equivalent to ± 31.0\% of the total value $Q$ = 0.091 m$^3$/s. For 50\% pipe filling, the uncertainty $U(Q)$ = ± 0.245 m$^3$/s, corresponding to (± 11.0\%) of the discharge $Q$ = 2.17 m$^3$/s.
+
+\subsection{Rainfall-runoff model and its reliability} \label{RRmodel}
+
+To simulate the discharges at the drainage system outlet, an EPA-SWMM model is used which was calibrated using an independent data set, i.e. measurements obtained from the three local rain gauges (Fig. \ref{2fig1}, left) before the experimental period of this study (see Supplementary material for more details). The rainfall-runoff model was constructed using detailed information about the catchment (e.g. the ratio of impervious areas for individual subcatchments) and the drainage system (e.g. pipe materials and diameters) provided by the municipal water management authority.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=12.5cm]{02paperI/Fig 3.jpg}
+\caption{Results of the rainfall-runoff model verification. Top: Histograms of the statistics for all evaluated events. Bottom: Scatter plots showing the statistics for single events with respect to the maximal 10-minute rainfall intensity ($R_{max,10}$) observed by the local rain gauges during these events.} \label{2fig3}
+\end{center}
+% \FloatBarrier
+\end{figure}
+
+The reliability of model predictions was tested using rainfall data from the three local rain gauges (Fig. \ref{2fig1}, left), i.e. the same devices that were used for the model calibration. This verification was performed for a data set obtained in the same period as the rainfall data from CMLs subsequently analyzed in the study, i.e. between July 2014 and October 2016. Results of this verification are summarized for all 56 rainfall-runoff events in Fig. \ref{2fig3}. These results suggest that the model predicts very realistic rainfall runoff. First, on average 78\% of simulated discharges fall within the 95\% confidence bands of observed runoff defined by 2.5\% and 97.5\% quantiles of observation errors (see section \ref{InstErr}), i.e. the mean containing ratio ($CR$ [-]) is 0.78, and its st. dev. is 0.15. Second, the relative error in volume on average is only -0.7\%, and modelled discharge shows a 0.95 Pearson's correlation coefficient in relation to the observed values. The Nash–Sutcliffe efficiency is also high (mean 0.77 and st. dev. 0.3). The model performs less satisfactorily in terms of predicting peak flows during heavy rainfalls, they are often substantially overestimated (on average by 40\%). This is probably related to errors associated with the rainfall measurement or strong assumptions regarding rainfall spatial variability over the catchment area. For some of the heaviest rainfalls, which are excluded from the evaluation (see section \ref{DatAva}), peak flows are overestimated by more than 100\%, which is probably also due to the model structural deficiencies, e.g. overland flows during extreme events. In summary, the rainfall-runoff model performs very well except for extreme events. Hydrographs for all analyzed events are presented in the Supplementary material. 
+
+
+
+
+
