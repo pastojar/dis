@@ -11,7 +11,8 @@ This chapter is about the intorduction. \newline
 
 Urban drainage systems are designed to drain waste- and stormwater from land surfaces in urban areas using combined or separate sewer networks. However, excessive amounts of stormwater can overload drainage systems and cause urban pluvial flooding and health risks due to pathogens, decrease the efficiency of wastewater treatment plants, or impact the aquatic biota of receiving waters through hydraulic stress and pollution. Therefore, the operational management of the quantity and quality of urban stormwater runoff is a serious concern in urban environmental management (Tsihrintzis and Hamid, 1997).
 
-Since precipitation is the essential driver of runoff processes in urban areas, rainfall observations are the key input data when designing and operating urban drainage systems during wet weather periods. Nowadays, the mitigation of the negative effects of urban drainage on society and the environment is often related to methods and concepts requiring operational rainfall products which are available in (near) real time and with a high spatial and/or temporal resolution (Einfalt et al., 2004). Such rainfall observations are employed in real-time control strategies to optimize treatment processes at wastewater treatment plants (Schütze et al., 2004), or to minimize the impacts of sewer overflows (Vezzaro and Grum, 2014). Furthermore, these data are used for extreme event analyses, e.g. for the evaluation of insurance damage claims (Spekkers et al., 2013) or for operational warnings (Montesarchio et al., 2009). Operational rainfall data are becoming increasingly important because of the ongoing climate change (van der Pol et al., 2015) as the intensity and frequency of heavy rainfall in many areas around the world are expected to increase (Willems et al., 2012). 
+Since precipitation is the essential driver of runoff processes in urban areas, rainfall observations are the key input data when designing and operating urban drainage systems during wet weather periods. Nowadays, the mitigation of the negative effects of urban drainage on society and the environment is often related to methods and concepts requiring operational rainfall products which are available in (near) real time and with a high spatial and/or temporal resolution (Einfalt et al., 2004). Such rainfall observations are employed in real-time control strategies to optimize treatment processes at wastewater treatment plants (Schütze et al., 2004), or to minimize the impacts of sewer overflows (Vezzaro and Grum, 2014). Furthermore, these data are used for extreme event analyses, e.g. for the evaluation of insurance damage claims (Spekkers et al., 2013) or for operational warnings (Montesarchio et al., 2009). Operational rainfall data are becoming increasingly important because of the ongoing climate change (van der Pol et al., 2015) as the intensity and frequency of heavy rainfall in many areas around the world are expected to increase (Willems et al., 2012).
+
 
 \subsection{Current rainfall monitoring practices}
 
@@ -23,11 +24,13 @@ Tipping bucket rain gauges represent the traditional way of retrieving precipita
 
 Weather radar observations have been extensively studied in recent years. Due to the inherent limitations of this technology (indirect rainfall measurement, often in relatively high altitudes above the ground and far away from the radar), radar rainfall data are commonly adjusted to rainfall measurements from rain gauges to be more advantageous for hydrological modelling (Harrison et al., 2009). These adjustments usually reduce the mean areal bias of rainfall fields, though often destroy the small-scale spatial structure of local extremes (Wang et al., 2015). However, neglecting rainfall spatiotemporal variability at small scales can lead to substantial errors in the runoff modelling of urban catchments (e.g. Gires et al., 2012). The smoothing of local extremes could be reduced by adjusting the radar data to dense rain gauge networks. Nevertheless, it has been concluded that traditionally available rain gauge networks and adjustment techniques do not meet the requirements of urban hydrology (Wang et al., 2013; Borup et al., 2016). Although the usage of weather radars for urban water management applications has been extensively investigated in the past decades and substantial progress has been made towards reliable high-quality data, many challenges remain unresolved. For example, it is difficult to quantify uncertainty arising from the discrepancy between the catch area of a rain gauge (in the order of 10$^{-2}$ m$^2$) and the area of a radar pixel (in the order of 10$^4$--10$^6$ m$^2$) (e.g. Anagnostou et al., 1999). Similarly, adjusting radar data in an operational mode is both a methodological and technical challenge because rain gauge data are often delivered with a delay. Finally, the availability of weather radars is mostly limited to developed countries (Heistermann et al., 2013), where, even in these regions, there are observational gaps when radar observations are not available in the desired spatiotemporal resolution.
 
+
 \subsection{Opportunistic precipitation data collection}
 
 One possibility to overcome the above challenges could be so-called \enquote{opportunistic sensing} (Tauro et al., 2018). Opportunistic precipitation sensing can provide rainfall data from new types of devices which could conveniently complement traditional precipitation observation networks and, thus, improve rainfall data availability. The recent development of various accessible hardware and software solutions has made measurements with special purpose sensors widely available throughout many different fields (Swan, 2012). Furthermore, there are numerous online amateur weather networks that aggregate and visualize citizen-contributed weather observations (Gharesifard et al., 2017, de Vos et al., 2017). However, quality control of such crowdsourced data (and associated metadata) from amateur weather stations is extremely challenging since these devices are often uncalibrated or irregularly maintained. Furthermore, as with radar rainfall observations, this kind of data is primarily available in developed regions only.
 
 Opportunistic sensing of precipitation can also be performed using devices not constructed primarily for rainfall observation (e.g. telecommunication infrastructure or building automation sensors), which are often connected to centralized communication infrastructure, so the data can be queried in (sub-)minute intervals. This is the case of commercial microwave links whose millimeter-wave radio signal is attenuated by rainfall droplets.
+
 
 \subsection{Rainfall retrieval from commercial microwave links}
 
@@ -53,6 +56,7 @@ A_r = (A - A_w - B)
 
 where $A_w$ [dB] stands for attenuation caused by antenna wetting, and $B$ [dB] for rainfall-independent \enquote{baseline} attenuation. The latter can be identified from dry-weather attenuation levels. However, quantifying $A_w$ is still challenging, although it is (in contrast to $A_r$ and $B$) independent of CML path length and previous studies (Leijnse et al., 2008; Overeem et al., 2011) suggest that it is relatively insensitive to CML frequency at bands suitable for rainfall retrieval (20--40 GHz). Nevertheless, antenna wetting is a complex process influenced not only by rainfall, but by other atmospheric conditions, such as wind, temperature, humidity or solar radiation, and also antenna radome material or coating (Leth et al., 2018). This complexity (and site-specificity) is probably why $A_w$ models suggested in the literature (Leijnse et al., 2008; Overeem et al., 2011; Schleiss et al., 2013) are often based on different assumptions and result in considerably different $A_w$ estimates. Therefore, the resulting rainfall estimates are frequently highly biased, especially for CMLs with shorter paths and lower frequencies which are less sensitive to raindrop-induced attenuation $A_r$ (Leijnse et al., 2008). To reduce this bias in QPEs from CMLs, Fencl et al. (2017) proposed adjusting the CML QPEs to measurements from traditional rain gauges if these are available in the vicinity of CMLs. According to Fencl et al. (2017), such adjusted high-resolution CML QPEs can outperform rainfall data derived only from the gauges used for adjusting. The adjustment, however, leads to underestimation of peak rainfalls, and it is not clear how this will affect hydrological modelling, since it has never been investigated experimentally on an extensive data set.
 
+
 \subsection{Hydrological modelling using CML QPEs}
 
 Thanks to the extensive continental coverage of cellular networks, CMLs represent a promising rainfall sensors for hydrological modelling. The greatest potential of this technique is in areas where traditional infrastructure for rainfall measurement is, in general, insufficient (Gosset et al., 2016), e.g. in developing countries. Nevertheless, CMLs might also conveniently complement traditional monitoring networks common in developed countries, since, unlike weather radars, they observe rainfall close to the ground. Moreover, CML rainfall measurements have a path-integrated character which makes them better suited for capturing areal rainfalls over a catchment than rain gauges. 
@@ -60,6 +64,47 @@ Thanks to the extensive continental coverage of cellular networks, CMLs represen
 To date, only a few studies with limited data sets studied the ability of CML QPEs for quantitative hydrology. Smiatek et al. (2017) investigated the potential of QPEs from CMLs for streamflow prediction in an orographically complex mountainous region and found out that the CML QPEs improved hydrograph reproduction for strong local rainfall events. Stránský et al. (2018) demonstrated for a case study in Tábor, Czech Rep., that, at city scale, using CMLs together with rain gauges can improve urban drainage modelling in terms of peak flows, especially their timing.
 
 However, the current body of knowledge suggests that the performance of CMLs as rainfall sensors for hydrological modelling is very much dependent on \emph{i)} the characteristics of a given CML, which influence the sensitivity to wet antenna attenuation $A_w$, and \emph{ii)} the topology, i.e. CML position and path length. Path lengths of CMLs typically range from a few hundred meters up to a few kilometers. Longer CMLs, which are, in general, less prone to bias due to $A_w$, often do not correspond well to relatively small scales of urban (sub)catchments and cannot capture rainfall spatial variability at corresponding scales. On the other hand, shorter CMLs, fitting the typical urban catchment scale well, are often substantially biased (Leijnse et al., 2008). Such bias might also depend on the transmission frequency of a given CML, because the frequency determines, among other things, how sensitive a CML is to $A_w$. Unfortunately, very little is currently known about the effect of the CML instrumental errors and their spatial representativeness, although it is a crucial issue for the efficient use of CML QPEs for rainfall-runoff modeling.
+
+
+
+
+
+\subsection{Output transformation} \label{transf}
+
+Because of the  statistical assumptions of homoscedasticity and normality of calibration residuals, we apply a transformation $g()$ on simulation results and output data.  According to  \cite{giudice2013improving}, it is a common way in hydrological modelling how to account for increasing variance with increasing discharge and to reduce the heteroscedascity.
+
+According to \cite{giudice2013improving},  two most promising variance stabilization techniques for urban drainage
+applications are the Box–Cox \citep{box1964analysis}  and the log-sinh \citep{wang2012log} transformation. Another motivation for applying such transformation is to reduce the proportion of negative flow predictions by making error distributions asymmetric.
+
+The Box-Cox transformation has been used more often in hydrological studies \\ \citep{giudice2013improving} than the log-sinh alternative, primarily due to the date of its first introduction by \cite{box1964analysis}. The two-parameter Box–Cox transformation can be written as
+\begin{equation}
+ g(y)=
+    \begin{cases}
+      log(y+\lambda_2) , & \text{if}\ \lambda_1=0 \\
+      \frac{(y+\lambda_2)^{\lambda_1}-1}{\lambda_1} , & \text{otherwise}
+    \end{cases}
+\end{equation}
+and holds for $y > -\lambda_2$. The one-parameter version would need only  $\lambda_1$  while keeping $\lambda_2 = 0$.
+
+\cite{giudice2013improving} decided to use the one-parameter version of the transformation with the parameter value $\lambda_1=0.35$, which had already been proven to perform satisfactorily in the past \citep[e.g.][]{honti2013integrated, wang2012log}.
+
+
+The log-sinh transformation was introduced for hydrological purposes only recently by \cite{wang2012log}. \cite{giudice2013improving}  decided to modify its formulation, to use a \enquote{reparameterised form with parameters that have a more intuitive meaning}. The formula would be
+\begin{equation}
+g(y)= \beta \, log \Big(sinh \big( \frac{\alpha+y}{\beta} \big) \Big),
+\end{equation}
+where $\alpha$ and $\beta$ represent lower and upper reference outputs. This means that \\ \enquote{$\alpha$ controls how the relative error increases for low flows} and \enquote{for outputs larger than $\beta$, the absolute error gradually stops increasing} \citep{giudice2013improving}.
+
+Several different transformation have been tested during the first stages of this project. The following options have been considered (first two used by \cite{giudice2013improving}): 
+\begin{itemize}
+	\item   log-sinh transformation with $\alpha=5$ and  $\beta=100$  
+	\item   Box-Cox transformation with $\lambda_1 = 0.35$ and $\lambda_2 = 0$
+	\item   Box-Cox transformation with $\lambda_1 = 0.35$ and $\lambda_2 = 1$
+	\item   Box-Cox transformation with $\lambda_1 = 0.45$ and $\lambda_2 = 1$	
+\end{itemize}
+Results of this small analysis and the decision what transformation to use subsequently can be found in the section \ref{trans_results}.
+
+
 
 \subsection{Objectives of the study}
 

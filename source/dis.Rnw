@@ -1,7 +1,10 @@
 \documentclass{ctuthesis}
 
-\usepackage{csquotes}    % robust quoting functions
-\usepackage[all]{nowidow} % no widow / orphan lines
+\usepackage{csquotes}      % robust quoting functions
+\usepackage[all]{nowidow}  % no widow / orphan lines
+\usepackage{dsfont}        % identity matrix
+\usepackage{csquotes}      % correct quotation
+\usepackage{natbib}        % text references
 
 \ctusetup{
     xdoctype = D,
@@ -77,10 +80,11 @@
         \chapter{Conclusion}
         Lorep ipsum \cite{doe}
         
-        
-        \begin{thebibliography}{1}
-        \bibitem{doe} J. Doe. \emph{Book on foobar.} Publisher X, 2300.
-        \end{thebibliography}
+  
+      
+  
+        \bibliographystyle{myacmtrans3} %apalike2  ieeetr  % pri vacsine vypnut natbib! apa-good
+        \bibliography{fromZotero} 
         
     
 \end{document}

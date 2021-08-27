@@ -9,4 +9,5 @@
 !/source/*.Rnw
 !/source/*.tex
 !/source/*.cls
+!/source/*.bib
 !/source/dis.pdf
