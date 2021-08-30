@@ -1,0 +1,111 @@
+% !Rnw root = dis.Rnw
+
+\chapter{On the value of CML QPEs for urban rainfall-runoff modelling: The pilot study} \label{chap4}
+
+\rule{\textwidth}{0.4pt}
+... \newline
+....\newline
+... \newline
+\rule[0.2cm]{\textwidth}{0.4pt}
+
+{\footnotesize The bulk of this chapter was originally published in: \newline
+\-\hspace{0.5cm}
+Pastorek, J., Fencl, M., Rieckermann, J., Sýkora, P., Stránský, D., Dohnal, M., Bareš, V. 2018. \textbf{Posouzení srážkových dat z mikrovlnných spojů v městském povodí pomocí analýzy nejistot hydrologického modelu} (in Czech). \emph{SOVAK: Časopis oboru vodovodů a kanalizací} 27, 16-‐22. \newline
+\-\hspace{0.5cm}
+Pastorek, J., Fencl, M., Stránský, D., Rieckermann, J., Bareš, V. 2017. \textbf{Reliability of microwave link rainfall data for urban runoff modelling}. \emph{Proceedings of the 14th IWA/IAHR International Conference on Urban Drainage}, Prague, Czech Republic, 10--15 September 2017, 1340-‐1343.
+}
+\newpage
+
+
+\section{Objectives of the study}
+
+...
+....
+...
+
+ 
+\section{Methods} \label{paperIMnM}
+
+We investigated the defined problem on a small urban catchment in Prague-Letňany, Czech Republic. Our experimental design for rainfall monitoring (Fig. X) enabled us to investigate the following rainfall data sets: 
+\begin{enumerate}
+        \item A single temporary rain gauge in the catchment (RG2),
+        \item QPEs from four CMLs adjusted by data from RG2, 
+        \item Three rain gauges from the long-term municipal network,
+        \item QPEs from four CMLs adjusted by the three municipal gauges,
+        \item Unadjusted QPEs from all CMLs available in the area.
+\end{enumerate}
+For details on the CML data adjustment method, see \cite{fenclGaugeadjustedRainfallEstimates2017}. 
+
+We used 10 events from the summer season of 2014 to analyze the model predictions. To better interpret the results, we classified the rainfall events as either light or heavy, based on the maximal 10-minute precipitation rate. 
+
+Prediction uncertainty was estimated by a method that statistically describes model deficiencies (Del Giudice et al., 2013). Specifically, model bias, induced chiefly by input and structural errors, is in this method represented as a stochastic autocorrelated process. By varying the model input (rainfall data) while keeping the model structure unchanged, we were able to trace the associated uncertainty changes back to the input (rainfall) data. See the section \ref{paperIUnc} for more details.
+
+To assess the model performance, we used the following metrics: i) the relative error of the total runoff volume ($dV$ [-]), ii) the rel. error of the maximal discharges (integrated over 8-min period) ($dVpeak$ [-]), iii) the timing of the discharge maximum ($dt_{Qmax}$ [h]), and iv) the prediction reliability ($reliab$~[-]), i.e. the fraction of flow observations falling into the predicted interval.
+
+
+
+\subsection{Prediction uncertainty quantification} \label{paperIUnc}
+
+Prediction uncertainty of the rainfall-runoff modelling is estimated by a method first used in a similar context by \cite{giudice2013improving} as described in section \ref{delGiudTheor}.
+
+
+\subsubsection{Prior definition}
+In accordance with \cite{giudice2013improving}, we do not use  completely uninformative priors  (\ref{priorTheor}). The priors for the used parameters (both $\Theta$ and  $\psi$) have been chosen based on consultations with experts who had already used the method in the past. For all the parameters (both $\Theta$ and $\psi$), the marginals of the prior joint distribution were defined as truncated normal distributions with 4 defining parameters - mean, standard deviation, minimum and maximum. It should be noted that  $\sigma_{B_{ct}}$ and  $\sigma_E$ are defined in a transformed space (via a transformation $g()$).  When the parameters of the deterministic hydrological model ($\Theta$) are considered, they represent multiplicative (scaling) values of  parameters of the empirical model. More information on these parameters can be found in the section \ref{implem}. The priors used for purpose of this thesis are summarized in the following table:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ c | c | c | c | c }
+	$par$		&	$\mu$ & 	$\sigma$	& 	$min$ 			& 	 $max$  \\ \hline \hline
+
+	$imp$		&	1	&	1		&	0.8			&	1.2		\\ \hline
+	$wid$		&	1	&	1		&	0.3			&	1.7		\\ \hline
+	$Nim$		&	1	&	1		&	0.3			&	1.7		\\ \hline
+	$Sim$		&	1	&	1		&	0.3			&	1.7		\\ \hline
+	$pc0$		&	1	&	1		&	0.3			&	1.7		\\ \hline
+	$Nco$		&	1	&	1		&	0.3			&	1.7		\\ \hline
+	
+	$\tau$		&	0.5		&	0.25		&	0.01			&	3	\\ \hline
+	$\sigma_E$		&	$g($0.5$)$	&	0.25		&	0.01			&	1.5	\\ \hline
+	$\sigma_{B_{ct}}$	&	$g($50$)$	&	25		&	0			&	10 000 000
+	
+	
+\end{tabular}
+\caption{Summary of the prior marginal distributions.}
+\label{kalibracia_tab}
+\end{table}
+
+\subsubsection{Output transformation}
+
+Several different transformation have been tested during the first stages of this project. The following options have been considered (first two used by \cite{giudice2013improving}): 
+\begin{itemize}
+	\item   log-sinh transformation with $\alpha=5$ and  $\beta=100$  
+	\item   Box-Cox transformation with $\lambda_1 = 0.35$ and $\lambda_2 = 0$
+	\item   Box-Cox transformation with $\lambda_1 = 0.35$ and $\lambda_2 = 1$
+	\item   Box-Cox transformation with $\lambda_1 = 0.45$ and $\lambda_2 = 1$	
+\end{itemize}
+
+
+\subsubsection{Calibration}
+
+Before performing the  Bayesian inference calibration itself, we use the generalised simulated annealing function of the \textsf{GenSA} package \citep{GenSA}. The function \enquote{searches for global minimum of a very complex non-linear objective function with a very large number of optima}.
+
+To solve the problem emerging during the calibration by Bayesian inference, described in the section \ref{calibTheor}, we use a numerical Monte Carlo Markov Chain sampler as implemented by \cite{adaptmcmc} according to the proposal of \cite{vihola2012robust}. In the first step, in accordance with \cite{giudice2013improving}, we seek to obtain a suitable jump distribution by tuning the covariance matrix of the (normal) jump distribution to achieve the desired acceptance rate. Subsequently, classical (non-adaptive) Metropolis sampling is employed to sample from the posterior joint distribution.
+
+
+\subsubsection{Performance assessment}
+
+We do not the evaluate the prediction performance  by examining separately the uncertainty intervals for the deterministic model output. This is again in accordance with \cite{giudice2013improving}, who see this approach as \enquote{not conclusive because the field observations are not realisations of the deterministic model but of the model plus the errors}.
+
+We have decided to employ, apart from the two mentioned above,  as well a metric which combines them -- the interval score $S_\alpha$ as formulated by \cite{gneiting2007strictly}.
+
+Apart from assessing the model  predictive performance using the modelled discharge values at every time step of the prediction period, we investigate as well metrics more common in everyday engineering practice, such as the total discharged volume over the observed period $V$ \citep[e.g.][]{fencl2013assessing}, the discharged volume during peak flow period $V_{peak}$  and Nash–Sutcliffe efficiency index $N\!S\!E$ \citep{nash1970river}. To be more precise, we compute the relative error of the total discharged volume and of the volume during peak flow ($dV$ and $dV_{peak}$) for every prediction. 
+
+When calculating $V_{peak}$, the time step with maximal discharge (can differ for observation and prediction) from the given period is identified first and the volume discharged during $4$ min around the time step (\mbox{$2$ min} before and $2$ min after) is computed afterwards. The difference between the observed time with maximal discharge and the modelled one (the \enquote{time shift}) is another metric we record for every prediction.
+
+We calculate as well the mean and the standard deviation of the conventional metrics described above ($dV$, $dV_{peak}$, $N\!S\!E$, time shift of the peak). We see it as another way how to evaluate the model  predictive uncertainty. This is in accordance with \cite{fencl2013assessing}, who use as well the relative error of the total discharged volume and who interpret the related mean ($E(dV)$) as the metric's  bias and the standard deviation  ($sd(dV)$) as its uncertainty. 
+
+
+
+\section{Results}
+
+

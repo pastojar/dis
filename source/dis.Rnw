@@ -55,19 +55,24 @@
         <<material, child='01intro.Rnw'>>=
         @
         
-        %------------------------------------------------------ 2. Material
+        %------------------------------------------------------ 2. Methods
         
-        <<material, child='02material.Rnw'>>=
+        <<material, child='02theory.Rnw'>>=
         @
         
-        %------------------------------------------------------ 3. Pilot (Sovak + ICUD)
+        %------------------------------------------------------ 3. Material
         
-        <<paperI, child='03pilot.Rnw'>>=
+        <<material, child='03material.Rnw'>>=
         @
         
-        %------------------------------------------------------ 3. Paper I. (JoEM)
+        %------------------------------------------------------ 4. Pilot (Sovak + ICUD)
         
-        <<paperI, child='04paperI.Rnw'>>=
+        <<paperI, child='04pilot.Rnw'>>=
+        @
+        
+        %------------------------------------------------------ 5. Paper I. (JoEM)
+        
+        <<paperI, child='05paperI.Rnw'>>=
         @
         
         
