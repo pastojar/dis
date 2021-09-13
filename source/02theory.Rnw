@@ -293,7 +293,7 @@ interest, the novel approach is not recommendable, given its high computational 
 \subsection{Explicit statistical consideration of the bias} \label{delGiudTheor}
 
 Herein we describe the framework of Kennedy and O’Hagan (2001), as formulated by Reichert and Schuwirth (2012) and first used in a context similar to ours by \cite{giudice2013improving}. The basic principle of the method is the extension of the deterministic (e.g. rainfall-runoff) model by a stochastic error model. However, a commonly used error model considering only independent and identically distributed (i.i.d.) errors is adjusted to explicitly account for the systematic model errors (bias) of the deterministic model, acknowledging the fact that simulators cannot describe the \enqoute{true} behavior of a system \citep{giudice2013improving}. The extended model can be thus formulated using the equation
-\begin{equation}
+\begin{equation} \label{eq:ext_model}
 Y_o (x,\theta, \psi) = y_M (x, \theta) + B (\psi) + E (\psi)
 \end{equation}
 where variables in capitals represent random variables, whereas those in lowercase are deterministic functions. $Y_o$ represents the observed system output, $y_M$ stands for the deterministic model output, $B$ for the bias in the system output, (\ref{biasTheor}) and $E$ for the measurement noise of the system output. Precipitation as the external driving force is represented by $x$, whereas $\theta$ and $\psi$ respectively represent the deterministic and error model parameters. To better fulfill the underlying statistical assumptions and thus obtain more reliable predictions, a transformation should be applied on both $Y_o$ and $y_M$ \citep{giudice2013improving}. 
