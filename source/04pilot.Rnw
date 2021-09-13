@@ -10,14 +10,14 @@
 
 {\footnotesize The bulk of this chapter was originally published in: \newline
 \-\hspace{0.5cm}
-Pastorek, J., Fencl, M., Rieckermann, J., Sýkora, P., Stránský, D., Dohnal, M., Bareš, V. 2018. \textbf{Posouzení srážkových dat z mikrovlnných spojů v městském povodí pomocí analýzy nejistot hydrologického modelu} (in Czech). \emph{SOVAK: Časopis oboru vodovodů a kanalizací} 27, 16-‐22. \newline
+Pastorek, J., Fencl, M., Stránský, D., Rieckermann, J., Bareš, V. 2017. \textbf{Reliability of microwave link rainfall data for urban runoff modelling}. \emph{Proceedings of the 14th IWA/IAHR International Conference on Urban Drainage}, Prague, Czech Republic, 10--15 September 2017, 1340-‐1343. \newline
 \-\hspace{0.5cm}
-Pastorek, J., Fencl, M., Stránský, D., Rieckermann, J., Bareš, V. 2017. \textbf{Reliability of microwave link rainfall data for urban runoff modelling}. \emph{Proceedings of the 14th IWA/IAHR International Conference on Urban Drainage}, Prague, Czech Republic, 10--15 September 2017, 1340-‐1343.
+Pastorek, J., Fencl, M., Rieckermann, J., Sýkora, P., Stránský, D., Dohnal, M., Bareš, V. 2018. \textbf{Posouzení srážkových dat z mikrovlnných spojů v městském povodí pomocí analýzy nejistot hydrologického modelu} [The Evaluation of CML Rainfall Data in Urban Catchment by Means of Hydrologic Model Uncertainty]. \emph{SOVAK: Časopis oboru vodovodů a kanalizací} 27, 16-‐22
 }
 \newpage
 
 
-\section{Objectives of the study}
+\section{Introduction}
 
 ...
 ....
@@ -26,33 +26,55 @@ Pastorek, J., Fencl, M., Stránský, D., Rieckermann, J., Bareš, V. 2017. \text
  
 \section{Methods} \label{paperIMnM}
 
-We investigated the defined problem on a small urban catchment in Prague-Letňany, Czech Republic. Our experimental design for rainfall monitoring (Fig. X) enabled us to investigate the following rainfall data sets: 
+The defined problem is addrresses using data collected in a small urban catchment in Prague-Letňany, Czech Republic (details in \ref{chap3}) during three months (Aug\,--\,Oct) of 2014. Precipitation time series from five rainfall data sets are propagated through a rainfall-runoff model (\ref{RRmodel}) and evaluated against observed runoffs. However, the hydrological model is operated by means of prediction uncertainty quantification as first used in~a~similar context by \cite{giudice2013improving}.
+
+
+\subsection{Observation layouts} 
+
+We investigate the following five rainfall data sets: 
 \begin{enumerate}
-        \item A single temporary rain gauge in the catchment (RG2),
-        \item QPEs from four CMLs adjusted by data from RG2, 
-        \item Three rain gauges from the long-term municipal network,
-        \item QPEs from four CMLs adjusted by the three municipal gauges,
-        \item Unadjusted QPEs from all CMLs available in the area.
+         \item Measurements from municipal rain gauges
+                \begin{quote}
+                Rainfall data from the three municipal rain gauges closest to the catchment (Fig. \ref{3fig2}). Due to their 1-min resolution, for which correlations are low for the given distances \citep{villariniRainfallSamplingUncertainties2008}, only a  single time series, constructed as the mean of the instantaneous $R$ [mm/h] values of the three gauges, is evaluated.
+                This data set represents rainfall data standardly available in long-term perspectives in urbanized areas of the Czech Republic.
+                \end{quote}
+        \item Measurements from a single local rain gauge 
+                \begin{quote}
+                Rainfall data at a 1-min resolution from the local rain gauge located at the south-west catchment boundary (Fig. \ref{3fig1}).
+                This data set represents rainfall information observed directly in the urban catchment of interest, which could be typically available for a limited period of time, e.g. in order to evaluate the effect of (re)construction works in the catchment.
+                \end{quote}
+        \item QPEs from four CMLs adjusted by the municipal rain gauges 
+                \begin{quote}
+                The mean of the data from the three municipal rain gauges, aggregated to 15-min time steps, is used to adjust \citep{fenclGaugeadjustedRainfallEstimates2017} CML QPEs with a 1-min resolution. In particular, wet antenna attenuation ($A_{wa}$ from Eq. \ref{eq:2eq2}) and $\alpha$ (Eq. \ref{eq:2eq1}) are adjusted, while keeping $\beta =$ 1. Only short CMLs (path length < 1500 m) located close to the catchment center are used (\#1, \#2, \#5, \#7; Fig. \ref{3fig2}; \#3 and \#4 are excluded due to outages and erratic behavior, respectively). Only a single time series, constructed as the mean of the instantaneous $R$ [mm/h] values of the four CMLs, is evaluated.
+                This rainfall data set showcases application of CML QPEs in situations when rainfall is not measured directly in the catchment, but there are gauges in the distance of 2\,--\,3 km, which, however, may provide data in lower temporal resolutions (e.g. 15, 30, or 60 min).
+                \end{quote}
+        \item QPEs from the four CMLs adjusted by the local rain gauge, 
+                \begin{quote}
+                 The instantaneous mean of the QPEs from the same four CMLs as above, adjusted in the same way, however, using 15-min data from the single local rain gauge (specified above). 
+                \end{quote}
+        \item Unadjusted QPEs from all 19 CMLs available in the area (Fig. \ref{3fig2}).
+                \begin{quote}
+                CML QPEs derived using standard methods. $A_{wa}$ is estimated as a constant offset with the value of 2.5 dB, which was determined by comparing the specific raindrop attenuation $\gamma$ [dB/km] of short and long CMLs. The rainfall intensity $R$ [mm/h] is calculated with parameter values $\alpha$ and $\beta$ chosen in accordance with \cite{recommendation2005838}.
+                This data set represents a situation when traditional rainfall information is not available in the catchment's surroundings.
+                \end{quote}
 \end{enumerate}
-For details on the CML data adjustment method, see \cite{fenclGaugeadjustedRainfallEstimates2017}. 
 
-We used 10 events from the summer season of 2014 to analyze the model predictions. To better interpret the results, we classified the rainfall events as either light or heavy, based on the maximal 10-minute precipitation rate. 
+The rainfall model input is in all cases implemented as areal rainfall in the model, meaning that rainfall intensity in a given time step has a constant value over all subcatchments of the model.
 
-Prediction uncertainty was estimated by a method that statistically describes model deficiencies (Del Giudice et al., 2013). Specifically, model bias, induced chiefly by input and structural errors, is in this method represented as a stochastic autocorrelated process. By varying the model input (rainfall data) while keeping the model structure unchanged, we were able to trace the associated uncertainty changes back to the input (rainfall) data. See the section \ref{paperIUnc} for more details.
-
-To assess the model performance, we used the following metrics: i) the relative error of the total runoff volume ($dV$ [-]), ii) the rel. error of the maximal discharges (integrated over 8-min period) ($dVpeak$ [-]), iii) the timing of the discharge maximum ($dt_{Qmax}$ [h]), and iv) the prediction reliability ($reliab$~[-]), i.e. the fraction of flow observations falling into the predicted interval.
+We used 10 events from  to analyze the model predictions. To better interpret the results, we classified the rainfall events as either light or heavy, based on the maximal 10-minute precipitation rate. 
 
 
+\subsection{Prediction uncertainty analysis}
 
-\subsection{Prediction uncertainty quantification} \label{paperIUnc}
-
-Prediction uncertainty of the rainfall-runoff modelling is estimated by a method first used in a similar context by \cite{giudice2013improving} as described in section \ref{delGiudTheor}.
+Prediction uncertainty of the rainfall-runoff modelling is estimated by a method by \cite{giudice2013improving} described in section \ref{delGiudTheor}. Model bias, induced chiefly by input and structural errors, is in this method represented as a stochastic autocorrelated process. By varying the model input (rainfall data) while keeping the model structure unchanged, we were able to trace the associated changes in the uncertainty back to the rainfall data. 
 
 
 \subsubsection{Prior definition}
-In accordance with \cite{giudice2013improving}, we do not use  completely uninformative priors  (\ref{priorTheor}). The priors for the used parameters (both $\Theta$ and  $\psi$) have been chosen based on consultations with experts who had already used the method in the past. For all the parameters (both $\Theta$ and $\psi$), the marginals of the prior joint distribution were defined as truncated normal distributions with 4 defining parameters - mean, standard deviation, minimum and maximum. It should be noted that  $\sigma_{B_{ct}}$ and  $\sigma_E$ are defined in a transformed space (via a transformation $g()$).  When the parameters of the deterministic hydrological model ($\Theta$) are considered, they represent multiplicative (scaling) values of  parameters of the empirical model. More information on these parameters can be found in the section \ref{implem}. The priors used for purpose of this thesis are summarized in the following table:
+
+In accordance with \cite{giudice2013improving}, we do not use  completely uninformative priors  (\ref{priorTheor}). The priors for the used parameters (both $\theta$ and  $\psi$) have been chosen based on consultations with experts who had already used the method in the past. For all the parameters (both $\theta$ and $\psi$), the marginals of the prior joint distribution were defined as truncated normal distributions with 4 defining parameters - mean, standard deviation, minimum and maximum. It should be noted that  $\sigma_{B_{ct}}$ and  $\sigma_E$ are defined in a transformed space (via a transformation $g()$).  When the parameters of the deterministic hydrological model ($\theta$) are considered, they represent multiplicative (scaling) values of  parameters of the empirical model. More information on these parameters can be found in the section \ref{implem}. The priors used for purpose of this thesis are summarized in the following table:
 
 \begin{table}[H]
+\small
 \centering
 \begin{tabular}{ c | c | c | c | c }
 	$par$		&	$\mu$ & 	$\sigma$	& 	$min$ 			& 	 $max$  \\ \hline \hline
@@ -87,12 +109,34 @@ Several different transformation have been tested during the first stages of thi
 
 \subsubsection{Calibration}
 
+
+\begin{itemize}
+\vspace{-0.4cm}
+\item percentage of impervious areas $imp$ [\%] 
+\item width of overland flow path $wid$ [m]
+\item average surface slope $slo$ [\%]
+\item Manning's N for impervious areas $Nim$
+\item surface depression storage for impervious areas $Sim$ [mm]
+\item surface depression storage for pervious areas $Spe$ [mm] 
+\item percentage of impervious areas with no depression storage $pc0$ [\%] 
+\item Manning's N for conduits $Nco$
+\end{itemize}
+
+Therefore, based on the results of the sensitivity analysis, we decided to neglect the parameters  $slo$ and $Spe$, in other words  to keep them constant. This reduced the number of the deterministic model parameters $\theta$  used in the uncertainty analysis to $6$.
+
+These parameters work as multiplicative parameters (scaling factors). This means that when a given parameter, e.g. $imp$, is set to $1$, the respective $imp$ values for all subcatchments ($195$ in total) are multiplied by $1$.  Similarly, if $Nco$ is set to $2$, the initial values of Manning's N for all  conduits in the model are multiplied \mbox{by $2$}. For every investigated parameter, the sensitivity is analysed for values from the interval $[0.1, 1.9]$. 
+
+We acknowledge that this approach, not varying the internal relative structure for the given parameter, might be perceived as questionable and could be avoided by introducing additional stochastic parameters, which would incorporate random changes into the internal proportions  of the $\theta$ parameters. However, we choose not to implement this for the sake of modelling simplicity (lower number of parameters).
+
+
 Before performing the  Bayesian inference calibration itself, we use the generalised simulated annealing function of the \textsf{GenSA} package \citep{GenSA}. The function \enquote{searches for global minimum of a very complex non-linear objective function with a very large number of optima}.
 
 To solve the problem emerging during the calibration by Bayesian inference, described in the section \ref{calibTheor}, we use a numerical Monte Carlo Markov Chain sampler as implemented by \cite{adaptmcmc} according to the proposal of \cite{vihola2012robust}. In the first step, in accordance with \cite{giudice2013improving}, we seek to obtain a suitable jump distribution by tuning the covariance matrix of the (normal) jump distribution to achieve the desired acceptance rate. Subsequently, classical (non-adaptive) Metropolis sampling is employed to sample from the posterior joint distribution.
 
 
-\subsubsection{Performance assessment}
+\subsection{Performance assessment}
+
+To assess the model performance, we used the following metrics: i) the relative error of the total runoff volume ($dV$ [-]), ii) the rel. error of the maximal discharges (integrated over 8-min period) ($dVpeak$ [-]), iii) the timing of the discharge maximum ($dt_{Qmax}$ [h]), and iv) the prediction reliability ($reliab$~[-]), i.e. the fraction of flow observations falling into the predicted interval.
 
 We do not the evaluate the prediction performance  by examining separately the uncertainty intervals for the deterministic model output. This is again in accordance with \cite{giudice2013improving}, who see this approach as \enquote{not conclusive because the field observations are not realisations of the deterministic model but of the model plus the errors}.
 

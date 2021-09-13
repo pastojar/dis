@@ -6,8 +6,7 @@
 
 \begin{thanks}
         I would like to thank everyone who supported my work on this project. In particular, I would like to thank Vojtěch Bareš,
-        Martin Fencl, and David Stránský from CTU in Prague, and also Jörg Rieckermann, Andreas Scheidegger, and others from the
-        SWW department of Eawag. \par
+        Martin Fencl, and David Stránský from CTU in Prague, and also Jörg Rieckermann, Andreas Scheidegger, and others from Eawag. \par
         
         I would also like to thank T-Mobile Czech Republic, a.s., for providing the CML data, and especially Pavel Kubík
         for assisting with our numerous requests. I would also like to thank Pražská vodohospodářská společnost, a.s., for

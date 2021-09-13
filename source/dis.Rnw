@@ -5,6 +5,7 @@
 \usepackage{dsfont}        % identity matrix
 \usepackage{csquotes}      % correct quotation
 \usepackage{natbib}        % text references
+\usepackage{makecell}      % break line in tables
 
 \ctusetup{
     xdoctype = D,
@@ -51,32 +52,34 @@
         \maketitle
         
         %------------------------------------------------------ 1. Introduction
-        
-        <<material, child='01intro.Rnw'>>=
+        <<intro, child='01intro.Rnw'>>=
         @
         
         %------------------------------------------------------ 2. Methods
-        
-        <<material, child='02theory.Rnw'>>=
+        <<methods, child='02theory.Rnw'>>=
         @
         
         %------------------------------------------------------ 3. Material
-        
         <<material, child='03material.Rnw'>>=
         @
         
         %------------------------------------------------------ 4. Pilot (Sovak + ICUD)
-        
-        <<paperI, child='04pilot.Rnw'>>=
+        <<pilot, child='04pilot.Rnw'>>=
         @
         
         %------------------------------------------------------ 5. Paper I. (JoEM)
-        
         <<paperI, child='05paperI.Rnw'>>=
         @
         
+        %------------------------------------------------------ 6. Paper II. (TGRS)
+        <<paperII, child='06paperII.Rnw'>>=
+        @
         
+        %------------------------------------------------------ 7. Paper III. (???)
+        <<paperIII, child='07paperIII.Rnw'>>=
+        @
         
+        %------------------------------------------------------ dummy chapter
         <<test, child='Child.Rnw'>>=
         @
         
@@ -88,7 +91,8 @@
   
       
   
-        \bibliographystyle{myacmtrans3} %apalike2  ieeetr  % pri vacsine vypnut natbib! apa-good
+        \bibliographystyle{apalike2} %apalike2 myacmtrans3  ieeetr  % pri vacsine vypnut natbib! apa-good
+        \small
         \bibliography{fromZotero} 
         
     

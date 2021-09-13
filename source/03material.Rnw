@@ -3,29 +3,27 @@
 \chapter{Material} \label{chap3}
 
 \rule{\textwidth}{0.4pt}
-This chapter is about the material relevant for multiple following chapters. \newline
+This chapter is about the material used in the studies presented in the following chapters. \newline
 \rule[0.2cm]{\textwidth}{0.4pt}
 
 
-
-\section{Experimental catchment}
-
-The experimental urban catchment (Fig. \ref{2fig1}) with an area of 1.3 km\textsuperscript{2} lies in Prague-Letňany, Czech Republic, and it is drained by a separate stormwater sewer system. Approximately 35\% of the catchment area is covered by impervious surfaces. The catchment is slightly inclined to the north, with the altitude gradually declining from roughly 280 to 250 m above sea level (Baltic 1957 height, EPSG:8357). The lag time between rainfall peak and runoff peak observed at the outlet from the catchment is approximately 20 minutes.
+The data used originate from an experimental urban catchment (Fig. \ref{3fig1}) with an area of 1.3 km\textsuperscript{2} which lies in Prague-Letňany, Czech Republic, and is drained by a separate stormwater sewer system. Approximately 35\% of the catchment area is covered by impervious surfaces. The catchment is slightly inclined to the north, with the altitude gradually declining from roughly 280 to 250 m above sea level (Baltic 1957 height, EPSG:8357). The lag time between rainfall peak and runoff peak observed at the outlet from the catchment is approximately 20 minutes.
 
 
-\begin{figure}[p]
+\begin{figure}[H]
 \begin{center}
-\includegraphics[width=13cm]{02paperI/Fig 1.jpg}
-\caption{Left: Schematic layout of the urban catchment studied and the local rain gauges used for model calibration. Right: Location of the CMLs (with IDs denoted) and municipal rain gauges.} \label{2fig1}
+\includegraphics[width=6.7cm]{figs/IntTheMat/catchment + loc RGs.png}
+\caption{Aerial view of the urban catchment studied with the main sewers and receiveing water body as well as the position of the local rain gauges (RGs).} \label{3fig1}
 \end{center}
 % \FloatBarrier
 \end{figure}
 
 \begin{table}[p]
+\small
 \begin{ctucolortab}
 \centering
 \begin{tabular}{ c | c  c  c  c }
-	\bfseries ID    &       \textbf{FreqA [GHz]}   &  \bfseries FreqB [GHz]  &  \bfseries  Polarization  & \bfseries Length [m]   \\ \Midrule
+\bfseries ID    &       \textbf{FreqA [GHz]}   &  \bfseries FreqB [GHz]  &  \bfseries  Polarization  & \bfseries Length [m]   \\ \Midrule
         1  &	31.82 &	32.63 &	V  &	611     \\
         2  &	32.63 &	NA    &	H  &	645     \\
         3  &	NA    &	32.63 &	V  &	816     \\      
@@ -46,34 +44,50 @@ The experimental urban catchment (Fig. \ref{2fig1}) with an area of 1.3 km\texts
         18  &	24.55 &	25.56 &	V  &	4523    \\
         19  &	24.55 &	25.56 &	V  &	5795
 \end{tabular}
-\caption{Characteristics of CMLs. FreqA and FreqB are CML frequencies for both directions. The NA value indicates that records in respective directions are not available. Polarization (Vertical/Horizontal) is the same for both directions.}
-\label{2tab1}
+\caption{Characteristics of the CMLs observed. FreqA and FreqB are CML frequencies for the two directions. The NA values indicate that records are not available. Polarization (Vertical/Horizontal) is the same for both directions.}
+\label{3tab1}
 \end{ctucolortab}
 \end{table}
  
  
-\section{Data retrieval} \label{DatRet}
+\section{Data retrieval and availability} \label{DatRet}
 
-We monitored 19 CMLs (Table \ref{2tab1}) located in the catchment and its surroundings (Fig. \ref{2fig1}, right) from the period between July 2014 and October 2016, excluding the winter months (December--March). The CMLs broadcast at frequencies from 25 to 39 GHz, their lengths are between 611 and 5795 m, and they are operated by a major telecommunication service provider. Long CMLs extend out of the catchment for several kilometers. Data from CMLs were retrieved at a 10-s resolution with a custom-made logging script (for details, see Fencl et al., 2015) and aggregated to a 1-min resolution.
+We monitored 19 CMLs (Table \ref{3tab1}; Fig. \ref{3fig2}) and several rain gauges located in the catchment's surroundings (Figs. \ref{3fig1} and \ref{3fig2}) over the period between July 2014 and October 2016, excluding the winter months (December--March) as CML signal attenuation by frozen precipitation, occurring in winter periods, is considerably different than that of liquid precipitation. Moreover, our monitoring setup is designed for periods with liquid precipitation only, as the rain gauges are not heated.
 
-Observations from three tipping bucket rain gauges (MR3, Meteoservis; Fig. \ref{2fig1}, right), were collected at a 1-min resolution during the same period. The rain gauges are located roughly 2.5 km outside of the catchment. They are operated and maintained by the municipal sewer authority and dynamically calibrated (Humphrey et al., 1997) every year. They have a funnel area of 500 cm$^2$, a bucket volume of 5 ml, and their single tip corresponds to 0.1 mm of rainfall. Moreover, three rain gauges with the same characteristics were temporarily installed within or close to the catchment boundaries (Fig. \ref{2fig1}, left; see \textcolor{red}{Supplementary material} for more details).
+The CMLs (Mini-Link, Ericsson) broadcast at frequencies from 25 to 39 GHz, their lengths are between 611 and 5795 m, and they are operated by a major telecommunication service provider. Long CMLs extend out of the catchment for several kilometers. Signal-level data from CMLs, featuring a common quantization of 1 dB and 0.33 dB for the transmitted and received signal power, were retrieved at a 10-s resolution with a custom-made logging script \citep{fenclCommercialMicrowaveLinks2015} and then aggregated to a 1-min resolution.
 
-In addition, we measured discharges at the stormwater drainage system outlet using an area-velocity flow meter (Triton, ADS). The flow meter was calibrated in a standard way using stream gaging and the velocity-area method employing an electromagnetic velocity probe. The temporal resolution of the discharge measurements is 2 min for wet periods and 10 min for dry periods. Observed discharge values range from approximately 2 to 2000 l/s (see Supplementary material for details).
+All tipping bucket rain gauges in the area (Figs. \ref{3fig1} and \ref{3fig2}) were produced by the same manufacturer (MR3, Meteoservis)  and feature the same characteristics:  A funnel area of 500 cm$^2$, a bucket volume of 5 ml, and a single tip corresponding to 0.1 mm of rainfall. They are all dynamically calibrated \citep{humphreyNewMethodAutomated1997} every year and the rainfall data they provide is stored at a 1-min resolution. However, the rain gauges make part of two different networks. Those located one km or more outside of the catchment (Fig. \ref{3fig2}) are operated and maintained by the municipal sewer authority as a part of their long-term monitoring network with a density of one gauge per 20–-25 km\textsuperscript{2}. These gauges are further referred to as \enquote{municipal}. In contrast, rain gauges temporarily installed at the three locations within or close to the catchment boundaries (Fig. \ref{3fig1}) are referred to as \enquote{local}. 
 
+In addition, we measured discharges at the stormwater drainage system outlet (Fig. \ref{3fig2}) using an area-velocity flow meter (Triton, ADS). The flow meter was calibrated in a standard way using stream gaging and the velocity-area method employing an electromagnetic velocity probe. The temporal resolution of the discharge measurements is 2 min for wet periods and 10 min for dry periods. Observed discharge values range from approximately 2 to 2000 l/s.
 
-\section{Rainfall-runoff model and its reliability} \label{RRmodel}
-
-To simulate the discharges at the drainage system outlet, an EPA-SWMM model is used which was constructed using detailed information about the catchment (e.g. the ratio of impervious areas for individual subcatchments) and the drainage system (e.g. pipe materials and diameters) provided by the municipal water management authority. The process of runoff generation is formulated empirically and separately for each model subcatchment using the respective surface-depression-storage-depth parameters. The subsequent runoff itself is modeled as a one-dimensional flow expressed by Saint-Venant equations. These are numerically solved in the approximated form of a~kinematic wave for surface runoff and in the full form of a dynamic wave for the later runoff in the stormwater drainage network. The model was calibrated using an independent data set, i.e. measurements obtained from the three local rain gauges (Fig. \ref{2fig1}, left) before the experimental period of this study (see Supplementary material for more details). 
-
-\begin{figure}[h]
+\begin{figure}[p]
 \begin{center}
-\includegraphics[width=12.5cm]{02paperI/Fig 3.jpg}
-\caption{Results of the rainfall-runoff model verification. Top: Histograms of the statistics for all evaluated events. Bottom: Scatter plots showing the statistics for single events with respect to the maximal 10-minute rainfall intensity ($R_{max,10}$) observed by the local rain gauges during these events.} \label{2fig3}
+\includegraphics[width=13cm]{figs/IntTheMat/big map 18 CML + catchment edited.png}
+\caption{ Spatial relations of the catchment, the flowmeter (FM), the CMLs (with IDs denoted), and the monitored municipal rain gauges (RGs).} \label{3fig2}
 \end{center}
 % \FloatBarrier
 \end{figure}
 
-The reliability of model predictions was tested using rainfall data from the three local rain gauges (Fig. \ref{2fig1}, left), i.e. the same devices that were used for the model calibration. This verification was performed for a data set obtained in the same period as the rainfall data from CMLs subsequently analyzed in the study, i.e. between July 2014 and October 2016. Results of this verification are summarized for all 56 rainfall-runoff events in Fig. \ref{2fig3}. These results suggest that the model predicts very realistic rainfall runoff. First, on average 78\% of simulated discharges fall within the 95\% confidence bands of observed runoff defined by 2.5\% and 97.5\% quantiles of observation errors (see section \ref{InstErr}), i.e. the mean containing ratio ($CR$ [-]) is 0.78, and its st. dev. is 0.15. Second, the relative error in volume on average is only -0.7\%, and modelled discharge shows a 0.95 Pearson's correlation coefficient in relation to the observed values. The Nash–Sutcliffe efficiency is also high (mean 0.77 and st. dev. 0.3). The model performs less satisfactorily in terms of predicting peak flows during heavy rainfalls, they are often substantially overestimated (on average by 40\%). This is probably related to errors associated with the rainfall measurement or strong assumptions regarding rainfall spatial variability over the catchment area. For some of the heaviest rainfalls, which are excluded from the evaluation (see section \ref{DatAva}), peak flows are overestimated by more than 100\%, which is probably also due to the model structural deficiencies, e.g. overland flows during extreme events. In summary, the rainfall-runoff model performs very well except for extreme events. Hydrographs for all analyzed events are presented in the Supplementary material. 
+During the observation period, we observed more than 100 relevant rainfall events with depths exceeding 2 mm. However, due to outages in data from the monitoring devices, it was possible to analyze data from only a considerably lower number of events. The exact number differs for each study presented due to using data from various sets of devices, the availability of the data at a given time, or differences in event definition. Details on rainfall characteristics for events as used in the study presented in chapter \ref{chap5} (see \ref{paperIIdatAval}0 are provided in Appendix ???.
+
+An overview of CML data availability during the monitoring period is shown in Appendix ???. Data from each CML were available, on average, during 80\% of the events. Six CMLs had data availability higher than 95\% and only two of them lower than 50\%. Due to long-term outages, data from CMLs  \#1, \#2, and \#10 were analyzed only in the study presented in chapter \ref{chap4}, which investigated only a shorter period during which the data from these CMLs were available.
+
+
+\section{Rainfall-runoff model and its reliability} \label{RRmodel}
+
+To simulate the discharges at the drainage system outlet, an EPA-SWMM model is used which was constructed using detailed information about the catchment (e.g. the ratio of impervious areas for individual subcatchments) and the drainage system (e.g. pipe materials and diameters) provided by the municipal water management authority. The process of runoff generation is formulated empirically and separately for each model subcatchment (195 in total) using the respective surface-depression-storage-depth parameters. The subsequent runoff itself is modeled as a one-dimensional flow expressed by Saint-Venant equations. These are numerically solved in the approximated form of a~kinematic wave for surface runoff and in the full form of a dynamic wave for the following runoff in the stormwater drainage network. The model was calibrated using an independent data set, i.e. measurements obtained from the three local rain gauges (Fig. \ref{3fig1}) before the above specified observation period \citep{bakalarka}. 
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=12.5cm]{figs/03paperI/Fig 3.jpg}
+\caption{Results of the rainfall-runoff model verification. Top: Histograms of the statistics for all evaluated events. Bottom: Scatter plots showing the statistics for single events with respect to the maximal 10-minute rainfall intensity ($R_{max,10}$) observed by the local rain gauges during these events.} \label{3fig3}
+\end{center}
+% \FloatBarrier
+\end{figure}
+
+In the cases of all rainfall data sets studied, except for the local rain gauges, the rainfall model input is implemented as areal rainfall in the model, meaning that rainfall intensity in a given time step has a constant value over all model subcatchments. For the local rain gauges, the catchment is divided into three Thiessen polygons, corresponding to the local gauges at three locations. This means that every subcatchment is assigned the same rainfall intensity as measured at the closest local rain gauge.
+
+The reliability of model predictions was tested using rainfall data from the three local rain gauges, i.e. the same devices that were used for the model calibration. This verification was performed for 59 rainfall-runoff events (see \ref{paperIIdatAval}) from the observed period between July 2014 and October 2016. Hydrographs for all analyzed events are provided in Appendix ???.  Results of this verification are summarized in Fig. \ref{3fig3}. These results suggest that the model predicts very realistic rainfall runoff. First, on average 78\% of simulated discharges fall within the 95\% confidence bands of observed runoff defined by 2.5\% and 97.5\% quantiles of observation errors (see section \ref{Quncer}), i.e. the mean containing ratio \mbox{$CR$~[-]} is 0.78, and its st. dev. is 0.15. Second, the relative error in volume on average is only -0.7\%, and modelled discharge shows a~0.95 Pearson's correlation coefficient in relation to the observed values. The Nash–Sutcliffe efficiency is also high (mean 0.77 and st. dev. 0.3). The model performs less satisfactorily in terms of predicting peak flows during heavy rainfalls, they are often substantially overestimated (on average by 40\%). This is probably related to errors associated with the rainfall measurement or strong assumptions regarding rainfall spatial variability over the catchment area. For some of the heaviest rainfalls, peak flows are overestimated by more than 100\%, which is probably also due to the model structural deficiencies, e.g. unmodelled overland flows during extreme events. In summary, the rainfall-runoff model performs very well except for extreme events. 
 
 
 

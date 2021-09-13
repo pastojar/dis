@@ -1,6 +1,6 @@
 % !Rnw root = dis.Rnw
 
-\chapter{Analysis}
+\chapter{Dummy chapter}
 This is the analysis.
 
 <<analysis>>=
