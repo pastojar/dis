@@ -19,21 +19,25 @@ Pastorek, J., Fencl, M., Rieckermann, J., Sýkora, P., Stránský, D., Dohnal, M
 
 \section{Introduction}
 
-...
-....
-...
+Reliable rainfall data are crucial when performing urban rainfall-runoff modelling. Nevertheless, high spatial variability of rainfall during convective events negatively affects the representativeness of point precipitation measurements from rain gauges. This could be avoided by employing commercial microwave links (CMLs), which allow for indirect path-averaged precipitation detection and are typically very dense in urban areas. However, to date, only a few studies have investigated the ability of quantitative precipitation estimates (QPEs) from CMLs for quantitative hydrology. 
+
+\cite{smiatekPotentialCommercialMicrowave2017} investigated the potential of QPEs from CMLs for streamflow prediction in an orographically complex mountainous region. In urban settings,  \cite{fencl2013assessing} assessed the potential of CMLs to capture spatiotemporal rainfall dynamics and thus improve urban rainfall-runoff modelling, however, using only  virtual rainfall fields. In a similar analysis, \cite{fenclCommercialMicrowaveLinks2015} evaluated QPEs derived from real-world CML data, however, without using these for hydrological modelling. Thus, to the best of our knowledge, no research has been presented yet in relevant literature where real-world CML QPEs would be applied for urban rainfall-runoff modelling. 
+
+In this study, we target the above research gap and analyze whether QPEs obtained from CMLs can be regarded as a viable alternative for rainfall data in the field of urban rainfall-runoff modelling. As CML QPEs are often highly biased, what limits their usability for practical purposes, we analyze CML QPEs derived using both a standard approach and a recently proposed \cite{fenclGaugeadjustedRainfallEstimates2017} novel method for adjusting the QPEs to existing rain gauges. 
+
+The CML QPEs, as well as traditional data from rain gauges, are propagated through a calibrated rainfall-runoff model and evaluated against observed discharges. Since additional uncertainties are introduced into the process of rainfall data evaluation by employing the rainfall-runoff modelling, we use a thorough statistical method which allows for a reliable quantification of the runoff prediction uncertainty associated with various rainfall observation layouts. 
 
  
 \section{Methods} \label{paperIMnM}
 
-The defined problem is addrresses using data collected in a small urban catchment in Prague-Letňany, Czech Republic (details in \ref{chap3}) during three months (Aug\,--\,Oct) of 2014. Precipitation time series from five rainfall observation layouts are propagated through a rainfall-runoff model (\ref{RRmodel}) and evaluated against observed runoffs. However, the hydrological model is operated by means of prediction uncertainty quantification as first used in~a~similar context by \cite{giudice2013improving}.
+The defined problem is addrresses using rainfall and runoff data collected in~a small urban catchment in Prague-Letňany, Czech Republic (details in \ref{chap3}) during three months (August\,--\,October) of 2014. Precipitation time series from five rainfall observation layouts are propagated through a rainfall-runoff model (\ref{RRmodel}) and evaluated against observed runoffs. In order to quantify the associated uncertainties, the hydrological model is operated by means of prediction uncertainty quantification as first used in~a~similar context by \cite{giudice2013improving} and introduced in section \ref{delGiudTheor}.
 
 
-\subsection{Observation layouts} 
+\subsection{Rainfall observation layouts} 
 
-We investigate rainfall data observed during 15 rainfall-runoff events using  the following five observation layouts: 
+We investigate rainfall data observed using the  five following observation layouts during 15 rainfall-runoff events from the summer season of 2014: 
 \begin{enumerate}
-         \item Measurements from municipal rain gauges
+         \item Measurements from three municipal rain gauges
                 \begin{quote}
                 Rainfall data from the three municipal rain gauges closest to the catchment (Fig. \ref{3fig2}). Due to their 1-min resolution, for which correlations are low for the given distances \citep{villariniRainfallSamplingUncertainties2008}, only a  single time series, constructed as the mean of the instantaneous $R$ [mm/h] values of the three gauges, is evaluated.
                 This data set represents rainfall data standardly available in long-term perspectives in urbanized areas of the Czech Republic.
@@ -65,20 +69,22 @@ The rainfall input is in all cases implemented as areal rainfall in the hydrolog
 
 
 
-\subsection{Prediction uncertainty analysis}
+\subsection{Rainfall-runoff modelling and uncertainty analysis}
 
-Prediction uncertainty of the rainfall-runoff modelling is estimated using the approach of \cite{giudice2013improving} introduced in section \ref{delGiudTheor}. By varying the model input (rainfall data) while keeping the model structure unchanged, we are able to trace the associated changes in the uncertainty back to the rainfall data. Although the rainfall-runoff model has been previously calibrated and performs in general well (\ref{RRmodel}), in order to account for uncertainty from all major sources, the hydrological model is, again, calibrated as part of the extended model (Eq. \ref{eq:ext_model}).
+Rainfall time series retrieved using all the five observation layouts are propagated through a rainfall-runoff model (\ref{RRmodel}) and evaluated against discharges observed at the outlet from the local stormwater drainage system. In order to acknowledge uncertainties of the rainfall-runoff model predictions, we employ uncertainty analysis framework of \cite{kennedy2001bayesian} as formulated by \cite{reichert2012linking} and first used in a context similar to ours by \cite{giudice2013improving}. The basic principle of the method (details in section \ref{delGiudTheor}) is the extension (Eq. \ref{eq:ext_model}) of the deterministic (i.e., in our case, rainfall-runoff) model by a stochastic error model which explicitly accounts for systematic model errors, i.e. bias. 
 
 \cite{giudice2013improving} investigated various formulations of the model bias and various transformation functions. Based on previous analyses \citep{pastorekEffectDifferentRainfall2016}, we formulate the bias $B (\psi)$ as an autoregressive stationary random process with a long-term equilibrium value of zero and a constant variance, and, as transformation $g()$, we use the Box-Cox transformation \citep{box1964analysis} with parameters $\lambda_1 =$ 0.45 and $\lambda_2 =$~1.
 
+By varying the input rainfall data while keeping the rainfall-runoff model structure unchanged, we are able to trace the associated changes in the prediction uncertainty back to the respective rainfall data. However, to achieve accurate rainfall-runoff predictions and reliable quantification of their uncertainty, the extended model should be calibrated first. Although the deterministc rainfall-runoff model has been calibrated in the past, we optimize its parameters also here, together with the stochastic error model parameters, as we aim to maximize both the discharge prediction reliability and precision.
 
 
+\subsubsection{Prior distribution definition and model calibration}
 
-\subsubsection{Prior definition}
+Since the extended model has to be calibrated in a Bayesian framework, prior probability distribution of the model parameters which are to be calibrated must be first defined. In accordance with \cite{giudice2013improving} (see \ref{delGiudTheor}), we do not use  completely uninformative prior distributions for parameters of neither the deterministic rainfall-runoff model ($\theta$) nor  the stochastic error model ($\psi$). In contrast, the priors are chosen based on knowledge of the urban catchment and consultations with experts who have already used the method. 
 
-In accordance with \cite{giudice2013improving} (see \ref{delGiudTheor}), we do not use  completely uninformative priors neither for parameters of the deterministic rainfall-runoff model ($\theta$), nor for the stochastic error model ($\psi$). In contrast, the priors are chosen based on the local knowledge of the urban catchment and consultations with experts who had already used the method. For all the parameters, marginals of the prior joint distribution were defined (Table \ref{kalibracia_tab}) as truncated normal distributions with four defining parameters - mean ($\mu$), standard deviation ($\sigma$), minimum, and maximum. It should be noted that  $\psi$ parameters $\sigma_B$ and  $\sigma_E$ are defined in a transformed space (via a transformation $g()$).  When the $\theta$ parameters are considered, they represent multiplicative (scaling) values of the hydrological model parameters. This means that when a given parameter, e.g. $imp$, is set to $1.1$, the respective $imp$ values for all 195 subcatchments are multiplied by $1.1$.
+For all the parameters, marginals of the prior joint distribution are defined (Table \ref{kalibracia_tab}) as truncated normal distributions with four defining parameters - mean ($\mu$), standard deviation ($\sigma$), minimum, and maximum. It should be noted that $\psi$ parameters $\sigma_B$ and  $\sigma_E$ are defined in a transformed space via a transformation $g()$.  When $\theta$ parameters are concerned, they represent multiplicative (scaling) values of the actual model parameters. This means that when a given parameter, e.g. $imp$, is set to $1.1$, the respective $imp$ values for all 195 subcatchments are multiplied by $1.1$.
 
-\begin{table}[H]
+\begin{table}[h]
 \begin{ctucolortab}
 \small
 \centering
@@ -105,22 +111,13 @@ In accordance with \cite{giudice2013improving} (see \ref{delGiudTheor}), we do n
 
 
 
-\subsubsection{Calibration}
+Data from five out of the 15 available rainfall-runoff events are used to calibrate the extended model. The calibration itself is performed in two steps. First, we use the generalized simulated annealing function of the \textsf{GenSA} package \citep{xiangGeneralizedSimulatedAnnealing2013}, which was designed to \enquote{search for global minimum of a very complex non-linear objective function with a very large number of optima}. Second, we use a numerical Monte Carlo Markov Chain sampler as implemented by \cite{adaptmcmc} according to the proposal of \cite{vihola2012robust}. This function first  tunes the covariance matrix of the jump distribution to achieve a desired acceptance rate. Next, a non-adaptive Metropolis sampling is employed to draw from the posterior distribution.
 
-? MOVE DISC
-We acknowledge that this approach, not varying the internal relative structure for the given parameter, might be perceived as questionable and could be avoided by introducing additional stochastic parameters, which would incorporate random changes into the internal proportions  of the $\theta$ parameters. However, we choose not to implement this for the sake of modelling simplicity (lower number of parameters).
-? MOVE DISC
-
-From the 15 available rainfall-runoff events, 5 are used to calibrate the extended model.
-
-Before performing the  Bayesian inference calibration itself, we use the generalized simulated annealing function of the \textsf{GenSA} package \citep{xiangGeneralizedSimulatedAnnealing2013}. The function \enquote{searches for global minimum of a very complex non-linear objective function with a very large number of optima}.
-
-To solve the problem emerging during the calibration by Bayesian inference, described in the section \ref{calibTheor}, we use a numerical Monte Carlo Markov Chain sampler as implemented by \cite{adaptmcmc} according to the proposal of \cite{vihola2012robust}. In the first step, in accordance with \cite{giudice2013improving}, we seek to obtain a suitable jump distribution by tuning the covariance matrix of the (normal) jump distribution to achieve the desired acceptance rate. Subsequently, classical (non-adaptive) Metropolis sampling is employed to sample from the posterior joint distribution.
 
 
 \subsection{Performance assessment}
 
-Data from the remaining 10 rainfall-runoff events were used to analyze the model predictions. To better interpret the results, we classified the rainfall events as either light or heavy, based on the maximal 10-minute precipitation rate. 
+After performing the extended model calibration, data from the remaining ten rainfall-runoff events are used to analyze the model predictions. To better interpret the results, we classified the rainfall events as either light or heavy, based on the maximal 10-minute precipitation rate. 
 
 To assess the model performance, we used the following metrics: i) the relative error of the total runoff volume ($dV$ [-]), ii) the rel. error of the maximal discharges (integrated over 8-min period) ($dVpeak$ [-]), iii) the timing of the discharge maximum ($dt_{Qmax}$ [h]), and iv) the prediction reliability ($reliab$~[-]), i.e. the fraction of flow observations falling into the predicted interval.
 
@@ -139,3 +136,6 @@ We calculate as well the mean and the standard deviation of the conventional met
 \section{Results}
 
 
+\section{Discussion}
+
+We acknowledge that this approach, not varying the internal relative structure for the given parameter, might be perceived as questionable and could be avoided by introducing additional stochastic parameters, which would incorporate random changes into the internal proportions  of the $\theta$ parameters. However, we choose not to implement this for the sake of modelling simplicity (lower number of parameters).
