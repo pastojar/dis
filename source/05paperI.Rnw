@@ -6,9 +6,7 @@
 This study addresses the ability of individual commercial microwave links (CMLs) to provide relevant quantitative precipitation estimates (QPEs) for urban rainfall-runoff simulations and specifically investigates the influence of CML characteristics and position on the predicted runoff. QPEs from real world CMLs are used as inputs for urban rainfall-runoff predictions and subsequent modelling performance is assessed by comparing simulated runoffs with measured stormwater discharges. The results show that model performance is related to both the sensitivity of CML to rainfall and CML position. The bias propagated into the runoff predictions is inversely proportional to CML path length. The effect of CML position is especially pronounced during heavy rainfalls, when QPEs from shorter CMLs, located within or close to catchment boundaries, better reproduce runoff dynamics than QPEs from longer CMLs extending far beyond the catchment boundaries. Interestingly, QPEs averaged from all available CMLs best reproduce the runoff temporal dynamics. Adjusting CML QPEs to three rain gauges located 2--3 km outside of the catchment substantially reduces the bias in CML QPEs. Unfortunately, this compromises the ability of the CML QPEs to reproduce runoff dynamics during heavy rainfalls.
 \rule[0.2cm]{\textwidth}{0.4pt}
 
-{\footnotesize The bulk of this chapter was originally published in: \newline
-\-\hspace{0.5cm}
-Pastorek, J., Fencl, M., Rieckermann, J., Bareš, V. 2019. \textbf{Commercial microwave links for urban drainage modelling: The effect of link characteristics and their position on runoff simulations}. \emph{Journal of Environmental Management} 251, 109522. \newline https://doi.org/10.1016/j.jenvman.2019.109522.
+{\footnotesize The bulk of this chapter was originally published in \cite{pastorekCommercialMicrowaveLinks2019}. 
 }
 
 \section{Introduction}
@@ -39,7 +37,7 @@ In our view, main innovations of the study include also the following:
 QPEs from real-world CMLs (\ref{DatRet}) are used as inputs in a calibrated urban rainfall-runoff model (\ref{RRmodel}). The model performance is evaluated for CML QPEs from various observation layouts by comparing the simulated runoffs with those observed at the stormwater drainage system outlet. Next, we perform an exploratory data analysis on CML attributes to better understand their influence on volumes and temporal dynamics of the simulated runoff. 
 
 
-\subsection{Data availability} \label{paperIIdatAval}
+\subsection{Data availability} \label{paperIdatAval}
 
 Due to outages in data from the monitoring devices, it was possible to perform and evaluate rainfall-runoff simulations for 71 events from the monitoring period (\ref{DatRet}). For each of the events, there were data available from between 9 and 17 CMLs (47\%--89\%). To improve the robustness of the statistical evaluation, we have excluded from the analysis 12 rainfall events with less than two thirds of the CMLs available. Also, we excluded three extreme rainfall events for which runoff predictions were unsatisfactory, i.e. maximal discharges were overestimated by more than 100\% when modelled using high-quality rainfall data from the three local rain gauges (Fig. \ref{3fig1}). Similarly, three CMLs (\#1, \#2, \#10), which experienced long outages during the experimental period, are not analyzed in the study. In summary, after rigorous quality control, the analysis is performed for 16 CMLs and 56 events. Details on the rainfall event characteristics are provided in Appendix ??.
 

@@ -7,6 +7,7 @@
 \usepackage{natbib}        % text references
 \usepackage{makecell}      % break line in tables
 
+
 \ctusetup{
     xdoctype = D,
     xfaculty = F1,
@@ -89,8 +90,8 @@
         Lorep ipsum \cite{doe}
         
   
-      
-  
+    
+
         \bibliographystyle{apalike2} %apalike2 myacmtrans3  ieeetr  % pri vacsine vypnut natbib! apa-good
         \small
         \bibliography{fromZotero} 

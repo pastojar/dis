@@ -3,18 +3,11 @@
 \chapter{On the value of CML QPEs for urban rainfall-runoff modelling: The pilot study} \label{chap4}
 
 \rule{\textwidth}{0.4pt}
-... \newline
-....\newline
-... \newline
+Rainfall-runoff modelling in urban catchments requires reliable rainfall data with high temporal and spatial resolution. Such data are often not available and, thus, unmeasured spatial rainfall variability is an important source of uncertainty in urban rainfall-runoff modelling. Recently, commercial microwave links (CMLs), an extensively used solution in telecommunication networks, have been introduced as a new potential source of rainfall data with the necessary resolution. We compare this novel rainfall data source with more conventional sources from point rain gauges based on a comparison of measured runoffs with rainfall-runoff modelling results of a small urbanized catchment obtained using the researched rainfall data sets. We employ a method based on Bayesian inference to calibrate our rainfall-runoff model and to estimate the uncertainty of modelling outputs. Results of the performed analyses show that CML rainfall data, when a suitable adjustment is applied (e.g. using information from remote rain gauges), allow for better detection of dynamics of precipitation and subsequent runoff than data from point rain gauges alone, especially in the case of heavy rainfalls which are highly variable in space and time. Therefore, microwave links represent a relevant rainfall data source, which can conveniently complement existing rainfall monitoring networks.
 \rule[0.2cm]{\textwidth}{0.4pt}
 
-{\footnotesize The bulk of this chapter was originally published in: \newline
-\-\hspace{0.5cm}
-Pastorek, J., Fencl, M., Stránský, D., Rieckermann, J., Bareš, V. 2017. \textbf{Reliability of microwave link rainfall data for urban runoff modelling}. \emph{Proceedings of the 14th IWA/IAHR International Conference on Urban Drainage}, Prague, Czech Republic, 10--15 September 2017, 1340-‐1343. \newline
-\-\hspace{0.5cm}
-Pastorek, J., Fencl, M., Rieckermann, J., Sýkora, P., Stránský, D., Dohnal, M., Bareš, V. 2018. \textbf{Posouzení srážkových dat z mikrovlnných spojů v městském povodí pomocí analýzy nejistot hydrologického modelu} [The Evaluation of CML Rainfall Data in Urban Catchment by Means of Hydrologic Model Uncertainty]. \emph{SOVAK: Časopis oboru vodovodů a kanalizací} 27, 16-‐22
-}
-\newpage
+{\footnotesize The bulk of this chapter was originally published in \cite{pastorekReliabilityMicrowaveLink2017, pastorekPosouzeniSrazkovychDat2018}.} 
+
 
 
 \section{Introduction}
@@ -28,7 +21,7 @@ In this study, we target the above research gap and analyze whether QPEs obtaine
 The CML QPEs, as well as traditional data from rain gauges, are propagated through a calibrated rainfall-runoff model and evaluated against observed discharges. Since additional uncertainties are introduced into the process of rainfall data evaluation by employing the rainfall-runoff modelling, we use a thorough statistical method which allows for a reliable quantification of the runoff prediction uncertainty associated with various rainfall observation layouts. 
 
  
-\section{Methods} \label{paperIMnM}
+\section{Methods} \label{pilotMnM}
 
 The defined problem is addrresses using rainfall and runoff data collected in~a small urban catchment in Prague-Letňany, Czech Republic (details in \ref{chap3}) during three months (August\,--\,October) of 2014. Precipitation time series from five rainfall observation layouts are propagated through a rainfall-runoff model (\ref{RRmodel}) and evaluated against observed runoffs. In order to quantify the associated uncertainties, the hydrological model is operated by means of prediction uncertainty quantification as first used in~a~similar context by \cite{giudice2013improving} and introduced in section \ref{delGiudTheor}.
 
@@ -58,31 +51,34 @@ We investigate rainfall data observed using the  five following observation layo
                 \end{quote}
         \item Unadjusted QPEs from all CMLs available (Fig. \ref{3fig2}).
                 \begin{quote}
-                The instantaneous mean of QPEs derived from all CMLs available in the area in the given time using standard methods. $A_{wa}$ is estimated as a constant offset with the value of 2.5 dB, which was determined by comparing the specific raindrop attenuation $\gamma$ [dB/km] of short and long CMLs. The rainfall intensity $R$ [mm/h] is calculated with parameter values $\alpha$ and $\beta$ chosen in accordance with \cite{recommendation2005838}.
+                The instantaneous mean of QPEs derived, using a standard approach, from all CMLs available in the area in a given time. $A_{wa}$ is estimated as a constant offset with the value of 2.5 dB, which was determined by comparing the specific raindrop attenuation $\gamma$ [dB/km] of short and long CMLs. The rainfall intensity $R$ [mm/h] is calculated with parameter values $\alpha$ and $\beta$ chosen in accordance with \cite{recommendation2005838}.
                 This data set represents a situation when traditional rainfall information is not available in the catchment's surroundings.
                 \end{quote}
 \end{enumerate}
 
 In the cases of all CML data, prior to applying the correction for $A_{wa}$, baseline $B$ [dB] (Eq. \ref{eq:2eq2}) is separated in the same manner as in \cite{fenclGaugeadjustedRainfallEstimates2017}.
 
-The rainfall input is in all cases implemented as areal rainfall in the hydrological model, meaning that rainfall intensity in a given time step has a constant value over all subcatchments of the model.
-
 
 
 \subsection{Rainfall-runoff modelling and uncertainty analysis}
 
-Rainfall time series retrieved using all the five observation layouts are propagated through a rainfall-runoff model (\ref{RRmodel}) and evaluated against discharges observed at the outlet from the local stormwater drainage system. In order to acknowledge uncertainties of the rainfall-runoff model predictions, we employ uncertainty analysis framework of \cite{kennedy2001bayesian} as formulated by \cite{reichert2012linking} and first used in a context similar to ours by \cite{giudice2013improving}. The basic principle of the method (details in section \ref{delGiudTheor}) is the extension (Eq. \ref{eq:ext_model}) of the deterministic (i.e., in our case, rainfall-runoff) model by a stochastic error model which explicitly accounts for systematic model errors, i.e. bias. 
+Rainfall time series retrieved using all the five observation layouts are propagated through a rainfall-runoff model (\ref{RRmodel}) and evaluated against discharges observed at the outlet from the local stormwater drainage system. The rainfall input is in all cases implemented as areal rainfall in the model, meaning that rainfall intensity in a given time step has a constant value over all subcatchments of the model. In order to acknowledge uncertainties of the rainfall-runoff model predictions, we employ uncertainty analysis framework of \cite{kennedy2001bayesian} as formulated by \cite{reichert2012linking} and first used in a context similar to ours by \cite{giudice2013improving}. The basic principle of the method (details in section \ref{delGiudTheor}) is the extension (Eq. \ref{eq:ext_model}) of a deterministic (i.e., in our case, rainfall-runoff) model by a stochastic error model which explicitly accounts for systematic model errors, i.e. bias. 
 
-\cite{giudice2013improving} investigated various formulations of the model bias and various transformation functions. Based on previous analyses \citep{pastorekEffectDifferentRainfall2016}, we formulate the bias $B (\psi)$ as an autoregressive stationary random process with a long-term equilibrium value of zero and a constant variance, and, as transformation $g()$, we use the Box-Cox transformation \citep{box1964analysis} with parameters $\lambda_1 =$ 0.45 and $\lambda_2 =$~1.
+\cite{giudice2013improving} investigated various formulations of the model bias and various transformation functions. Based on their recommendations and our previous analyses \citep{pastorekEffectDifferentRainfall2016}, as transformation $g()$, we use the Box-Cox transformation \citep{box1964analysis} with parameters $\lambda_1 =$ 0.45 and $\lambda_2 =$~1. Moreover,   we formulate the bias $B (\psi)$ as an autoregressive stationary random process with a long-term equilibrium value of zero and a constant variance. It is a mean-reverting Ornstein–Uhlenbeck process \citep{uhlenbeck1930theory}, \enquote{the discretisation of which would be a first-order autoregressive process with Gaussian independent and identically distributed noise} \citep{giudice2013improving}. It can be expressed using the following differential equation:
+\begin{equation} 
+dB (t)= - \frac{B (t)}{\tau}dt + \sqrt{\frac{2}{\tau}} \sigma_{B}  dW(t),
+\end{equation}
+where $\tau$ represents the correlation time, $\sigma_{B}$ the asymptotic standard deviation of the random fluctuations around the equilibrium, and $dW(t)$ a Wiener process, i.e. standard Brownian motion.
 
-By varying the input rainfall data while keeping the rainfall-runoff model structure unchanged, we are able to trace the associated changes in the prediction uncertainty back to the respective rainfall data. However, to achieve accurate rainfall-runoff predictions and reliable quantification of their uncertainty, the extended model should be calibrated first. Although the deterministc rainfall-runoff model has been calibrated in the past, we optimize its parameters also here, together with the stochastic error model parameters, as we aim to maximize both the discharge prediction reliability and precision.
+
+By varying the input rainfall data while keeping the rainfall-runoff model structure unchanged, we are able to trace the associated changes in the prediction uncertainty back to the respective rainfall data. However, to achieve accurate rainfall-runoff predictions and reliable quantification of their uncertainty, the extended model should be calibrated first. Although the deterministc rainfall-runoff model has been calibrated in the past, we optimize its parameters also here, together with the stochastic error model parameters, as we aim to maximize both the discharge prediction accuracy and precision.
 
 
 \subsubsection{Prior distribution definition and model calibration}
 
-Since the extended model has to be calibrated in a Bayesian framework, prior probability distribution of the model parameters which are to be calibrated must be first defined. In accordance with \cite{giudice2013improving} (see \ref{delGiudTheor}), we do not use  completely uninformative prior distributions for parameters of neither the deterministic rainfall-runoff model ($\theta$) nor  the stochastic error model ($\psi$). In contrast, the priors are chosen based on knowledge of the urban catchment and consultations with experts who have already used the method. 
+Since the extended model has to be calibrated in a Bayesian framework, prior probability distribution of the model parameters which are to be calibrated must be first defined. \cite{giudice2013improving} suggest that completely uninformative prior distributions should not be used for parameters of neither the deterministic rainfall-runoff model ($\theta$) nor  the stochastic error model ($\psi$). Furthermore, it is \enquote{important that the prior of the bias reflects the desire to avoid model inadequacy as much as possible}. Considering the chosen bias model, $\sigma_{B}$ is unlikely to be higher than the variability of observed discharge, $\tau$ should represent the characteristic correlation length of the residuals, and  $\sigma_E$ should mirror the measurement noise of the system output \cite{giudice2013improving}.
 
-For all the parameters, marginals of the prior joint distribution are defined (Table \ref{kalibracia_tab}) as truncated normal distributions with four defining parameters - mean ($\mu$), standard deviation ($\sigma$), minimum, and maximum. It should be noted that $\psi$ parameters $\sigma_B$ and  $\sigma_E$ are defined in a transformed space via a transformation $g()$.  When $\theta$ parameters are concerned, they represent multiplicative (scaling) values of the actual model parameters. This means that when a given parameter, e.g. $imp$, is set to $1.1$, the respective $imp$ values for all 195 subcatchments are multiplied by $1.1$.
+In accordance with \cite{giudice2013improving} (see \ref{delGiudTheor}), we do not use completely uninformative prior parameter distributions. In contrast, the priors are chosen based on knowledge of the urban catchment and consultations with experts who have already used the method. For all the parameters, marginals of the prior joint distribution are defined (Table \ref{kalibracia_tab}) as truncated normal distributions with four defining parameters - mean ($\mu$), standard deviation ($\sigma$), minimum, and maximum. It should be noted that $\psi$ parameters $\sigma_B$ and  $\sigma_E$ are defined in a transformed space via a transformation $g()$.  When $\theta$ parameters are concerned, they represent multiplicative (scaling) values of the actual model parameters. This means that when a given parameter, e.g. $imp$, is set to $1.1$, the respective $imp$ values for all 195 subcatchments are multiplied by $1.1$.
 
 \begin{table}[h]
 \begin{ctucolortab}
@@ -117,19 +113,13 @@ Data from five out of the 15 available rainfall-runoff events are used to calibr
 
 \subsection{Performance assessment}
 
-After performing the extended model calibration, data from the remaining ten rainfall-runoff events are used to analyze the model predictions. To better interpret the results, we classified the rainfall events as either light or heavy, based on the maximal 10-minute precipitation rate. 
+After performing the extended model calibration, data from the ten remaining rainfall-runoff events are used to analyze the model predictions. To evaluate the rainfall-runoff predictions visually, we produce hydrographs for each of the ten events and rainfall data from each of the five observation layouts. We do not the evaluate the prediction performance  by examining separately the uncertainty intervals for the deterministic rainfall-runoff model output. This is in accordance with \cite{giudice2013improving}, who see this approach as \enquote{not conclusive because the field observations are not realisations of the deterministic model but of the model plus the errors}. Instead, we only evaluate the total uncertainty intervals associated with the extended model, i.e. the deterministic and the stochastic model together. 
 
-To assess the model performance, we used the following metrics: i) the relative error of the total runoff volume ($dV$ [-]), ii) the rel. error of the maximal discharges (integrated over 8-min period) ($dVpeak$ [-]), iii) the timing of the discharge maximum ($dt_{Qmax}$ [h]), and iv) the prediction reliability ($reliab$~[-]), i.e. the fraction of flow observations falling into the predicted interval.
+The prediction reliability $reliab$~[-] is quantified as the fraction of discharge observations falling into the predicted 90\% confidence intervals. We also employ common summary hydrological metrics such as the total discharged volume during a whole given event  or the discharged volume during peak flow period.  In particular, we compute relative errors of the total discharged volume  $dV$ [-] and of the volume during peak flow $dV_{peak}$ [-] for every single prediction of the extended model. When calculating $dV_{peak}$, the time step with maximal discharge observed is identified first and the volume discharged during eight minutes around the time step (four minutes before and four after) is computed afterwards. The difference between the observed time with maximal discharge and the modelled one $dt_{Qmax}$ [h] is another metric we quantify for every model prediction.
 
-We do not the evaluate the prediction performance  by examining separately the uncertainty intervals for the deterministic model output. This is again in accordance with \cite{giudice2013improving}, who see this approach as \enquote{not conclusive because the field observations are not realisations of the deterministic model but of the model plus the errors}.
+To summarize the above metrics $dV$, $dV_{peak}$, and $dt_{Qmax}$ for the whole set of predictions associated with the given event and rainfall observation layout, we calculate their means and standard deviations. This is in accordance with \cite{fencl2013assessing} who also used the relative error of the total discharged volume and interpreted its mean $\overline{dV}$ as the metric's bias and its standard deviation $sd(dV)$ as its uncertainty.
 
-We have decided to employ, apart from the two mentioned above,  as well a metric which combines them -- the interval score $S_\alpha$ as formulated by \cite{gneiting2007strictly}.
-
-Apart from assessing the model  predictive performance using the modelled discharge values at every time step of the prediction period, we investigate as well metrics more common in everyday engineering practice, such as the total discharged volume over the observed period $V$ \citep[e.g.][]{fencl2013assessing}, the discharged volume during peak flow period $V_{peak}$  and Nash–Sutcliffe efficiency index $N\!S\!E$ \citep{nash1970river}. To be more precise, we compute the relative error of the total discharged volume and of the volume during peak flow ($dV$ and $dV_{peak}$) for every prediction. 
-
-When calculating $V_{peak}$, the time step with maximal discharge (can differ for observation and prediction) from the given period is identified first and the volume discharged during $4$ min around the time step (\mbox{$2$ min} before and $2$ min after) is computed afterwards. The difference between the observed time with maximal discharge and the modelled one (the \enquote{time shift}) is another metric we record for every prediction.
-
-We calculate as well the mean and the standard deviation of the conventional metrics described above ($dV$, $dV_{peak}$, $N\!S\!E$, time shift of the peak). We see it as another way how to evaluate the model  predictive uncertainty. This is in accordance with \cite{fencl2013assessing}, who use as well the relative error of the total discharged volume and who interpret the related mean ($E(dV)$) as the metric's  bias and the standard deviation  ($sd(dV)$) as its uncertainty. 
+To better interpret the results, we classify the rainfall events as either light or heavy, based on the maximal 10-minute precipitation rate. 
 
 
 

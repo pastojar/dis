@@ -1,3 +1,9 @@
 % !Rnw root = dis.Rnw
 
 \chapter{On the value of CML QPEs for urban rainfall-runoff modelling: The final study} \label{chap7}
+
+
+\section{Methods} \label{paperIIIMnM}
+
+\subsection{Performance assessment}
+?? We have decided to employ, apart from the two mentioned above,  as well a metric which combines them -- the interval score $S_\alpha$ as formulated by \cite{gneiting2007strictly}.

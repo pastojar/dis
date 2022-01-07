@@ -7,9 +7,9 @@ This chapter is about the theory (?and methods?) relevant for multiple following
 \rule[0.2cm]{\textwidth}{0.4pt}
 
 
-Urban drainage systems are designed to drain waste- and stormwater from land surfaces in urban areas using combined or separate sewer networks. However, excessive amounts of stormwater can overload drainage systems and cause urban pluvial flooding and health risks due to pathogens, decrease the efficiency of wastewater treatment plants, or impact the aquatic biota of receiving waters through hydraulic stress and pollution. Therefore, the operational management of the quantity and quality of urban stormwater runoff is a serious concern in urban environmental management (Tsihrintzis and Hamid, 1997).
+Urban drainage systems are designed to drain waste- and stormwater from land surfaces in urban areas using combined or separate sewer networks. However, excessive amounts of stormwater can overload drainage systems and cause urban pluvial flooding and health risks due to pathogens, decrease the efficiency of wastewater treatment plants, or impact the aquatic biota of receiving waters through hydraulic stress and pollution. Therefore, the operational management of the quantity and quality of urban stormwater runoff is a serious concern in urban environmental management \citep{tsihrintzisModelingManagementUrban1997}.
 
-Since precipitation is the essential driver of runoff processes in urban areas, rainfall observations are the key input data when designing and operating urban drainage systems during wet weather periods. Nowadays, the mitigation of the negative effects of urban drainage on society and the environment is often related to methods and concepts requiring operational rainfall products which are available in (near) real time and with a high spatial and/or temporal resolution (Einfalt et al., 2004). Such rainfall observations are employed in real-time control strategies to optimize treatment processes at wastewater treatment plants (Schütze et al., 2004), or to minimize the impacts of sewer overflows (Vezzaro and Grum, 2014). Furthermore, these data are used for extreme event analyses, e.g. for the evaluation of insurance damage claims (Spekkers et al., 2013) or for operational warnings (Montesarchio et al., 2009). Operational rainfall data are becoming increasingly important because of the ongoing climate change (van der Pol et al., 2015) as the intensity and frequency of heavy rainfall in many areas around the world are expected to increase (Willems et al., 2012).
+Since precipitation is the essential driver of runoff processes in urban areas, rainfall observations are the key input data when designing and operating urban drainage systems during wet weather periods. Nowadays, the mitigation of the negative effects of urban drainage on society and the environment is often related to methods and concepts requiring operational rainfall products which are available in (near) real time and with a high spatial and/or temporal resolution \citep{einfaltRoadmapUseRadar2004}. Such rainfall observations are employed in real-time control strategies to optimize treatment processes at wastewater treatment plants \citep{schutzeRealTimeControl2004}, or to minimize the impacts of sewer overflows \citep{vezzaroGeneralisedDynamicOverflow2014}. Furthermore, these data are used for extreme event analyses, e.g. for the evaluation of insurance damage claims \citep{spekkersStatisticalAnalysisInsurance2013} or for operational warnings \citep{montesarchioRainfallThresholdsFlood2009}. Operational rainfall data are becoming increasingly important because of the ongoing climate change \citep{vanderpolImpactsRainfallVariability2015} as the intensity and frequency of heavy rainfall in many areas around the world are expected to increase \citep{willemsClimateChangeImpact2012}.
 
 
 \section{Current rainfall monitoring practices}
@@ -32,24 +32,28 @@ Opportunistic sensing of precipitation can also be performed using devices not c
 
 \section{Rainfall retrieval from commercial microwave links}
 
-Commercial microwave links (CMLs) are point-to-point radio connections widely used as cellular backhaul. A substantial part of CML networks is operated at frequencies between 20 and 40 GHz where radio wave attenuation caused by raindrops is almost proportional to rainfall intensity. These CMLs can, therefore, be used as unintended rainfall sensors providing path-integrated quantitative precipitation estimates (QPEs). Moreover, CML data are accessible online in real time from network operation centers either through network monitoring systems or specifically designed server-sided applications (Chwala et al., 2016).
+Commercial microwave links (CMLs) are point-to-point radio connections widely used as cellular backhaul. A substantial part of CML networks is operated at frequencies between 20 and 40 GHz where radio wave attenuation caused by raindrops is almost proportional to rainfall intensity. These CMLs can, therefore, be used as unintended rainfall sensors providing path-integrated quantitative precipitation estimates (QPEs). Moreover, CML data are accessible online in real time from network operation centers either through network monitoring systems or specifically designed server-sided applications \citep{chwalaRealtimeDataAcquisition2016}.
 
-Although deriving precipitation estimates from the attenuation of microwaves was originally suggested several decades ago (Atlas and Ulbrich, 1977), the idea has experienced a renaissance in recent years, thanks to the extensive growth of cellular networks (Messer et al., 2006, Leijnse et al., 2007) which frequently incorporate CMLs. Presently, there are about four million CMLs being used worldwide within cellular networks and the number is increasing (Ericsson, 2016).
+Although deriving precipitation estimates from the attenuation of microwaves was originally suggested several decades ago \citep{atlasPathAreaIntegratedRainfall1977}, the idea has experienced a renaissance in recent years, thanks to the extensive growth of cellular networks \citep{messer2006environmental, leijnseRainfallMeasurementUsing2007} which frequently incorporate CMLs. Recently, there has been about four million CMLs being used worldwide within cellular networks and the number has been increasing \citep{ericssonEricssonMicrowaveOutlook2016}.
 
 The relationship between raindrop-induced attenuation $A_r$ [dB] and rainfall intensity $R$ [mm/h] is robust and well-understood. For a given rainfall intensity, $A_r$ is proportional to CML length and frequency. The relation can be expressed using the following approximation:
         \begin{equation} \label{eq:2eq1}
         % \tilde{Y}_o (x,\theta, \psi) = \tilde{y}_M (x, \theta) + B_M (\psi) + E (\psi)
         R = \alpha (A_r / L)^\beta,
         \end{equation}
-where $L$ [m] is the length of a given CML, and $\alpha$ [mm/h km$^\beta$ dB$^{-\beta}$] and $\beta$ [-] are empirical parameters dependent upon CML frequency and polarization, and drop size distribution (Olsen et al., 1978). The fraction $A_r / L$ can be expressed as a single variable -- specific raindrop attenuation $\gamma$ [dB/km].
+where $L$ [m] is the length of a given CML, and $\alpha$ [mm/h km$^\beta$ dB$^{-\beta}$] and $\beta$ [-] are empirical parameters dependent upon CML frequency and polarization, and drop size distribution \citep{olsenARbRelationCalculation1978}. The fraction $A_r / L$ can be expressed as a single variable -- specific raindrop attenuation $\gamma$ [dB/km].
 
 Nonetheless, $A_r$ must be separated from other components of the difference between the transmitted and received signal levels $TRSL$ [dB], for whose purposes the following relation is often used: 
         \begin{equation} \label{eq:2eq2}
         TRSL = B + A = B + A_{wa} + A_r
         \end{equation}
-where $B$ [dB] represents baseline attenuation consisting of, e.g., free space loss and gaseous attenuation, $A$ [dB] stands for observed attenuation after baseline separation (henceforth referred to as “observed attenuation”), and $A_{wa}$ [dB] represents wet antenna attenuation (WAA).
+where $B$ [dB] represents baseline attenuation consisting of, e.g., free space loss and gaseous attenuation, $A$ [dB] stands for observed attenuation after baseline separation (henceforth referred to as “observed attenuation”), and $A_{wa}$ [dB] represents wet antenna attenuation (WAA). Imprecise quantification of the raindrop-induced attenuation $A_r$ due to CML instrumental uncertainties such as WAA estimation represents a major source of errors in CML QPEs \citep[][more details in \ref{InstErr}]{chwalaCommercialMicrowaveLink2019}.
 
-Imprecise quantification of the raindrop-induced attenuation $A_r$ due to CML instrumental uncertainties such as WAA estimation represents a major source of errors in CML QPEs (Chwala and Kunstmann, 2019).
+
+Thanks to the extensive continental coverage of cellular networks, CMLs represent a promising rainfall sensors for hydrological modelling. The greatest potential of this technique is in areas where traditional infrastructure for rainfall measurement is, in general, insufficient \citep{gossetImprovingRainfallMeasurement2016}, e.g. in developing countries. Nevertheless, CMLs might also conveniently complement traditional monitoring networks common in developed countries, since, unlike weather radars, they observe rainfall close to the ground. Moreover, CML rainfall measurements have a path-integrated character which makes them better suited for capturing areal rainfalls over a catchment than rain gauges. 
+
+Only a few studies have investigated the ability of QPEs derived from real-world CML networks for quantitative hydrology, either for rural \citep{brauerEffectDifferencesRainfall2016, cazzanigaCalculatingHydrologicalResponse2020, smiatekPotentialCommercialMicrowave2017}  or urban catchments \citep{dischImpactDifferentSources2019, stranskyRunoffPredictionUsing2018}. The studies from urban environments have suggested that CML QPEs could be conveniently used in combination with other rainfall data, e.g. to disaggregate cumulative rainfall measurements from point rain gauges, if available in high temporal resolutions. However, many questions regarding  applications of CML QPEs, especially correction of their systematic errors, remain open.
+
 
 
 \section{CML QPE errors}
@@ -75,37 +79,42 @@ For a 1-km-long CML working at a frequency of 32 GHz, the raindrop attenuation $
 % \FloatBarrier
 \end{figure}
 
-The following main potential instrumental error sources were identified by Leijnse et al. (2010), with the last two being most important for the bias in the estimated rain rates (Chwala and Kunstmann, 2019): 
+The following main potential instrumental error sources were identified by \cite{leijnseErrorsUncertaintiesMicrowave2010}, with the last two being most important for the bias in the estimated rain rates \citep{chwalaCommercialMicrowaveLink2019}: 
 \begin{itemize}
-        \item Too coarse temporal sampling; 
-        \item Quantization of $TRSL$ values; 
-        \item Wet antenna attenuation; and
-        \item Uncertainty of the baseline level $B$.
+        \item Too coarse temporal sampling
+        \item Quantization of $TRSL$ values 
+        \begin{itemize}
+                \item Commonly used quantization levels of the records of transmitted and received radio signal power, used to calculate $TRSL$, are 1 dB and 0.33 dB respectively
+        \end{itemize}
+        \item Wet antenna attenuation
+        \begin{itemize}
+                Details in \ref{WAAtheor}
+        \end{itemize}
+        \item Uncertainty of the baseline level $B$
+        \begin{itemize}
+                \item $B$ can be identified from dry-weather attenuation levels
+        \end{itemize}
 \end{itemize}
 
-Commonly used quantization levels of the records of transmitted and received radio signal power, used to calculate $TRSL$, are 1 dB and 0.33 dB respectively. 
-
-$B$ can be identified from dry-weather attenuation levels, however, quantifying $A_{wa}$ is still challenging.
 
 
 
+\subsubsection{Wet antenna attenuation} \label{WAAtheor}
 
-\subsubsection{Wet antenna attenuation}
+WAA is, in contrast to $A_r$ and $B$, independent of CML path length. Previous studies \citep{leijnseMicrowaveLinkRainfall2008, overeemMeasuringUrbanRainfall2011} also suggest that it is relatively insensitive to CML frequency at bands suitable for rainfall retrieval (20--40 GHz). However, the complexity of the antenna wetting process is a major challenge to reliable WAA estimation. 
 
-WAA is, in contrast to $A_r$ and $B$, independent of CML path length and previous studies (Leijnse et al., 2008; Overeem et al., 2011) suggest that it is relatively insensitive to CML frequency at bands suitable for rainfall retrieval (20--40 GHz). However, the complexity of the antenna wetting process is a major challenge to reliable WAA estimation. 
+Antenna wetting is influenced not only by rainfall, but by other atmospheric conditions (e.g. wind, temperature, humidity or solar radiation) and also  antenna hardware properties \citep[e.g. antenna radome material or coating;][]{lethMeasurementCampaignAssess2018}. Thus, to date, there is no unified approach to estimate WAA and reported WAA models are often based on different assumptions and result in considerably different estimates. For example, drying times of up to several hours have been reported \citep{schleissQuantificationModelingWetAntenna2013}, whereas other studies have not considered any wetting or drying dynamics at all, relating WAA only to rainfall intensity \citep{valtrExcessAttenuationCaused2019, kharadlyEffectWetAntenna2001}. 
 
-Antenna wetting is influenced not only by rainfall, but by other atmospheric conditions (e.g. wind, temperature, humidity or solar radiation) and also  antenna hardware properties (e.g. antenna radome material or coating; Leth et al., 2018). Thus, to date, there is no unified approach to estimate WAA and reported WAA models are often based on different assumptions and result in considerably different estimates. For example, drying times of up to several hours have been reported [4], whereas other studies have not considered any wetting or drying dynamics at all, relating WAA only to rainfall intensity [5], [6]. 
+It has also been suggested to estimate WAA based on water quantity and distribution (droplets, rivulets, water film) on antenna radomes \citep{leijnseMicrowaveLinkRainfall2008, manciniImpactWetSBand2019}. Recently, it has been shown that WAA can be estimated using antenna reflectivity acting as a proxy variable for water film thickness \citep{moroderModelingWetAntenna2019}. However, applying this model is significantly limited by the unavailability of the required antenna reflectivity measurements.
 
-It has also been suggested to estimate WAA based on water quantity and distribution (droplets, rivulets, water film) on antenna radomes [7], [8]. Recently, it has been shown that WAA can be estimated using antenna reflectivity acting as a proxy variable for water film thickness [9]. However, applying this model is significantly limited by the unavailability of the required antenna reflectivity measurements.
+Since having a globally valid WAA model only depending on known CML characteristics such as frequency does not seem possible, optimal WAA models should ideally be determined for each individual CML. This is especially true for models whose parameters depend on CML path length \citep[e.g.][]{kharadlyEffectWetAntenna2001}. However, optimal WAA model identification (e.g. for calibration purposes) on the level of individual CMLs is challenging, especially for real-world application with networks consisting of a high number of CMLs. As noted by \citep{ostrometzkyWetAntennaEffectFactor2018}, maintenance of dedicated equipment for the retrieval of the needed reference rainfall observations is impractical for such networks. 
 
-Since having a globally valid WAA model only depending on known CML characteristics such as frequency does not seem possible, optimal WAA models should ideally be determined for each individual CML. This is especially true for models whose parameters depend on CML path length, e.g., [6]. However, optimal WAA model identification (e.g., for calibration purposes) on the level of individual CMLs is challenging, especially for real-world application with networks consisting of a high number of CMLs. As noted by [11], maintenance of dedicated equipment for the retrieval of the needed reference rainfall observations is impractical for such networks. 
+Due to all the above issues, application-focused studies with city or regional-scale CML networks have often not applied any WAA correction at all \citep{chwalaPrecipitationObservationUsing2012, smiatekPotentialCommercialMicrowave2017} or have used only a simple constant offset model \citep{overeemMeasuringUrbanRainfall2011, roversiCommercialMicrowaveLinks2020, fenclAtmosphericObservationsEband2020}. Although the latter approach may be a reasonable choice when only 15-min TRSL maxima and minima are available \citep{chwalaCommercialMicrowaveLink2019}, it can introduce considerable bias in the resulting CML QPEs \citep{fenclQuantifyingWetAntenna2019}.
 
-Due to all the above issues, application-focused studies with city or regional-scale CML networks have often not applied any WAA correction at all [12], [13] or have used only a simple constant offset model [3], [14], [15], [16]. Although the latter approach may be a reasonable choice when only 15-min TRSL maxima and minima are available [2], it can introduce considerable bias in the resulting CML QPEs [3], [17].
-
-Fencl et al. (2017) proposed adjusting the CML QPEs to measurements from traditional rain gauges if these are available in the vicinity of CMLs. According to Fencl et al. (2017), such adjusted high-resolution CML QPEs can outperform rainfall data derived only from the gauges used for adjusting. The adjustment, however, leads to underestimation of peak rainfalls, and it is not clear how this will affect hydrological modelling, since it has never been investigated experimentally on an extensive data set.
+\cite{fenclGaugeadjustedRainfallEstimates2017} proposed adjusting the CML QPEs to measurements from traditional rain gauges if these are available in the vicinity of CMLs. Such adjusted high-resolution CML QPEs can outperform rainfall data derived only from the gauges used for adjusting \citep{fenclGaugeadjustedRainfallEstimates2017}. The adjustment, however, leads to underestimation of peak rainfalls, and it is not clear how this will affect hydrological modelling, since it has never been investigated experimentally on an extensive data set.
 
 
-Calibration to reference (rainfall) data seems to be a reasonable way to achieve reliable WAA models. However, reference rainfall retrieval approaches employed in research studies which include intensive monitoring campaigns (e.g. Schleiss et al., 2013; van Leth et al., 2018) are impractical for high numbers of CMLs due to the costs associated with the dedicated equipment needed. Alternatively, already existing rain gauge networks or high-resolution weather radars might be used to calibrate the WAA models. However, as discussed above, such rainfall data sources are often not readily available to urban hydrologists. Moreover, the potential usefulness of CML QPEs increases with the decreasing availability of other rainfall (or other reference) data. Thus, it would come handy if the WAA models could be calibrated using better available data and tools, such as low resolution rainfall measurements or stormwater discharge observations in combination with a rainfall-runoff model.
+Calibration to reference (rainfall) data seems to be a reasonable way to achieve reliable WAA models. However, reference rainfall retrieval approaches employed in research studies which include intensive monitoring campaigns \citep[e.g.][]{schleissQuantificationModelingWetAntenna2013, lethMeasurementCampaignAssess2018} are impractical for high numbers of CMLs due to the costs associated with the dedicated equipment needed. Alternatively, already existing rain gauge networks or high-resolution weather radars might be used to calibrate the WAA models. However, as discussed above, such rainfall data sources are often not readily available to urban hydrologists. Moreover, the potential usefulness of CML QPEs increases with the decreasing availability of other rainfall (or other reference) data. Thus, it would come handy if WAA models could be calibrated using better available data and tools, such as low resolution rainfall measurements or stormwater discharge observations in combination with a rainfall-runoff model.
 
 
 
@@ -125,6 +134,7 @@ In addition, Fencl et al. (2015) concluded that a few very precise (i.e. least b
 Moreover, if the bias in QPEs is relatively comparable among the CMLs, it is not clear how to identify optimal subsets of CMLs in such conditions. It remains to be investigated in what other ways such subsets could be identified efficiently. 
 For example, it should be investigated whether the CML spatial relations with the catchment can be used as the only decisive criteria. If this was proved to be efficient, it could considerably improve the value added of CMLs under data scarce conditions.
 Alternatively, if suitable reference data are available, the CML subsetting could be optimized by calibration to these data
+
 
 
 
@@ -170,28 +180,12 @@ By employing rainfall‐runoff modelling, additional uncertainties are being int
 of rainfall data evaluation. It has been argued that ignoring the uncertainty, particularly related to
 input data, compromises (not only) hydrological modelling (Beven, 2006; Kavetski et al., 2006), or
 similarly, that quantification of the uncertainty associated with the models in urban stormwater
-modelling is a must (Dotto et al., 2012).
-
-However, quantifying the effect of all principal uncertainty sources (or, specifically, the effect of
+modelling is a must (Dotto et al., 2012). However, quantifying the effect of all principal uncertainty sources (or, specifically, the effect of
 uncertainty related to rainfall data) on rainfall‐runoff modelling results is a complex and challenging
 task. Therefore, though conceptually desirable, it is rarely practiced (Dotto et al., 2012). Researchers
 have often been avoiding it by trying to maximize the reliability of modelling results, e.g. by using
 data measured over a long period of time (e.g. Segond et al., 2007), or by employing “verified and
 operational models” (Ochoa‐Rodriguez et al., 2015).
-
-
-
-\section{Hydrological applications of CML QPEs}
-
-Thanks to the extensive continental coverage of cellular networks, CMLs represent a promising rainfall sensors for hydrological modelling. The greatest potential of this technique is in areas where traditional infrastructure for rainfall measurement is, in general, insufficient (Gosset et al., 2016), e.g. in developing countries. Nevertheless, CMLs might also conveniently complement traditional monitoring networks common in developed countries, since, unlike weather radars, they observe rainfall close to the ground. Moreover, CML rainfall measurements have a path-integrated character which makes them better suited for capturing areal rainfalls over a catchment than rain gauges. 
-
-To date, only a few studies ?with limited data sets? investigated the ability of CML QPEs for quantitative hydrology, either for rural (Brauer et al., 2016; Cazzaniga et al., 2020; Smiatek et al., 2017)  or urban catchments (Disch et al., 2019; Pastorek et al., 2019; Stránský et al., 2018). Therefore, many questions regarding such applications of CML QPEs remain open.
-
-The studies from urban environments have suggested that CML QPEs could be conveniently used in combination with other rainfall data, e.g. to disaggregate cumulative rainfall measurements from point rain gauges, if available in high temporal resolutions. It has been also shown that using CML QPEs without additional rainfall information can lead to very well predicted temporal dynamics of runoff, however, the bias common in such rainfall data makes them unsuitable for applications where runoff volume is of high importance (Pastorek et al., 2019). Thus, these systematic errors represent a major challenge to be overcome, especially if CML QPEs are to be used without other rainfall information.
-
-
-
-\section{Rainfall‐Runoff Modelling Evaluation}
 
 Whether the uncertainty analysis is employed or not, there are various methods to evaluate the
 performance of a rainfall‐runoff model. The primary output of a rainfall‐runoff model is a time series
@@ -203,135 +197,96 @@ discharged) of the hydrograph. If multiple rainfall‐runoff events or even vari
 compared, it is preferable to use standardized dimensionless criteria, e.g. the relative error of
 maximal discharges. Alternatively, there are metrics which take into account the whole time series
 and are often applied when trying to summarize the overall model performance, such as the mean
-squared error (MSE) or Nash‐Sutcliffe efficiency (NSE).
-
-Criteria used for model performance evaluation are employed as objective functions when
-performing an automated model calibration. It has been noted that all objective functions sacrifice
-the fit of a certain portion of the dataset in order to achieve a good performance in another portion
-(Wagener et al., 2004). In other words, the choice of objective function can impact the model
-parameter values, and, therefore, it is essential that objective functions are matched to the purpose
-and requirements of the modelling application (Deletic et al., 2012). However, especially the MSE
-and NSE criteria are used very commonly in hydrological modelling, even though it has been shown
-that there are systematic problems inherent with such optimizations (Gupta et al., 2009).
-
-Imperfections of the common automated calibration routines led to applying multicriteria
-optimization techniques, which should more closely reflect the practice of manual model calibration,
-when modelers carefully make trade‐offs among different characteristic sections of a hydrograph
-(Reichert and Schuwirth, 2012). Many such techniques lead to the determination of a Pareto set of
-parameters. The main property of these sets is that for each point in the set the degree of fulfilment
-of none of the objectives can be improved without reducing the degree of fulfilment of another
-objective when changing parameter values. However, a major issue of this approach is that it is
-unclear how we should interpret the ranges of simulation results that correspond to a given Pareto
-set of parameters, since no probabilistic description of inference results is provided (Reichert and
-Schuwirth, 2012).
-
-When performing uncertainty analysis and thus producing parameter probability distributions and
-estimating confidence intervals around the model’s outputs, it is common to evaluate the model
-predictive performance, no matter what metric used, from two aspects: i) the width of the
-determined confidence interval, referred to also as interval sharpness (e.g. Breinholt et al., 2012),
-and ii) the reliability of the predictions represented by the share the observed data included within
-the confidence interval. The sharpness and reliability can be combined into a single performance
-
-measure (“the interval skill score”; Gneiting and Raftery, 2007) that rewards narrow and reliable
-confidence bounds. In the case of model outputs in the form of discharge time series, the prediction
-intervals can be plotted as a hydrograph, creating prediction bands (also bounds). Similarly as in the
-case of simple deterministic predictions, visual evaluation of such hydrographs could be quite
-intuitive, however, numerical evaluation is more straightforward when using summarizing
-performance metrics.
+squared error (MSE) or Nash‐Sutcliffe efficiency (NSE). These two metrics are used very commonly in hydrological modelling although it has been shown
+that there are systematic problems inherent with their usage (Gupta et al., 2009).
 
 
 
-\section{Prediction uncertainty quantification} \label{PredUncQuant}
+\section{Prediction uncertainty quantification in hydrology} \label{PredUncQuant}
 
-Deletic et al. (2012) reviewed studies investigating uncertainty in urban hydrological modelling and identified the following key uncertainty sources:
+\cite{deleticAssessingUncertaintiesUrban2012} reviewed studies investigating uncertainty in urban hydrological modelling and identified the following key uncertainty sources:
 \begin{enumerate}
         \item Model input (measured input data and parameters) uncertainties;
         \item Calibration (calibration data measuring, availability, and choices; calibration algorithms and objective functions used in the calibration process) uncertainties;
         \item Model structure (conceptualisation errors, equations and numerical methods) uncertainties. 
 \end{enumerate}
 
-Many published urban drainage modelling studies have dealt with uncertainties associated with model parameters, often producing parameter probability distributions and estimating confidence intervals around the model’s outputs (e.g. Thorndal et al., 2008; Dotto et al., 2012). However, Deletic et al. (2012) recognized that the uncertainty sources are highly interlinked, “suggesting that assessing the impact of a single source is not going to be adequate and that simultaneous propagation of key sources of uncertainties is required.”
+Many published urban drainage modelling studies have dealt with uncertainties associated with model parameters, often producing parameter probability distributions and estimating confidence intervals around the model’s outputs \citep[e.g.][]{thorndahlEventBasedUncertainty2008, dotto2012comparison}. However, \cite{deleticAssessingUncertaintiesUrban2012} recognized that the uncertainty sources are highly interlinked, suggesting that \enqoute{assessing the impact of a single source is not going to be adequate and that simultaneous propagation of key sources of uncertainties is required}.
 
-Dotto et al. (2011) observed that a common approach when trying to estimate the total uncertainty
-(related to parameters and all other sources) is adding a Gaussian error term to the model
-predictions. This approach is based on the assumption that the residuals between the measured and
-modelled values are normally distributed (only due to white measurement noise). However, the
-deviations of model outputs from observed data are usually considerably larger than random
-observation errors, typically due to a simplified description of the system by the deterministic model
-and due to input data imperfections (Reichert and Schuwirth, 2012). When ignored, such systematic
-deviations can lead to unrealistic (usually too narrow) uncertainty bounds of model parameters and
-model predictions (Reichert and Schuwirth, 2012).
+\cite{dotto2012comparison} observed that a common approach when trying to estimate the total uncertainty (related to parameters and all other sources) is adding a Gaussian error term to the model predictions. This approach is based on the assumption that the residuals between the measured and modelled values are normally distributed (i.e. only due to white measurement noise). However, the deviations of model outputs from observed data are usually considerably larger than random observation errors, typically due to a simplified description of the system by the deterministic model and due to input data imperfections \citep{reichert2012linking}. When ignored, such systematic deviations can lead to unrealistic (usually too narrow) uncertainty bounds of model parameters and model predictions \citep{reichert2012linking}.
 
-Systematic deviations of model results from observed data, or model bias, can by addressed by
-increasing the complexity of the model to reduce bias or by trying to find a statistical description of
-bias in model outputs. Reichert and Schuwirth (2012) adapted a statistical technique of Kennedy and
-O’Hagan (2001), accounting for bias in model outputs, for purposes of environmental modelling and
-extended it with a framework enabling for multiobjective model calibration. Del Giudice et al. (2013)
-later applied this technique to urban drainage modelling while proposing various formulations of the
-stochastic process representing the model bias {\ref{delGiudTheor}}.
+Systematic deviations of model predictions from observed data, or model bias, can by addressed by increasing the complexity of the model to reduce bias or by trying to find a statistical description of the bias in model outputs. \cite{reichert2012linking} adapted a statistical technique of \cite{kennedy2001bayesian}, accounting for bias in model outputs, for purposes of environmental modelling and extended it with a framework enabling for multiobjective model calibration. \cite{giudice2013improving} later applied this technique to urban drainage modelling while proposing various formulations of the stochastic process representing the model bias (more in section \ref{delGiudTheor}). Their results showed that runoff simulations are much more reliable when bias is accounted for than when it is neglected. 
 
-While approaches based on explicit model bias consideration can improve the reliability of
-hydrological predictions, they only provide limited information about the causes of model bias and,
-therefore, do not help much to distinguish imperfections in input rainfall data from model structural
-errors (Del Giudice et al., 2016). A conceptually more satisfying approach is to make the input
-uncertain and to propagate it through the model. This is can be done by using so‐called rainfall
-multipliers (Kavetski et al., 2006; Vrugt et al., 2008). These random variables multiply observed
-rainfall rates (1 multiplier per event) before feeding it into the model. They are estimated together
-with other model parameters and allow to quantify the rainfall‐related uncertainty directly in input
-data. Sikorska et al. (2012) combined a stochastic error model with rainfall multipliers to separate the effect of uncertainty in the rainfall data from other erorrs sources. However, the rainfall multiplier approach fails when the observed precipitation has a different temporal pattern from the true one or if the true nonzero input is not detected (Del Giudice et al., 2016). 
+While approaches based on explicit model bias consideration can improve the reliability of hydrological predictions, they only provide limited information about the causes of model bias and, therefore, do not help much to distinguish imperfections in input rainfall data from model structural errors \citep{giudice2013improving}. A conceptually more satisfying approach is to make the input uncertain and to propagate it through the model. This is can be done by using so‐called rainfall multipliers \citep{kavetskiBayesianAnalysisInput2006, vrugtTreatmentInputUncertainty2008}. These random variables multiply observed rainfall rates (1 multiplier per event) before feeding it into the model. They are estimated together
+with other model parameters and allow to quantify the rainfall‐related uncertainty directly in input data. \cite{sikorskaBayesianUncertaintyAssessment2012} combined a stochastic error model with rainfall multipliers to separate the effect of uncertainty in the rainfall data from other erorrs sources. However, the rainfall multiplier approach fails when the observed precipitation has a different temporal pattern from the true one or if the true nonzero rainfall is not detected \citep{delgiudiceDescribingCatchmentaveragedPrecipitation2016}. 
 
-To overcome the above problem, Del Giudice et al. (2016) introduced a method where the
-average precipitation over a given catchment is formulated as a stochastic process, parameters of
-which are inferred together with other model parameters during calibration. They
-showed that, even when starting with inaccurate precipitation data, this approach can accurately
-reconstruct the whole‐catchment precipitation and reliably quantify the related uncertainty.
-However, even a simpler approach (e.g. Del Giudice et al., 2013) can lead to similar model
-parameters and prediction intervals. Therefore, if precipitation reconstructing is not of major
-interest, the novel approach is not recommendable, given its high computational requirements.
+To overcome the above problem, \cite{delgiudiceDescribingCatchmentaveragedPrecipitation2016} introduced a method where the average precipitation over a given catchment is formulated as a stochastic process, parameters of which are inferred together with other model parameters during calibration. They showed that, even when starting with inaccurate precipitation data, this approach can accurately reconstruct the whole‐catchment precipitation and reliably quantify the related uncertainty. However, their results suggested that even a simpler approach \citep[e.g.][]{giudice2013improving} can lead to similar model parameters and prediction intervals. Therefore, if precipitation reconstructing is not of major interest, the novel approach is not appealing, given its high computational requirements.
 
 
-\subsection{Explicit statistical consideration of the bias} \label{delGiudTheor}
+\subsection{Performance assessment} \label{PerAsses}
 
-Herein we describe the framework of \cite{kennedy2001bayesian}, as formulated by \cite{reichert2012linking} and first used in a context similar to ours by \cite{giudice2013improving}. The basic principle of the method is the extension of the deterministic (e.g. rainfall-runoff) model by a stochastic error model. However, a commonly used error model considering only independent and identically distributed (i.i.d.) errors is adjusted to explicitly account for the systematic model errors (bias) of the deterministic model, acknowledging the fact that simulators cannot describe the \enqoute{true} behavior of a system \citep{giudice2013improving}. The extended model can be thus formulated using the equation
+When dealing with interval predictions, it is common to evaluate two aspects of the predictive performance -- its precision and accuracy. The prediction precision can be quantified by the width of the determined confidence interval, referred to also as interval sharpness \mbox{\citep[e.g.][]{breinholt2012formal}}. The prediction accuracy can be understood as the position of observed value(s) in relation to the confidence bound(s). Time series predictions such as hydrographs can also  be assessed in this manner, e.g. by calculating the prediction reliability, i.e. the share of observed data points within the predicted bounds, and the \enquote{average bandwidth} --  the interval widths averaged over the entire prediction period \citep{giudice2013improving}.
+
+\cite{gneiting2007strictly} proposed a metric which combines the two above aspects  -- the interval score $S_\alpha$. For a single interval prediction at a confidence level $1-\alpha$ (determined by the prediction quantiles at levels $ \frac{\alpha}{2} $ and $ 1-\frac{\alpha}{2} $), the interval score 
+\begin{equation}
+S_\alpha(l,u,x) =  ( u - l ) + \frac{2}{\alpha} (l - x)  \mathds{1} \left\{x < l \right\} + \frac{2}{\alpha} (x - u)  \mathds{1} \left\{x > u \right\} ,
+\end{equation}
+where $l$ and $u$ stand for lower and upper interval bounds. This metric is supposed to allow for intuitive comprehension as \enquote{the forecaster is rewarded for narrow prediction intervals and incurs a penalty, the size of which depends on $\alpha$, if the observation misses the interval} \citep{gneiting2007strictly}.
+
+For time series predicition, the idea of $S_\alpha$ can be extended and the mean interval scores ($M\!I\!S$) for a given period can be quantified. \cite{bourginTransferringGlobalUncertainty2015} further developed the concept and, \enquote{to ease comparison between catchments and evaluate the skill of the prediction bounds}, proposed to benchmark the prediction confidence bounds by $M\!I\!S$ for reference bounds ($M\!I\!S_{ref}$) obtained e.g. from long term climatological data. The mean interval skill score $M\!I\!S\!S$ would be computed as 
+\begin{equation}
+M\!I\!S\!S = 1 -  ( M\!I\!S  /  M\!I\!S_{ref} ),  
+\end{equation}
+high values of which indicate greater prediction skill, with positive scores indicating that evaluated predictions are more skillful than the reference.
+
+\section{Explicit statistical consideration of model bias} \label{delGiudTheor}
+
+Herein we describe the framework of \cite{kennedy2001bayesian} as formulated by \cite{reichert2012linking} and first used in the context of urban hydrology by \cite{giudice2013improving}. The basic principle of the method is extension of a deterministic (e.g. rainfall-runoff) model by a stochastic error model. However, a commonly used error model considering only independent and identically distributed (i.i.d.) errors is adjusted to explicitly account for the systematic model errors (bias) of the deterministic model, acknowledging the fact that simulators cannot describe the \enqoute{true} behavior of a system \citep{giudice2013improving}. Using this approach, the extended model can be formulated using the equation
 \begin{equation} \label{eq:ext_model}
 Y_o (x,\theta, \psi) = y_M (x, \theta) + B (\psi) + E (\psi)
 \end{equation}
-where variables in capitals represent random variables, whereas those in lowercase are deterministic functions. $Y_o$ represents the observed system output, $y_M$ stands for the deterministic model output, $B$ for the bias in the system output, (\ref{biasTheor}) and $E$ for the measurement noise of the system output. Precipitation as the external driving force is represented by $x$, whereas $\theta$ and $\psi$ respectively represent the deterministic and error model parameters. To better fulfill the underlying statistical assumptions and thus obtain more reliable predictions, a transformation should be applied on both $Y_o$ and $y_M$ \citep{giudice2013improving}. 
+where variables in capitals represent random variables and those in lowercase are deterministic functions. $Y_o$ represents the observed system output, $y_M$ stands for the deterministic model output. To better fulfill the underlying statistical assumptions and thus obtain more reliable predictions, a transformation (details in \ref{transfTheor}) should be applied on both $Y_o$ and $y_M$ \citep{giudice2013improving}. Next, $B$ and $E$, respectively, stand for the bias and  measurement noise in the system output. Precipitation as the external driving force is represented by $x$, whereas $\theta$ and $\psi$ respectively represent the deterministic and error model parameters.  
 
-The measurement noise of the system response $E$, representing the i.i.d. errors, is sampled from a multivariate normal distribution with mean 0 and a diagonal covariance matrix
+The measurement noise of the system response $E$ is sampled from a multivariate normal distribution with mean 0 and a diagonal covariance matrix
 \begin{equation}
 \Sigma_E= \sigma_E^2 \mathds{1}
 \end{equation}
 
-By combining the deterministic hydrological and the stochastic error models, we can quantify the probability that the observed runoffs can be explained by the given predicted runoffs and error model. This can be formally expressed by a likelihood function describing the joint probability density $f(Y|\theta, \psi, x)$ of observed system response $Y$ for given $\theta$, $\psi$, and $x$. It can be written as
+\cite{giudice2013improving} investigated various formulations of the model bias $B$ and  presented a structured approach to select the optimal bias description
+for a given case study. In general, it is an autoregressive term which can be dependent on the input (rainfall) or/and output (runoff) of the system. For more details, see \cite{giudice2013improving}.
 
-$ f (Y|\theta, \psi, x) = \frac{(2\Pi)^{-\frac{n}{2}}}{\sqrt{det(\Sigma(\theta, \psi, x))}} $
+
+By combining the deterministic hydrological and the stochastic error models, we can quantify the probability that the observed runoffs can be explained by given predicted runoffs and error model. This can be formally expressed by a likelihood function describing the joint probability density $f(Y_o|\theta, \psi, x)$ of observed system response $Y_o$ for given $\theta$, $\psi$, and $x$. It can be written as
+
+$ f (Y_o|\theta, \psi, x) = \frac{(2\Pi)^{-\frac{n}{2}}}{\sqrt{det(\Sigma(\theta, \psi, x))}} $
 \begin{equation}
-. exp \Big( -\frac{1}{2}  [ \tilde{y}_{o} - \tilde{y}_{M}(\theta, x)^{T}  \Sigma(\theta, \psi, x)^{-1} ]  [ \tilde{y}_{o} - \tilde{y}_{M}(\theta, x)]  \prod^{n}_{i=1} \frac{dg}{dy} (y_{o,i},\psi) \Big),
+. exp \Big( -\frac{1}{2}  [ \tilde{Y}_{o} - \tilde{y}_{M}(\theta, x)^{T}  \Sigma(\theta, \psi, x)^{-1} ]  [ \tilde{Y}_{o} - \tilde{y}_{M}(\theta, x)]  \prod^{n}_{i=1} \frac{dg}{dy} (Y_{o,i},\psi) \Big),
 \end{equation}
 
-where $\Sigma(\theta, \psi, x)$ stands for a covariance matrix of the residuals transformed by a function $g()$, i.e. $\tilde{y}=g(y)$. Observed values are represented by $y_{o}$, deterministic model predictions by $y_{M}$ and $n$ is the number of observations (the dimension of $y_{o}$ and $y_{M}$).
+where $n$ is the number of observations (i.e. the dimension of $Y_{o}$ and $y_{M}$) and $\Sigma(\theta, \psi, x)$ stands for a covariance matrix of the residuals transformed by a function $g()$. Similarly, $\tilde{y}_M=g(y_M)$.
 
 
-To achieve accurate rainfall-runoff predictions and reliable quantification of their uncertainty, the extended model should be calibrated. In theory, this could be done by optimizing the likelihood function as the objective function. However, by implementing the Bayesian approach, i.e. combining the likelihood with prior knowledge (belief) about the extended model, we can ...
+To achieve accurate rainfall-runoff predictions and reliable quantification of their uncertainty, the extended model should be calibrated. In theory, this could be done by optimizing the likelihood function as the objective function. However, 
+there is \enquote{a severe identifiability problem} between the deterministic model $y_M$ and bias $B$ \enquote{as the two components cannot be observed separately} \citep{reichert2012linking}. By implementing the Bayesian approach, i.e. combining the likelihood with prior knowledge (belief) about the extended model, we can specify that we are seeking for the smallest bias possible when calibrating the model.
 
-Calibration of our deterministic model (parameters $\theta$) expanded by the error model (parameters $\psi$) using the statistical bias description method and subsequent analysis of prediction uncertainties require to follow these steps \citep{giudice2013improving}:
-\begin{itemize}
-	\item  Definition of marginal distributions of the prior joint probability distribution of the both parameters types $\theta$ and $\psi$. 
+Performing the uncertainty analysis in the above described manner requires to follow these steps \citep{giudice2013improving}:
+\begin{enumerate}
+	\item  Definition of marginal distributions of the prior joint probability distribution of the both the deterministic rainfall-runoff model parameters $\theta$  and  the stochastic error model parameters $\psi$.
         \begin{itemize}
-                \item \cite{giudice2013improving} suggest that $\sigma_{B_{ct}}$ is unlikely to be higher than the variability of observed discharge, $\tau$ should represent the characteristic correlation length of the residuals, and  $\sigma_E$ mirrors the measurement noise of the system output. Furthermore, it is \enquote{important that the prior of the bias reflects the desire to avoid model inadequacy as much as possible}. 
+                \item \cite{giudice2013improving} suggest that completely uninformative prior distributions should not be used for neither $\theta$ nor $\psi$ parameters. Furthermore, it is \enquote{important that the prior of the bias reflects the desire to avoid model inadequacy as much as possible ... to reduce the identifiability problem between the deterministic
+model and the bias}.
         \end{itemize}
 
 	\item  Bayesian inference of the posterior parameter distribution.
 	\begin{itemize}
-                \item	The joint probability density, a product of the prior $f(\theta, \psi)$ and the likelihood function $f(y_o | \theta, \psi, x)$, gets conditioned on the observed data, using the Bayes' theorem
+                \item	The joint probability density, a product of the prior $f(\theta, \psi)$ and the likelihood function $f(Y_o | \theta, \psi, x)$, gets conditioned on the observed discharge data, using the Bayes' theorem
                 \begin{equation}
-f (\theta, \psi | y_o, x) = \frac{ f(\theta, \psi) \, f(y_o | \theta, \psi, x) } { \iint f(\theta' , \psi') \, f(y_o | \theta', \psi', x) d\theta' d\psi'} \; .
+f (\theta, \psi | Y_o, x) = \frac{ f(\theta, \psi) \, f(Y_o | \theta, \psi, x) } { \iint f(\theta' , \psi') \, f(Y_o | \theta', \psi', x) d\theta' d\psi'} \; .
                 \end{equation}
 
 Solving this problem analytically would include dealing with multidimensional integrals. This can be avoided by employing a numerical method such as Markov Chain Monte Carlo (MCMC) to approximate properties of the posterior distribution.
 
-        \item Before the inference, a transformation $g()$  should be applied on simulation results and output data to account for the variance increasing with discharge and to reduce the heteroscedascity of residuals. Details in \ref{transfTheor}.
+        \item Before the inference, a transformation $g()$  should be applied on simulation results and output data to account for the variance increasing with discharge and to reduce the heteroscedascity of residuals \citep{giudice2013improving}. Details in \ref{transfTheor}.
         \end{itemize}
         
 	\item  Probabilistic predictions for the data set used for calibration
@@ -341,44 +296,28 @@ Solving this problem analytically would include dealing with multidimensional in
 	
 	\item  Probabilistic predictions for unseen temporal points.
 	\begin{itemize}
-                \item 	It is possible to proceed analogically as above. However, \cite{giudice2013improving} suggest to take advantage of using bias formulated as an  OU process and to \enquote{draw a realization for the entire period by iteratively drawing the realization for the next time step at time   $t_ j$ from that of a previous time step at time $t_ {j-1}$ from a normal distribution}. In both cases, nevertheless, it is necessary to draw a large sample from the  posterior parameter joint distribution and to propagate it through the deterministic model.
+                \item 	It is possible to proceed analogically as above. However, \cite{giudice2013improving} suggest to take advantage of using bias formulated as an  Ornstein–Uhlenbeck process and to \enquote{draw a realization for the entire period by iteratively drawing the realization for the next time step at time   $t_ j$ from that of a previous time step at time $t_ {j-1}$ from a normal distribution}. In both cases, nevertheless, it is necessary to draw and evaluate a large sample from the  posterior parameter joint distribution.
         \end{itemize}
-
-	\item Assessment of the predictions quality (see \ref{PerAsses}).
 	
 	\item Verification of the statistical assumptions
 	\begin{itemize}
-                \item 	In many similar cases, it is usual to confirm the statistical assumptions of the error model by residual analysis \citep{reichert2012linking}. However, Bayesian approach implemented in this method allows us to test only the observation error $E$, which is the only purely frequentist term. 
-
-According to \cite{giudice2013improving}, this test can be performed on the predictive distribution of the observation error, predicted for the calibration data. It should be verified whether the observation errors are normally distributed with constant variance and without autocorrelation. However, since these errors are likely to constitute only a small portion of the residuals of the deterministic simulator, the informative value of this analysis might be limited.
+                \item 	In many similar cases, it is usual to confirm the statistical assumptions of the error model by residual analysis \citep{reichert2012linking}. However, Bayesian approach implemented in this method allows us to test only the observation error $E$, which is the only purely frequentist term. However, since these errors are likely to constitute only a small portion of the residuals of the deterministic simulator, the informative value of this analysis might be limited.
         \end{itemize}
 
 	
-\end{itemize}
-
-
-\subsubsection{Bias formulation} \label{biasTheor}
-
-...
-
-...
-
-The bias $B$ is formulated as an autoregressive stationary random process with a long-term equilibrium value of zero and a constant variance. \enquote{It is a mean-reverting OU process \citep{uhlenbeck1930theory}, the discretisation of which would be a first-order autoregressive process with Gaussian independent and identically distributed noise} \citep{giudice2013improving}. It can be expressed using the following differential equation:
-\begin{equation} 
-dB (t)= - \frac{B (t)}{\tau}dt + \sqrt{\frac{2}{\tau}} \sigma_{B_{ct}}  dW(t),
-\end{equation}
-where $\tau$ represents the correlation time, $\sigma_{B_{ct}}$ the asymptotic standard deviation of the random fluctuations around the equilibrium and $dW(t)$ a Wiener process (standard Brownian motion). Although there has been some research on using more sophisticated, e.g. model input- or output-dependent, bias formulation \citep{honti2013integrated}, we have decided to follow the recommendations of \cite{giudice2013improving} and to employ the simpler constant bias formulation.
+\end{enumerate}
 
 
 
-\subsubsection{Output transformation} \label{transfTheor}
 
-Because of the  statistical assumptions of homoscedasticity and normality of calibration residuals, we apply a transformation $g()$ on simulation results and output data.  According to  \cite{giudice2013improving}, it is a common way in hydrological modelling how to account for increasing variance with increasing discharge and to reduce the heteroscedascity.
+
+
+\subsection{Output transformation} \label{transfTheor}
+
+Because of the  statistical assumptions of homoscedasticity and normality of calibration residuals, a transformation $g()$ should be applied on simulation and observed output data (i.e., in our case, runoff discharges).  It is a common way in hydrological modelling how to account for increasing variance with increasing discharge and thus reduce the residual heteroscedascity. Moreover, it is expected to reduce the proportion of negative flow predictions by making error distributions asymmetric \citep{giudice2013improving}.
 
 According to \cite{giudice2013improving},  two most promising variance stabilization techniques for urban drainage
-applications are the Box–Cox \citep{box1964analysis}  and the log-sinh \citep{wang2012log} transformation. Another motivation for applying such transformation is to reduce the proportion of negative flow predictions by making error distributions asymmetric.
-
-The Box-Cox transformation has been used more often in hydrological studies \\ \citep{giudice2013improving} than the log-sinh alternative, primarily due to the date of its first introduction by \cite{box1964analysis}. The two-parameter Box–Cox transformation can be written as
+applications are the Box–Cox \citep{box1964analysis}  and the log-sinh \citep{wang2012log} transformation. The Box-Cox transformation has been used more often in hydrological studies  than the log-sinh alternative, primarily due to the date of its first introduction. The two-parameter Box–Cox transformation can be written as
 \begin{equation}
  g(y)=
     \begin{cases}
@@ -386,12 +325,9 @@ The Box-Cox transformation has been used more often in hydrological studies \\ \
       \frac{(y+\lambda_2)^{\lambda_1}-1}{\lambda_1} , & \text{otherwise}
     \end{cases}
 \end{equation}
-and holds for $y > -\lambda_2$. The one-parameter version would need only  $\lambda_1$  while keeping $\lambda_2 = 0$.
+and holds for $y > -\lambda_2$. The one-parameter version would need only  $\lambda_1$  while keeping $\lambda_2 = 0$. \cite{giudice2013improving} used the one-parameter version of the transformation with the parameter value $\lambda_1=0.35$, which had already been proven to perform satisfactorily in the past \citep[e.g.][]{honti2013integrated, wang2012log}.
 
-\cite{giudice2013improving} decided to use the one-parameter version of the transformation with the parameter value $\lambda_1=0.35$, which had already been proven to perform satisfactorily in the past \citep[e.g.][]{honti2013integrated, wang2012log}.
-
-
-The log-sinh transformation was introduced for hydrological purposes only recently by \cite{wang2012log}. \cite{giudice2013improving}  decided to modify its formulation, to use a \enquote{reparameterised form with parameters that have a more intuitive meaning}. The formula would be
+The log-sinh transformation was introduced for hydrological purposes only recently by \cite{wang2012log}. \cite{giudice2013improving}  proposed its modification which would result in a \enquote{reparameterised form with parameters that have a more intuitive meaning}. The formula would be
 \begin{equation}
 g(y)= \beta \, log \Big(sinh \big( \frac{\alpha+y}{\beta} \big) \Big),
 \end{equation}
@@ -399,36 +335,6 @@ where $\alpha$ and $\beta$ represent lower and upper reference outputs. This mea
 
 
 
-\subsubsection{Probabilistic predictions}
-The third step is to compute predictive distributions for the data points (observations) that have been used for the calibration process. 
 
-It should be noted that the word \enquote{predictions} in this context represents  generation of model outputs in general, consistently with e.g. \cite{reichert2012linking} or \cite{giudice2013improving}, in contrast to simulation only for time points or locations where measurements are not available. In other words, using the terminology of \cite{breinholt2012formal}, our model is tailored as an off-line simulation model suitable rather for long-term investigations than for forecasting in  real time.
-
-
-?MOVE \\
-Separating different uncertainty components is enabled by expanding the transformed simulator output $\tilde{y}_M$ with the model bias $B_M$ and independent error $E$ terms (see the equation (3.2)). Subsequently, the results are transformed back to the original space using the inverse transformation $g^{-1}()$.
-
-To be able to visualize and distinguish uncertainty of the deterministic simulator predictions $y_M$, the best knowledge about the system response $g^{-1}(\tilde{y}_M+ B_M)$ and the modelled observed system response (including flow measurement errors) $Y_o= g^{-1}(\tilde{y}_M+ B_M + E)$, it is profitable to compute sample quantiles (e.g. $0.05$, $0.5$ and $0.095$) of the respective calculated predictions in every time step.}
-\\ ?MOVE
-
-
-\subsection{Performance assessment} \label{PerAsses}
-To conclude uncertainty analysis, quality of the predictions (propagations of the sample from the posterior joint parameter distribution) should be evaluated and underlying statistical assumptions verified \citep{giudice2013improving}. 
-
-When dealing with interval predictions at a certain confidence level $1-\alpha$ (determined by the predictive quantiles at level $ \frac{\alpha}{2} $ and $ 1-\frac{\alpha}{2} $) as in our case, it is common to evaluate the model predictive performance by two metrics: width of the determined confidence interval, referred to also as interval sharpness \mbox{\citep[e.g.][]{breinholt2012formal}} and reliability of the predictions represented by the share the observed data included within the confidence bounds.
-
-\cite{giudice2013improving} assessed the model predictive capability also in this manner, evaluating the uncertainty bands  by calculating the predictions reliability and the \enquote{average bandwidth} --  the interval widths averaged over the entire prediction period.
-
- a metric which combines them -- the interval score $S_\alpha$ as formulated by \cite{gneiting2007strictly}. For a single interval prediction, the interval score 
-\begin{equation}
-S_\alpha(l,u,x) =  ( u - l ) + \frac{2}{\alpha} (l - x)  \mathds{1} \left\{x < l \right\} + \frac{2}{\alpha} (x - u)  \mathds{1} \left\{x > u \right\} ,
-\end{equation}
-where $l$ and $u$ stand for lower and upper interval bounds (quantiles at levels $ \frac{\alpha}{2} $ and $ 1-\frac{\alpha}{2} $ ). The evaluated variable $x$ stands in our case for the modelled system response including measurement errors $Y_o$. 
-
-As described by \cite{gneiting2007strictly}, when using the interval score $S_\alpha$, \enquote{the forecaster is rewarded for narrow prediction intervals, and he or she incurs a penalty, the size of which depends on $\alpha$, if the observation misses the interval}, which should provide it with an intuitive appeal.
-
-However, we obtain predictions in a form of a vector of discharges in various time steps of a rain event. Therefore, we \enquote{extend} the idea of  $S_\alpha$ and evaluate the mean of interval scores ($M\!I\!S$) for every given   rain event. Analogically to this, we calculate as well the \enquote{average band width} ($A\!B\!W$) as the mean width of prediction intervals in the given period (similarly to \cite{giudice2013improving}).
-
-However, we acknowledge that  uncertainty estimation based on  standard deviations of  predictions performance metrics (e.g. $dV$)  is reliable only as far as the predictions themselves are reliable. If the reliability is too low (below the defined confidence level $1- \alpha$), the $sd$ of a given metric does not reflect the metric's uncertainty reliably. In this case, the interval score $S_\alpha$ (expanded to  $M\!I\!S$ in our case) proves its worth, since it combines the uncertainty estimation based purely on predictions with the reliability obtained after comparing the predictions with observations.
 
 
