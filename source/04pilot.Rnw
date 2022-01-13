@@ -23,31 +23,37 @@ The CML QPEs, as well as traditional data from rain gauges, are propagated throu
  
 \section{Methods} \label{pilotMnM}
 
-The defined problem is addrresses using rainfall and runoff data collected in~a small urban catchment in Prague-Letňany, Czech Republic (details in \ref{chap3}) during three months (August\,--\,October) of 2014. Precipitation time series from five rainfall observation layouts are propagated through a rainfall-runoff model (\ref{RRmodel}) and evaluated against observed runoffs. In order to quantify the associated uncertainties, the hydrological model is operated by means of prediction uncertainty quantification as first used in~a~similar context by \cite{giudice2013improving} and introduced in section \ref{delGiudTheor}.
+The defined problem is addrresses using rainfall and runoff data collected in~a small urban catchment in Prague-Letňany, Czech Republic (details in \ref{chap3}) during three months (August\,--\,October) of 2014. Precipitation time series from six rainfall observation layouts are propagated through a rainfall-runoff model (\ref{RRmodel}) and evaluated against observed runoffs. In order to quantify the associated uncertainties, the hydrological model is operated by means of prediction uncertainty quantification as first used in~a~similar context by \cite{giudice2013improving} and introduced in section \ref{delGiudTheor}.
 
 
 \subsection{Rainfall observation layouts} 
 
-We investigate rainfall data observed using the  five following observation layouts during 15 rainfall-runoff events from the summer season of 2014: 
+We investigate rainfall data observed during 15 rainfall-runoff events from the summer season of 2014 using the six following observation layouts: 
 \begin{enumerate}
+        \item Measurements from three local rain gauges
+                \begin{quote}
+                Rainfall data from three local rain gauges installed for research purposes (Fig. \ref{3fig1}) around the catchment of interest. 
+                This data set represents rainfall information observed on site which, however, in the context of the Czech Republic, is available only for short term experimental purposes.
+                \end{quote}
+        \item Measurements from a single local rain gauge 
+                \begin{quote}
+                Rainfall data at a 1-min resolution from the local rain gauge located at the south-west catchment boundary (Fig. \ref{3fig1}).
+                This data set represents rainfall information observed on site which could be available more commonly than the data above, however typically also only for a limited period of time, e.g. in order to evaluate the effect of (re)construction works in the catchment.
+                \end{quote}
          \item Measurements from three municipal rain gauges
                 \begin{quote}
                 Rainfall data from the three municipal rain gauges closest to the catchment (Fig. \ref{3fig2}). Due to their 1-min resolution, for which correlations are low for the given distances \citep{villariniRainfallSamplingUncertainties2008}, only a  single time series, constructed as the mean of the instantaneous $R$ [mm/h] values of the three gauges, is evaluated.
                 This data set represents rainfall data standardly available in long-term perspectives in urbanized areas of the Czech Republic.
                 \end{quote}
-        \item Measurements from a single local rain gauge 
+        \item QPEs from the four CMLs adjusted by the local rain gauge, 
                 \begin{quote}
-                Rainfall data at a 1-min resolution from the local rain gauge located at the south-west catchment boundary (Fig. \ref{3fig1}).
-                This data set represents rainfall information observed directly in the urban catchment of interest, which could be typically available for a limited period of time, e.g. in order to evaluate the effect of (re)construction works in the catchment.
+                Data from the single local rain gauge specified above, aggregated to 15-min time steps, is used to adjust \citep{fenclGaugeadjustedRainfallEstimates2017} CML QPEs with a 1-min resolution. In particular, wet antenna attenuation ($A_{wa}$ from Eq. \ref{eq:2eq2}) and $\alpha$ (Eq. \ref{eq:2eq1}) are adjusted, while keeping $\beta =$ 1. Only short CMLs (path length < 1500 m) located close to the catchment center are used (\#1, \#2, \#5, \#7; Fig. \ref{3fig2}; \#3 and \#4 are excluded due to outages and erratic behavior, respectively). Only a single time series, constructed as the mean of the instantaneous $R$ [mm/h] values of the four CMLs, is evaluated.
+                This rainfall data set showcases application of CML QPEs when traditional rainfall information is available directly in the catchment area, however, not in a satisfying spatial resolution.
                 \end{quote}
         \item QPEs from four CMLs adjusted by the municipal rain gauges 
                 \begin{quote}
-                The mean of the data from the three municipal rain gauges, aggregated to 15-min time steps, is used to adjust \citep{fenclGaugeadjustedRainfallEstimates2017} CML QPEs with a 1-min resolution. In particular, wet antenna attenuation ($A_{wa}$ from Eq. \ref{eq:2eq2}) and $\alpha$ (Eq. \ref{eq:2eq1}) are adjusted, while keeping $\beta =$ 1. Only short CMLs (path length < 1500 m) located close to the catchment center are used (\#1, \#2, \#5, \#7; Fig. \ref{3fig2}; \#3 and \#4 are excluded due to outages and erratic behavior, respectively). Only a single time series, constructed as the mean of the instantaneous $R$ [mm/h] values of the four CMLs, is evaluated.
-                This rainfall data set showcases application of CML QPEs in situations when rainfall is not measured directly in the catchment, but there are gauges in the distance of 2\,--\,3 km, which, however, may provide data in lower temporal resolutions (e.g. 15, 30, or 60 min).
-                \end{quote}
-        \item QPEs from the four CMLs adjusted by the local rain gauge, 
-                \begin{quote}
-                 The instantaneous mean of the QPEs from the same four CMLs as above, adjusted in the same way, however, using 15-min data from the single local rain gauge (specified above). 
+                The instantaneous mean of the QPEs from the same four CMLs as above, adjusted in the same way, however, using the mean of the data from the three municipal rain gauges (specified above).
+                This rainfall data set showcases application of CML QPEs in situations when rainfall is not measured directly in the catchment, but there are gauges in the distance of 2\,--\,3 km, which, however, provide data in lower temporal resolutions (e.g. 15, 30, or 60 min).
                 \end{quote}
         \item Unadjusted QPEs from all CMLs available (Fig. \ref{3fig2}).
                 \begin{quote}
@@ -62,7 +68,9 @@ In the cases of all CML data, prior to applying the correction for $A_{wa}$, bas
 
 \subsection{Rainfall-runoff modelling and uncertainty analysis}
 
-Rainfall time series retrieved using all the five observation layouts are propagated through a rainfall-runoff model (\ref{RRmodel}) and evaluated against discharges observed at the outlet from the local stormwater drainage system. The rainfall input is in all cases implemented as areal rainfall in the model, meaning that rainfall intensity in a given time step has a constant value over all subcatchments of the model. In order to acknowledge uncertainties of the rainfall-runoff model predictions, we employ uncertainty analysis framework of \cite{kennedy2001bayesian} as formulated by \cite{reichert2012linking} and first used in a context similar to ours by \cite{giudice2013improving}. The basic principle of the method (details in section \ref{delGiudTheor}) is the extension (Eq. \ref{eq:ext_model}) of a deterministic (i.e., in our case, rainfall-runoff) model by a stochastic error model which explicitly accounts for systematic model errors, i.e. bias. 
+Rainfall time series retrieved using all the five observation layouts are propagated through a rainfall-runoff model (\ref{RRmodel}) and evaluated against discharges observed at the outlet from the local stormwater drainage system. When usig rainfall data from the three local rain gauges, the rainfall input is implemented in the model using three Thiessen polygons. This means that the rainfall intensity above a given model subcatchment is assumed to be the same as measured at the closest gauge. In all other cases, rainfall input is implemented as areal rainfall, meaning that rainfall intensity in a given time step has a constant value over all subcatchments of the model. 
+
+In order to acknowledge uncertainties of the rainfall-runoff model predictions, we employ uncertainty analysis framework of \cite{kennedy2001bayesian} as formulated by \cite{reichert2012linking} and first used in a context similar to ours by \cite{giudice2013improving}. The basic principle of the method (details in section \ref{delGiudTheor}) is the extension (Eq. \ref{eq:ext_model}) of a deterministic (i.e., in our case, rainfall-runoff) model by a stochastic error model which explicitly accounts for systematic model errors, i.e. bias. 
 
 \cite{giudice2013improving} investigated various formulations of the model bias and various transformation functions. Based on their recommendations and our previous analyses \citep{pastorekEffectDifferentRainfall2016}, as transformation $g()$, we use the Box-Cox transformation \citep{box1964analysis} with parameters $\lambda_1 =$ 0.45 and $\lambda_2 =$~1. Moreover,   we formulate the bias $B (\psi)$ as an autoregressive stationary random process with a long-term equilibrium value of zero and a constant variance. It is a mean-reverting Ornstein–Uhlenbeck process \citep{uhlenbeck1930theory}, \enquote{the discretisation of which would be a first-order autoregressive process with Gaussian independent and identically distributed noise} \citep{giudice2013improving}. It can be expressed using the following differential equation:
 \begin{equation} 
@@ -115,15 +123,54 @@ Data from five out of the 15 available rainfall-runoff events are used to calibr
 
 After performing the extended model calibration, data from the ten remaining rainfall-runoff events are used to analyze the model predictions. To evaluate the rainfall-runoff predictions visually, we produce hydrographs for each of the ten events and rainfall data from each of the five observation layouts. We do not the evaluate the prediction performance  by examining separately the uncertainty intervals for the deterministic rainfall-runoff model output. This is in accordance with \cite{giudice2013improving}, who see this approach as \enquote{not conclusive because the field observations are not realisations of the deterministic model but of the model plus the errors}. Instead, we only evaluate the total uncertainty intervals associated with the extended model, i.e. the deterministic and the stochastic model together. 
 
-The prediction reliability $reliab$~[-] is quantified as the fraction of discharge observations falling into the predicted 90\% confidence intervals. We also employ common summary hydrological metrics such as the total discharged volume during a whole given event  or the discharged volume during peak flow period.  In particular, we compute relative errors of the total discharged volume  $dV$ [-] and of the volume during peak flow $dV_{peak}$ [-] for every single prediction of the extended model. When calculating $dV_{peak}$, the time step with maximal discharge observed is identified first and the volume discharged during eight minutes around the time step (four minutes before and four after) is computed afterwards. The difference between the observed time with maximal discharge and the modelled one $dt_{Qmax}$ [h] is another metric we quantify for every model prediction.
+We also employ common summary hydrological metrics such as the total discharged volume during a whole given event  or the discharged volume during peak flow period.  In particular, we compute relative errors of the total discharged volume  $dV$ [-] and of the volume during peak flow $dV_{peak}$ [-] for every single prediction of the extended model. When calculating $dV_{peak}$, the time step with the maximal discharge observed is identified first and the volume discharged during eight minutes around the time step (four minutes before and four after) is computed afterwards. The difference between the modelled time with the maximal discharge and the observed one $dt_{Qmax}$ [h] is another metric we quantify for every model prediction. 
 
-To summarize the above metrics $dV$, $dV_{peak}$, and $dt_{Qmax}$ for the whole set of predictions associated with the given event and rainfall observation layout, we calculate their means and standard deviations. This is in accordance with \cite{fencl2013assessing} who also used the relative error of the total discharged volume and interpreted its mean $\overline{dV}$ as the metric's bias and its standard deviation $sd(dV)$ as its uncertainty.
+To summarize the above metrics $dV$, $dV_{peak}$, and $dt_{Qmax}$ for the whole set of predictions associated with a given rainfall observation layout, we calculate their medians and variances which are then graphically presented in boxplots. This is in accordance with \cite{fencl2013assessing} who also used the relative error of the total discharged volume and interpreted its mean $\overline{dV}$ as the metric's bias and its standard deviation $sd(dV)$ as its uncertainty. Moreover, the discharge prediction reliability associated with a given observation layout is quantified as the fraction of discharge observations falling into the predicted 90\% confidence intervals.
 
 To better interpret the results, we classify the rainfall events as either light or heavy, based on the maximal 10-minute precipitation rate. 
 
 
 
 \section{Results}
+
+
+\begin{figure}[p]
+\begin{center}
+\includegraphics[width=13cm]{figs/pilot/hydrograph heavy.png}
+\caption{Hydrogrpahs associated with a heavy rainfall observed on 29th August 2014 with a start at 02:56 pm. Predicted discharges at a confidence level of 90\% are shown as grey bands. The dashed line represents median prediction for a given timestep. Observed discharges are shown as circles (blue if within the prediction bounds, red if outside).} \label{pil_fig1}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[p]
+\begin{center}
+\includegraphics[width=13cm]{figs/pilot/hydrograph light.png}
+\caption{Hydrogrpahs associated with a light rainfall observed on 11th August 2014 with a start at 02:24 am. Predicted discharges at a confidence level of 90\% are shown as grey bands. The dashed line represents median prediction for a given timestep. Observed discharges are shown as circles (blue if within the prediction bounds, red if outside).} \label{pil_fig2}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=13cm]{figs/pilot/2 metrics 1.png}
+\caption{Boxplots.} \label{pil_fig3}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=13cm]{figs/pilot/2 metrics 2.png}
+\caption{Boxplots.} \label{pil_fig4}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=7cm]{figs/pilot/reliab.png}
+\caption{Reliability.} \label{pil_fig5}
+\end{center}
+\end{figure}
 
 
 \section{Discussion}
