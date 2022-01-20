@@ -3,7 +3,7 @@
 \chapter{On the value of CML QPEs for urban rainfall-runoff modelling: The pilot study} \label{chap4}
 
 \rule{\textwidth}{0.4pt}
-Rainfall-runoff modelling in urban catchments requires reliable rainfall data with high temporal and spatial resolution. Such data are often not available and, thus, unmeasured spatial rainfall variability is an important source of uncertainty in urban rainfall-runoff modelling. Recently, commercial microwave links (CMLs), an extensively used solution in telecommunication networks, have been introduced as a new potential source of rainfall data with the necessary resolution. We compare this novel rainfall data source with more conventional sources from point rain gauges based on a comparison of measured runoffs with rainfall-runoff modelling results of a small urbanized catchment obtained using the researched rainfall data sets. We employ a method based on Bayesian inference to calibrate our rainfall-runoff model and to estimate the uncertainty of modelling outputs. Results of the performed analyses show that CML rainfall data, when a suitable adjustment is applied (e.g. using information from remote rain gauges), allow for better detection of dynamics of precipitation and subsequent runoff than data from point rain gauges alone, especially in the case of heavy rainfalls which are highly variable in space and time. Therefore, microwave links represent a relevant rainfall data source, which can conveniently complement existing rainfall monitoring networks.
+Rainfall-runoff modelling in urban catchments requires reliable rainfall data with high temporal and spatial resolution. Such data are often not available and, thus, unmeasured spatial rainfall variability is an important source of uncertainty in urban rainfall-runoff modelling. Recently, commercial microwave links (CMLs), an extensively used solution in telecommunication networks, have been introduced as a new potential source of rainfall data with the necessary resolution. We compare this novel rainfall data source with more conventional sources from point rain gauges based on a comparison of measured runoffs with rainfall-runoff modelling results of a small urbanized catchment obtained using the researched rainfall data sets. We employ a method based on Bayesian inference to calibrate our rainfall-runoff model and to estimate the uncertainty of modelling outputs. Results of the performed analyses show that CML rainfall data, when a suitable adjustment is applied (e.g. using information from nearby rain gauges), allow for better detection of dynamics of precipitation and subsequent runoff than data from point rain gauges alone, especially in the case of heavy rainfalls which are highly variable in space and time. Therefore, microwave links represent a relevant rainfall data source, which can conveniently complement existing rainfall monitoring networks.
 \rule[0.2cm]{\textwidth}{0.4pt}
 
 {\footnotesize The bulk of this chapter was originally published in \cite{pastorekReliabilityMicrowaveLink2017, pastorekPosouzeniSrazkovychDat2018}.} 
@@ -16,7 +16,7 @@ Reliable rainfall data are crucial when performing urban rainfall-runoff modelli
 
 \cite{smiatekPotentialCommercialMicrowave2017} investigated the potential of QPEs from CMLs for streamflow prediction in an orographically complex mountainous region. In urban settings,  \cite{fencl2013assessing} assessed the potential of CMLs to capture spatiotemporal rainfall dynamics and thus improve urban rainfall-runoff modelling, however, using only  virtual rainfall fields. In a similar analysis, \cite{fenclCommercialMicrowaveLinks2015} evaluated QPEs derived from real-world CML data, however, without using these for hydrological modelling. Thus, to the best of our knowledge, no research has been presented yet in relevant literature where real-world CML QPEs would be applied for urban rainfall-runoff modelling. 
 
-In this study, we target the above research gap and analyze whether QPEs obtained from CMLs can be regarded as a viable alternative for rainfall data in the field of urban rainfall-runoff modelling. As CML QPEs are often highly biased, what limits their usability for practical purposes, we analyze CML QPEs derived using both a standard approach and a recently proposed \cite{fenclGaugeadjustedRainfallEstimates2017} novel method for adjusting the QPEs to existing rain gauges. 
+In this study, we target the above research gap and analyze whether QPEs obtained from CMLs can be regarded as a viable alternative for rainfall data in the field of urban rainfall-runoff modelling. As CML QPEs are often highly biased, what limits their usability for practical purposes, we analyze CML QPEs derived using both a standard approach and a recently proposed \citep{fenclGaugeadjustedRainfallEstimates2017} novel method for adjusting the QPEs to existing rain gauges. 
 
 The CML QPEs, as well as traditional data from rain gauges, are propagated through a calibrated rainfall-runoff model and evaluated against observed discharges. Since additional uncertainties are introduced into the process of rainfall data evaluation by employing the rainfall-runoff modelling, we use a thorough statistical method which allows for a reliable quantification of the runoff prediction uncertainty associated with various rainfall observation layouts. 
 
@@ -125,7 +125,7 @@ After performing the extended model calibration, data from the ten remaining rai
 
 We also employ common summary hydrological metrics such as the total discharged volume during a whole given event  or the discharged volume during peak flow period.  In particular, we compute relative errors of the total discharged volume  $dV$ [-] and of the volume during peak flow $dV_{peak}$ [-] for every single prediction of the extended model. When calculating $dV_{peak}$, the time step with the maximal discharge observed is identified first and the volume discharged during eight minutes around the time step (four minutes before and four after) is computed afterwards. The difference between the modelled time with the maximal discharge and the observed one $dt_{Qmax}$ [h] is another metric we quantify for every model prediction. 
 
-To summarize the above metrics $dV$, $dV_{peak}$, and $dt_{Qmax}$ for the whole set of predictions associated with a given rainfall observation layout, we calculate their medians and variances which are then graphically presented in boxplots. This is in accordance with \cite{fencl2013assessing} who also used the relative error of the total discharged volume and interpreted its mean $\overline{dV}$ as the metric's bias and its standard deviation $sd(dV)$ as its uncertainty. Moreover, the discharge prediction reliability associated with a given observation layout is quantified as the fraction of discharge observations falling into the predicted 90\% confidence intervals.
+The uncertainty in the above metrics $dV$, $dV_{peak}$, and $dt_{Qmax}$ is evaluated by calculating the median and other quantiles for the set of predictions associated with a given rainfall observation layout, which are then graphically presented in boxplots.  This is in accordance with \cite{fencl2013assessing} who also used the relative error of the total discharged volume and interpreted its mean $\overline{dV}$ as the metric's bias and its standard deviation $sd(dV)$ as its uncertainty. Moreover, the discharge prediction reliability associated with a given observation layout is quantified as the fraction of discharge observations falling into the predicted 90\% confidence intervals.
 
 To better interpret the results, we classify the rainfall events as either light or heavy, based on the maximal 10-minute precipitation rate. 
 
@@ -133,44 +133,61 @@ To better interpret the results, we classify the rainfall events as either light
 
 \section{Results}
 
+First, we present hydrographs showing observed and modelled discharges for a heavy and a light rainfall event which characterize well typical features of the overall results. Next, a summary of the results for all events classified as heavy (maximal 10-min rainfall intensity $R_{max,10}$ > 12 mm/h), as light ($R_{max,10} \leq$ 12 mm/h), and both categories together is presented in  boxplots, with a special attention on the heavy rainfalls.
 
-\begin{figure}[p]
+\begin{figure}[H]
 \begin{center}
-\includegraphics[width=13cm]{figs/pilot/hydrograph heavy.png}
-\caption{Hydrogrpahs associated with a heavy rainfall observed on 29th August 2014 with a start at 02:56 pm. Predicted discharges at a confidence level of 90\% are shown as grey bands. The dashed line represents median prediction for a given timestep. Observed discharges are shown as circles (blue if within the prediction bounds, red if outside).} \label{pil_fig1}
+\includegraphics[width=13cm]{figs/pilot/hydrograph light + heavy.png}
+\caption{Hydrographs associated with a light rainfall observed on 11th August 2014 with a start at 02:24 am (top) and a heavy rainfall observed on 29th August 2014 with a start at 02:56 pm (bottom). Predicted discharges at a confidence level of 90\% are shown as grey bands. The dashed line represents median prediction for a given timestep. Observed discharges are shown as circles (blue if within the prediction bounds, red if outside).} \label{pil_fig1}
 \end{center}
 \end{figure}
 
 
-\begin{figure}[p]
+
+Na hydrogramu vybrané mírné události (obr. 3) vidíme, že
+pro 3 soubory srážkových dat jsou výsledky velmi podobné,
+i k nesprávným předpovědím dochází ve stejných částech hyrogramu
+(začátek stoupající větve). Výjimkou jsou předpovědi získané
+pomocí dat z MV spojů se základním zpracováním, kde je
+evidentní tendence podhodnocovat průtoky, nicméně i zde je
+dynamika události zachycena velmi dobře.
+
+
+
+Příklad silné srážko-odtokové události (obr. 4) nám ukazuje
+odlišné chování, než tomu bylo u mírných událostí. Nejhorší
+předpověď, konkrétněji výrazné podhodnocení maximálního
+průtoku, vznikla po použití dešťových dat ze tří vzdálených
+srážkoměrů. Ostatní tři soubory srážkových dat, včetně těch
+z MV spojů se základním zpracováním, vedli k předpovědím velice
+dobrým ve všech ohledech.
+
+
+
+
+\begin{figure}[H]
 \begin{center}
-\includegraphics[width=13cm]{figs/pilot/hydrograph light.png}
-\caption{Hydrogrpahs associated with a light rainfall observed on 11th August 2014 with a start at 02:24 am. Predicted discharges at a confidence level of 90\% are shown as grey bands. The dashed line represents median prediction for a given timestep. Observed discharges are shown as circles (blue if within the prediction bounds, red if outside).} \label{pil_fig2}
+\includegraphics[width=12cm]{figs/pilot/all strong weak NSE + dV.png}
+\caption{Boxplots all 10 events.} \label{pil_fig2}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=6cm]{figs/pilot/reliab.png}
+\caption{Discharge prediction reliability.} \label{pil_fig3}
 \end{center}
 \end{figure}
 
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=13cm]{figs/pilot/2 metrics 1.png}
-\caption{Boxplots.} \label{pil_fig3}
+\includegraphics[width=12cm]{figs/pilot/strong dtQmax dVmax.png}
+\caption{Boxplots heavy rainfalls.} \label{pil_fig4}
 \end{center}
 \end{figure}
 
 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=13cm]{figs/pilot/2 metrics 2.png}
-\caption{Boxplots.} \label{pil_fig4}
-\end{center}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=7cm]{figs/pilot/reliab.png}
-\caption{Reliability.} \label{pil_fig5}
-\end{center}
-\end{figure}
 
 
 \section{Discussion}
