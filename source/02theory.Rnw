@@ -148,31 +148,20 @@ data set which better describes the ground‐truth precipitation than the refere
 improvement could not be captured with this approach. This could be very unfortunate especially if
 we dealt with rainfall data of unknown characteristics.
 
-The same issue can arise also in studies where various rainfall data sets are evaluated primarily for
-purposes of hydrological modelling, such as the study of \cite{ochoa-rodriguezImpactSpatialTemporal2015} on the impact
-of spatial and temporal resolution of rainfall inputs on urban hydrodynamic modelling. In this study,
-modelling results obtained using various rainfall data sets were evaluated using as reference the
-modelling results associated to the finest resolution rainfall estimates. Furthermore, in this type of
-studies, it is unclear whether the best‐quality rainfall data always (e.g. even when the model used
-was calibrated using another rainfall data set) lead to the best model performance.
+River (and drainage system) discharges closely reflect transformed rainfall aggregated for a whole given catchment. Especially in urban areas, stormwater runoff can be considered as a proxy variable of the catchment areal rainfall. This can be especially useful in the case of convective precipitation when the true incident rainfall over a given area is often difficult to estimate using traditional reference rainfall measurements. Furthermore, stream discharges are typically measurable more reliably than the true incident precipitation over the given area. Therefore, when evaluating rainfall data sets for the purposes of rainfall-runoff modelling, using runoff observations and a rainfall-runoff model is a common approach. Nevertheless, it is not employed in every study with such goals. 
 
-River (resp. drainage system) discharges, especially in urban areas, closely reflect transformed rainfall
-aggregated for a whole given catchment. Furthermore, they are typically measurable more reliably
-than the true incident precipitation over the given area. Many questions related to the
-representativeness of the referential data could disappear if such runoff measurements were
-employed when evaluating various rainfall data sets. This approach was previously applied both in
-natural (e.g. Obled et al., 1994; Segond et al., 2007) and urban \citep{berneTemporalSpatialResolution2004} catchments.
+\cite{ochoa-rodriguezImpactSpatialTemporal2015} analyzed the impact of spatial and temporal resolution of rainfall inputs on urban hydrodynamic modelling. In this study, model outputs obtained using various rainfall data sets were evaluated using, as the reference, model outputs associated with the finest resolution rainfall estimates. Nevertheless, when using this approach, similar issues as discussed above, regarding the representativeness of the reference, can arise. Furthermore, it is unclear whether the best‐quality rainfall data lead to the best model performance in some circumstances, e.g. when the model used was calibrated using another rainfall data set.
 
-The study of Berne et al. (2004) investigated spatiotemporal rainfall‐runoff dynamics in
-Mediterranean urban areas, among others, from the point of view of rain measurements integrated
-to various temporal resolutions. The relation between the precipitation and runoff was quantified
-only using the lag time, which is “the time difference between the gravity centre of the mean rainfall
-over the catchment on one hand and the gravity centre of the generated hydrograph on the other
-hand”.
+\cite{berneTemporalSpatialResolution2004} investigated spatiotemporal rainfall‐runoff dynamics in Mediterranean urban areas in relation to , among others, rainfall measurements integration to various temporal resolutions. The relation between the precipitation and runoff was only quantified only the lag time, i.e. “the time difference between the gravity centre of the mean rainfall over the catchment on one hand and the gravity centre of the generated hydrograph on the other hand”. 
 
-However, when evaluating rainfall data sets for the purposes of hydrological modelling, using a rainfall‐runoff model to evaluate rainfall data of interest is a common approach (Goormans and Willems, 2013, Wang et al., 2015). Moreover, stormwater runoff can be considered as a proxy variable of catchment areal rainfall, which can be especially useful in the case of convective precipitation, when the true incident rainfall over a given area is often difficult to estimate using traditional reference rainfall measurements. This was done also in the studies of Obled et al. (1994) and Segond et al. (2007), even though
+ was done also in the studies of Obled et al. (1994), Segond et al. (2007), or \citep{sikorskaValueDifferentPrecipitation2018}, although
 they investigated natural catchments. Focusing specifically on urban stormwater modelling,
-Kleidorfer et al. (2009) studied the impact of (artificially created) imperfections in rainfall data on urban drainage model parameters. In this study, and as well in a similar study of Dotto et al. (2014), it was found that systematic rainfall errors can have a significant impact on model parameters, resp. model outputs.
+Kleidorfer et al. (2009) studied the impact of (artificially created) imperfections in rainfall data on urban drainage model parameters. (Goormans and Willems, 2013, Wang et al., 2015).
+
+
+
+
+
 
 By employing rainfall‐runoff modelling, additional uncertainties are being introduced into the process
 of rainfall data evaluation. It has been argued that ignoring the uncertainty, particularly related to
@@ -213,7 +202,7 @@ Many published urban drainage modelling studies have dealt with uncertainties as
 
 \cite{dotto2012comparison} observed that a common approach when trying to estimate the total uncertainty (related to parameters and all other sources) is adding a Gaussian error term to the model predictions. This approach is based on the assumption that the residuals between the measured and modelled values are normally distributed (i.e. only due to white measurement noise). However, the deviations of model outputs from observed data are usually considerably larger than random observation errors, typically due to a simplified description of the system by the deterministic model and due to input data imperfections \citep{reichert2012linking}. When ignored, such systematic deviations can lead to unrealistic (usually too narrow) uncertainty bounds of model parameters and model predictions \citep{reichert2012linking}.
 
-Systematic deviations of model predictions from observed data, or model bias, can by addressed by increasing the complexity of the model to reduce bias or by trying to find a statistical description of the bias in model outputs. \cite{reichert2012linking} adapted a statistical technique of \cite{kennedy2001bayesian}, accounting for bias in model outputs, for purposes of environmental modelling and extended it with a framework enabling for multiobjective model calibration. \cite{giudice2013improving} later applied this technique to urban drainage modelling while proposing various formulations of the stochastic process representing the model bias (more in section \ref{delGiudTheor}). Their results showed that runoff simulations are much more reliable when bias is accounted for than when it is neglected. 
+Systematic deviations of model predictions from observed data, or model bias, can by addressed by increasing the complexity of the model to reduce bias or by trying to find a statistical description of the bias in model outputs. \cite{reichert2012linking} adapted a statistical technique of \cite{kennedy2001bayesian}, accounting for bias in model outputs, for purposes of environmental modelling and extended it with a framework enabling for multiobjective model calibration. \citep{sikorskaValueDifferentPrecipitation2018} used this approach to asses the value of different precipitation data for flood prediction in an alpine catchment. \cite{giudice2013improving} applied this technique to urban drainage modelling while proposing various formulations of the stochastic process representing the model bias (more in section \ref{delGiudTheor}). Their results showed that runoff simulations are much more reliable when bias is accounted for than when it is neglected. 
 
 While approaches based on explicit model bias consideration can improve the reliability of hydrological predictions, they only provide limited information about the causes of model bias and, therefore, do not help much to distinguish imperfections in input rainfall data from model structural errors \citep{giudice2013improving}. A conceptually more satisfying approach is to make the input uncertain and to propagate it through the model. This is can be done by using so‐called rainfall multipliers \citep{kavetskiBayesianAnalysisInput2006, vrugtTreatmentInputUncertainty2008}. These random variables multiply observed rainfall rates (1 multiplier per event) before feeding it into the model. They are estimated together
 with other model parameters and allow to quantify the rainfall‐related uncertainty directly in input data. \cite{sikorskaBayesianUncertaintyAssessment2012} combined a stochastic error model with rainfall multipliers to separate the effect of uncertainty in the rainfall data from other erorrs sources. However, the rainfall multiplier approach fails when the observed precipitation has a different temporal pattern from the true one or if the true nonzero rainfall is not detected \citep{delgiudiceDescribingCatchmentaveragedPrecipitation2016}. 

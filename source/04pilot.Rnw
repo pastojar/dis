@@ -18,7 +18,7 @@ Reliable rainfall data are crucial when performing urban rainfall-runoff modelli
 
 In this study, we target the above research gap and analyze whether QPEs obtained from CMLs can be regarded as a viable alternative for rainfall data in the field of urban rainfall-runoff modelling. As CML QPEs are often highly biased, what limits their usability for practical purposes, we analyze CML QPEs derived using both a standard approach and a recently proposed \citep{fenclGaugeadjustedRainfallEstimates2017} novel method for adjusting the QPEs to existing rain gauges. 
 
-The CML QPEs, as well as traditional data from rain gauges, are propagated through a calibrated rainfall-runoff model and evaluated against observed discharges. Since additional uncertainties are introduced into the process of rainfall data evaluation by employing the rainfall-runoff modelling, we use a thorough statistical method which allows for a reliable quantification of the runoff prediction uncertainty associated with various rainfall observation layouts. 
+The CML QPEs, as well as traditional data from rain gauges, are propagated through a calibrated rainfall-runoff model and evaluated against observed discharges. Since additional uncertainties are introduced into the process of rainfall data evaluation by employing the rainfall-runoff modelling, we use a thorough statistical method which allows for reliable quantification of the runoff prediction uncertainty associated with various rainfall observation layouts. 
 
  
 \section{Methods} \label{pilotMnM}
@@ -33,7 +33,7 @@ We investigate rainfall data observed during 15 rainfall-runoff events from the 
         \item Measurements from three local rain gauges
                 \begin{quote}
                 Rainfall data from three local rain gauges installed for research purposes (Fig. \ref{3fig1}) around the catchment of interest. 
-                This data set represents rainfall information observed on site which, however, in the context of the Czech Republic, is available only for short term experimental purposes.
+                This data set represents rainfall information observed on site which, however, in the context of the Czech Republic, is available only for short term experimental purposes. In this study, this data set is considered as the best-case-scenario reference.
                 \end{quote}
         \item Measurements from a single local rain gauge 
                 \begin{quote}
@@ -45,7 +45,7 @@ We investigate rainfall data observed during 15 rainfall-runoff events from the 
                 Rainfall data from the three municipal rain gauges closest to the catchment (Fig. \ref{3fig2}). Due to their 1-min resolution, for which correlations are low for the given distances \citep{villariniRainfallSamplingUncertainties2008}, only a  single time series, constructed as the mean of the instantaneous $R$ [mm/h] values of the three gauges, is evaluated.
                 This data set represents rainfall data standardly available in long-term perspectives in urbanized areas of the Czech Republic.
                 \end{quote}
-        \item QPEs from the four CMLs adjusted by the local rain gauge, 
+        \item QPEs from four CMLs adjusted by the local rain gauge, 
                 \begin{quote}
                 Data from the single local rain gauge specified above, aggregated to 15-min time steps, is used to adjust \citep{fenclGaugeadjustedRainfallEstimates2017} CML QPEs with a 1-min resolution. In particular, wet antenna attenuation ($A_{wa}$ from Eq. \ref{eq:2eq2}) and $\alpha$ (Eq. \ref{eq:2eq1}) are adjusted, while keeping $\beta =$ 1. Only short CMLs (path length < 1500 m) located close to the catchment center are used (\#1, \#2, \#5, \#7; Fig. \ref{3fig2}; \#3 and \#4 are excluded due to outages and erratic behavior, respectively). Only a single time series, constructed as the mean of the instantaneous $R$ [mm/h] values of the four CMLs, is evaluated.
                 This rainfall data set showcases application of CML QPEs when traditional rainfall information is available directly in the catchment area, however, not in a satisfying spatial resolution.
@@ -57,7 +57,7 @@ We investigate rainfall data observed during 15 rainfall-runoff events from the 
                 \end{quote}
         \item Unadjusted QPEs from all CMLs available (Fig. \ref{3fig2}).
                 \begin{quote}
-                The instantaneous mean of QPEs derived, using a standard approach, from all CMLs available in the area in a given time. $A_{wa}$ is estimated as a constant offset with the value of 2.5 dB, which was determined by comparing the specific raindrop attenuation $\gamma$ [dB/km] of short and long CMLs. The rainfall intensity $R$ [mm/h] is calculated with parameter values $\alpha$ and $\beta$ chosen in accordance with \cite{recommendation2005838}.
+                The instantaneous mean of QPEs derived, using a standard approach, from all 19 CMLs available in the area in a given time. $A_{wa}$ is estimated as a constant offset with the value of 2.5 dB, which was determined by comparing the specific raindrop attenuation $\gamma$ [dB/km] of short and long CMLs. The rainfall intensity $R$ [mm/h] is calculated with parameter values $\alpha$ and $\beta$ chosen in accordance with \cite{recommendation2005838}.
                 This data set represents a situation when traditional rainfall information is not available in the catchment's surroundings.
                 \end{quote}
 \end{enumerate}
@@ -68,7 +68,7 @@ In the cases of all CML data, prior to applying the correction for $A_{wa}$, bas
 
 \subsection{Rainfall-runoff modelling and uncertainty analysis}
 
-Rainfall time series retrieved using all the five observation layouts are propagated through a rainfall-runoff model (\ref{RRmodel}) and evaluated against discharges observed at the outlet from the local stormwater drainage system. When usig rainfall data from the three local rain gauges, the rainfall input is implemented in the model using three Thiessen polygons. This means that the rainfall intensity above a given model subcatchment is assumed to be the same as measured at the closest gauge. In all other cases, rainfall input is implemented as areal rainfall, meaning that rainfall intensity in a given time step has a constant value over all subcatchments of the model. 
+Rainfall time series retrieved using all the five observation layouts are propagated through a rainfall-runoff model (\ref{RRmodel}) and evaluated against discharges observed at the outlet from the local stormwater drainage system. When using rainfall data from the three local rain gauges, the rainfall input is implemented in the model using three Thiessen polygons. This means that the rainfall intensity above a given model subcatchment is assumed to be the same as measured at the closest gauge. In all other cases, rainfall input is implemented as areal rainfall, meaning that rainfall intensity in a given time step has a constant value over all subcatchments of the model. 
 
 In order to acknowledge uncertainties of the rainfall-runoff model predictions, we employ uncertainty analysis framework of \cite{kennedy2001bayesian} as formulated by \cite{reichert2012linking} and first used in a context similar to ours by \cite{giudice2013improving}. The basic principle of the method (details in section \ref{delGiudTheor}) is the extension (Eq. \ref{eq:ext_model}) of a deterministic (i.e., in our case, rainfall-runoff) model by a stochastic error model which explicitly accounts for systematic model errors, i.e. bias. 
 
@@ -82,7 +82,7 @@ where $\tau$ represents the correlation time, $\sigma_{B}$ the asymptotic standa
 By varying the input rainfall data while keeping the rainfall-runoff model structure unchanged, we are able to trace the associated changes in the prediction uncertainty back to the respective rainfall data. However, to achieve accurate rainfall-runoff predictions and reliable quantification of their uncertainty, the extended model should be calibrated first. Although the deterministc rainfall-runoff model has been calibrated in the past, we optimize its parameters also here, together with the stochastic error model parameters, as we aim to maximize both the discharge prediction accuracy and precision.
 
 
-\subsubsection{Prior distribution definition and model calibration}
+\subsubsection{Prior distribution definition and model calibration} \label{priors_calibr}
 
 Since the extended model has to be calibrated in a Bayesian framework, prior probability distribution of the model parameters which are to be calibrated must be first defined. \cite{giudice2013improving} suggest that completely uninformative prior distributions should not be used for parameters of neither the deterministic rainfall-runoff model ($\theta$) nor  the stochastic error model ($\psi$). Furthermore, it is \enquote{important that the prior of the bias reflects the desire to avoid model inadequacy as much as possible}. Considering the chosen bias model, $\sigma_{B}$ is unlikely to be higher than the variability of observed discharge, $\tau$ should represent the characteristic correlation length of the residuals, and  $\sigma_E$ should mirror the measurement noise of the system output \cite{giudice2013improving}.
 
@@ -123,9 +123,9 @@ Data from five out of the 15 available rainfall-runoff events are used to calibr
 
 After performing the extended model calibration, data from the ten remaining rainfall-runoff events are used to analyze the model predictions. To evaluate the rainfall-runoff predictions visually, we produce hydrographs for each of the ten events and rainfall data from each of the five observation layouts. We do not the evaluate the prediction performance  by examining separately the uncertainty intervals for the deterministic rainfall-runoff model output. This is in accordance with \cite{giudice2013improving}, who see this approach as \enquote{not conclusive because the field observations are not realisations of the deterministic model but of the model plus the errors}. Instead, we only evaluate the total uncertainty intervals associated with the extended model, i.e. the deterministic and the stochastic model together. 
 
-We also employ common summary hydrological metrics such as the total discharged volume during a whole given event  or the discharged volume during peak flow period.  In particular, we compute relative errors of the total discharged volume  $dV$ [-] and of the volume during peak flow $dV_{peak}$ [-] for every single prediction of the extended model. When calculating $dV_{peak}$, the time step with the maximal discharge observed is identified first and the volume discharged during eight minutes around the time step (four minutes before and four after) is computed afterwards. The difference between the modelled time with the maximal discharge and the observed one $dt_{Qmax}$ [h] is another metric we quantify for every model prediction. 
+We also employ common summary hydrological metrics such as the Nash-Sutcliffe efficiency $N\!S\!E$ [-], the total discharged volume during a whole given event, or the discharged volume during peak flow period.  In particular, we compute relative errors of the total discharged volume  $dV$ [-] and of the volume during peak flow $dV_{peak}$ [-] for every single prediction of the extended model. When calculating $dV_{peak}$, the time step with the maximal discharge observed is identified first and the volume discharged during eight minutes around the time step (four minutes before and four after) is computed afterwards. The difference between the modelled time with the maximal discharge and the observed one $dt_{Qmax}$ [h] is another metric we quantify for every model prediction. 
 
-The uncertainty in the above metrics $dV$, $dV_{peak}$, and $dt_{Qmax}$ is evaluated by calculating the median and other quantiles for the set of predictions associated with a given rainfall observation layout, which are then graphically presented in boxplots.  This is in accordance with \cite{fencl2013assessing} who also used the relative error of the total discharged volume and interpreted its mean $\overline{dV}$ as the metric's bias and its standard deviation $sd(dV)$ as its uncertainty. Moreover, the discharge prediction reliability associated with a given observation layout is quantified as the fraction of discharge observations falling into the predicted 90\% confidence intervals.
+The uncertainty in the metrics $N\!S\!E$, $dV$, $dV_{peak}$, and $dt_{Qmax}$ is evaluated by calculating the median and other quantiles for the whole set of predictions associated with a given rainfall observation layout, which are then graphically presented in boxplots.  This is in accordance with \cite{fencl2013assessing} who also used the relative error of the total discharged volume and interpreted its mean $\overline{dV}$ as the volume prediction bias and its standard deviation $sd(dV)$ as the prediction uncertainty. Moreover, the discharge prediction reliability associated with a given observation layout is quantified as the fraction of discharge observations falling into the predicted 90\% confidence intervals.
 
 To better interpret the results, we classify the rainfall events as either light or heavy, based on the maximal 10-minute precipitation rate. 
 
@@ -133,7 +133,7 @@ To better interpret the results, we classify the rainfall events as either light
 
 \section{Results}
 
-First, we present hydrographs showing observed and modelled discharges for a heavy and a light rainfall event which characterize well typical features of the overall results. Next, a summary of the results for all events classified as heavy (maximal 10-min rainfall intensity $R_{max,10}$ > 12 mm/h), as light ($R_{max,10} \leq$ 12 mm/h), and both categories together is presented in  boxplots, with a special attention on the heavy rainfalls.
+First, we present hydrographs showing observed and modelled discharges for a heavy and a light rainfall event which characterize well typical features of the overall results. Next, a summary of the results for all 10 events used, as well as only those classified as heavy (maximal 10-min rainfall intensity $R_{max,10}$ > 12 mm/h), and those classified as light ($R_{max,10} \leq$ 12 mm/h) is presented in  boxplots, with a special attention on the heavy rainfalls.
 
 \begin{figure}[H]
 \begin{center}
@@ -142,54 +142,65 @@ First, we present hydrographs showing observed and modelled discharges for a hea
 \end{center}
 \end{figure}
 
+Hydrographs of a chosen light rainfall event (Fig. \ref{pil_fig1} top) show that the prediction performance during such an event is very similar for five out of the six evaluated rainfall observation layouts. The runoff dynamics as well as volumes are captured very well in all cases and errors occur in the same part of the hydrographs -  the  rising limbs. In contrast, results for the unadjusted CML QPEs present different characteristics. There is a tendency to notably underestimate the discharges. The runoff dynamics feature similar trends as before, however, not as precisely. Interestingly, many observations are out of the prediction bounds, meaning that the prediction reliability is low for this rainfall observation layout.
 
-
-Na hydrogramu vybrané mírné události (obr. 3) vidíme, že
-pro 3 soubory srážkových dat jsou výsledky velmi podobné,
-i k nesprávným předpovědím dochází ve stejných částech hyrogramu
-(začátek stoupající větve). Výjimkou jsou předpovědi získané
-pomocí dat z MV spojů se základním zpracováním, kde je
-evidentní tendence podhodnocovat průtoky, nicméně i zde je
-dynamika události zachycena velmi dobře.
-
-
-
-Příklad silné srážko-odtokové události (obr. 4) nám ukazuje
-odlišné chování, než tomu bylo u mírných událostí. Nejhorší
-předpověď, konkrétněji výrazné podhodnocení maximálního
-průtoku, vznikla po použití dešťových dat ze tří vzdálených
-srážkoměrů. Ostatní tři soubory srážkových dat, včetně těch
-z MV spojů se základním zpracováním, vedli k předpovědím velice
-dobrým ve všech ohledech.
-
-
-
+Hydrographs of a chosen heavy rainfall event (Fig. \ref{pil_fig1} bottom) present a slightly different picture than the light rainfalls above. The worst runoff prediction was obtained using rainfall data from three municipal rain gauges. In particular, the peak flows were considerably underestimated in this case. Rainfall data from all other observation layouts, including unadjusted CML QPEs, reproduced well the peaks as well as all other hydrograph features.
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=12cm]{figs/pilot/all strong weak NSE + dV.png}
-\caption{Boxplots all 10 events.} \label{pil_fig2}
+\caption{Boxplots showing prediction performance summaries in terms of $N\!S\!E$ (left) and $dV$ (right) for all 10 events (top), heavy rainfalls (center), and light rainfalls (bottom). Boxplot whiskers extent from the 10th to 100th percentile for $N\!S\!E$ and from the 5th to 95th percentile for $dV$.} \label{pil_fig2}
 \end{center}
 \end{figure}
 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=6cm]{figs/pilot/reliab.png}
-\caption{Discharge prediction reliability.} \label{pil_fig3}
-\end{center}
-\end{figure}
-
+Summary results presented in Fig. \ref{pil_fig3} confirm the previously mentioned tendencies. First of all, unadjusted CML QPEs feature remarkably different results than other five observation layouts which quite resemble each other. The unadjusted QPEs considerably underestimate the runoff volumes for light rainfalls, circa by 75\% in median. However, for heavy rainfall events, the bias is at the same level as in other cases. This is also reflected in the associated $N\!S\!E$ values, which are around -0.5 in median for light and around 0.7 for heavy rainfalls. A certain level of bias is present as well in result for the five other observation layouts, roughly between -10\% and -20\% in median. Interestingly, in the cases of both the single local rain gauge and the three municipal gauges, CML QPEs adjusted using the gauge data feature smaller bias than the gauge data used alone. This also affect the associated $N\!S\!E$ values, which are better for the adjusted CML QPEs than for the rain gauge data, especially when the heavy rainfalls are considered.
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=12cm]{figs/pilot/strong dtQmax dVmax.png}
-\caption{Boxplots heavy rainfalls.} \label{pil_fig4}
+\caption{Boxplots showing prediction performance summaries in terms of $dt_{Qmax}$ (left) and $dV_{peak}$ (right) for heavy rainfalls. Boxplot whiskers extent from the 5th to 95th percentile.} \label{pil_fig3}
 \end{center}
 \end{figure}
 
+Heavy rainfall events are analyzed in more detail in terms of their peak flows in Fig. \ref{pil_fig3}. This shows that unadjusted CML QPEs most overestimate the peak discharges. However, adjusting CML QPEs to rain gauge data reduces the variance in $dV_{peak}$ values, even when compared to the rain gauge data themselves. In fact, most accurate and precise peak flows are obtained using the QPEs adjusted to the three municipal rain gauges. When timing of the discharge maximum is considered, the worst results in terms of precision are obtained using the single local rain gauge, and in terms of accuracy using the three municipal gauges. CML QPEs, both adjusted and unadjusted, perform very similarly as the best-case-scenario three local rain gauges.
 
 
 
 \section{Discussion}
 
-We acknowledge that this approach, not varying the internal relative structure for the given parameter, might be perceived as questionable and could be avoided by introducing additional stochastic parameters, which would incorporate random changes into the internal proportions  of the $\theta$ parameters. However, we choose not to implement this for the sake of modelling simplicity (lower number of parameters).
+The main findings of the study are that CML QPEs derived using a standard approach, which are often biased, lead to biased rainfall-runoff predictions, especially their underestimation during light rainfall events. However, for heavy rainfalls, which are often associated with convective events, the bias is notably lower, and runoff temporal dynamic are captured similarly well as when using high-resolution local rain gauge data. Moreover, compared to traditional rain gauge data (a single local rain gauge or three municipal gauges) used alone, adjusting CML QPEs to these gauge data has lead to an improvement in the reproduction of peak discharges and the overall modelling performance in terms of $N\!S\!E$ for heavy rainfalls, for which CMLs play out the advantage of excellent spatial coverage. 
+
+Theses findings suggests that CML QPEs can be regarded as a viable additional rainfall data source for the field of urban rainfall-runoff modelling, especially for the monitoring of heavy rainfalls when the availability of traditional rain gauge data is limited. This is in agreement with \cite{smiatekPotentialCommercialMicrowave2017} who investigated the potential of CML QPEs for streamflow prediction in an orographically complex mountainous region. They found that, during an extreme flooding period with many local heavy rainfall events, a considerable improvement in hydrograph reproduction can be achieved when CML QPEs are employed. Our findings are also in agreement with those of \cite{fenclGaugeadjustedRainfallEstimates2017}, who found that adjusting CML QPEs to rain gauge data reduces the bias in the QPEs, which can then outperform each of the rainfall data types used individually.
+
+Nevertheless, the relevance of our findings should be subject to further research using more extensive data sets ideally from multiple locations, since our data set only covers three consecutive months in the area of a single urban catchment. Next, it should be stressed out that the observation layouts of unadjusted CML QPEs consists of data from all 19 CMLs available in the area in that time. However, due to high computational demands, the CML QPEs adjusting to rain gauge data has been done only for four rather short CMLs which were assumed to correspond well to the catchment topology. Therefore, a similar analysis should be performed where data from CMLs of more variable path lengths and other relevant characteristics (e.g. frequency) would be evaluated, and the potential role of these characteristics on the results would be studied.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=6cm]{figs/pilot/reliab.png}
+\caption{Discharge prediction reliability for all 10 events.} \label{pil_fig4}
+\end{center}
+\end{figure}
+
+Next, the bias in simulated runoffs when using the unadjusted CML QPEs, especially pronounced during light rainfall events, has not been adequately compensated for by extending the prediction intervals (see e.g. Fig. \ref{pil_fig1} top) which has also lead to low overall prediction reliability as presented in Fig \ref{pil_fig4}. For all other observational layouts, the prediction reliability at the declared 90\%-confidence level is very close to 90\%, however, it is only 56\% for the unadjusted CML QPEs. This behavior, which could be explained by an inappropriately calibrated stochastic error model, does not compromise the main findings regarding rainfall data from this observational layouts Nevertheless, it should be analyzed what factors ( e.g. the definition of the parameter prior distributions, or the choice of meta-parameters necessary for the calibration process) have caused this effect so that similar erratic behavior could be avoided in future analyses.  
+
+It should also be noted that, during the extended model calibration, the internal structure of the deterministic rainfall-runoff model stays unchanged for a given $\theta$ parameter, which is used only as a scaling factor affecting all sub-parts of the model in the same way (see \ref{priors_calibr}). This could be avoided by employing additional stochastic parameters which would introduce random changes into the internal proportions of the $\theta$ parameters and might, in theory, improve the model structure and thus reduce the associated uncertainities. However, we choose not to implement this, for the sake of modelling simplicity (lower number of parameters) and results interpretability.
+
+
+\section{Conclusions}
+
+This study has presented the first analysis of using QPEs from real-world CMLs for rainfall-runoff modelling in a small urban catchment. This has included a comparison of the modelling performance with traditional rain gauge data and a robust statistical analysis of the model prediction uncertainty.
+
+Our results have shown that stormwater discharges modelled using CML QPEs derived using a standard approach are often considerably biased, especially during light rainfall events. On the other hand, these QPEs can very well reproduce the runoff temporal dynamics. Moreover, adjusting the CML QPEs to traditional rain gauge data in sub-optimal resolutions has lead to an improvement in the reproduction of peak discharges and the overall modelling performance in terms of $N\!S\!E$ for heavy rainfalls, compared to using the rain gauge data alone. Such adjusted CML QPEs can even lead to the same rainfall-runoff modelling performance as high-resolution rain gauge data during heavy precipitation events.
+
+The above findings suggest that CML QPEs can be regarded as a viable additional rainfall data source
+for the field of urban rainfall-runoff modelling, especially for monitoring of heavy rainfalls if local rain gauge data in high spatial resolution are not available in a given catchment. In such cases, adjusting CML QPEs to gauges from a low-density network, e.g. operated by national meteorological service or similar institutions, could provide rainfall information of adequate quality, especially when heavy rainfalls, crucial for design and operation of urban drainage systems, are considered.
+
+Using CML QPEs in situations when other rainfall data are not available, i.e. adjusting is not an option, would be complicated by the systematic errors in these data. However, more advanced pre-processing of CML QPEs could in theory reduce these errors in the future.
+
+Future studies should also assess the validity of our findings using more extensive data sets which would cover longer time periods and ideally various experimental areas with CMLs of various relevant characteristics (path length, frequency), and could thus evaluate the potential role of these various factors.
+
+ 
+
+
+
+
