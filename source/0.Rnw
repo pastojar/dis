@@ -19,7 +19,7 @@
         The work on the thesis was supported by:  
         \vspace{-30pt}
         \begin{itemize}
-        	\item the Czech Science Foundation under the projects no.
+        	\item the Czech Science Foundation (GAČR) under the projects no.
                 \vspace{-5pt}
                 \begin{itemize}
                 	\item 14-22978S
