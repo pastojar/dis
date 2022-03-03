@@ -190,6 +190,11 @@ This thesis aims to
 
 This thesis is structured as follows
 
+\cite{pastorekReliabilityMicrowaveLink2017, pastorekPosouzeniSrazkovychDat2018}
+
+\cite{pastorekCommercialMicrowaveLinks2019}
+
+\cite{pastorekPrecipitationEstimatesCommercial2022}
         
         %------------------------------------------------------ 2. Methods
 
@@ -415,9 +420,9 @@ for a given case study. In general, it is an autoregressive term which can be de
 
 By combining the deterministic hydrological and the stochastic error models, we can quantify the probability that the observed runoffs can be explained by given predicted runoffs and error model. This can be formally expressed by a likelihood function describing the joint probability density $f(Y_o|\theta, \psi, x)$ of observed system response $Y_o$ for given $\theta$, $\psi$, and $x$. It can be written as
 
-$ f (Y_o|\theta, \psi, x) = \frac{(2\Pi)^{-\frac{n}{2}}}{\sqrt{det(\Sigma(\theta, \psi, x))}} $
+$ f (Y_o|\theta, \psi, x) = \frac{(2\pi)^{-\frac{n}{2}}}{\sqrt{\det(\Sigma(\theta, \psi, x))}} $
 \begin{equation}
-. exp \Big( -\frac{1}{2}  [ \tilde{Y}_{o} - \tilde{y}_{M}(\theta, x)^{T}  \Sigma(\theta, \psi, x)^{-1} ]  [ \tilde{Y}_{o} - \tilde{y}_{M}(\theta, x)]  \prod^{n}_{i=1} \frac{dg}{dy} (Y_{o,i},\psi) \Big),
+. \exp \Big( -\frac{1}{2}  [ \tilde{Y}_{o} - \tilde{y}_{M}(\theta, x)]^{T}  \Sigma(\theta, \psi, x)^{-1}  [ \tilde{Y}_{o} - \tilde{y}_{M}(\theta, x)] \Big)  \prod^{n}_{i=1} \frac{\text{d}g}{\text{d}y} (Y_{o,i},\psi) ,
 \end{equation}
 
 where $n$ is the number of observations (i.e. the dimension of $Y_{o}$ and $y_{M}$) and $\Sigma(\theta, \psi, x)$ stands for a covariance matrix of the residuals transformed by a function $g()$. Similarly, $\tilde{y}_M=g(y_M)$.
@@ -438,7 +443,7 @@ model and the bias}.
 	\begin{itemize}
                 \item	The joint probability density, a product of the prior $f(\theta, \psi)$ and the likelihood function $f(Y_o | \theta, \psi, x)$, gets conditioned on the observed discharge data, using the Bayes' theorem
                 \begin{equation}
-f (\theta, \psi | Y_o, x) = \frac{ f(\theta, \psi) \, f(Y_o | \theta, \psi, x) } { \iint f(\theta' , \psi') \, f(Y_o | \theta', \psi', x) d\theta' d\psi'} \; .
+f (\theta, \psi | Y_o, x) = \frac{ f(\theta, \psi) \, f(Y_o | \theta, \psi, x) } { \iint f(\theta' , \psi') \, f(Y_o | \theta', \psi', x) \text{d}\theta' \text{d}\psi'} \; .
                 \end{equation}
 
 Solving this problem analytically would include dealing with multidimensional integrals. This can be avoided by employing a numerical method such as Markov Chain Monte Carlo (MCMC) to approximate properties of the posterior distribution.
@@ -601,10 +606,16 @@ The reliability of model predictions was tested using rainfall data from the thr
 \chapter{On the value of CML QPEs for urban rainfall-runoff modelling: The pilot study} \label{chap4}
 
 \rule{\textwidth}{0.4pt}
-Rainfall-runoff modelling in urban catchments requires reliable rainfall data with high temporal and spatial resolution. Such data are often not available and, thus, unmeasured spatial rainfall variability is an important source of uncertainty in urban rainfall-runoff modelling. Recently, commercial microwave links (CMLs), an extensively used solution in telecommunication networks, have been introduced as a new potential source of rainfall data with the necessary resolution. We compare this novel rainfall data source with more conventional sources from point rain gauges based on a comparison of measured runoffs with rainfall-runoff modelling results of a small urbanized catchment obtained using the researched rainfall data sets. We employ a method based on Bayesian inference to calibrate our rainfall-runoff model and to estimate the uncertainty of modelling outputs. Results of the performed analyses show that CML rainfall data, when a suitable adjustment is applied (e.g. using information from nearby rain gauges), allow for better detection of dynamics of precipitation and subsequent runoff than data from point rain gauges alone, especially in the case of heavy rainfalls which are highly variable in space and time. Therefore, microwave links represent a relevant rainfall data source, which can conveniently complement existing rainfall monitoring networks.
+Rainfall-runoff modelling in urban catchments requires reliable rainfall data with high temporal and spatial resolution. Such data are often not available and, thus, unmeasured spatial rainfall variability is an important source of uncertainty in urban rainfall-runoff modelling. Recently, commercial microwave links (CMLs) have been introduced as a new source of rainfall data with the necessary resolution. We compare rainfall data from CMLs with more conventional data from point rain gauges on the basis of rainfall-runoff modelling of a small urbanized catchment performed with the researched rainfall data sets and evaluated against observed runoffs. We employ a method based on Bayesian inference to calibrate our rainfall-runoff model and to estimate the uncertainty of modelling outputs. Results of the performed analyses show that CML rainfall data, when a suitable adjustment is applied (e.g. using information from nearby rain gauges), allow for better detection of dynamics of precipitation and subsequent runoff than data from point rain gauges alone, especially in the case of heavy rainfalls which are highly variable in space and time. Thus, CMLs seem to represent a relevant rainfall data source, which can conveniently complement existing rainfall monitoring networks.
 \rule[0.2cm]{\textwidth}{0.4pt}
-
-{\footnotesize The bulk of this chapter was originally published in \cite{pastorekReliabilityMicrowaveLink2017, pastorekPosouzeniSrazkovychDat2018}.} 
+{\footnotesize The bulk of this chapter was originally published in: \newline
+\-\hspace{0.5cm}
+Pastorek, J., Fencl, M., Stránský, D., Rieckermann, J., \& Bareš, V. 2017. \textbf{Reliability
+of microwave link rainfall data for urban runoff modelling}. In \emph{Proceedings of the
+14th IWA/IAHR International Conference on Urban Drainage} (pp. 1340--1343). Prague, Czech Republic.
+\newline \-\hspace{0.5cm}
+Pastorek, J., Fencl, M., Rieckermann, J., Sýkora, P., Stránský, D., Dohnal, M., \& Bareš, V. 2018. \textbf{Posouzení srážkových dat z mikrovlnných spojů v městském povodí pomocí analýzy nejistot hydrologického modelu}. [The Evaluation of CML Rainfall Data in Urban Catchment by Means of Hydrologic Model Uncertainty]. \emph{SOVAK: Časopis oboru vodovodů a kanalizací}, 27, 16--22).
+}
 
 
 
@@ -713,7 +724,7 @@ In accordance with \cite{giudice2013improving} (see \ref{delGiudTheor}), we do n
 
 
 
-Data from five out of the 15 available rainfall-runoff events are used to calibrate the extended model. The calibration itself is performed in two steps. First, we use the generalized simulated annealing function of the \textsf{GenSA} package \citep{xiangGeneralizedSimulatedAnnealing2013}, which was designed to \enquote{search for global minimum of a very complex non-linear objective function with a very large number of optima}. Second, we use a numerical Monte Carlo Markov Chain sampler as implemented by \cite{adaptmcmc} according to the proposal of \cite{vihola2012robust}. This function first  tunes the covariance matrix of the jump distribution to achieve a desired acceptance rate. Next, a non-adaptive Metropolis sampling is employed to draw from the posterior distribution.
+Data from five out of the 15 available rainfall-runoff events are used to calibrate the extended model. The calibration itself is performed in two steps. First, we use the generalized simulated annealing function of the \textsf{GenSA} package \citep{xiangGeneralizedSimulatedAnnealing2013}, which was designed to \enquote{search for global minimum of a very complex non-linear objective function with a very large number of optima}. Second, we use a numerical Monte Carlo Markov Chain sampler as implemented by \cite{scheideggerAdaptMCMCImplementationGeneric2012} according to the proposal of \cite{vihola2012robust}. This function first  tunes the covariance matrix of the jump distribution to achieve a desired acceptance rate. Next, a non-adaptive Metropolis sampling is employed to draw from the posterior distribution.
 
 
 
@@ -813,7 +824,9 @@ Future studies should also assess the validity of our findings using more extens
 This study addresses the ability of individual commercial microwave links (CMLs) to provide relevant quantitative precipitation estimates (QPEs) for urban rainfall-runoff simulations and specifically investigates the influence of CML characteristics and position on the predicted runoff. QPEs from real world CMLs are used as inputs for urban rainfall-runoff predictions and subsequent modelling performance is assessed by comparing simulated runoffs with measured stormwater discharges. The results show that model performance is related to both the sensitivity of CML to rainfall and CML position. The bias propagated into the runoff predictions is inversely proportional to CML path length. The effect of CML position is especially pronounced during heavy rainfalls, when QPEs from shorter CMLs, located within or close to catchment boundaries, better reproduce runoff dynamics than QPEs from longer CMLs extending far beyond the catchment boundaries. Interestingly, QPEs averaged from all available CMLs best reproduce the runoff temporal dynamics. Adjusting CML QPEs to three rain gauges located 2--3 km outside of the catchment substantially reduces the bias in CML QPEs. Unfortunately, this compromises the ability of the CML QPEs to reproduce runoff dynamics during heavy rainfalls.
 \rule[0.2cm]{\textwidth}{0.4pt}
 
-{\footnotesize The bulk of this chapter was originally published in \cite{pastorekCommercialMicrowaveLinks2019}. 
+{\footnotesize The bulk of this chapter was originally published in:  \newline
+\-\hspace{0.5cm}
+Pastorek, J., Fencl, M., Rieckermann, J., \& Bareš, V. 2019.  \textbf{Commercial microwave links for urban drainage modelling: The effect of link characteristics and their position on runoff simulations}. \emph{Journal of Environmental Management}, 251, 109522. https://doi.org/10.1016/j.jenvman.2019.109522.
 }
 
 \section{Introduction}
@@ -1018,7 +1031,7 @@ This study analyzes how, when deriving quantitative precipitation estimates (QPE
 
 {\footnotesize The bulk of this chapter was originally published in: \newline
 \-\hspace{0.5cm}
-Pastorek, J., Fencl, M., Rieckermann, J., Bareš, V. 2021. \textbf{Precipitation Estimates from Commercial Microwave Links: Practical Approaches to Wet-Antenna Correction}. \emph{IEEE Transactions on Geoscience and Remote Sensing} XYZ, XYZXYZ. \newline https://doi.org/10.1109/TGRS.2021.3110004.
+Pastorek, J., Fencl, M., Rieckermann, J., \& Bareš, V. 2022. \textbf{Precipitation Estimates from Commercial Microwave Links: Practical Approaches to Wet-Antenna Correction}. \emph{IEEE Transactions on Geoscience and Remote Sensing} 60, 1--9. \newline https://doi.org/10.1109/TGRS.2021.3110004.
 }
 
 \section{Introduction}

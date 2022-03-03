@@ -6,7 +6,9 @@
 This study addresses the ability of individual commercial microwave links (CMLs) to provide relevant quantitative precipitation estimates (QPEs) for urban rainfall-runoff simulations and specifically investigates the influence of CML characteristics and position on the predicted runoff. QPEs from real world CMLs are used as inputs for urban rainfall-runoff predictions and subsequent modelling performance is assessed by comparing simulated runoffs with measured stormwater discharges. The results show that model performance is related to both the sensitivity of CML to rainfall and CML position. The bias propagated into the runoff predictions is inversely proportional to CML path length. The effect of CML position is especially pronounced during heavy rainfalls, when QPEs from shorter CMLs, located within or close to catchment boundaries, better reproduce runoff dynamics than QPEs from longer CMLs extending far beyond the catchment boundaries. Interestingly, QPEs averaged from all available CMLs best reproduce the runoff temporal dynamics. Adjusting CML QPEs to three rain gauges located 2--3 km outside of the catchment substantially reduces the bias in CML QPEs. Unfortunately, this compromises the ability of the CML QPEs to reproduce runoff dynamics during heavy rainfalls.
 \rule[0.2cm]{\textwidth}{0.4pt}
 
-{\footnotesize The bulk of this chapter was originally published in \cite{pastorekCommercialMicrowaveLinks2019}. 
+{\footnotesize The bulk of this chapter was originally published in:  \newline
+\-\hspace{0.5cm}
+Pastorek, J., Fencl, M., Rieckermann, J., \& Bareš, V. 2019.  \textbf{Commercial microwave links for urban drainage modelling: The effect of link characteristics and their position on runoff simulations}. \emph{Journal of Environmental Management}, 251, 109522. https://doi.org/10.1016/j.jenvman.2019.109522.
 }
 
 \section{Introduction}

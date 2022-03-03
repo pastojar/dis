@@ -220,9 +220,9 @@ for a given case study. In general, it is an autoregressive term which can be de
 
 By combining the deterministic hydrological and the stochastic error models, we can quantify the probability that the observed runoffs can be explained by given predicted runoffs and error model. This can be formally expressed by a likelihood function describing the joint probability density $f(Y_o|\theta, \psi, x)$ of observed system response $Y_o$ for given $\theta$, $\psi$, and $x$. It can be written as
 
-$ f (Y_o|\theta, \psi, x) = \frac{(2\Pi)^{-\frac{n}{2}}}{\sqrt{det(\Sigma(\theta, \psi, x))}} $
+$ f (Y_o|\theta, \psi, x) = \frac{(2\pi)^{-\frac{n}{2}}}{\sqrt{\det(\Sigma(\theta, \psi, x))}} $
 \begin{equation}
-. exp \Big( -\frac{1}{2}  [ \tilde{Y}_{o} - \tilde{y}_{M}(\theta, x)^{T}  \Sigma(\theta, \psi, x)^{-1} ]  [ \tilde{Y}_{o} - \tilde{y}_{M}(\theta, x)]  \prod^{n}_{i=1} \frac{dg}{dy} (Y_{o,i},\psi) \Big),
+. \exp \Big( -\frac{1}{2}  [ \tilde{Y}_{o} - \tilde{y}_{M}(\theta, x)]^{T}  \Sigma(\theta, \psi, x)^{-1}  [ \tilde{Y}_{o} - \tilde{y}_{M}(\theta, x)] \Big)  \prod^{n}_{i=1} \frac{\text{d}g}{\text{d}y} (Y_{o,i},\psi) ,
 \end{equation}
 
 where $n$ is the number of observations (i.e. the dimension of $Y_{o}$ and $y_{M}$) and $\Sigma(\theta, \psi, x)$ stands for a covariance matrix of the residuals transformed by a function $g()$. Similarly, $\tilde{y}_M=g(y_M)$.
@@ -243,7 +243,7 @@ model and the bias}.
 	\begin{itemize}
                 \item	The joint probability density, a product of the prior $f(\theta, \psi)$ and the likelihood function $f(Y_o | \theta, \psi, x)$, gets conditioned on the observed discharge data, using the Bayes' theorem
                 \begin{equation}
-f (\theta, \psi | Y_o, x) = \frac{ f(\theta, \psi) \, f(Y_o | \theta, \psi, x) } { \iint f(\theta' , \psi') \, f(Y_o | \theta', \psi', x) d\theta' d\psi'} \; .
+f (\theta, \psi | Y_o, x) = \frac{ f(\theta, \psi) \, f(Y_o | \theta, \psi, x) } { \iint f(\theta' , \psi') \, f(Y_o | \theta', \psi', x) \text{d}\theta' \text{d}\psi'} \; .
                 \end{equation}
 
 Solving this problem analytically would include dealing with multidimensional integrals. This can be avoided by employing a numerical method such as Markov Chain Monte Carlo (MCMC) to approximate properties of the posterior distribution.

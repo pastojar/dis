@@ -3,10 +3,16 @@
 \chapter{On the value of CML QPEs for urban rainfall-runoff modelling: The pilot study} \label{chap4}
 
 \rule{\textwidth}{0.4pt}
-Rainfall-runoff modelling in urban catchments requires reliable rainfall data with high temporal and spatial resolution. Such data are often not available and, thus, unmeasured spatial rainfall variability is an important source of uncertainty in urban rainfall-runoff modelling. Recently, commercial microwave links (CMLs), an extensively used solution in telecommunication networks, have been introduced as a new potential source of rainfall data with the necessary resolution. We compare this novel rainfall data source with more conventional sources from point rain gauges based on a comparison of measured runoffs with rainfall-runoff modelling results of a small urbanized catchment obtained using the researched rainfall data sets. We employ a method based on Bayesian inference to calibrate our rainfall-runoff model and to estimate the uncertainty of modelling outputs. Results of the performed analyses show that CML rainfall data, when a suitable adjustment is applied (e.g. using information from nearby rain gauges), allow for better detection of dynamics of precipitation and subsequent runoff than data from point rain gauges alone, especially in the case of heavy rainfalls which are highly variable in space and time. Therefore, microwave links represent a relevant rainfall data source, which can conveniently complement existing rainfall monitoring networks.
+Rainfall-runoff modelling in urban catchments requires reliable rainfall data with high temporal and spatial resolution. Such data are often not available and, thus, unmeasured spatial rainfall variability is an important source of uncertainty in urban rainfall-runoff modelling. Recently, commercial microwave links (CMLs) have been introduced as a new source of rainfall data with the necessary resolution. We compare rainfall data from CMLs with more conventional data from point rain gauges on the basis of rainfall-runoff modelling of a small urbanized catchment performed with the researched rainfall data sets and evaluated against observed runoffs. We employ a method based on Bayesian inference to calibrate our rainfall-runoff model and to estimate the uncertainty of modelling outputs. Results of the performed analyses show that CML rainfall data, when a suitable adjustment is applied (e.g. using information from nearby rain gauges), allow for better detection of dynamics of precipitation and subsequent runoff than data from point rain gauges alone, especially in the case of heavy rainfalls which are highly variable in space and time. Thus, CMLs seem to represent a relevant rainfall data source, which can conveniently complement existing rainfall monitoring networks.
 \rule[0.2cm]{\textwidth}{0.4pt}
-
-{\footnotesize The bulk of this chapter was originally published in \cite{pastorekReliabilityMicrowaveLink2017, pastorekPosouzeniSrazkovychDat2018}.} 
+{\footnotesize The bulk of this chapter was originally published in: \newline
+\-\hspace{0.5cm}
+Pastorek, J., Fencl, M., Stránský, D., Rieckermann, J., \& Bareš, V. 2017. \textbf{Reliability
+of microwave link rainfall data for urban runoff modelling}. In \emph{Proceedings of the
+14th IWA/IAHR International Conference on Urban Drainage} (pp. 1340--1343). Prague, Czech Republic.
+\newline \-\hspace{0.5cm}
+Pastorek, J., Fencl, M., Rieckermann, J., Sýkora, P., Stránský, D., Dohnal, M., \& Bareš, V. 2018. \textbf{Posouzení srážkových dat z mikrovlnných spojů v městském povodí pomocí analýzy nejistot hydrologického modelu}. [The Evaluation of CML Rainfall Data in Urban Catchment by Means of Hydrologic Model Uncertainty]. \emph{SOVAK: Časopis oboru vodovodů a kanalizací}, 27, 16--22).
+}
 
 
 
@@ -115,7 +121,7 @@ In accordance with \cite{giudice2013improving} (see \ref{delGiudTheor}), we do n
 
 
 
-Data from five out of the 15 available rainfall-runoff events are used to calibrate the extended model. The calibration itself is performed in two steps. First, we use the generalized simulated annealing function of the \textsf{GenSA} package \citep{xiangGeneralizedSimulatedAnnealing2013}, which was designed to \enquote{search for global minimum of a very complex non-linear objective function with a very large number of optima}. Second, we use a numerical Monte Carlo Markov Chain sampler as implemented by \cite{adaptmcmc} according to the proposal of \cite{vihola2012robust}. This function first  tunes the covariance matrix of the jump distribution to achieve a desired acceptance rate. Next, a non-adaptive Metropolis sampling is employed to draw from the posterior distribution.
+Data from five out of the 15 available rainfall-runoff events are used to calibrate the extended model. The calibration itself is performed in two steps. First, we use the generalized simulated annealing function of the \textsf{GenSA} package \citep{xiangGeneralizedSimulatedAnnealing2013}, which was designed to \enquote{search for global minimum of a very complex non-linear objective function with a very large number of optima}. Second, we use a numerical Monte Carlo Markov Chain sampler as implemented by \cite{scheideggerAdaptMCMCImplementationGeneric2012} according to the proposal of \cite{vihola2012robust}. This function first  tunes the covariance matrix of the jump distribution to achieve a desired acceptance rate. Next, a non-adaptive Metropolis sampling is employed to draw from the posterior distribution.
 
 
 

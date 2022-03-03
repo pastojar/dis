@@ -19,3 +19,8 @@ This thesis aims to
 
 This thesis is structured as follows
 
+\cite{pastorekReliabilityMicrowaveLink2017, pastorekPosouzeniSrazkovychDat2018}
+
+\cite{pastorekCommercialMicrowaveLinks2019}
+
+\cite{pastorekPrecipitationEstimatesCommercial2022}
