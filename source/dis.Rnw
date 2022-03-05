@@ -20,8 +20,8 @@
     fieldofstudy-english = {Stavební inženýrství}, 
     subfieldofstudy-english = {Vodní hospodářství a vodní stavby},
     supervisor = {Ing. Vojtěch Bareš, Ph.D.},
-    month = 1,
-    year = 2021,
+    month = 4,
+    year = 2022,
     front-list-of-figures = false,
     front-list-of-tables = false
 }
@@ -56,8 +56,12 @@
         <<intro, child='01intro.Rnw'>>=
         @
         
+        %------------------------------------------------------ 2. Theory
+        <<theory, child='02theory.Rnw'>>=
+        @
+        
         %------------------------------------------------------ 2. Methods
-        <<methods, child='02theory.Rnw'>>=
+        <<methods, child='02_5_theory2.Rnw'>>=
         @
         
         %------------------------------------------------------ 3. Material

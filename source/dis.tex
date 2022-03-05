@@ -70,8 +70,8 @@
     fieldofstudy-english = {Stavební inženýrství}, 
     subfieldofstudy-english = {Vodní hospodářství a vodní stavby},
     supervisor = {Ing. Vojtěch Bareš, Ph.D.},
-    month = 1,
-    year = 2021,
+    month = 4,
+    year = 2022,
     front-list-of-figures = false,
     front-list-of-tables = false
 }
@@ -173,17 +173,25 @@
 
 \chapter{Introduction} \label{chap1}
 
-\rule{\textwidth}{0.4pt}
-This chapter is about the intorduction. \newline
-\rule[0.2cm]{\textwidth}{0.4pt}
+As the driving phenomenon of runoff mechanisms, rainfall plays an essential role in urban hydrology \citep{berneTemporalSpatialResolution2004}. Due to high degrees of imperviousness, relatively small scales, and high land-use spatial variability in urban areas, small-scale spatial and temporal rainfall variability can affect the hydrological response in terms of the hydrograph shape, peak flows, and their timing \citep{cristianoSpatialTemporalVariability2017, ochoa-rodriguezImpactSpatialTemporal2015, rico-ramirezQuantifyingRadarrainfallUncertainties2015}. Thus, when used as input for urban hydrological models, rainfall data represent one of the most prominent sources of uncertainty in the modelling process \citep{schellartInfluenceRainfallEstimation2012, thorndahlEventBasedUncertainty2008}. Therefore, there are high requirements on the resolution of rainfall data for urban hydrology. 
 
+Operational management of the quantity and quality of urban stormwater runoff is a serious concern nowadays \citep{tsihrintzisModelingManagementUrban1997} as excessive amounts of stormwater can overload drainage systems and cause urban pluvial flooding and health risks due to pathogens, decrease the efficiency of wastewater treatment plants, or impact the aquatic biota of receiving waters through hydraulic stress and pollution. The mitigation of such negative effects often relies on methods and concepts requiring operational rainfall products which are not only available in high spatial and/or temporal resolution, but also in real time \citep{einfaltRoadmapUseRadar2004}.
+
+Comercial microwave links (CMLs) are pairs of telecom antennas which operate at frequencies where radio signal is attenuated by rainfall droplets. The difference between the transmitted and received signal levels can be used to derive path-integrated quantitative precipitation estimates (QPEs). As a crucial part of telecom networks, CMLs densely cover urban areas around the world. Moreover, they can also provide data in high temporal resolutions and are accessible in (near) real time from network operation centers either through network monitoring systems or specifically designed server-sided applications \citep{chwalaRealtimeDataAcquisition2016}. Therefore, QPEs derived from CMLs represent a very promising rainfall data source for urban hydrological modelling. However, systematic errors often associated with CML QPEs, e.g. due to inaccurate wet antenna attenuation (WAA) estimation \citep{leijnseMicrowaveLinkRainfall2008, fenclGaugeadjustedRainfallEstimates2017}, compromise their value for applications where volume is of high importance. Uncertainties associated with such errors thus represent a major challenge to be overcome.
+
+Over the last decade, many research studies have addressed the uncertainties in the retrieval of CML QPEs. Thanks to the innovations introduced, CML QPEs have proven to provide valuable rainfall information which could complement traditional observations with rain gauges and weather radars \citep{chwalaCommercialMicrowaveLink2019, gossetImprovingRainfallMeasurement2016, imhoffRainfallNowcastingUsing2020, riosgaonaRainfallRetrievalCommercial2018, uijlenhoetOpportunisticRemoteSensing2018}. However, to date, only a few studies investigated the ability of QPEs derived from real-world CML networks for quantitative hydrology, either for rural \citep{brauerEffectDifferencesRainfall2016, cazzanigaCalculatingHydrologicalResponse2020, smiatekPotentialCommercialMicrowave2017} or urban catchments \citep{dischImpactDifferentSources2019, stranskyRunoffPredictionUsing2018}.
 
 
 \section{Objectives of the thesis}
 
-This thesis aims to 
+This thesis aims to robustly evaluate the potential of QPEs from CMLs for hydrological modelling in small urban catchments. In order to reach the highest possible quality of CML QPEs, reduction of the uncertainty in the QPE retrieval is also addressed. In short, this thesis
 
-? further improve the understanding of the potential of CML QPEs in urban hydrological modelling.
+\begin{itemize}
+        \item investigates in how far CML instrumental parameters and network topology influence the performance of CMLs as rainfall sensors for urban hydrological modelling;
+        \item analyzes various WAA estimation models, including a newly proposed one, which are based on considerably different assumptions and tests their performance in detail;
+        \item explores the possibility to calibrate WAA estimation models using data that could be commonly available to many urban hydrology specialists; 
+        \item leverages the above research to derive state-of-the-art CML QPEs, the suitability of which for urban rainfall-runoff modelling is then to be robustly evaluated by means of model output uncertainty quantification.
+\end{itemize}
 
 
 \section{Thesis' structure}
@@ -195,26 +203,24 @@ This thesis is structured as follows
 \cite{pastorekCommercialMicrowaveLinks2019}
 
 \cite{pastorekPrecipitationEstimatesCommercial2022}
+
+The bulk of the research presented in this thesis has been originally published in peer-reviewed journal or conference papers over the course of the past few years. Thus, the thesis also partially documents the development in the current state of knowledge in the area. Therefore, especially when the chapters \ref{chap4} and \ref{chap5} are considered, the reader is kindly asked to perceive the presented research in the context of the time when it was first published.
+
         
-        %------------------------------------------------------ 2. Methods
+        %------------------------------------------------------ 2. Theory
 
 % !Rnw root = dis.Rnw
 
-\chapter{Theory} \label{chap2}
+\chapter{Rainfall monitoring for urban hydrology} \label{chap2}
 
 \rule{\textwidth}{0.4pt}
-This chapter is about the theory (?and methods?) relevant for multiple following chapters. \newline
+This chapter is about the theory ... . \newline
 \rule[0.2cm]{\textwidth}{0.4pt}
 
 
-Urban drainage systems are designed to drain waste- and stormwater from land surfaces in urban areas using combined or separate sewer networks. However, excessive amounts of stormwater can overload drainage systems and cause urban pluvial flooding and health risks due to pathogens, decrease the efficiency of wastewater treatment plants, or impact the aquatic biota of receiving waters through hydraulic stress and pollution. Therefore, the operational management of the quantity and quality of urban stormwater runoff is a serious concern in urban environmental management \citep{tsihrintzisModelingManagementUrban1997}.
+Nowadays, the mitigation of the negative effects of urban drainage on society and the environment is often related to methods and concepts requiring operational rainfall products which are available in (near) real time and with a high spatial and/or temporal resolution \citep{einfaltRoadmapUseRadar2004}. Such rainfall observations are employed in real-time control strategies to optimize treatment processes at wastewater treatment plants \citep{schutzeRealTimeControl2004}, or to minimize the impacts of sewer overflows \citep{vezzaroGeneralisedDynamicOverflow2014}. Furthermore, these data are used for extreme event analyses, e.g. for the evaluation of insurance damage claims \citep{spekkersStatisticalAnalysisInsurance2013} or for operational warnings \citep{montesarchioRainfallThresholdsFlood2009}. Operational rainfall data are becoming increasingly important because of the ongoing climate change \citep{vanderpolImpactsRainfallVariability2015} as the intensity and frequency of heavy rainfall in many areas around the world are expected to increase \citep{willemsClimateChangeImpact2012}.
 
-Since precipitation is the essential driver of runoff processes in urban areas, rainfall observations are the key input data when designing and operating urban drainage systems during wet weather periods. Nowadays, the mitigation of the negative effects of urban drainage on society and the environment is often related to methods and concepts requiring operational rainfall products which are available in (near) real time and with a high spatial and/or temporal resolution \citep{einfaltRoadmapUseRadar2004}. Such rainfall observations are employed in real-time control strategies to optimize treatment processes at wastewater treatment plants \citep{schutzeRealTimeControl2004}, or to minimize the impacts of sewer overflows \citep{vezzaroGeneralisedDynamicOverflow2014}. Furthermore, these data are used for extreme event analyses, e.g. for the evaluation of insurance damage claims \citep{spekkersStatisticalAnalysisInsurance2013} or for operational warnings \citep{montesarchioRainfallThresholdsFlood2009}. Operational rainfall data are becoming increasingly important because of the ongoing climate change \citep{vanderpolImpactsRainfallVariability2015} as the intensity and frequency of heavy rainfall in many areas around the world are expected to increase \citep{willemsClimateChangeImpact2012}.
-
-
-\section{Current rainfall monitoring practices}
-
-In general, rainfall data of sufficient quality is lacking for most of the Earth’s land surface. To make things worse, coverage by surface precipitation gauging networks has declined in many regions around the world \citep{lorenzHydrologicalCycleThree2012}. Global precipitation data sets can be obtained from satellite missions, but the accuracy and spatiotemporal resolution of these observations are still insufficient to be used in the hydrological modelling of small, mountainous or urban catchments \citep{kiddGlobalPrecipitationMeasurement2011}.
+In general, rainfall data of sufficient quality are lacking for most of the Earth’s land surface. To make things worse, coverage by surface precipitation gauging networks has declined in many regions around the world \citep{lorenzHydrologicalCycleThree2012}. Global precipitation data sets can be obtained from satellite missions, but the accuracy and spatiotemporal resolution of these observations are still insufficient to be used in the hydrological modelling of small, mountainous or urban catchments \citep{kiddGlobalPrecipitationMeasurement2011}.
 
 The requirements on the temporal and spatial resolution of rainfall data are higher in urban catchments \citep[e.g.][]{schilling1991rainfall, berneTemporalSpatialResolution2004} because, hydrologically, they differ from natural ones in two fundamental aspects. Firstly, the scales of areas examined in urban and natural catchment hydrology typically differ in orders of magnitude. Secondly, urban areas are covered by a high ratio of impermeable surfaces that not only limit rainfall infiltration, but also lead to more surface runoff (e.g. causing higher peak flows) and a faster response of the runoff process.
 
@@ -333,10 +339,16 @@ Moreover, if the bias in QPEs is relatively comparable among the CMLs, it is not
 For example, it should be investigated whether the CML spatial relations with the catchment can be used as the only decisive criteria. If this was proved to be efficient, it could considerably improve the value added of CMLs under data scarce conditions.
 Alternatively, if suitable reference data are available, the CML subsetting could be optimized by calibration to these data
 
+        
+        %------------------------------------------------------ 2. Methods
 
+% !Rnw root = dis.Rnw
 
+\chapter{Evaluation of rainfall data for urban hydrology} \label{chap2_5}
 
-\section{Rainfall Data Evaluation}
+\rule{\textwidth}{0.4pt}
+This chapter is about the evaluation of rainfall data for urban hydrology ... . \newline
+\rule[0.2cm]{\textwidth}{0.4pt}
 
 It is a common approach \citep[e.g.][]{fenclCommercialMicrowaveLinks2015, fenclGaugeadjustedRainfallEstimates2017, riosgaonaMeasurementInterpolationUncertainties2015, grafRainfallEstimationGermanwide2020} to evaluate and benchmark rainfall data by a direct comparison with a reference (or best‐case scenario) rainfall data set. However, the limited or unknown representativeness of the reference rainfall data, compared to the true incident rainfall, represents a major uncertainty. If one was about to evaluate a data set which would better describe the ground‐truth precipitation than the reference rainfall data, the potential improvement could not be discovered. Even if high‐quality precipitation measurements, e.g. from a relatively dense network of rain gauges, are used as the reference, the information about precipitation included in such data can differ significantly from the true rainfall over a given area. This could be very limiting when evaluating rainfall data of unknown characteristics.
 
@@ -346,25 +358,12 @@ River (and drainage system) discharges closely reflect transformed rainfall aggr
 
 \cite{berneTemporalSpatialResolution2004} investigated spatiotemporal rainfall‐runoff dynamics in Mediterranean urban areas in relation to, among others, rainfall data integration to various temporal resolutions. The relation between the precipitation and runoff was only quantified using the lag time, i.e. “the time difference between the gravity centre of the mean rainfall over the catchment on one hand and the gravity centre of the generated hydrograph on the other hand”. 
 
-When rainfall‐runoff modelling is employed, additional uncertainties are introduced into the process of rainfall data evaluation. It has been argued that ignoring the uncertainty, particularly related to input data, compromises (not only) hydrological modelling \citep{beven2006undermining, kavetskiBayesianAnalysisInput2006}, or similarly, that quantification of the uncertainty associated with the models in urban stormwater modelling is a must \citep{dotto2012comparison}. However, quantifying the effect of all principal uncertainty sources (or, specifically, the effect of
-uncertainty related to rainfall data) on rainfall‐runoff modelling results is a complex and challenging
-task. Therefore, though conceptually desirable, it is rarely practiced \citep{dotto2012comparison}. Researchers have often decided, instead, to put effort to maximize the reliability of modelling results, e.g. by using data measured over a long period of time \citep{segondSignificanceSpatialRainfall2007}, or by employing “verified and operational models” \citep{ochoa-rodriguezImpactSpatialTemporal2015}.
-
-Whether the uncertainty analysis is employed or not, there are various methods to evaluate the
-performance of a rainfall‐runoff model. The primary output of a rainfall‐runoff model is a time series
-of simulated discharges at a given location. Such a time series is well suited to being evaluated
-visually, creating a hydrograph. However, for numerical evaluation, it is preferable to summarize the
-performance in a single metric (or a small number of metrics). Many metrics often represent only a
-specific part (e.g. maximal discharge) or only a certain aspect (e.g. temporal precision, total volume
-discharged) of the hydrograph. If multiple rainfall‐runoff events or even various catchments are to be
-compared, it is preferable to use standardized dimensionless criteria, e.g. the relative error of
-maximal discharges. Alternatively, there are metrics which take into account the whole time series
-and are often applied when trying to summarize the overall model performance, such as the mean
-squared error ($M\!S\!E$) or Nash‐Sutcliffe efficiency ($N\!S\!E$). These two metrics are used very commonly in hydrological modelling although it has been shown that there are systematic problems inherent with their usage \citep{guptaDecompositionMeanSquared2009}.
-
-
 
 \section{Prediction uncertainty quantification in hydrology} \label{PredUncQuant}
+
+Additional uncertainties are introduced into the process of rainfall data evaluation when hydrological modelling is employed. It has been argued that ignoring the uncertainty, particularly related to input data, compromises (not only) hydrological modelling \citep{beven2006undermining, kavetskiBayesianAnalysisInput2006}, or similarly, that quantification of the uncertainty associated with the models in urban stormwater modelling is a must \citep{dotto2012comparison}. However, quantifying the effect of all principal uncertainty sources (or, specifically, the effect of
+uncertainty related to rainfall data) on rainfall‐runoff modelling results is a complex and challenging
+task. Therefore, though conceptually desirable, it is rarely practiced \citep{dotto2012comparison}. Researchers have often decided, instead, to put effort to maximize the reliability of modelling results, e.g. by using data measured over a long period of time \citep{segondSignificanceSpatialRainfall2007}, or by employing “verified and operational models” \citep{ochoa-rodriguezImpactSpatialTemporal2015}.
 
 \cite{deleticAssessingUncertaintiesUrban2012} reviewed studies investigating uncertainty in urban hydrological modelling and identified the following key uncertainty sources:
 \begin{enumerate}
@@ -385,21 +384,6 @@ with other model parameters and allow to quantify the rainfall‐related uncerta
 To overcome the above problem, \cite{delgiudiceDescribingCatchmentaveragedPrecipitation2016} introduced a method where the average precipitation over a given catchment is formulated as a stochastic process, parameters of which are inferred together with other model parameters during calibration. They showed that, even when starting with inaccurate precipitation data, this approach can accurately reconstruct the whole‐catchment precipitation and reliably quantify the related uncertainty. However, their results suggested that even a simpler approach \citep[e.g.][]{giudice2013improving} can lead to similar model parameters and prediction intervals. Therefore, if precipitation reconstructing is not of major interest, the novel approach is not appealing, given its high computational requirements.
 
 
-\subsection{Performance assessment} \label{PerAsses}
-
-When dealing with interval predictions, it is common to evaluate two aspects of the predictive performance -- its precision and accuracy. The prediction precision can be quantified by the width of the determined confidence interval, referred to also as interval sharpness \mbox{\citep[e.g.][]{breinholt2012formal}}. The prediction accuracy can be understood as the position of observed value(s) in relation to the confidence bound(s). Time series predictions such as hydrographs can also  be assessed in this manner, e.g. by calculating the prediction reliability, i.e. the share of observed data points within the predicted bounds, and the \enquote{average bandwidth} --  the interval widths averaged over the entire prediction period \citep{giudice2013improving}.
-
-\cite{gneiting2007strictly} proposed a metric which combines the two above aspects  -- the interval score $S_\alpha$. For a single interval prediction at a confidence level $1-\alpha$ (determined by the prediction quantiles at levels $ \frac{\alpha}{2} $ and $ 1-\frac{\alpha}{2} $), the interval score 
-\begin{equation}
-S_\alpha(l,u,x) =  ( u - l ) + \frac{2}{\alpha} (l - x)  \mathds{1} \left\{x < l \right\} + \frac{2}{\alpha} (x - u)  \mathds{1} \left\{x > u \right\} ,
-\end{equation}
-where $l$ and $u$ stand for lower and upper interval bounds. This metric is supposed to allow for intuitive comprehension as \enquote{the forecaster is rewarded for narrow prediction intervals and incurs a penalty, the size of which depends on $\alpha$, if the observation misses the interval} \citep{gneiting2007strictly}.
-
-For time series predicition, the idea of $S_\alpha$ can be extended and the mean interval scores ($M\!I\!S$) for a given period can be quantified. \cite{bourginTransferringGlobalUncertainty2015} further developed the concept and, \enquote{to ease comparison between catchments and evaluate the skill of the prediction bounds}, proposed to benchmark the prediction confidence bounds by $M\!I\!S$ for reference bounds ($M\!I\!S_{ref}$) obtained e.g. from long term climatological data. The mean interval skill score $M\!I\!S\!S$ would be computed as 
-\begin{equation}
-M\!I\!S\!S = 1 -  ( M\!I\!S  /  M\!I\!S_{ref} ),  
-\end{equation}
-high values of which indicate greater prediction skill, with positive scores indicating that evaluated predictions are more skillful than the reference.
 
 \section{Explicit statistical consideration of model bias} \label{delGiudTheor}
 
@@ -497,6 +481,24 @@ where $\alpha$ and $\beta$ represent lower and upper reference outputs. This mea
 
 
 
+\section{Rainfall-runoff modelling performance assessment} \label{PerAsses} 
+
+Whether the uncertainty analysis is employed or not, there are various methods to evaluate the
+performance of a rainfall‐runoff model. The primary output of a rainfall‐runoff model is a time series of simulated discharges at a given location. Such a time series is well suited to being evaluated visually, creating a hydrograph. However, for numerical evaluation, it is preferable to summarize the performance in a single metric (or a small number of metrics). Many metrics often represent only a specific part (e.g. maximal discharge) or only a certain aspect (e.g. temporal precision, total volume discharged) of the hydrograph. If multiple rainfall‐runoff events or even various catchments are to be compared, it is preferable to use standardized dimensionless criteria, e.g. the relative error of maximal discharges. Alternatively, there are metrics which take into account the whole time series and are often applied when trying to summarize the overall model performance, such as the mean squared error ($M\!S\!E$) or Nash‐Sutcliffe efficiency ($N\!S\!E$). These two metrics are used very commonly in hydrological modelling although it has been shown that there are systematic problems inherent with their usage \citep{guptaDecompositionMeanSquared2009}.
+
+When dealing with interval predictions, it is common to evaluate two aspects of the predictive performance -- its precision and accuracy. The prediction precision can be quantified by the width of the determined confidence interval, referred to also as interval sharpness \mbox{\citep[e.g.][]{breinholt2012formal}}. The prediction accuracy can be understood as the position of observed value(s) in relation to the confidence bound(s). Time series predictions such as hydrographs can also  be assessed in this manner, e.g. by calculating the prediction reliability, i.e. the share of observed data points within the predicted bounds, and the \enquote{average bandwidth} --  the interval widths averaged over the entire prediction period \citep{giudice2013improving}.
+
+\cite{gneiting2007strictly} proposed a metric which combines the two above aspects  -- the interval score $S_\alpha$. For a single interval prediction at a confidence level $1-\alpha$ (determined by the prediction quantiles at levels $ \frac{\alpha}{2} $ and $ 1-\frac{\alpha}{2} $), the interval score 
+\begin{equation}
+S_\alpha(l,u,x) =  ( u - l ) + \frac{2}{\alpha} (l - x)  \mathds{1} \left\{x < l \right\} + \frac{2}{\alpha} (x - u)  \mathds{1} \left\{x > u \right\} ,
+\end{equation}
+where $l$ and $u$ stand for lower and upper interval bounds. This metric is supposed to allow for intuitive comprehension as \enquote{the forecaster is rewarded for narrow prediction intervals and incurs a penalty, the size of which depends on $\alpha$, if the observation misses the interval} \citep{gneiting2007strictly}.
+
+For time series predicition, the idea of $S_\alpha$ can be extended and the mean interval scores ($M\!I\!S$) for a given period can be quantified. \cite{bourginTransferringGlobalUncertainty2015} further developed the concept and, \enquote{to ease comparison between catchments and evaluate the skill of the prediction bounds}, proposed to benchmark the prediction confidence bounds by $M\!I\!S$ for reference bounds ($M\!I\!S_{ref}$) obtained e.g. from long term climatological data. The mean interval skill score $M\!I\!S\!S$ would be computed as 
+\begin{equation}
+M\!I\!S\!S = 1 -  ( M\!I\!S  /  M\!I\!S_{ref} ),  
+\end{equation}
+high values of which indicate greater prediction skill, with positive scores indicating that evaluated predictions are more skillful than the reference.
 
 
 
@@ -614,7 +616,7 @@ Pastorek, J., Fencl, M., Stránský, D., Rieckermann, J., \& Bareš, V. 2017. \t
 of microwave link rainfall data for urban runoff modelling}. In \emph{Proceedings of the
 14th IWA/IAHR International Conference on Urban Drainage} (pp. 1340--1343). Prague, Czech Republic.
 \newline \-\hspace{0.5cm}
-Pastorek, J., Fencl, M., Rieckermann, J., Sýkora, P., Stránský, D., Dohnal, M., \& Bareš, V. 2018. \textbf{Posouzení srážkových dat z mikrovlnných spojů v městském povodí pomocí analýzy nejistot hydrologického modelu}. [The Evaluation of CML Rainfall Data in Urban Catchment by Means of Hydrologic Model Uncertainty]. \emph{SOVAK: Časopis oboru vodovodů a kanalizací}, 27, 16--22).
+Pastorek, J., Fencl, M., Rieckermann, J., Sýkora, P., Stránský, D., Dohnal, M., \& Bareš, V. 2018. \textbf{Posouzení srážkových dat z mikrovlnných spojů v městském povodí pomocí analýzy nejistot hydrologického modelu}. [The Evaluation of CML Rainfall Data in Urban Catchment by Means of Hydrologic Model Uncertainty]. \emph{SOVAK: Časopis oboru vodovodů a kanalizací}, 27, 16--22.
 }
 
 
@@ -1036,7 +1038,7 @@ Pastorek, J., Fencl, M., Rieckermann, J., \& Bareš, V. 2022. \textbf{Precipitat
 
 \section{Introduction}
 
-The complexity of the antenna (radome) wetting process, namely its dependence on antenna hardware properties \citep[e.g. coating;][]{lethMeasurementCampaignAssess2018} and on atmospheric conditions other than precipitation, is a major challenge to reliable estimation of wet antenna attnuation (WAA). It also negatively affects the transferability of WAA models among different commercial microwave links (CMLs) and, thus, optimal WAA models should ideally be determined for each individual CML. This is especially true for models whose parameters depend on CML path length \citep[e.g.][]{kharadlyEffectWetAntenna2001}. However, optimal WAA model identification (e.g. for calibration purposes) on the level of individual CMLs is challenging for real-world application with networks consisting of a high number of CMLs. As noted by \citep{ostrometzkyWetAntennaEffectFactor2018}, maintenance of dedicated equipment for the retrieval of the needed reference rainfall observations is impractical for such networks. Consequently, application-focused studies with city or regional-scale CML networks have often not applied any WAA correction at all \citep{chwalaPrecipitationObservationUsing2012, smiatekPotentialCommercialMicrowave2017} or have used only a simple constant offset model \citep{pastorekCommercialMicrowaveLinks2019, overeemMeasuringUrbanRainfall2011, roversiCommercialMicrowaveLinks2020, fenclAtmosphericObservationsEband2020}. Although the latter approach may be a reasonable choice when observations of the difference between the transmitted and received signal levels $T\!R\!S\!L$ [dB] are available only as 15-min maxima and minima  \citep{chwalaCommercialMicrowaveLink2019}, it can introduce considerable bias in resulting CML quantitative precipitation estimates (QPEs) \citep{pastorekCommercialMicrowaveLinks2019, fenclQuantifyingWetAntenna2019}. To avoid such errors, \cite{grafRainfallEstimationGermanwide2020} recently tested a time-dependent \citep{schleissQuantificationModelingWetAntenna2013} and a semi-empirical WAA model assuming a homogeneous water film on antenna radomes which depends on rain rate through a power law \citep{leijnseMicrowaveLinkRainfall2008}. However, in the case of both WAA models, only a single set of fixed parameters for all of around 4000 CMLs from their extensive dataset was used and this did not address the suitability of the WAA model parameters for individual CMLs.
+The complexity of the antenna (radome) wetting process, namely its dependence on antenna hardware properties \citep[e.g. coating;][]{lethMeasurementCampaignAssess2018} and on atmospheric conditions other than precipitation, is a major challenge to reliable estimation of wet antenna attnuation (WAA). It also negatively affects the transferability of WAA models among different commercial microwave links (CMLs) and, thus, optimal WAA models should ideally be determined for each individual CML. This is especially true for models whose parameters depend on CML path length \citep[e.g.][]{kharadlyEffectWetAntenna2001}. However, optimal WAA model identification (e.g. for calibration purposes) on the level of individual CMLs is challenging for real-world application with networks consisting of a high number of CMLs. As noted by \cite{ostrometzkyWetAntennaEffectFactor2018}, maintenance of dedicated equipment for the retrieval of the needed reference rainfall observations is impractical for such networks. Consequently, application-focused studies with city or regional-scale CML networks have often not applied any WAA correction at all \citep{chwalaPrecipitationObservationUsing2012, smiatekPotentialCommercialMicrowave2017} or have used only a simple constant offset model \citep{pastorekCommercialMicrowaveLinks2019, overeemMeasuringUrbanRainfall2011, roversiCommercialMicrowaveLinks2020, fenclAtmosphericObservationsEband2020}. Although the latter approach may be a reasonable choice when observations of the difference between the transmitted and received signal levels $T\!R\!S\!L$ [dB] are available only as 15-min maxima and minima  \citep{chwalaCommercialMicrowaveLink2019}, it can introduce considerable bias in resulting CML quantitative precipitation estimates (QPEs) \citep{pastorekCommercialMicrowaveLinks2019, fenclQuantifyingWetAntenna2019}. To avoid such errors, \cite{grafRainfallEstimationGermanwide2020} recently tested a time-dependent \citep{schleissQuantificationModelingWetAntenna2013} and a semi-empirical WAA model assuming a homogeneous water film on antenna radomes which depends on rain rate through a power law \citep{leijnseMicrowaveLinkRainfall2008}. However, in the case of both WAA models, only a single set of fixed parameters for all of around 4000 CMLs from their extensive dataset was used and this did not address the suitability of the WAA model parameters for individual CMLs.
 
 This study analyzes, for the first time, six empirical WAA models, including a newly proposed one, based on considerably different assumptions and tests their performance in detail. In contrast to previous studies, often limited by a low number of CMLs investigated \citep{schleissQuantificationModelingWetAntenna2013, leijnseMicrowaveLinkRainfall2008, lethMeasurementCampaignAssess2018}, short time series of a few months \citep{leijnseMicrowaveLinkRainfall2008, overeemMeasuringUrbanRainfall2011, roversiCommercialMicrowaveLinks2020} or 15-min CML data sampling intervals \citep{overeemMeasuringUrbanRainfall2011, riosgaonaRainfallRetrievalCommercial2018}, a rich dataset of more than two years of data retrieved from 16 CMLs with a sub-minute sampling rate is used. Motivated by the vision of reducing the costs of future studies with high numbers of CMLs, we also address the previously recognized need \citep{ostrometzkyWetAntennaEffectFactor2018, grafRainfallEstimationGermanwide2020} to minimize the amount of auxiliary data necessary for WAA estimation without compromising the quality of retrieved QPEs and, thus, we introduce three conceptual innovations not previously presented in relevant literature. Firstly, we show how the investigated empirical WAA models can be calibrated while notably minimizing the requirements on the reference rainfall data necessary, i.e. using only a rain gauge network with a spatial resolution of one gauge per 20\,--\,25 km\textsuperscript{2} and a temporal resolution of 15 minutes. Secondly, we analyze the variability in WAA model parameters optimized for different CMLs, thus indirectly assessing parameter uncertainties, and investigate which of the studied models can provide reliable WAA estimates without being calibrated for each individual CML. This includes a reformulation of a previously reported WAA model \citep{valtrExcessAttenuationCaused2019}. Thirdly, we suggest a procedure enabling the application of rainfall-dependent WAA models without any auxiliary rainfall observations, i.e. using only CML data.
 

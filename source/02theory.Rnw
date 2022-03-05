@@ -1,20 +1,15 @@
 % !Rnw root = dis.Rnw
 
-\chapter{Theory} \label{chap2}
+\chapter{Rainfall monitoring for urban hydrology} \label{chap2}
 
 \rule{\textwidth}{0.4pt}
-This chapter is about the theory (?and methods?) relevant for multiple following chapters. \newline
+This chapter is about the theory ... . \newline
 \rule[0.2cm]{\textwidth}{0.4pt}
 
 
-Urban drainage systems are designed to drain waste- and stormwater from land surfaces in urban areas using combined or separate sewer networks. However, excessive amounts of stormwater can overload drainage systems and cause urban pluvial flooding and health risks due to pathogens, decrease the efficiency of wastewater treatment plants, or impact the aquatic biota of receiving waters through hydraulic stress and pollution. Therefore, the operational management of the quantity and quality of urban stormwater runoff is a serious concern in urban environmental management \citep{tsihrintzisModelingManagementUrban1997}.
+Nowadays, the mitigation of the negative effects of urban drainage on society and the environment is often related to methods and concepts requiring operational rainfall products which are available in (near) real time and with a high spatial and/or temporal resolution \citep{einfaltRoadmapUseRadar2004}. Such rainfall observations are employed in real-time control strategies to optimize treatment processes at wastewater treatment plants \citep{schutzeRealTimeControl2004}, or to minimize the impacts of sewer overflows \citep{vezzaroGeneralisedDynamicOverflow2014}. Furthermore, these data are used for extreme event analyses, e.g. for the evaluation of insurance damage claims \citep{spekkersStatisticalAnalysisInsurance2013} or for operational warnings \citep{montesarchioRainfallThresholdsFlood2009}. Operational rainfall data are becoming increasingly important because of the ongoing climate change \citep{vanderpolImpactsRainfallVariability2015} as the intensity and frequency of heavy rainfall in many areas around the world are expected to increase \citep{willemsClimateChangeImpact2012}.
 
-Since precipitation is the essential driver of runoff processes in urban areas, rainfall observations are the key input data when designing and operating urban drainage systems during wet weather periods. Nowadays, the mitigation of the negative effects of urban drainage on society and the environment is often related to methods and concepts requiring operational rainfall products which are available in (near) real time and with a high spatial and/or temporal resolution \citep{einfaltRoadmapUseRadar2004}. Such rainfall observations are employed in real-time control strategies to optimize treatment processes at wastewater treatment plants \citep{schutzeRealTimeControl2004}, or to minimize the impacts of sewer overflows \citep{vezzaroGeneralisedDynamicOverflow2014}. Furthermore, these data are used for extreme event analyses, e.g. for the evaluation of insurance damage claims \citep{spekkersStatisticalAnalysisInsurance2013} or for operational warnings \citep{montesarchioRainfallThresholdsFlood2009}. Operational rainfall data are becoming increasingly important because of the ongoing climate change \citep{vanderpolImpactsRainfallVariability2015} as the intensity and frequency of heavy rainfall in many areas around the world are expected to increase \citep{willemsClimateChangeImpact2012}.
-
-
-\section{Current rainfall monitoring practices}
-
-In general, rainfall data of sufficient quality is lacking for most of the Earth’s land surface. To make things worse, coverage by surface precipitation gauging networks has declined in many regions around the world \citep{lorenzHydrologicalCycleThree2012}. Global precipitation data sets can be obtained from satellite missions, but the accuracy and spatiotemporal resolution of these observations are still insufficient to be used in the hydrological modelling of small, mountainous or urban catchments \citep{kiddGlobalPrecipitationMeasurement2011}.
+In general, rainfall data of sufficient quality are lacking for most of the Earth’s land surface. To make things worse, coverage by surface precipitation gauging networks has declined in many regions around the world \citep{lorenzHydrologicalCycleThree2012}. Global precipitation data sets can be obtained from satellite missions, but the accuracy and spatiotemporal resolution of these observations are still insufficient to be used in the hydrological modelling of small, mountainous or urban catchments \citep{kiddGlobalPrecipitationMeasurement2011}.
 
 The requirements on the temporal and spatial resolution of rainfall data are higher in urban catchments \citep[e.g.][]{schilling1991rainfall, berneTemporalSpatialResolution2004} because, hydrologically, they differ from natural ones in two fundamental aspects. Firstly, the scales of areas examined in urban and natural catchment hydrology typically differ in orders of magnitude. Secondly, urban areas are covered by a high ratio of impermeable surfaces that not only limit rainfall infiltration, but also lead to more surface runoff (e.g. causing higher peak flows) and a faster response of the runoff process.
 
@@ -132,171 +127,4 @@ In addition, \cite{fenclCommercialMicrowaveLinks2015} concluded that a few very 
 Moreover, if the bias in QPEs is relatively comparable among the CMLs, it is not clear how to identify optimal subsets of CMLs in such conditions. It remains to be investigated in what other ways such subsets could be identified efficiently. 
 For example, it should be investigated whether the CML spatial relations with the catchment can be used as the only decisive criteria. If this was proved to be efficient, it could considerably improve the value added of CMLs under data scarce conditions.
 Alternatively, if suitable reference data are available, the CML subsetting could be optimized by calibration to these data
-
-
-
-
-\section{Rainfall Data Evaluation}
-
-It is a common approach \citep[e.g.][]{fenclCommercialMicrowaveLinks2015, fenclGaugeadjustedRainfallEstimates2017, riosgaonaMeasurementInterpolationUncertainties2015, grafRainfallEstimationGermanwide2020} to evaluate and benchmark rainfall data by a direct comparison with a reference (or best‐case scenario) rainfall data set. However, the limited or unknown representativeness of the reference rainfall data, compared to the true incident rainfall, represents a major uncertainty. If one was about to evaluate a data set which would better describe the ground‐truth precipitation than the reference rainfall data, the potential improvement could not be discovered. Even if high‐quality precipitation measurements, e.g. from a relatively dense network of rain gauges, are used as the reference, the information about precipitation included in such data can differ significantly from the true rainfall over a given area. This could be very limiting when evaluating rainfall data of unknown characteristics.
-
-River (and drainage system) discharges closely reflect transformed rainfall aggregated for a whole given catchment. Especially in urban areas, stormwater runoff can be considered as a proxy variable of the catchment areal rainfall. Furthermore, stream discharges are typically measurable more reliably than the true incident precipitation over the given area. This can be especially useful in the case of convective precipitation when the true incident rainfall over a given area is often difficult to estimate using traditional reference rainfall measurements.  Therefore, when evaluating the suitability of rainfall data sets for purposes of rainfall-runoff modelling, using a rainfall-runoff model and runoff observations as the reference is a common approach.  This was done also in the studies of \cite{obledSensitivityHydrologicalModels1994}, \cite{segondSignificanceSpatialRainfall2007}, or \cite{sikorskaValueDifferentPrecipitation2018} which investigated natural catchments. Focusing specifically on urban rainfall-runoff modelling, \cite{goormansUsingLocalWeather2013} and \cite{wangSingularitysensitiveGaugebasedRadar2015} evaluated the suitability of weather radar data sets, and \citep{kleidorferImpactInputData2009} studied the impact of artificially created imperfections in rainfall data on model parameters. Nevertheless, this approach is not employed in every study with similar goals. 
-
-\cite{ochoa-rodriguezImpactSpatialTemporal2015} analyzed the impact of spatial and temporal resolution of rainfall inputs on urban hydrodynamic modelling. In this study, model outputs obtained using various rainfall data sets were evaluated using, as the reference, model outputs associated with the finest resolution rainfall estimates. Nevertheless, when using this approach, similar issues as discussed above, regarding the representativeness of the reference, can arise. Furthermore, it is unclear whether the best‐quality rainfall data lead to the best model performance in some circumstances, e.g. when the model used was calibrated using another rainfall data set.
-
-\cite{berneTemporalSpatialResolution2004} investigated spatiotemporal rainfall‐runoff dynamics in Mediterranean urban areas in relation to, among others, rainfall data integration to various temporal resolutions. The relation between the precipitation and runoff was only quantified using the lag time, i.e. “the time difference between the gravity centre of the mean rainfall over the catchment on one hand and the gravity centre of the generated hydrograph on the other hand”. 
-
-When rainfall‐runoff modelling is employed, additional uncertainties are introduced into the process of rainfall data evaluation. It has been argued that ignoring the uncertainty, particularly related to input data, compromises (not only) hydrological modelling \citep{beven2006undermining, kavetskiBayesianAnalysisInput2006}, or similarly, that quantification of the uncertainty associated with the models in urban stormwater modelling is a must \citep{dotto2012comparison}. However, quantifying the effect of all principal uncertainty sources (or, specifically, the effect of
-uncertainty related to rainfall data) on rainfall‐runoff modelling results is a complex and challenging
-task. Therefore, though conceptually desirable, it is rarely practiced \citep{dotto2012comparison}. Researchers have often decided, instead, to put effort to maximize the reliability of modelling results, e.g. by using data measured over a long period of time \citep{segondSignificanceSpatialRainfall2007}, or by employing “verified and operational models” \citep{ochoa-rodriguezImpactSpatialTemporal2015}.
-
-Whether the uncertainty analysis is employed or not, there are various methods to evaluate the
-performance of a rainfall‐runoff model. The primary output of a rainfall‐runoff model is a time series
-of simulated discharges at a given location. Such a time series is well suited to being evaluated
-visually, creating a hydrograph. However, for numerical evaluation, it is preferable to summarize the
-performance in a single metric (or a small number of metrics). Many metrics often represent only a
-specific part (e.g. maximal discharge) or only a certain aspect (e.g. temporal precision, total volume
-discharged) of the hydrograph. If multiple rainfall‐runoff events or even various catchments are to be
-compared, it is preferable to use standardized dimensionless criteria, e.g. the relative error of
-maximal discharges. Alternatively, there are metrics which take into account the whole time series
-and are often applied when trying to summarize the overall model performance, such as the mean
-squared error ($M\!S\!E$) or Nash‐Sutcliffe efficiency ($N\!S\!E$). These two metrics are used very commonly in hydrological modelling although it has been shown that there are systematic problems inherent with their usage \citep{guptaDecompositionMeanSquared2009}.
-
-
-
-\section{Prediction uncertainty quantification in hydrology} \label{PredUncQuant}
-
-\cite{deleticAssessingUncertaintiesUrban2012} reviewed studies investigating uncertainty in urban hydrological modelling and identified the following key uncertainty sources:
-\begin{enumerate}
-        \item Model input (measured input data and parameters) uncertainties;
-        \item Calibration (calibration data measuring, availability, and choices; calibration algorithms and objective functions used in the calibration process) uncertainties;
-        \item Model structure (conceptualisation errors, equations and numerical methods) uncertainties. 
-\end{enumerate}
-
-Many published urban drainage modelling studies have dealt with uncertainties associated with model parameters, often producing parameter probability distributions and estimating confidence intervals around the model’s outputs \citep[e.g.][]{thorndahlEventBasedUncertainty2008, dotto2012comparison}. However, \cite{deleticAssessingUncertaintiesUrban2012} recognized that the uncertainty sources are highly interlinked, suggesting that \enqoute{assessing the impact of a single source is not going to be adequate and that simultaneous propagation of key sources of uncertainties is required}.
-
-\cite{dotto2012comparison} observed that a common approach when trying to estimate the total uncertainty (related to parameters and all other sources) is adding a Gaussian error term to the model predictions. This approach is based on the assumption that the residuals between the measured and modelled values are normally distributed (i.e. only due to white measurement noise). However, the deviations of model outputs from observed data are usually considerably larger than random observation errors, typically due to a simplified description of the system by the deterministic model and due to input data imperfections \citep{reichert2012linking}. When ignored, such systematic deviations can lead to unrealistic (usually too narrow) uncertainty bounds of model parameters and model predictions \citep{reichert2012linking}.
-
-Systematic deviations of model predictions from observed data, or model bias, can by addressed by increasing the complexity of the model to reduce bias or by trying to find a statistical description of the bias in model outputs. \cite{reichert2012linking} adapted a statistical technique of \cite{kennedy2001bayesian}, accounting for bias in model outputs, for purposes of environmental modelling and extended it with a framework enabling for multiobjective model calibration. \cite{sikorskaValueDifferentPrecipitation2018} used this approach to asses the value of different precipitation data for flood prediction in an alpine catchment. \cite{giudice2013improving} applied this technique to urban drainage modelling while proposing various formulations of the stochastic process representing the model bias (more in section \ref{delGiudTheor}). Their results showed that runoff simulations are much more reliable when bias is accounted for than when it is neglected. 
-
-While approaches based on explicit model bias consideration can improve the reliability of hydrological predictions, they only provide limited information about the causes of model bias and, therefore, do not help much to distinguish imperfections in input rainfall data from model structural errors \citep{giudice2013improving}. A conceptually more satisfying approach is to make the input uncertain and to propagate it through the model. This is can be done by using so‐called rainfall multipliers \citep{kavetskiBayesianAnalysisInput2006, vrugtTreatmentInputUncertainty2008}. These random variables multiply observed rainfall rates (1 multiplier per event) before feeding it into the model. They are estimated together
-with other model parameters and allow to quantify the rainfall‐related uncertainty directly in input data. \cite{sikorskaBayesianUncertaintyAssessment2012} combined a stochastic error model with rainfall multipliers to separate the effect of uncertainty in the rainfall data from other erorrs sources. However, the rainfall multiplier approach fails when the observed precipitation has a different temporal pattern from the true one or if the true nonzero rainfall is not detected \citep{delgiudiceDescribingCatchmentaveragedPrecipitation2016}. 
-
-To overcome the above problem, \cite{delgiudiceDescribingCatchmentaveragedPrecipitation2016} introduced a method where the average precipitation over a given catchment is formulated as a stochastic process, parameters of which are inferred together with other model parameters during calibration. They showed that, even when starting with inaccurate precipitation data, this approach can accurately reconstruct the whole‐catchment precipitation and reliably quantify the related uncertainty. However, their results suggested that even a simpler approach \citep[e.g.][]{giudice2013improving} can lead to similar model parameters and prediction intervals. Therefore, if precipitation reconstructing is not of major interest, the novel approach is not appealing, given its high computational requirements.
-
-
-\subsection{Performance assessment} \label{PerAsses}
-
-When dealing with interval predictions, it is common to evaluate two aspects of the predictive performance -- its precision and accuracy. The prediction precision can be quantified by the width of the determined confidence interval, referred to also as interval sharpness \mbox{\citep[e.g.][]{breinholt2012formal}}. The prediction accuracy can be understood as the position of observed value(s) in relation to the confidence bound(s). Time series predictions such as hydrographs can also  be assessed in this manner, e.g. by calculating the prediction reliability, i.e. the share of observed data points within the predicted bounds, and the \enquote{average bandwidth} --  the interval widths averaged over the entire prediction period \citep{giudice2013improving}.
-
-\cite{gneiting2007strictly} proposed a metric which combines the two above aspects  -- the interval score $S_\alpha$. For a single interval prediction at a confidence level $1-\alpha$ (determined by the prediction quantiles at levels $ \frac{\alpha}{2} $ and $ 1-\frac{\alpha}{2} $), the interval score 
-\begin{equation}
-S_\alpha(l,u,x) =  ( u - l ) + \frac{2}{\alpha} (l - x)  \mathds{1} \left\{x < l \right\} + \frac{2}{\alpha} (x - u)  \mathds{1} \left\{x > u \right\} ,
-\end{equation}
-where $l$ and $u$ stand for lower and upper interval bounds. This metric is supposed to allow for intuitive comprehension as \enquote{the forecaster is rewarded for narrow prediction intervals and incurs a penalty, the size of which depends on $\alpha$, if the observation misses the interval} \citep{gneiting2007strictly}.
-
-For time series predicition, the idea of $S_\alpha$ can be extended and the mean interval scores ($M\!I\!S$) for a given period can be quantified. \cite{bourginTransferringGlobalUncertainty2015} further developed the concept and, \enquote{to ease comparison between catchments and evaluate the skill of the prediction bounds}, proposed to benchmark the prediction confidence bounds by $M\!I\!S$ for reference bounds ($M\!I\!S_{ref}$) obtained e.g. from long term climatological data. The mean interval skill score $M\!I\!S\!S$ would be computed as 
-\begin{equation}
-M\!I\!S\!S = 1 -  ( M\!I\!S  /  M\!I\!S_{ref} ),  
-\end{equation}
-high values of which indicate greater prediction skill, with positive scores indicating that evaluated predictions are more skillful than the reference.
-
-\section{Explicit statistical consideration of model bias} \label{delGiudTheor}
-
-Herein we describe the framework of \cite{kennedy2001bayesian} as formulated by \cite{reichert2012linking} and first used in the context of urban hydrology by \cite{giudice2013improving}. The basic principle of the method is extension of a deterministic (e.g. rainfall-runoff) model by a stochastic error model. However, a commonly used error model considering only independent and identically distributed (i.i.d.) errors is adjusted to explicitly account for the systematic model errors (bias) of the deterministic model, acknowledging the fact that simulators cannot describe the \enqoute{true} behavior of a system \citep{giudice2013improving}. Using this approach, the extended model can be formulated using the equation
-\begin{equation} \label{eq:ext_model}
-Y_o (x,\theta, \psi) = y_M (x, \theta) + B (\psi) + E (\psi)
-\end{equation}
-where variables in capitals represent random variables and those in lowercase are deterministic functions. $Y_o$ represents the observed system output, $y_M$ stands for the deterministic model output. To better fulfill the underlying statistical assumptions and thus obtain more reliable predictions, a transformation (details in \ref{transfTheor}) should be applied on both $Y_o$ and $y_M$ \citep{giudice2013improving}. Next, $B$ and $E$, respectively, stand for the bias and  measurement noise in the system output. Precipitation as the external driving force is represented by $x$, whereas $\theta$ and $\psi$ respectively represent the deterministic and error model parameters.  
-
-The measurement noise of the system response $E$ is sampled from a multivariate normal distribution with mean 0 and a diagonal covariance matrix
-\begin{equation}
-\Sigma_E= \sigma_E^2 \mathds{1}
-\end{equation}
-
-\cite{giudice2013improving} investigated various formulations of the model bias $B$ and  presented a structured approach to select the optimal bias description
-for a given case study. In general, it is an autoregressive term which can be dependent on the input (rainfall) or/and output (runoff) of the system. For more details, see \cite{giudice2013improving}.
-
-
-By combining the deterministic hydrological and the stochastic error models, we can quantify the probability that the observed runoffs can be explained by given predicted runoffs and error model. This can be formally expressed by a likelihood function describing the joint probability density $f(Y_o|\theta, \psi, x)$ of observed system response $Y_o$ for given $\theta$, $\psi$, and $x$. It can be written as
-
-$ f (Y_o|\theta, \psi, x) = \frac{(2\pi)^{-\frac{n}{2}}}{\sqrt{\det(\Sigma(\theta, \psi, x))}} $
-\begin{equation}
-. \exp \Big( -\frac{1}{2}  [ \tilde{Y}_{o} - \tilde{y}_{M}(\theta, x)]^{T}  \Sigma(\theta, \psi, x)^{-1}  [ \tilde{Y}_{o} - \tilde{y}_{M}(\theta, x)] \Big)  \prod^{n}_{i=1} \frac{\text{d}g}{\text{d}y} (Y_{o,i},\psi) ,
-\end{equation}
-
-where $n$ is the number of observations (i.e. the dimension of $Y_{o}$ and $y_{M}$) and $\Sigma(\theta, \psi, x)$ stands for a covariance matrix of the residuals transformed by a function $g()$. Similarly, $\tilde{y}_M=g(y_M)$.
-
-
-To achieve accurate rainfall-runoff predictions and reliable quantification of their uncertainty, the extended model should be calibrated. In theory, this could be done by optimizing the likelihood function as the objective function. However, 
-there is \enquote{a severe identifiability problem} between the deterministic model $y_M$ and bias $B$ \enquote{as the two components cannot be observed separately} \citep{reichert2012linking}. By implementing the Bayesian approach, i.e. combining the likelihood with prior knowledge (belief) about the extended model, we can specify that we are seeking for the smallest bias possible when calibrating the model. Although somewhat subjective choices regarding the amount of bias acceptable are required, this approach at least makes them transparent \citep{reichert2012linking}.
-
-Performing the uncertainty analysis in the above described manner requires to follow these steps \citep{giudice2013improving}:
-\begin{enumerate}
-	\item  Definition of marginal distributions of the prior joint probability distribution of the both the deterministic rainfall-runoff model parameters $\theta$  and  the stochastic error model parameters $\psi$.
-        \begin{itemize}
-                \item \cite{giudice2013improving} suggest that completely uninformative prior distributions should not be used for neither $\theta$ nor $\psi$ parameters. Furthermore, it is \enquote{important that the prior of the bias reflects the desire to avoid model inadequacy as much as possible ... to reduce the identifiability problem between the deterministic
-model and the bias}.
-        \end{itemize}
-
-	\item  Bayesian inference of the posterior parameter distribution.
-	\begin{itemize}
-                \item	The joint probability density, a product of the prior $f(\theta, \psi)$ and the likelihood function $f(Y_o | \theta, \psi, x)$, gets conditioned on the observed discharge data, using the Bayes' theorem
-                \begin{equation}
-f (\theta, \psi | Y_o, x) = \frac{ f(\theta, \psi) \, f(Y_o | \theta, \psi, x) } { \iint f(\theta' , \psi') \, f(Y_o | \theta', \psi', x) \text{d}\theta' \text{d}\psi'} \; .
-                \end{equation}
-
-Solving this problem analytically would include dealing with multidimensional integrals. This can be avoided by employing a numerical method such as Markov Chain Monte Carlo (MCMC) to approximate properties of the posterior distribution.
-
-        \item Before the inference, a transformation $g()$  should be applied on simulation results and output data to account for the variance increasing with discharge and to reduce the heteroscedascity of residuals \citep{giudice2013improving}. Details in \ref{transfTheor}.
-        \end{itemize}
-        
-	\item  Probabilistic predictions for the data set used for calibration
-	\begin{itemize}
-                \item For details on probabilistic predictions for multivariate normal distributions related to the random variables of this type, \cite{giudice2013improving} recommend to consult \cite{kendall1994vol} or \cite{kollo2006advanced}.
-        \end{itemize}
-	
-	\item  Probabilistic predictions for unseen temporal points.
-	\begin{itemize}
-                \item 	It is possible to proceed analogically as above. However, \cite{giudice2013improving} suggest to take advantage of using bias formulated as an  Ornstein–Uhlenbeck process and to \enquote{draw a realization for the entire period by iteratively drawing the realization for the next time step at time   $t_ j$ from that of a previous time step at time $t_ {j-1}$ from a normal distribution}. In both cases, nevertheless, it is necessary to draw and evaluate a large sample from the  posterior parameter joint distribution.
-        \end{itemize}
-	
-	\item Verification of the statistical assumptions
-	\begin{itemize}
-                \item 	In many similar cases, it is usual to confirm the statistical assumptions of the error model by residual analysis \citep{reichert2012linking}. However, Bayesian approach implemented in this method allows us to test only the observation error $E$, which is the only purely frequentist term. However, since these errors are likely to constitute only a small portion of the residuals of the deterministic simulator, the informative value of this analysis might be limited.
-        \end{itemize}
-
-	
-\end{enumerate}
-
-
-
-
-
-
-\subsection{Output transformation} \label{transfTheor}
-
-Because of the  statistical assumptions of homoscedasticity and normality of calibration residuals, a transformation $g()$ should be applied on simulation and observed output data (i.e., in our case, runoff discharges).  It is a common way in hydrological modelling how to account for increasing variance with increasing discharge and thus reduce the residual heteroscedascity. Moreover, it is expected to reduce the proportion of negative flow predictions by making error distributions asymmetric \citep{giudice2013improving}.
-
-According to \cite{giudice2013improving},  two most promising variance stabilization techniques for urban drainage
-applications are the Box–Cox \citep{box1964analysis}  and the log-sinh \citep{wang2012log} transformation. The Box-Cox transformation has been used more often in hydrological studies  than the log-sinh alternative, primarily due to the date of its first introduction. The two-parameter Box–Cox transformation can be written as
-\begin{equation}
- g(y)=
-    \begin{cases}
-      log(y+\lambda_2) , & \text{if}\ \lambda_1=0 \\
-      \frac{(y+\lambda_2)^{\lambda_1}-1}{\lambda_1} , & \text{otherwise}
-    \end{cases}
-\end{equation}
-and holds for $y > -\lambda_2$. The one-parameter version would need only  $\lambda_1$  while keeping $\lambda_2 = 0$. \cite{giudice2013improving} used the one-parameter version of the transformation with the parameter value $\lambda_1=0.35$, which had already been proven to perform satisfactorily in the past \citep[e.g.][]{honti2013integrated, wang2012log}.
-
-The log-sinh transformation was introduced for hydrological purposes only recently by \cite{wang2012log}. \cite{giudice2013improving}  proposed its modification which would result in a \enquote{reparameterised form with parameters that have a more intuitive meaning}. The formula would be
-\begin{equation}
-g(y)= \beta \, log \Big(sinh \big( \frac{\alpha+y}{\beta} \big) \Big),
-\end{equation}
-where $\alpha$ and $\beta$ represent lower and upper reference outputs. This means that \\ \enquote{$\alpha$ controls how the relative error increases for low flows} and \enquote{for outputs larger than $\beta$, the absolute error gradually stops increasing} \citep{giudice2013improving}.
-
-
-
-
-
 
