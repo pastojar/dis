@@ -1,0 +1,16 @@
+% !Rnw root = dis.Rnw
+
+\chapter{Conclusions}    \label{chap_concl}
+
+Lorep ipsum \cite{doe}
+
+
+Chapter \ref{chap4}
+Both the CML QPEs and traditional rainfall data are used for rainfall-runoff modelling in a small urban catchment, the performance of which is evaluated against observed discharge measurements. The study's results suggest that CMLs could represent a relevant rainfall data source, especially for monitoring of heavy rainfalls, if local rain gauge data in high spatial resolution are not available in a given catchment.
+
+
+
+\section{bla}
+
+\subsection{bla}
+?? We have decided to employ, apart from the two mentioned above,  as well a metric which combines them -- the interval score $S_\alpha$ as formulated by \cite{gneiting2007strictly}.

@@ -84,16 +84,14 @@
         <<paperIII, child='07paperIII.Rnw'>>=
         @
         
+        %------------------------------------------------------ 8. Conclusion 
+        <<concl, child='08concl.Rnw'>>=
+        @
+        
         %------------------------------------------------------ dummy chapter
         <<test, child='Child.Rnw'>>=
         @
-        
-        
-        
-        \chapter{Conclusion}
-        Lorep ipsum \cite{doe}
-        
-  
+      
     
 
         \bibliographystyle{apalike2} %apalike2 myacmtrans3  ieeetr  % pri vacsine vypnut natbib! apa-good
