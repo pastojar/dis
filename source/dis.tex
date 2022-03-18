@@ -195,7 +195,7 @@ Chapter \ref{chap4} presents a study which explores whether QPEs obtained from C
 
 Chapter \ref{chap5} presents a study which addresses the ability of individual CMLs to provide relevant QPEs for urban rainfall-runoff modelling. It investigates in how far CML instrumental parameters (path length, transmission frequency) and network topology influence the rainfall-runoff modelling performance. This study was first published in \cite{pastorekCommercialMicrowaveLinks2019}.
 
-Chapter \ref{chap6} contains a study which analyzes how, when deriving CML QPEs, WAA can be estimated without dedicated rainfall monitoring. Various WAA estimation models, including a newly proposed one, based on considerably different assumptions and tested. The transferability of WAA model parameters among CMLs of various characteristics is also addressed. This study was first published in \cite{pastorekPrecipitationEstimatesCommercial2022}
+Chapter \ref{chap6} contains a study which analyzes how, when deriving CML QPEs, WAA can be estimated without dedicated rainfall monitoring. Various WAA estimation models, including a newly proposed one, based on considerably different assumptions are tested. The transferability of WAA model parameters among CMLs of various characteristics is also addressed. This study was first published in \cite{pastorekPrecipitationEstimatesCommercial2022}
 
 Chapter \ref{chap7} introduces a study which explores the possibility to calibrate WAA estimation models using data that could be commonly available to many urban hydrology specialists. This investigation is then leveraged to derive state-of-the-art CML QPEs, the suitability of which for urban rainfall-runoff modelling is then to be robustly evaluated by means of model output uncertainty quantification.
 
@@ -242,9 +242,7 @@ Rainfall data from new types of devices which could conveniently complement trad
 
 \section{Rainfall retrieval from commercial microwave links}
 
-Commercial microwave links (CMLs) are point-to-point radio connections widely used as cellular backhaul. A substantial part of CML networks is operated at frequencies between 20 and 40 GHz where radio wave attenuation caused by raindrops is almost proportional to rainfall intensity. These CMLs can, therefore, be used as unintended rainfall sensors providing path-integrated quantitative precipitation estimates (QPEs). Moreover, CML data are accessible online in real time from network operation centers either through network monitoring systems or specifically designed server-sided applications \citep{chwalaRealtimeDataAcquisition2016}.
-
-Although deriving precipitation estimates from the attenuation of microwaves was originally suggested several decades ago \citep{atlasPathAreaIntegratedRainfall1977}, the idea has experienced a renaissance in recent years, thanks to the extensive growth of cellular networks \citep{messer2006environmental, leijnseRainfallMeasurementUsing2007} which frequently incorporate CMLs. Recently, there has been about four million CMLs being used worldwide within cellular networks and the number has been increasing \citep{ericssonEricssonMicrowaveOutlook2016}.
+Commercial microwave links (CMLs) are point-to-point radio connections widely used as cellular backhaul. A substantial part of CML networks is operated at frequencies between 20 and 40 GHz where radio wave attenuation caused by raindrops is almost proportional to rainfall intensity. These CMLs can, therefore, be used as unintended rainfall sensors providing path-integrated quantitative precipitation estimates (QPEs). Although deriving precipitation estimates from the attenuation of microwaves was originally suggested several decades ago \citep{atlasPathAreaIntegratedRainfall1977}, the idea has experienced a renaissance in recent years, thanks to the extensive growth of cellular networks \citep{messer2006environmental, leijnseRainfallMeasurementUsing2007} which frequently incorporate CMLs.
 
 The relationship between raindrop-induced attenuation $A_r$ [dB] and rainfall intensity $R$ [mm/h] is robust and well-understood. For a given rainfall intensity, $A_r$ is proportional to CML length and frequency. The relation can be expressed using the following approximation:
         \begin{equation} \label{eq:2eq1}
@@ -257,13 +255,7 @@ Nonetheless, $A_r$ must be separated from other components of the difference bet
         \begin{equation} \label{eq:2eq2}
         T\!R\!S\!L = B + A = B + A_{wa} + A_r
         \end{equation}
-where $B$ [dB] represents baseline attenuation consisting of, e.g., free space loss and gaseous attenuation, $A$ [dB] stands for observed attenuation after baseline separation (henceforth referred to as “observed attenuation”), and $A_{wa}$ [dB] represents wet antenna attenuation (WAA). Imprecise quantification of the raindrop-induced attenuation $A_r$ due to CML instrumental uncertainties such as WAA estimation represents a major source of errors in CML QPEs \citep[][more details in \ref{InstErr}]{chwalaCommercialMicrowaveLink2019}.
-
-
-Thanks to the extensive continental coverage of cellular networks, CMLs represent a promising rainfall sensors for hydrological modelling. The greatest potential of this technique is in areas where traditional infrastructure for rainfall measurement is, in general, insufficient \citep{gossetImprovingRainfallMeasurement2016}, e.g. in developing countries. Nevertheless, CMLs might also conveniently complement traditional monitoring networks common in developed countries, since, unlike weather radars, they observe rainfall close to the ground. Moreover, CML rainfall measurements have a path-integrated character which makes them better suited for capturing areal rainfalls over a catchment than rain gauges. 
-
-Only a few studies have investigated the ability of QPEs derived from real-world CML networks for quantitative hydrology, either for rural \citep{brauerEffectDifferencesRainfall2016, cazzanigaCalculatingHydrologicalResponse2020, smiatekPotentialCommercialMicrowave2017}  or urban catchments \citep{dischImpactDifferentSources2019, stranskyRunoffPredictionUsing2018}. The studies from urban environments have suggested that CML QPEs could be conveniently used in combination with other rainfall data, e.g. to disaggregate cumulative rainfall measurements from point rain gauges, if available in high temporal resolutions. However, many questions regarding  applications of CML QPEs, especially correction of their systematic errors, remain open.
-
+where $B$ [dB] represents baseline attenuation consisting of, e.g., free space loss and gaseous attenuation, $A$ [dB] stands for observed attenuation after baseline separation (henceforth referred to as “observed attenuation”), and $A_{wa}$ [dB] represents wet antenna attenuation (WAA). Imprecise quantification of the raindrop-induced attenuation $A_r$ due to CML instrumental uncertainties such as WAA estimation represents a considerable source of errors in CML QPEs  \citep{chwalaCommercialMicrowaveLink2019} and a major challenge to their hydrological applications.
 
 
 \section{CML QPE errors}
@@ -311,7 +303,7 @@ The following main potential instrumental error sources were identified by \cite
 
 \subsubsection{Wet antenna attenuation} \label{WAAtheor}
 
-WAA is, in contrast to $A_r$ and $B$, independent of CML path length. Previous studies \citep{leijnseMicrowaveLinkRainfall2008, overeemMeasuringUrbanRainfall2011} also suggest that it is relatively insensitive to CML frequency at bands suitable for rainfall retrieval (20--40 GHz). However, the complexity of the antenna wetting process is a major challenge to reliable WAA estimation. 
+Wet antenna attenuation (WAA) is, in contrast to $A_r$ and $B$, independent of CML path length. Previous studies \citep{leijnseMicrowaveLinkRainfall2008, overeemMeasuringUrbanRainfall2011} also suggest that it is relatively insensitive to CML frequency at bands suitable for rainfall retrieval (20--40 GHz). However, the complexity of the antenna wetting process is a major challenge to reliable WAA estimation. 
 
 Antenna wetting is influenced not only by rainfall, but by other atmospheric conditions (e.g. wind, temperature, humidity or solar radiation) and also  antenna hardware properties \citep[e.g. antenna radome material or coating;][]{lethMeasurementCampaignAssess2018}. Thus, to date, there is no unified approach to estimate WAA and reported WAA models are often based on different assumptions and result in considerably different estimates. For example, drying times of up to several hours have been reported \citep{schleissQuantificationModelingWetAntenna2013}, whereas other studies have not considered any wetting or drying dynamics at all, relating WAA only to rainfall intensity \citep{valtrExcessAttenuationCaused2019, kharadlyEffectWetAntenna2001}. 
 
@@ -343,7 +335,18 @@ In addition, \cite{fenclCommercialMicrowaveLinks2015} concluded that a few very 
 
 Moreover, if the bias in QPEs is relatively comparable among the CMLs, it is not clear how to identify optimal subsets of CMLs in such conditions. It remains to be investigated in what other ways such subsets could be identified efficiently. 
 For example, it should be investigated whether the CML spatial relations with the catchment can be used as the only decisive criteria. If this was proved to be efficient, it could considerably improve the value added of CMLs under data scarce conditions.
-Alternatively, if suitable reference data are available, the CML subsetting could be optimized by calibration to these data
+Alternatively, if suitable reference data are available, the CML subsetting could be optimized by calibration to these data.
+
+
+\section{Hydrological potential of CML QPEs}
+
+CML QPEs have a path-integrated character which makes them better suited for capturing areal rainfalls over a catchment than rain gauges. Moreover, unlike weather radars, they observe rainfall close to the ground. Recently, there were about four million CMLs being used worldwide within cellular networks and the number has been increasing \citep{ericssonEricssonMicrowaveOutlook2016}. Exploiting this infrastructure for rainfall detection does not necessitate substantial additional investments. Moreover, CML data can be accessed online in high temporal resolutions and in (near) real time from network operation centers either through network monitoring systems or specifically designed server-sided applications \citep{chwalaRealtimeDataAcquisition2016}. Thanks to the dense coverage of urban areas, CMLs represent very promising rainfall sensors for urban hydrological modelling. The greatest potential of this technique is in areas where traditional infrastructure for rainfall measurement is, in general, insufficient \citep{gossetImprovingRainfallMeasurement2016}.
+
+In fact, thanks to the intensive recent research, especially regarding the uncertainties in their retrieval, CML QPEs have proven to provide valuable rainfall information which could complement traditional observations with rain gauges and weather radars \citep{chwalaCommercialMicrowaveLink2019, gossetImprovingRainfallMeasurement2016, imhoffRainfallNowcastingUsing2020, riosgaonaRainfallRetrievalCommercial2018, uijlenhoetOpportunisticRemoteSensing2018}. However, despite the high potential and recent advances, only a few studies have investigated the ability of QPEs derived from real-world CML networks for quantitative hydrology, either for rural \citep{brauerEffectDifferencesRainfall2016, cazzanigaCalculatingHydrologicalResponse2020, smiatekPotentialCommercialMicrowave2017} or urban catchments \citep{dischImpactDifferentSources2019, stranskyRunoffPredictionUsing2018}. The studies from urban environments have suggested that CML QPEs could be conveniently used in combination with other rainfall data, e.g. to disaggregate cumulative rainfall measurements from point rain gauges, if available in high temporal resolutions. 
+
+
+
+
 
         
         %------------------------------------------------------ 2. Methods
@@ -752,6 +755,12 @@ To better interpret the results, we classify the rainfall events as either light
 
 First, we present hydrographs showing observed and modelled discharges for a heavy and a light rainfall event which characterize well typical features of the overall results. Next, a summary of the results for all 10 events used, as well as only those classified as heavy (maximal 10-min rainfall intensity $R_{max,10}$ > 12 mm/h), and those classified as light ($R_{max,10} \leq$ 12 mm/h), is presented in  boxplots, with a special attention on the heavy rainfalls.
 
+Hydrographs of a chosen light rainfall event (Fig. \ref{pil_fig1} top) show that the prediction performance during such an event is very similar for five out of the six evaluated rainfall observation layouts. The runoff dynamics as well as volumes are captured very well in all cases and errors occur in the same part of the hydrographs -  the  rising limbs. In contrast, results for the unadjusted CML QPEs present different characteristics. There is a tendency to notably underestimate the discharges. The runoff dynamics feature similar trends as before, however, not as precisely. Interestingly, many observations are out of the prediction bounds, meaning that the prediction reliability is low for this rainfall observation layout.
+
+Hydrographs of a chosen heavy rainfall event (Fig. \ref{pil_fig1} bottom) present a slightly different picture than the light rainfalls above. The worst runoff prediction was obtained using rainfall data from three municipal rain gauges. In particular, the peak flows were considerably underestimated in this case. Rainfall data from all other observation layouts, including unadjusted CML QPEs, reproduced well the peaks as well as all other hydrograph features.
+
+Summary results presented in Fig. \ref{pil_fig2} confirm the previously mentioned tendencies. First of all, unadjusted CML QPEs feature remarkably different results than other five observation layouts which quite resemble each other. The unadjusted QPEs considerably underestimate the runoff volumes for light rainfalls, circa by 75\% in median. However, for heavy rainfall events, the bias is at the same level as in other cases. This is also reflected in the associated $N\!S\!E$ values, which are around -0.5 in median for light and around 0.7 for heavy rainfalls. A certain level of bias is present as well in result for the five other observation layouts, roughly between -10\% and -20\% in median. Interestingly, in the cases of both the single local rain gauge and the three municipal gauges, CML QPEs adjusted using the gauge data feature smaller bias than the gauge data used alone. This also affects the associated $N\!S\!E$ values, which are higher for the adjusted CML QPEs than for the rain gauge data, especially when the heavy rainfalls are considered.
+
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=13cm]{figs/pilot/hydrograph light + heavy.png}
@@ -759,9 +768,7 @@ First, we present hydrographs showing observed and modelled discharges for a hea
 \end{center}
 \end{figure}
 
-Hydrographs of a chosen light rainfall event (Fig. \ref{pil_fig1} top) show that the prediction performance during such an event is very similar for five out of the six evaluated rainfall observation layouts. The runoff dynamics as well as volumes are captured very well in all cases and errors occur in the same part of the hydrographs -  the  rising limbs. In contrast, results for the unadjusted CML QPEs present different characteristics. There is a tendency to notably underestimate the discharges. The runoff dynamics feature similar trends as before, however, not as precisely. Interestingly, many observations are out of the prediction bounds, meaning that the prediction reliability is low for this rainfall observation layout.
 
-Hydrographs of a chosen heavy rainfall event (Fig. \ref{pil_fig1} bottom) present a slightly different picture than the light rainfalls above. The worst runoff prediction was obtained using rainfall data from three municipal rain gauges. In particular, the peak flows were considerably underestimated in this case. Rainfall data from all other observation layouts, including unadjusted CML QPEs, reproduced well the peaks as well as all other hydrograph features.
 
 \begin{figure}[H]
 \begin{center}
@@ -770,7 +777,7 @@ Hydrographs of a chosen heavy rainfall event (Fig. \ref{pil_fig1} bottom) presen
 \end{center}
 \end{figure}
 
-Summary results presented in Fig. \ref{pil_fig2} confirm the previously mentioned tendencies. First of all, unadjusted CML QPEs feature remarkably different results than other five observation layouts which quite resemble each other. The unadjusted QPEs considerably underestimate the runoff volumes for light rainfalls, circa by 75\% in median. However, for heavy rainfall events, the bias is at the same level as in other cases. This is also reflected in the associated $N\!S\!E$ values, which are around -0.5 in median for light and around 0.7 for heavy rainfalls. A certain level of bias is present as well in result for the five other observation layouts, roughly between -10\% and -20\% in median. Interestingly, in the cases of both the single local rain gauge and the three municipal gauges, CML QPEs adjusted using the gauge data feature smaller bias than the gauge data used alone. This also affects the associated $N\!S\!E$ values, which are higher for the adjusted CML QPEs than for the rain gauge data, especially when the heavy rainfalls are considered.
+
 
 \begin{figure}[H]
 \begin{center}
@@ -1248,6 +1255,26 @@ This study has confirmed both the potential of CMLs as a source of high-quality 
 % !Rnw root = dis.Rnw
 
 \chapter{On the value of CML QPEs for urban rainfall-runoff modelling: The final study} \label{chap7}
+
+\rule{\textwidth}{0.4pt}
+blabla
+bla bla
+\newline
+\rule[0.2cm]{\textwidth}{0.4pt}
+{\footnotesize The bulk of this chapter ...: \newline
+\-\hspace{0.5cm}
+Pastorek, J., Fencl, M., \& Bareš, V. \textbf{Blabla}. Submitted to \emph{blabla}. 
+}
+
+
+
+\section{Introduction}
+
+Quantitative precipitation estimates (QPEs) retrieved from commercial microwave links (CMLs) have a path-integrated character which makes them better suited for capturing areal rainfalls over a catchment than rain gauges. Moreover, unlike weather radars, they observe rainfall close to the ground. Thanks to the dense coverage of urban areas, CMLs represent very promising rainfall sensors for urban hydrological modelling. The greatest potential of this technique is in areas where traditional infrastructure for rainfall measurement is, in general, insufficient \citep{gossetImprovingRainfallMeasurement2016}.
+
+Quantification of the raindrop-induced attenuation (Eq. \ref{eq:2eq2}) is a crucial step when estimating rainfall from CML data. Imprecision in this quantification, e.g. due to CML instrumental uncertainties such as wet antenna attenuation (WAA) estimation, represent a considerable source of errors in CML QPEs  \citep{chwalaCommercialMicrowaveLink2019}. These error often compromise the value of CML QPEs for many hydrological applications \citep{leijnseMicrowaveLinkRainfall2008, fenclGaugeadjustedRainfallEstimates2017} and thus represent a major challenge to be overcome.
+
+In fact, thanks to the intensive recent research, especially regarding the uncertainties in their retrieval, CML QPEs have proven to provide valuable rainfall information which could complement traditional observations with rain gauges and weather radars \citep{chwalaCommercialMicrowaveLink2019, gossetImprovingRainfallMeasurement2016, imhoffRainfallNowcastingUsing2020, riosgaonaRainfallRetrievalCommercial2018, uijlenhoetOpportunisticRemoteSensing2018}. However, despite the high potential and recent advances, only a few studies have investigated the ability of QPEs derived from real-world CML networks for quantitative hydrology, either for rural \citep{brauerEffectDifferencesRainfall2016, cazzanigaCalculatingHydrologicalResponse2020, smiatekPotentialCommercialMicrowave2017} or urban catchments \citep{dischImpactDifferentSources2019, stranskyRunoffPredictionUsing2018}. The studies from urban environments have suggested that CML QPEs could be conveniently used in combination with other rainfall data, e.g. to disaggregate cumulative rainfall measurements from point rain gauges, if available in high temporal resolutions. 
 
 
 \section{Methods} \label{paperIIIMnM}

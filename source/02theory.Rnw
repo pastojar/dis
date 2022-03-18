@@ -34,9 +34,7 @@ Rainfall data from new types of devices which could conveniently complement trad
 
 \section{Rainfall retrieval from commercial microwave links}
 
-Commercial microwave links (CMLs) are point-to-point radio connections widely used as cellular backhaul. A substantial part of CML networks is operated at frequencies between 20 and 40 GHz where radio wave attenuation caused by raindrops is almost proportional to rainfall intensity. These CMLs can, therefore, be used as unintended rainfall sensors providing path-integrated quantitative precipitation estimates (QPEs). Moreover, CML data are accessible online in real time from network operation centers either through network monitoring systems or specifically designed server-sided applications \citep{chwalaRealtimeDataAcquisition2016}.
-
-Although deriving precipitation estimates from the attenuation of microwaves was originally suggested several decades ago \citep{atlasPathAreaIntegratedRainfall1977}, the idea has experienced a renaissance in recent years, thanks to the extensive growth of cellular networks \citep{messer2006environmental, leijnseRainfallMeasurementUsing2007} which frequently incorporate CMLs. Recently, there has been about four million CMLs being used worldwide within cellular networks and the number has been increasing \citep{ericssonEricssonMicrowaveOutlook2016}.
+Commercial microwave links (CMLs) are point-to-point radio connections widely used as cellular backhaul. A substantial part of CML networks is operated at frequencies between 20 and 40 GHz where radio wave attenuation caused by raindrops is almost proportional to rainfall intensity. These CMLs can, therefore, be used as unintended rainfall sensors providing path-integrated quantitative precipitation estimates (QPEs). Although deriving precipitation estimates from the attenuation of microwaves was originally suggested several decades ago \citep{atlasPathAreaIntegratedRainfall1977}, the idea has experienced a renaissance in recent years, thanks to the extensive growth of cellular networks \citep{messer2006environmental, leijnseRainfallMeasurementUsing2007} which frequently incorporate CMLs.
 
 The relationship between raindrop-induced attenuation $A_r$ [dB] and rainfall intensity $R$ [mm/h] is robust and well-understood. For a given rainfall intensity, $A_r$ is proportional to CML length and frequency. The relation can be expressed using the following approximation:
         \begin{equation} \label{eq:2eq1}
@@ -49,13 +47,7 @@ Nonetheless, $A_r$ must be separated from other components of the difference bet
         \begin{equation} \label{eq:2eq2}
         T\!R\!S\!L = B + A = B + A_{wa} + A_r
         \end{equation}
-where $B$ [dB] represents baseline attenuation consisting of, e.g., free space loss and gaseous attenuation, $A$ [dB] stands for observed attenuation after baseline separation (henceforth referred to as “observed attenuation”), and $A_{wa}$ [dB] represents wet antenna attenuation (WAA). Imprecise quantification of the raindrop-induced attenuation $A_r$ due to CML instrumental uncertainties such as WAA estimation represents a major source of errors in CML QPEs \citep[][more details in \ref{InstErr}]{chwalaCommercialMicrowaveLink2019}.
-
-
-Thanks to the extensive continental coverage of cellular networks, CMLs represent a promising rainfall sensors for hydrological modelling. The greatest potential of this technique is in areas where traditional infrastructure for rainfall measurement is, in general, insufficient \citep{gossetImprovingRainfallMeasurement2016}, e.g. in developing countries. Nevertheless, CMLs might also conveniently complement traditional monitoring networks common in developed countries, since, unlike weather radars, they observe rainfall close to the ground. Moreover, CML rainfall measurements have a path-integrated character which makes them better suited for capturing areal rainfalls over a catchment than rain gauges. 
-
-Only a few studies have investigated the ability of QPEs derived from real-world CML networks for quantitative hydrology, either for rural \citep{brauerEffectDifferencesRainfall2016, cazzanigaCalculatingHydrologicalResponse2020, smiatekPotentialCommercialMicrowave2017}  or urban catchments \citep{dischImpactDifferentSources2019, stranskyRunoffPredictionUsing2018}. The studies from urban environments have suggested that CML QPEs could be conveniently used in combination with other rainfall data, e.g. to disaggregate cumulative rainfall measurements from point rain gauges, if available in high temporal resolutions. However, many questions regarding  applications of CML QPEs, especially correction of their systematic errors, remain open.
-
+where $B$ [dB] represents baseline attenuation consisting of, e.g., free space loss and gaseous attenuation, $A$ [dB] stands for observed attenuation after baseline separation (henceforth referred to as “observed attenuation”), and $A_{wa}$ [dB] represents wet antenna attenuation (WAA). Imprecise quantification of the raindrop-induced attenuation $A_r$ due to CML instrumental uncertainties such as WAA estimation represents a considerable source of errors in CML QPEs  \citep{chwalaCommercialMicrowaveLink2019} and a major challenge to their hydrological applications.
 
 
 \section{CML QPE errors}
@@ -103,7 +95,7 @@ The following main potential instrumental error sources were identified by \cite
 
 \subsubsection{Wet antenna attenuation} \label{WAAtheor}
 
-WAA is, in contrast to $A_r$ and $B$, independent of CML path length. Previous studies \citep{leijnseMicrowaveLinkRainfall2008, overeemMeasuringUrbanRainfall2011} also suggest that it is relatively insensitive to CML frequency at bands suitable for rainfall retrieval (20--40 GHz). However, the complexity of the antenna wetting process is a major challenge to reliable WAA estimation. 
+Wet antenna attenuation (WAA) is, in contrast to $A_r$ and $B$, independent of CML path length. Previous studies \citep{leijnseMicrowaveLinkRainfall2008, overeemMeasuringUrbanRainfall2011} also suggest that it is relatively insensitive to CML frequency at bands suitable for rainfall retrieval (20--40 GHz). However, the complexity of the antenna wetting process is a major challenge to reliable WAA estimation. 
 
 Antenna wetting is influenced not only by rainfall, but by other atmospheric conditions (e.g. wind, temperature, humidity or solar radiation) and also  antenna hardware properties \citep[e.g. antenna radome material or coating;][]{lethMeasurementCampaignAssess2018}. Thus, to date, there is no unified approach to estimate WAA and reported WAA models are often based on different assumptions and result in considerably different estimates. For example, drying times of up to several hours have been reported \citep{schleissQuantificationModelingWetAntenna2013}, whereas other studies have not considered any wetting or drying dynamics at all, relating WAA only to rainfall intensity \citep{valtrExcessAttenuationCaused2019, kharadlyEffectWetAntenna2001}. 
 
@@ -135,5 +127,16 @@ In addition, \cite{fenclCommercialMicrowaveLinks2015} concluded that a few very 
 
 Moreover, if the bias in QPEs is relatively comparable among the CMLs, it is not clear how to identify optimal subsets of CMLs in such conditions. It remains to be investigated in what other ways such subsets could be identified efficiently. 
 For example, it should be investigated whether the CML spatial relations with the catchment can be used as the only decisive criteria. If this was proved to be efficient, it could considerably improve the value added of CMLs under data scarce conditions.
-Alternatively, if suitable reference data are available, the CML subsetting could be optimized by calibration to these data
+Alternatively, if suitable reference data are available, the CML subsetting could be optimized by calibration to these data.
+
+
+\section{Hydrological potential of CML QPEs}
+
+CML QPEs have a path-integrated character which makes them better suited for capturing areal rainfalls over a catchment than rain gauges. Moreover, unlike weather radars, they observe rainfall close to the ground. Recently, there were about four million CMLs being used worldwide within cellular networks and the number has been increasing \citep{ericssonEricssonMicrowaveOutlook2016}. Exploiting this infrastructure for rainfall detection does not necessitate substantial additional investments. Moreover, CML data can be accessed online in high temporal resolutions and in (near) real time from network operation centers either through network monitoring systems or specifically designed server-sided applications \citep{chwalaRealtimeDataAcquisition2016}. Thanks to the dense coverage of urban areas, CMLs represent very promising rainfall sensors for urban hydrological modelling. The greatest potential of this technique is in areas where traditional infrastructure for rainfall measurement is, in general, insufficient \citep{gossetImprovingRainfallMeasurement2016}.
+
+In fact, thanks to the intensive recent research, especially regarding the uncertainties in their retrieval, CML QPEs have proven to provide valuable rainfall information which could complement traditional observations with rain gauges and weather radars \citep{chwalaCommercialMicrowaveLink2019, gossetImprovingRainfallMeasurement2016, imhoffRainfallNowcastingUsing2020, riosgaonaRainfallRetrievalCommercial2018, uijlenhoetOpportunisticRemoteSensing2018}. However, despite the high potential and recent advances, only a few studies have investigated the ability of QPEs derived from real-world CML networks for quantitative hydrology, either for rural \citep{brauerEffectDifferencesRainfall2016, cazzanigaCalculatingHydrologicalResponse2020, smiatekPotentialCommercialMicrowave2017} or urban catchments \citep{dischImpactDifferentSources2019, stranskyRunoffPredictionUsing2018}. The studies from urban environments have suggested that CML QPEs could be conveniently used in combination with other rainfall data, e.g. to disaggregate cumulative rainfall measurements from point rain gauges, if available in high temporal resolutions. 
+
+
+
+
 

@@ -141,6 +141,12 @@ To better interpret the results, we classify the rainfall events as either light
 
 First, we present hydrographs showing observed and modelled discharges for a heavy and a light rainfall event which characterize well typical features of the overall results. Next, a summary of the results for all 10 events used, as well as only those classified as heavy (maximal 10-min rainfall intensity $R_{max,10}$ > 12 mm/h), and those classified as light ($R_{max,10} \leq$ 12 mm/h), is presented in  boxplots, with a special attention on the heavy rainfalls.
 
+Hydrographs of a chosen light rainfall event (Fig. \ref{pil_fig1} top) show that the prediction performance during such an event is very similar for five out of the six evaluated rainfall observation layouts. The runoff dynamics as well as volumes are captured very well in all cases and errors occur in the same part of the hydrographs -  the  rising limbs. In contrast, results for the unadjusted CML QPEs present different characteristics. There is a tendency to notably underestimate the discharges. The runoff dynamics feature similar trends as before, however, not as precisely. Interestingly, many observations are out of the prediction bounds, meaning that the prediction reliability is low for this rainfall observation layout.
+
+Hydrographs of a chosen heavy rainfall event (Fig. \ref{pil_fig1} bottom) present a slightly different picture than the light rainfalls above. The worst runoff prediction was obtained using rainfall data from three municipal rain gauges. In particular, the peak flows were considerably underestimated in this case. Rainfall data from all other observation layouts, including unadjusted CML QPEs, reproduced well the peaks as well as all other hydrograph features.
+
+Summary results presented in Fig. \ref{pil_fig2} confirm the previously mentioned tendencies. First of all, unadjusted CML QPEs feature remarkably different results than other five observation layouts which quite resemble each other. The unadjusted QPEs considerably underestimate the runoff volumes for light rainfalls, circa by 75\% in median. However, for heavy rainfall events, the bias is at the same level as in other cases. This is also reflected in the associated $N\!S\!E$ values, which are around -0.5 in median for light and around 0.7 for heavy rainfalls. A certain level of bias is present as well in result for the five other observation layouts, roughly between -10\% and -20\% in median. Interestingly, in the cases of both the single local rain gauge and the three municipal gauges, CML QPEs adjusted using the gauge data feature smaller bias than the gauge data used alone. This also affects the associated $N\!S\!E$ values, which are higher for the adjusted CML QPEs than for the rain gauge data, especially when the heavy rainfalls are considered.
+
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=13cm]{figs/pilot/hydrograph light + heavy.png}
@@ -148,9 +154,7 @@ First, we present hydrographs showing observed and modelled discharges for a hea
 \end{center}
 \end{figure}
 
-Hydrographs of a chosen light rainfall event (Fig. \ref{pil_fig1} top) show that the prediction performance during such an event is very similar for five out of the six evaluated rainfall observation layouts. The runoff dynamics as well as volumes are captured very well in all cases and errors occur in the same part of the hydrographs -  the  rising limbs. In contrast, results for the unadjusted CML QPEs present different characteristics. There is a tendency to notably underestimate the discharges. The runoff dynamics feature similar trends as before, however, not as precisely. Interestingly, many observations are out of the prediction bounds, meaning that the prediction reliability is low for this rainfall observation layout.
 
-Hydrographs of a chosen heavy rainfall event (Fig. \ref{pil_fig1} bottom) present a slightly different picture than the light rainfalls above. The worst runoff prediction was obtained using rainfall data from three municipal rain gauges. In particular, the peak flows were considerably underestimated in this case. Rainfall data from all other observation layouts, including unadjusted CML QPEs, reproduced well the peaks as well as all other hydrograph features.
 
 \begin{figure}[H]
 \begin{center}
@@ -159,7 +163,7 @@ Hydrographs of a chosen heavy rainfall event (Fig. \ref{pil_fig1} bottom) presen
 \end{center}
 \end{figure}
 
-Summary results presented in Fig. \ref{pil_fig2} confirm the previously mentioned tendencies. First of all, unadjusted CML QPEs feature remarkably different results than other five observation layouts which quite resemble each other. The unadjusted QPEs considerably underestimate the runoff volumes for light rainfalls, circa by 75\% in median. However, for heavy rainfall events, the bias is at the same level as in other cases. This is also reflected in the associated $N\!S\!E$ values, which are around -0.5 in median for light and around 0.7 for heavy rainfalls. A certain level of bias is present as well in result for the five other observation layouts, roughly between -10\% and -20\% in median. Interestingly, in the cases of both the single local rain gauge and the three municipal gauges, CML QPEs adjusted using the gauge data feature smaller bias than the gauge data used alone. This also affects the associated $N\!S\!E$ values, which are higher for the adjusted CML QPEs than for the rain gauge data, especially when the heavy rainfalls are considered.
+
 
 \begin{figure}[H]
 \begin{center}

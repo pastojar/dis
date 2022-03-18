@@ -2,6 +2,26 @@
 
 \chapter{On the value of CML QPEs for urban rainfall-runoff modelling: The final study} \label{chap7}
 
+\rule{\textwidth}{0.4pt}
+blabla
+bla bla
+\newline
+\rule[0.2cm]{\textwidth}{0.4pt}
+{\footnotesize The bulk of this chapter ...: \newline
+\-\hspace{0.5cm}
+Pastorek, J., Fencl, M., \& Bareš, V. \textbf{Blabla}. Submitted to \emph{blabla}. 
+}
+
+
+
+\section{Introduction}
+
+Quantitative precipitation estimates (QPEs) retrieved from commercial microwave links (CMLs) have a path-integrated character which makes them better suited for capturing areal rainfalls over a catchment than rain gauges. Moreover, unlike weather radars, they observe rainfall close to the ground. Thanks to the dense coverage of urban areas, CMLs represent very promising rainfall sensors for urban hydrological modelling. The greatest potential of this technique is in areas where traditional infrastructure for rainfall measurement is, in general, insufficient \citep{gossetImprovingRainfallMeasurement2016}.
+
+Quantification of the raindrop-induced attenuation (Eq. \ref{eq:2eq2}) is a crucial step when estimating rainfall from CML data. Imprecision in this quantification, e.g. due to CML instrumental uncertainties such as wet antenna attenuation (WAA) estimation, represent a considerable source of errors in CML QPEs  \citep{chwalaCommercialMicrowaveLink2019}. These error often compromise the value of CML QPEs for many hydrological applications \citep{leijnseMicrowaveLinkRainfall2008, fenclGaugeadjustedRainfallEstimates2017} and thus represent a major challenge to be overcome.
+
+In fact, thanks to the intensive recent research, especially regarding the uncertainties in their retrieval, CML QPEs have proven to provide valuable rainfall information which could complement traditional observations with rain gauges and weather radars \citep{chwalaCommercialMicrowaveLink2019, gossetImprovingRainfallMeasurement2016, imhoffRainfallNowcastingUsing2020, riosgaonaRainfallRetrievalCommercial2018, uijlenhoetOpportunisticRemoteSensing2018}. However, despite the high potential and recent advances, only a few studies have investigated the ability of QPEs derived from real-world CML networks for quantitative hydrology, either for rural \citep{brauerEffectDifferencesRainfall2016, cazzanigaCalculatingHydrologicalResponse2020, smiatekPotentialCommercialMicrowave2017} or urban catchments \citep{dischImpactDifferentSources2019, stranskyRunoffPredictionUsing2018}. The studies from urban environments have suggested that CML QPEs could be conveniently used in combination with other rainfall data, e.g. to disaggregate cumulative rainfall measurements from point rain gauges, if available in high temporal resolutions. 
+
 
 \section{Methods} \label{paperIIIMnM}
 
