@@ -29,7 +29,7 @@ The CML QPEs, as well as traditional data from rain gauges, are propagated throu
  
 \section{Methods} \label{pilotMnM}
 
-The defined problem is addrresses using rainfall and runoff data collected in~a small urban catchment in Prague-Letňany, Czech Republic (details in \ref{chap3}) during three months (August\,--\,October) of 2014. Precipitation time series from six rainfall observation layouts are propagated through a rainfall-runoff model (\ref{RRmodel}) and evaluated against observed runoffs. In order to quantify the associated uncertainties, the hydrological model is operated by means of prediction uncertainty quantification as first used in~a~similar context by \cite{giudice2013improving} and introduced in section \ref{delGiudTheor}.
+The defined problem is addrresses using rainfall and runoff data collected in~a small urban catchment in Prague-Letňany, Czech Republic (details in chapter \ref{chap3}) during three months (August\,--\,October) of 2014. Precipitation time series from six rainfall observation layouts are propagated through a rainfall-runoff model (chapter \ref{RRmodel}) and evaluated against observed runoffs. In order to quantify the associated uncertainties, the hydrological model is operated by means of prediction uncertainty quantification as first used in~a~similar context by \cite{giudice2013improving} and introduced in~chapter~\ref{delGiudTheor}.
 
 
 \subsection{Rainfall observation layouts} 

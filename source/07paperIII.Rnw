@@ -16,14 +16,91 @@ Pastorek, J., Fencl, M., \& Bareš, V. \textbf{Blabla}. Submitted to \emph{blabl
 
 \section{Introduction}
 
-Quantitative precipitation estimates (QPEs) retrieved from commercial microwave links (CMLs) have a path-integrated character which makes them better suited for capturing areal rainfalls over a catchment than rain gauges. Moreover, unlike weather radars, they observe rainfall close to the ground. Thanks to the dense coverage of urban areas, CMLs represent very promising rainfall sensors for urban hydrological modelling. The greatest potential of this technique is in areas where traditional infrastructure for rainfall measurement is, in general, insufficient \citep{gossetImprovingRainfallMeasurement2016}.
+Quantitative precipitation estimates (QPEs) retrieved from commercial microwave links (CMLs) have been found to provide valuable rainfall information which could complement traditional observations with rain gauges and weather radars \citep{chwalaCommercialMicrowaveLink2019, gossetImprovingRainfallMeasurement2016, imhoffRainfallNowcastingUsing2020, riosgaonaRainfallRetrievalCommercial2018, uijlenhoetOpportunisticRemoteSensing2018}. However, despite the high potential and recent advances, only a few studies have investigated the ability of QPEs derived from real-world CML networks for quantitative hydrology, either for rural \citep{brauerEffectDifferencesRainfall2016, cazzanigaCalculatingHydrologicalResponse2020, smiatekPotentialCommercialMicrowave2017} or urban catchments \citep{dischImpactDifferentSources2019, pastorekCommercialMicrowaveLinks2019, stranskyRunoffPredictionUsing2018}. Therefore, many questions regarding their hydrological applications remain unanswered.
 
-Quantification of the raindrop-induced attenuation (Eq. \ref{eq:2eq2}) is a crucial step when estimating rainfall from CML data. Imprecision in this quantification, e.g. due to CML instrumental uncertainties such as wet antenna attenuation (WAA) estimation, represent a considerable source of errors in CML QPEs  \citep{chwalaCommercialMicrowaveLink2019}. These error often compromise the value of CML QPEs for many hydrological applications \citep{leijnseMicrowaveLinkRainfall2008, fenclGaugeadjustedRainfallEstimates2017} and thus represent a major challenge to be overcome.
+It has been shown that using CML QPEs can lead to very well predicted temporal dynamics of runoff from a small urban catchment. However, systematic errors in QPEs, common especially for short (ca. < 2 km) CMLs, make them unsuitable for practical applications where volume is of high importance \citep[][Chapter \ref{chap5}]{pastorekCommercialMicrowaveLinks2019}. This is unfortunate because such QPEs could be particularly useful for urban hydrology as they often represent well the typical scales of small urban catchments. Moreover, shorter CMLs are better suited to capture small-scale rainfall spatial variability which is of high importance for urban hydrology. It remains to be investigated to what extent the recent advances in CML QPE retrieval can improve the value of QPEs from such CMLs for urban rainfall-runoff modelling.
 
-In fact, thanks to the intensive recent research, especially regarding the uncertainties in their retrieval, CML QPEs have proven to provide valuable rainfall information which could complement traditional observations with rain gauges and weather radars \citep{chwalaCommercialMicrowaveLink2019, gossetImprovingRainfallMeasurement2016, imhoffRainfallNowcastingUsing2020, riosgaonaRainfallRetrievalCommercial2018, uijlenhoetOpportunisticRemoteSensing2018}. However, despite the high potential and recent advances, only a few studies have investigated the ability of QPEs derived from real-world CML networks for quantitative hydrology, either for rural \citep{brauerEffectDifferencesRainfall2016, cazzanigaCalculatingHydrologicalResponse2020, smiatekPotentialCommercialMicrowave2017} or urban catchments \citep{dischImpactDifferentSources2019, stranskyRunoffPredictionUsing2018}. The studies from urban environments have suggested that CML QPEs could be conveniently used in combination with other rainfall data, e.g. to disaggregate cumulative rainfall measurements from point rain gauges, if available in high temporal resolutions. 
+It has also been concluded that CML QPEs, if available in high temporal resolutions, could be conveniently used for urban hydrological modelling in combination with other rainfall data, e.g. to disaggregate cumulative rainfall measurements from point rain gauges \citep{dischImpactDifferentSources2019, stranskyRunoffPredictionUsing2018}. Nevertheless, CML QPEs could be particularly useful in regions where long-term rainfall monitoring networks are not available, or available only in resolutions which do no not suffice for most purposes of urban hydrological modelling \citep{gossetImprovingRainfallMeasurement2016}. Yet, it is not clear how to make the best use of  CML QPEs under such conditions.
+
+It has been argued that ignoring the uncertainty, particularly related to input data, compromises (not only) hydrological modelling \citep{beven2006undermining, kavetskiBayesianAnalysisInput2006}, or similarly, that quantification of the uncertainty associated with the models in urban stormwater modelling is a must \citep{dotto2012comparison}. However, extensive quantification of the uncertainties related to applying CML QPEs in urban hydrology, and a comparison with traditional rainfall data uncertainty, has not been presented yet in relevant literature.
+
+We address the above mentioned knowledge gaps and assess the value of CML QPEs for rainfall-runoff modelling in a small (1.3~km\textsuperscript{2}) urban catchment. We do this while trying to reduce their systematic errors with the help of three various reference data sets. We believe that an equivalent of at least one of these datasets could be available to most urban hydrology professionals. These datasets include:
+\begin{itemize}
+        \item 60-min data from three rain gauges located 2-–3 km outside of the catchment
+        \item 60-min data from a single rain gauge located in a 8-km distance from the catchment
+        \item stormwater discharge observations in combination with a rainfall-runoff model 
+\end{itemize}
+
+Moreover, we evaluate the rainfall-runoff modelling performance associated with the CML QPEs by quantifying the uncertainties in the rainfall-runoff modelling outputs.
+
 
 
 \section{Methods} \label{paperIIIMnM}
 
-\subsection{Performance assessment}
-?? We have decided to employ, apart from the two mentioned above,  as well a metric which combines them -- the interval score $S_\alpha$ as formulated by \cite{gneiting2007strictly}.
+The experiment is performed using rainfall and runoff data from an urban catchment with an area of 1.3 km\textsuperscript{2} collected during 46 rainfall-runoff events (670 hours) observed over a three-year period (section \ref{dataAcq}). QPEs are derived from CMLs using recent state-of-the-art approaches which could be implemented with the data available (section \ref{pIII_derivQPEs}). We seek to reduce the bias in CML QPEs by calibrating the wet-antenna attenuation (WAA) estimation model to the three reference datasets available, using data from 23 randomly selected events (section \ref{pIII_cal}). The remaining 23 events are used in the validation stage (section \ref{pIII_val}), in which rainfall data retrieved using all observation layouts of interest (section \ref{pIII_rainfall_scen}) are propagated through a rainfall-runoff model and the model outputs are evaluated against observed discharges. The model performance is analyzed using a robust prediction uncertainty quantification method.
+
+
+\subsection{Data acquisition} \label{dataAcq}
+The dataset used in this study was collected in a small (1.3 km\textsuperscript{2}) urban catchment drained by a stormwater sewer system and located in the Letňany neighborhood of Prague, Czech Republic (details in chapter \ref{chap3}). Most importantly, we collected signal-level data from 16 CMLs located within the catchment and its surroundings (Fig. \ref{3fig2}). These data were retrieved at a 10-s resolution. The CMLs (Mini-Link, Ericsson) belong to a major telecom operator, broadcast at 25–39 GHz frequencies and feature path lengths between 816 and 5795~m. Next, we use rain gauge data from a permanent monitoring network operated by the municipal sewer authority with the density of 1 gauge per 20–25 km\textsuperscript{2} (Fig. \ref{3fig2}). These gauges are referred to as “municipal”. Moreover, we observed rainfall using additional rain gauges temporarily installed at three locations around the catchment with the intention of increasing the rain gauge network density in the area (Fig. \ref{3fig1}). These gauges are referred to as “local”. All the rain gauges are tipping-bucket rain gauges (MR3, Meteoservis) and their observations were recorded at a 1-min resolution. When the rain gauge data are used as the reference for CML QPE routine optimization, their resolution is aggregated to 60 min for the sake of this study. In addition, using an area-velocity flowmeter (Triton, ADS), we measured discharges at the stormwater drainage system outlet (Fig. \ref{3fig2}). The temporal resolution of the discharge measurements is 2 min for wet periods and 10 min for dry periods.
+
+From the three-year observation period, we select data from hydrologically relevant rainfall events (rainfall height $H$ > 2 mm) and only use these in the presented study. After eliminating events with substantial data gaps, 46 events (670 hours) are available, from which we randomly select 23 (340 hours) to be used for the WAA model calibration (section \ref{pIII_cal}). The remaining 23 events (330 hours) are used in the validation stage (section\ref{pIII_val}).
+
+
+\subsection{Deriving CML QPEs} \label{pIII_derivQPEs}
+Rainfall retrieval from commercial microwave links follows the general concept presented in chapter  \ref{CMLretrievalTheor}. Up to the baseline separation, the first steps of processing the observed  $T\!R\!S\!L$ [dB]  data, including a quality check and aggregation to a 1-min resolution, are done in the same way as in \ref{DerCML}. Baseline is estimated as a moving median with a centered window having the length of 1 week applied on $T\!R\!S\!L$  time series averaged over 60-min intervals \citep{fenclAtmosphericObservationsEband2020}. To estimate WAA, we use the model proposed by \cite[][see Eq. \ref{eq:II_1}]{valtrExcessAttenuationCaused2019}. Values of the model parameters $k'$ and $\alpha'$ are obtained by calibration to the individual reference data sets available (details in section \ref{pIII_cal}). 
+
+After subtracting baseline $B$ [dB] and WAA $A_{wa}$ [dB] from the observed $T\!R\!S\!L$ (eq. \ref{eq:2eq2}), raindrop-induced attenuation $A_r$ [dB] is used to compute rainfall intensity $R$ [mm/h] (eq. \ref{eq:2eq1}) with parameters $\alpha$ and $\beta$ according to \cite{recommendation2005838}, similarly as in chapter \ref{paperIIMethA}.
+
+
+\subsection{WAA model calibration} \label{pIII_cal}
+Reference data sets used to calibrate the WAA estimation models include the following:
+\begin{itemize}
+        \item 60-min data from the three closest municipal rain gauges located 2--3 km outside of the catchment (Fig. \ref{3fig2}). A single time series, constructed as the mean of the instantaneous $R$ [mm/h] values of the three gauges, is used.
+        \item 60-min data from a municipal rain gauge located at the Prague central waste water treatment plant in an 8-km distance from the catchment (Fig.~\ref{3fig2}).
+        \item Stormwater discharges observed at the catchment's drainage system outlet (Fig. \ref{3fig2}).
+\end{itemize}
+
+
+The WAA model is calibrated successively for each individual reference dataset available. The optimization is performed separately for each single CML. 
+
+When using rain gauge data as the reference, the WAA model parameters are optimized by comparing QPEs with the gauge data as described in \ref{paperIIMethC}, however, with CML QPEs aggregated to 60-min resolution to match the gauge data resolution. The root mean square error is used as the objective function. 
+
+When employing the discharge measurements, we repeatedly propagate the CML QPEs in the original 1-min resolution through the deterministic rainfall-runoff model (details in section \ref{pIII_val}) and optimize the WAA model parameters by comparing the modelled and observed discharges. Now, the Nash–Sutcliffe efficiency is the objective function. In the case of both calibration approaches, the objective functions evaluate the QPEs as whole time series consisting of all 23 events, i.e. not considering the performance for individual events.
+
+
+\subsection{Rainfall observation layouts} \label{pIII_rainfall_scen}
+
+Three CML QPE datasets, corresponding to the three reference datasets used for WAA calibration (section \ref{pIII_cal}),
+
+Only the best-geographically-located CMLs -  why... - other in the discussion
+
+Rain gauge data as the performance reference
+\begin{itemize}
+\item 60-min data used for WAA calibration
+\item best-case-scenario - local RGs
+\end{itemize}
+
+
+\subsection{Rainfall data validation by rainfall-runoff modelling} \label{pIII_val}
+
+Rainfall data retrieved using the above observation layouts are propagated through a rainfall-runoff model, and the model outputs are evaluated against observed discharges. We decide to quantify uncertainties of the rainfall-runoff model predictions and employ the Bayesian uncertainty analysis framework of  \cite{kennedy2001bayesian} as formulated by \cite{reichert2012linking} and first used in a context similar to ours by \cite{giudice2013improving}. More recently, this approach has been successfully applied by \cite{sikorskaValueDifferentPrecipitation2018} to analyze the value of different precipitation data for flood prediction in an alpine catchment. The basic principle of the method is to extend the deterministic rainfall-runoff model by a stochastic error model which explicitly accounts for systematic model errors, i.e. bias. More information on the principles or particular details of this uncertainty quantification method can be found in chapter \ref{delGiudTheor}.
+
+The deterministic rainfall-runoff model was built in the EPA-SWMM software. It was calibrated in the past and has shown to perform well, except for extreme rainfalls. A detailed description of the rainfall-runoff model can be found in chapter \ref{chap3}. We use the model to simulate discharges at the outlet of the local stormwater drainage system. Except for data from the local rain gauges, rainfall input is implemented in the model as areal rainfall, meaning that rainfall intensity in a given time step has a constant value over all model subcatchments. For the local rain gauges, the catchment is divided into three Thiessen polygons, corresponding to the local gauges at three locations (Fig \ref{3fig1}).
+
+To maximize the accuracy of rainfall-runoff predictions ... 
+
+When calibrating the stochastic error model, data from the same 23 events ...
+
+To validate the rainfall-runoff modelling performance associated with a given rainfall data set in terms of prediction uncertainty ...
+
+
+We pay special attention to events with high  rainfall spatial variability, as they are often associated with both a low representativeness of traditional rain gauge observations and with high rainfall intensities which are of special interest for many urban hydrology tasks, e.g. evaluation of urban stormwater systems.
+
+
+
+
+
+
+
+
+
