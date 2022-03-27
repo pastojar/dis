@@ -56,7 +56,7 @@ After subtracting baseline $B$ [dB] and WAA $A_{wa}$ [dB] from the observed $T\!
 Reference data sets used to calibrate the WAA estimation models include the following:
 \begin{itemize}
         \item 60-min data from the three closest municipal rain gauges located 2--3 km outside of the catchment (Fig. \ref{3fig2}). A single time series, constructed as the mean of the instantaneous $R$ [mm/h] values of the three gauges, is used.
-        \item 60-min data from a municipal rain gauge located at the Prague central waste water treatment plant in an 8-km distance to the south-west from the catchment (Fig.~\ref{3fig2}).
+        \item 60-min data from a municipal rain gauge located at the Prague central waste water treatment plant (WWTP) in an 8-km distance to the south-west from the catchment (Fig.~\ref{3fig2}).
         \item Stormwater discharges observed at the catchment's drainage system outlet (Fig. \ref{3fig2}) at a 2-min resolution for wet periods and a 10-min resolution for dry ones.
 \end{itemize}
 
@@ -102,7 +102,7 @@ To maximize the accuracy of rainfall-runoff predictions and the reliability of t
 When calibrating the stochastic error model, data from the same 23 events as when optimizing the WAA estimation model are employed. The calibration by means of Bayesian inference (details in in chapter \ref{delGiudTheor}) is performed in two steps (similarly to chapter \ref{priors_calibr}). First, we use a generalized simulated annealing function which was designed to “search for a global minimum of a very complex non-linear objective function with a very large number of optima” \citep{xiangGeneralizedSimulatedAnnealing2013}. Second, we use a numerical Monte Carlo Markov Chain sampler which “achieves often a high efficiency by tuning the proposal distributions to a user defined acceptance rate” as implemented by \cite{scheideggerAdaptMCMCImplementationGeneric2012} according to the proposal of \cite{vihola2012robust}.
 
 
-To validate the rainfall-runoff modelling performance associated with a given rainfall observation layout, we use data from the 23 events not employed in the calibration stage. We produce hydrographs of each event showing median predictions and 90\% confidence intervals. For the median prediction, as well as for every single stochastic model prediction associated with a given event, we quantify the normalized Nash–Sutcliffe efficiency $N\!N\!S\!E$ [-] summarizing the overall performance, the relative error of the total runoff volume $dV$ [-], the Spearman rank correlation coefficient $S\!C\!C$ which quantifies the strength of a monotonic relationship between two variables and is independent of both linear and nonlinear bias, and $d_{Qmax}$ [-] which is the relative error of the sum of discharges during eight minutes around the observed maximal discharge (four minutes before and four after). The uncertainty of the performance metrics is analyzed by visualizing the most favorable 90\% intervals within their distributions. Next, the discharge prediction reliability is quantified for each event as the fraction of discharge observations falling into the 90\% confidence intervals. We also use a metric which takes into account both the prediction accuracy and precision - normalized mean interval skill score $N\!M\!I\!S\!S$ [-]. It is based on the interval score \citep{gneiting2007strictly, breinholtFormalStatisticalApproach2012} which rewards the forecaster for narrow prediction intervals and, depending on a predefined confidence level, penalizes the forecaster if the observation misses the prediction interval (Eq. \ref{eq:IS}). This concept has been extended into mean interval skill score $M\!I\!S\!S$ [-] \citep{bourginTransferringGlobalUncertainty2015, bockQuantifyingUncertaintySimulated2018} which benchmarks the prediction confidence bounds by reference bounds obtained, e.g., from long-term climatological data (Eq. \ref{eq:MISS}). We apply this approach and determine $M\!I\!S\!S$ for each event, however, we benchmark the 90\% confidence bounds by the 90\% range of the runoff observations for the given event. To confine its values to the interval of [-1, 1], we transform $M\!I\!S\!S$ into $N\!M\!I\!S\!S$ using the equation
+To validate the rainfall-runoff modelling performance associated with a given rainfall observation layout, we use data from the 23 events not employed in the calibration stage. We produce hydrographs of each event showing median predictions and 90\% confidence intervals. For the median prediction, as well as for every single stochastic model prediction associated with a given event, we quantify the normalized Nash–Sutcliffe efficiency $N\!N\!S\!E$ [-] summarizing the overall performance, the relative error of the total runoff volume $dV$ [-], the Spearman rank correlation coefficient $S\!C\!C$ which quantifies the strength of a monotonic relationship between two variables and is independent of both linear and nonlinear bias, and $dQ_{max}$ [-] which is the relative error of the sum of discharges during eight minutes around the observed maximal discharge (four minutes before and four after). The uncertainty of the performance metrics is analyzed by visualizing the most favorable 90\% intervals within their distributions. Next, the discharge prediction reliability is quantified for each event as the fraction of discharge observations falling into the 90\% confidence intervals. We also use a metric which takes into account both the prediction accuracy and precision - normalized mean interval skill score $N\!M\!I\!S\!S$ [-]. It is based on the interval score \citep{gneiting2007strictly, breinholtFormalStatisticalApproach2012} which rewards the forecaster for narrow prediction intervals and, depending on a predefined confidence level, penalizes the forecaster if the observation misses the prediction interval (Eq. \ref{eq:IS}). This concept has been extended into mean interval skill score $M\!I\!S\!S$ [-] \citep{bourginTransferringGlobalUncertainty2015, bockQuantifyingUncertaintySimulated2018} which benchmarks the prediction confidence bounds by reference bounds obtained, e.g., from long-term climatological data (Eq. \ref{eq:MISS}). We apply this approach and determine $M\!I\!S\!S$ for each event, however, we benchmark the 90\% confidence bounds by the 90\% range of the runoff observations for the given event. To confine its values to the interval of [-1, 1], we transform $M\!I\!S\!S$ into $N\!M\!I\!S\!S$ using the equation
 
 \begin{equation} \label{eq:pIIIeq1}
 N\!M\!I\!S\!S = 1  /  (2 -  M\!I\!S\!S ),  
@@ -112,10 +112,17 @@ N\!M\!I\!S\!S = 1  /  (2 -  M\!I\!S\!S ),
 
 \section{Results} \label{paperIIIRes}
 
+...
 We pay special attention to events with high  rainfall spatial variability, as they are often associated with both a low representativeness of traditional rain gauge observations and with high rainfall intensities which are of special interest for many urban hydrology tasks, e.g. evaluation of urban stormwater systems.
 
 
+\FloatBarrier
 \subsection{Retrieved rainfall} \label{paperIIIRes1}
+
+60-min data from the single RG at the WWTP differ from the 1-min data from closer RGs (see Fig. \ref{fig:III_1})
+
+CML QPEs calibrated to the data from the RG at the WWTP also differ other CML QPE layouts, which are very similar (!)
+
 
 \begin{figure}[h]
 \begin{center}
@@ -126,30 +133,72 @@ We pay special attention to events with high  rainfall spatial variability, as t
 \end{figure}
 
 
+\FloatBarrier
 \subsection{Scatter} \label{Scatter}
+
+Q modelled using CML QPEs are better (at least in volumes) than those for the municipal RGs (see Fig. \ref{fig:III_2})
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=14cm]{figs/paperIII/Scatter.png}
-\caption{Scatter.} 
+\includegraphics[width=13cm]{figs/paperIII/Scatter.png}
+\caption{Scatterplots comparing observed and modelled discharge $Q$ [l/s] at the level of individual data points (time steps) for four rainfall observation layouts: 60-min records from the single rain gauge at an 8-km distance, i.e. at the central WWTP (top left), 1-min records from the three municipal gauges at distances of 2--3 km (top right), CML QPEs retrieved with WAA model calibrated to the 60-min records from the gauge at the WWTP (bottom left), and CML QPEs retrieved with WAA model calibrated to the 60-min records from the three municipal gauges (bottom right). Each of the 23 events is displayed in a different colour which represents the rainfall spatial variability during the given event (blue – low variability, red – high variability). Note that the axes are in logarithmic scales.} 
 \label{fig:III_2}
 \end{center}
 \end{figure}
 
+\FloatBarrier
+\subsection{Hydrographs} \label{Hydrographs}
+
+CML QPEs can be better than the munic. RGs also in terms of timing
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=12cm]{figs/paperIII/hydrograph.png}
-\caption{Hydrograph.} 
+\includegraphics[width=11cm]{figs/paperIII/hydrograph.png}
+\caption{Hydrographs showing 90\% prediction bounds for a chosen rainfall-runoff event (2016-08-29, 02:28) obtained using 1-min data from the three municipal rain gauges (top) and CML QPEs retrieved with the WAA model calibrated using 60-min data from the same gauges (bottom). The violin-plots show the metrics ($dV, dQ_{max}, N\!N\!S\!E, S\!C\!C$) which can be evaluated for each individual model prediction within the uncertainty ensemble. The other two metrics (reliability, $N\!M\!I\!S\!S$) show the only value associated with the given event (in black) whereas the background boxplots (in light gray) show the variability among all 23 events.} 
 \label{fig:III_3}
+\end{center}
+\end{figure}
+
+\FloatBarrier
+\subsection{Summary} \label{Summary}
+
+The above tendencies are confirmed in the summary results (Fig. \ref{fig:III_4})
+
+CML QPEs calibrated to observed Q are as good as those calibrated to munic. RGs - better than munic. RGs themselves, almost as good as local RGs
+
+For spatially most variable events (Fig. \ref{fig:III_5}), CML QPEs calibrated to observed Q lead to least biased Q
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=11cm]{figs/paperIII/violins.png}
+\caption{The output uncertainty of the rainfall-runoff modelling associated with all six rainfall observation layouts evaluated, summarized for all 23 events. The violin-plots show the metrics ($dV, N\!N\!S\!E$) which were evaluated for each individual model prediction within the uncertainty ensemble. The purple lines reflect the median predictions for each event. Areas in darker gray highlight the best 90\% of the predictions. The boxplots feature metrics (reliability, $N\!M\!I\!S\!S$) which can be calculated only for the band prediction as a whole and thus only visualize the variability among 23 values associated with the individual events.} 
+\label{fig:III_4}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=8cm]{figs/paperIII/violins most var.png}
+\caption{The output uncertainty of the rainfall-runoff modelling associated with the 1-min records from the three local rain gauges (left) and with all three CML QPE observation layouts, summarized for eight events with the highest rainfall spatial variability. The violin-plots show the metrics ($dQ_{max}, N\!N\!S\!E$) which were evaluated for each individual model prediction within the uncertainty ensemble. The purple lines reflect the median predictions for each event. Areas in darker gray highlight the best 90\% of the predictions. The boxplots feature metrics (reliability, $N\!M\!I\!S\!S$) which can be calculated only for the band prediction as a whole and thus only visualize the variability among eight values associated with the individual events.} 
+\label{fig:III_5}
 \end{center}
 \end{figure}
 
 
 
 
+\FloatBarrier
 \section{Discussion} \label{paperIIIDis}
 
 
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=11cm]{figs/paperIII/boxplots_GBLvsALL_CMLs.png}
+\caption{Deterministic rainfall-runoff modelling performance in terms of $dV$ (top) and $N\!N\!S\!E$ (bottom) obtained using 1-min records from local rain gauges (loc. RGs), QPEs from individual CMLs (\#3, ..., \#19), mean QPEs from all CMLs available (all CMLs), and mean QPEs from those CMLs the paths of which best cover the catchment of interest (best-loc. CMLs; see chapter \ref{pIII_rainfall_scen}). All CML QPEs were retrieved using the WAA model calibrated to the 60-min data from the three municipal rain gauges.  Each boxplot reflects the variability among all 23 events used for the validation. The pink bars show the performance calculated for the time series consisting of the 23 events as a whole. The CMLs are ordered according to the increasing path length, their frequencies are colour-coded.
+} 
+\label{fig:III_6}
+\end{center}
+\end{figure}
 
 

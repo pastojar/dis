@@ -6,6 +6,7 @@
 \usepackage{csquotes}      % correct quotation
 \usepackage{natbib}        % text references
 \usepackage{makecell}      % break line in tables
+\usepackage{placeins}      % enables \FloatBarrier
 
 
 \ctusetup{
