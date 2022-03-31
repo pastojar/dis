@@ -13,4 +13,6 @@ Both the CML QPEs and traditional rainfall data are used for rainfall-runoff mod
 \section{bla}
 
 \subsection{bla}
-?? We have decided to employ, apart from the two mentioned above,  as well a metric which combines them -- the interval score $S_\alpha$ as formulated by \cite{gneiting2007strictly}.
+the position of CMLs in respect to the small urban catchment affects their ability to capture rainfall-runoff dynamics, such as the onset of a runoff event, timing of the hydrograph rising limb, runoff peak, and recession limb;
+
+CMLs with short paths, which typically correspond well to (sub-)catchment scales are often considerably biased, what compromises their usability for urban hydrology
