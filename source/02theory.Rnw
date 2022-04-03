@@ -44,7 +44,7 @@ Nonetheless, $A_r$ must be separated from other components of the difference bet
         \begin{equation} \label{eq:2eq2}
         T\!R\!S\!L = B + A = B + A_{wa} + A_r
         \end{equation}
-where $B$ [dB] represents baseline attenuation consisting of, e.g., free space loss and gaseous attenuation, $A$ [dB] stands for observed attenuation after baseline separation (henceforth referred to as “observed attenuation”), and $A_{wa}$ [dB] represents wet antenna attenuation (WAA). Imprecise quantification of the raindrop-induced attenuation $A_r$ due to CML rainfall retrieval uncertainties such as WAA estimation represents a considerable source of errors in CML QPEs  \citep{chwalaCommercialMicrowaveLink2019} and a major challenge to their hydrological applications.
+where $B$ [dB] represents baseline attenuation consisting of, e.g., free space loss and gaseous attenuation, $A$ [dB] stands for observed attenuation after baseline separation, and $A_{wa}$ [dB] represents wet antenna attenuation (WAA). Imprecise quantification of the raindrop-induced attenuation $A_r$ due to CML rainfall retrieval uncertainties such as WAA estimation represents a considerable source of errors in CML QPEs  \citep{chwalaCommercialMicrowaveLink2019} and a major challenge to their hydrological applications.
 
 
 \section{CML QPE uncertainties}

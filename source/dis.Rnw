@@ -7,6 +7,7 @@
 \usepackage{natbib}        % text references
 \usepackage{makecell}      % break line in tables
 \usepackage{placeins}      % enables \FloatBarrier
+\usepackage{afterpage}
 
 
 \ctusetup{
@@ -89,14 +90,17 @@
         <<concl, child='08concl.Rnw'>>=
         @
         
-        %------------------------------------------------------ dummy chapter
-        <<test, child='Child.Rnw'>>=
+        %------------------------------------------------------ Appendices
+        <<append, child='09app.Rnw'>>=
         @
       
     
-
-        \bibliographystyle{apalike2} %apalike2 myacmtrans3  ieeetr  % pri vacsine vypnut natbib! apa-good
+        
+        
+        \setcounter{chapter}{11}
+        \bibliographystyle{apalike2} % myacmtrans3  ieeetr  % pri vacsine vypnut natbib! apa-good
         \small
+        \chapterstarmark{Bibliography}
         \bibliography{fromZotero} 
         
     

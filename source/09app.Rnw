@@ -1,0 +1,63 @@
+% !Rnw root = dis.Rnw
+
+\setcounter{chapter}{10}
+\renewcommand{\thechapter}{A}
+
+\chapter*{Appendix}    \label{Append}
+\chapterstarmark{Appendix}
+
+
+Both the CML QPEs and traditional rainfall data are used for rainfall-runoff modelling in a small urban catchment, the performance of which is evaluated against observed discharge measurements. The study's results suggest that CMLs could represent a relevant rainfall data source, especially for monitoring of heavy rainfalls, if local rain gauge data in high spatial resolution are not available in a given catchment.
+
+
+\FloatBarrier
+
+\begin{table}[h]
+\begin{center}
+\includegraphics[width=13cm]{figs/App/rains overview table part1.png}
+Table continues on the next page.
+%\label{fig:App_1}
+\end{center}
+\end{table}
+
+\FloatBarrier
+
+\begin{table}[h]
+\begin{center}
+Table starts on the previous page.
+\includegraphics[width=13cm]{figs/App/rains overview table part2.png}
+\caption{Rainfall } 
+\label{tab:App_1}
+\end{center}
+\end{table}
+
+\FloatBarrier
+
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=13cm]{figs/App/Fig S2.png}
+\caption{Rainfall } 
+\label{fig:App_1}
+\end{center}
+\end{figure}
+
+
+
+
+
+
+
+
+\newpage
+\clearpage
+\clearpage
+\cleardoublepage
+\afterpage{\blankpage}
+\afterpage{\blankpage}
+
+
+
+
+\FloatBarrier
+\chapterstarmark{Appendix}

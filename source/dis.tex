@@ -57,6 +57,7 @@
 \usepackage{natbib}        % text references
 \usepackage{makecell}      % break line in tables
 \usepackage{placeins}      % enables \FloatBarrier
+\usepackage{afterpage}
 
 
 \ctusetup{
@@ -253,7 +254,7 @@ Nonetheless, $A_r$ must be separated from other components of the difference bet
         \begin{equation} \label{eq:2eq2}
         T\!R\!S\!L = B + A = B + A_{wa} + A_r
         \end{equation}
-where $B$ [dB] represents baseline attenuation consisting of, e.g., free space loss and gaseous attenuation, $A$ [dB] stands for observed attenuation after baseline separation (henceforth referred to as “observed attenuation”), and $A_{wa}$ [dB] represents wet antenna attenuation (WAA). Imprecise quantification of the raindrop-induced attenuation $A_r$ due to CML rainfall retrieval uncertainties such as WAA estimation represents a considerable source of errors in CML QPEs  \citep{chwalaCommercialMicrowaveLink2019} and a major challenge to their hydrological applications.
+where $B$ [dB] represents baseline attenuation consisting of, e.g., free space loss and gaseous attenuation, $A$ [dB] stands for observed attenuation after baseline separation, and $A_{wa}$ [dB] represents wet antenna attenuation (WAA). Imprecise quantification of the raindrop-induced attenuation $A_r$ due to CML rainfall retrieval uncertainties such as WAA estimation represents a considerable source of errors in CML QPEs  \citep{chwalaCommercialMicrowaveLink2019} and a major challenge to their hydrological applications.
 
 
 \section{CML QPE uncertainties}
@@ -331,13 +332,10 @@ The studies from urban environments  \citep{dischImpactDifferentSources2019, str
 
 \chapter{Evaluation of rainfall data for urban hydrology} \label{chap2_5}
 
-\rule{\textwidth}{0.4pt}
-This chapter is about the evaluation of rainfall data for urban hydrology ... . \newline
-\rule[0.2cm]{\textwidth}{0.4pt}
 
 It is a common approach \citep[e.g.][]{fenclCommercialMicrowaveLinks2015, fenclGaugeadjustedRainfallEstimates2017, riosgaonaMeasurementInterpolationUncertainties2015, grafRainfallEstimationGermanwide2020} to evaluate and benchmark rainfall data by a direct comparison with a reference (or best‐case scenario) rainfall data set. However, the limited or unknown representativeness of the reference rainfall data, compared to the true incident rainfall, represents a major uncertainty. If one was about to evaluate a data set which would better describe the ground‐truth precipitation than the reference rainfall data, the potential improvement could not be discovered. Even if high‐quality precipitation measurements, e.g. from a relatively dense network of rain gauges, are used as the reference, the information about precipitation included in such data can differ significantly from the true rainfall over a given area. This could be very limiting when evaluating rainfall data of unknown characteristics.
 
-River (and drainage system) discharges closely reflect transformed rainfall aggregated for a whole given catchment. Especially in urban areas, stormwater runoff can be considered as a proxy variable of the catchment areal rainfall. Furthermore, stream discharges are typically measurable more reliably than the true incident precipitation over the given area. This can be especially useful in the case of convective precipitation when the true incident rainfall over a given area is often difficult to estimate using traditional reference rainfall measurements.  Therefore, when evaluating the suitability of rainfall data sets for purposes of rainfall-runoff modelling, using a rainfall-runoff model and runoff observations as the reference is a common approach.  This was done also in the studies of \cite{obledSensitivityHydrologicalModels1994}, \cite{segondSignificanceSpatialRainfall2007}, or \cite{sikorskaValueDifferentPrecipitation2018} which investigated natural catchments. Focusing specifically on urban rainfall-runoff modelling, \cite{goormansUsingLocalWeather2013} and \cite{wangSingularitysensitiveGaugebasedRadar2015} evaluated the suitability of weather radar data sets, and \citep{kleidorferImpactInputData2009} studied the impact of artificially created imperfections in rainfall data on model parameters. Nevertheless, this approach is not employed in every study with similar goals. 
+River and drainage system discharges closely reflect transformed rainfall aggregated for a whole given catchment. Especially in urban areas, stormwater runoff can be considered as a proxy variable of the catchment areal rainfall. Furthermore, stream discharges are typically measurable more reliably than the true incident precipitation over the given area. This can be especially useful in the case of convective precipitation when the true incident rainfall over a given area is often difficult to estimate using traditional reference rainfall measurements.  Therefore, when evaluating the suitability of rainfall data sets for purposes of rainfall-runoff modelling, using a rainfall-runoff model and runoff observations as the reference is a common approach.  This was done also in the studies of \cite{obledSensitivityHydrologicalModels1994}, \cite{segondSignificanceSpatialRainfall2007}, or \cite{sikorskaValueDifferentPrecipitation2018} which investigated natural catchments. Focusing specifically on urban rainfall-runoff modelling, \cite{goormansUsingLocalWeather2013} and \cite{wangSingularitysensitiveGaugebasedRadar2015} evaluated the suitability of weather radar data sets, and \citep{kleidorferImpactInputData2009} studied the impact of artificially created imperfections in rainfall data on model parameters. Nevertheless, this approach is not employed in every study with similar goals. 
 
 \cite{ochoa-rodriguezImpactSpatialTemporal2015} analyzed the impact of spatial and temporal resolution of rainfall inputs on urban hydrodynamic modelling. In this study, model outputs obtained using various rainfall data sets were evaluated using, as the reference, model outputs associated with the finest resolution rainfall estimates. Nevertheless, when using this approach, similar issues as discussed above, regarding the representativeness of the reference, can arise. Furthermore, it is unclear whether the best‐quality rainfall data lead to the best model performance in some circumstances, e.g. when the model used was calibrated using another rainfall data set.
 
@@ -363,8 +361,7 @@ Many published urban drainage modelling studies have dealt with uncertainties as
 
 Systematic deviations of model predictions from observed data, or model bias, can by addressed by increasing the complexity of the model to reduce bias or by trying to find a statistical description of the bias in model outputs. \cite{reichert2012linking} adapted a statistical technique of \cite{kennedy2001bayesian}, accounting for bias in model outputs, for purposes of environmental modelling and extended it with a framework enabling for multiobjective model calibration. \cite{sikorskaValueDifferentPrecipitation2018} used this approach to asses the value of different precipitation data for flood prediction in an alpine catchment. \cite{giudice2013improving} applied this technique to urban drainage modelling while proposing various formulations of the stochastic process representing the model bias (more in section \ref{delGiudTheor}). Their results showed that runoff simulations are much more reliable when bias is accounted for than when it is neglected. 
 
-While approaches based on explicit model bias consideration can improve the reliability of hydrological predictions, they only provide limited information about the causes of model bias and, therefore, do not help much to distinguish imperfections in input rainfall data from model structural errors \citep{giudice2013improving}. A conceptually more satisfying approach is to make the input uncertain and to propagate it through the model. This is can be done by using so‐called rainfall multipliers \citep{kavetskiBayesianAnalysisInput2006, vrugtTreatmentInputUncertainty2008}. These random variables multiply observed rainfall rates (1 multiplier per event) before feeding it into the model. They are estimated together
-with other model parameters and allow to quantify the rainfall‐related uncertainty directly in input data. \cite{sikorskaBayesianUncertaintyAssessment2012} combined a stochastic error model with rainfall multipliers to separate the effect of uncertainty in the rainfall data from other erorrs sources. However, the rainfall multiplier approach fails when the observed precipitation has a different temporal pattern from the true one or if the true nonzero rainfall is not detected \citep{delgiudiceDescribingCatchmentaveragedPrecipitation2016}. 
+While approaches based on explicit model bias consideration can improve the reliability of hydrological predictions, they only provide limited information about the causes of model bias and, therefore, do not help much to distinguish imperfections in input rainfall data from model structural errors \citep{giudice2013improving}. A conceptually more satisfying approach is to make the input uncertain and to propagate it through the model. This can be done by using so‐called rainfall multipliers \citep{kavetskiBayesianAnalysisInput2006, vrugtTreatmentInputUncertainty2008}. These random variables multiply observed rainfall rates (1 multiplier per event) before feeding it into the model. They are estimated together with other model parameters and allow to quantify the rainfall‐related uncertainty directly in input data. \cite{sikorskaBayesianUncertaintyAssessment2012} combined a stochastic error model with rainfall multipliers to separate the effect of uncertainty in the rainfall data from other erorrs sources. However, the rainfall multiplier approach fails when the observed precipitation has a different temporal pattern from the true one or if the true nonzero rainfall is not detected \citep{delgiudiceDescribingCatchmentaveragedPrecipitation2016}. 
 
 To overcome the above problem, \cite{delgiudiceDescribingCatchmentaveragedPrecipitation2016} introduced a method where the average precipitation over a given catchment is formulated as a stochastic process, parameters of which are inferred together with other model parameters during calibration. They showed that, even when starting with inaccurate precipitation data, this approach can accurately reconstruct the whole‐catchment precipitation and reliably quantify the related uncertainty. However, their results suggested that even a simpler approach \citep[e.g.][]{giudice2013improving} can lead to similar model parameters and prediction intervals. Therefore, if precipitation reconstructing is not of major interest, the novel approach is not appealing, given its high computational requirements.
 
@@ -469,11 +466,11 @@ where $\alpha$ and $\beta$ represent lower and upper reference outputs. This mea
 \section{Rainfall-runoff modelling performance assessment} \label{PerAsses} 
 
 Whether the uncertainty analysis is employed or not, there are various methods to evaluate the
-performance of a rainfall‐runoff model. The primary output of a rainfall‐runoff model is a time series of simulated discharges at a given location. Such a time series is well suited to being evaluated visually, creating a hydrograph. However, for numerical evaluation, it is preferable to summarize the performance in a single metric (or a small number of metrics). Many metrics often represent only a specific part (e.g. maximal discharge) or only a certain aspect (e.g. temporal precision, total volume discharged) of the hydrograph. If multiple rainfall‐runoff events or even various catchments are to be compared, it is preferable to use standardized dimensionless criteria, e.g. the relative error of maximal discharges. Alternatively, there are metrics which take into account the whole time series and are often applied when trying to summarize the overall model performance, such as the mean squared error ($M\!S\!E$) or Nash‐Sutcliffe efficiency ($N\!S\!E$). These two metrics are used very commonly in hydrological modelling although it has been shown that there are systematic problems inherent with their usage \citep{guptaDecompositionMeanSquared2009, hess-15-877-2011}.
+performance of a rainfall‐runoff model. The primary output of a rainfall‐runoff model is a time series of simulated discharges at a given location. Such a time series is well suited to be evaluated visually, creating a hydrograph. However, for numerical evaluation, it is preferable to summarize the performance in a single metric (or a small number of metrics). Many metrics often represent only a specific part (e.g. maximal discharge) or only a certain aspect (e.g. temporal precision, total volume discharged) of the hydrograph. If multiple rainfall‐runoff events or even various catchments are to be compared, it is preferable to use standardized dimensionless criteria, e.g. the relative error of maximal discharges. Alternatively, there are metrics which take into account the whole time series and are often applied when trying to summarize the overall model performance, such as the mean squared error ($M\!S\!E$) or Nash‐Sutcliffe efficiency ($N\!S\!E$). These two metrics are used very commonly in hydrological modelling although it has been shown that there are systematic problems inherent with their usage \citep{guptaDecompositionMeanSquared2009, hess-15-877-2011}.
 
-When dealing with interval predictions, it is common to evaluate two aspects of the predictive performance -- its precision and accuracy. The prediction precision can be quantified by the width of the determined confidence interval, referred to also as interval sharpness \mbox{\citep[e.g.][]{breinholt2012formal}}. The prediction accuracy can be understood as the position of observed value(s) in relation to the confidence bound(s). Time series predictions such as hydrographs can also  be assessed in this manner, e.g. by calculating the prediction reliability, i.e. the share of observed data points within the predicted bounds, and the \enquote{average bandwidth} --  the interval widths averaged over the entire prediction period \citep{giudice2013improving}.
+When dealing with interval predictions, it is common to evaluate two aspects of the predictive performance -- its precision and accuracy. The prediction precision can be quantified by the width of the determined confidence interval, referred to also as interval sharpness \mbox{\citep[e.g.][]{breinholtFormalStatisticalApproach2012}}. The prediction accuracy can be understood as the position of observed value(s) in relation to the confidence bound(s). Time series predictions such as hydrographs can also  be assessed in this manner, e.g. by calculating the prediction reliability, i.e. the share of observed data points within the predicted bounds, and the \enquote{average bandwidth} --  the interval widths averaged over the entire prediction period \citep{giudice2013improving}.
 
-\cite{gneiting2007strictly} proposed a metric which combines the two above aspects  -- the interval score $S_\alpha$. For a single interval prediction at a confidence level $1-\alpha$ (determined by the prediction quantiles at levels $ \frac{\alpha}{2} $ and $ 1-\frac{\alpha}{2} $), the interval score 
+\cite{gneiting2007strictly} proposed a metric which combines the two above aspects  -- the interval score $S_\alpha$. For a single interval prediction at a confidence level $1-\alpha$ (determined by the prediction quantiles at levels $ \frac{\alpha}{2} $ and $ 1-\frac{\alpha}{2} $), the interval score is defined as
 \begin{equation} \label{eq:IS}
 S_\alpha(l,u,x) =  ( u - l ) + \frac{2}{\alpha} (l - x)  \mathds{1} \left\{x < l \right\} + \frac{2}{\alpha} (x - u)  \mathds{1} \left\{x > u \right\} ,
 \end{equation}
@@ -539,7 +536,7 @@ The data used originate from an experimental urban catchment (Fig. \ref{3fig1}) 
  
 \section{Data retrieval and availability} \label{DatRet}
 
-We monitored 19 CMLs (Table \ref{3tab1}; Fig. \ref{3fig2}) and several rain gauges located in the catchment's surroundings (Figs. \ref{3fig1} and \ref{3fig2}) over the period between July 2014 and October 2016, excluding the winter months (December--March) as CML signal attenuation by frozen precipitation, occurring in winter periods, is considerably different than that of liquid precipitation. Moreover, our monitoring setup is designed for periods with liquid precipitation only, as the rain gauges are not heated.
+We monitored 19 CMLs (Table \ref{3tab1}; Fig. \ref{3fig2}) and several rain gauges located in the catchment's surroundings (Figs. \ref{3fig1} and \ref{3fig2}) over the period between July 2014 and October 2016, excluding the winter months (December--March) as CML signal attenuation by frozen precipitation, occurring in winter periods, is considerably different than that of liquid precipitation. Moreover, our monitoring setup is designed for periods with liquid precipitation only, as the rain gauges (see below) are not heated.
 
 The CMLs (Mini-Link, Ericsson) broadcast at frequencies from 25 to 39 GHz, their lengths are between 611 and 5795 m, and they are operated by a major telecommunication service provider. Long CMLs extend out of the catchment for several kilometers. Signal-level data from CMLs, featuring a common quantization of 1 dB and 0.33 dB for the transmitted and received signal power, were retrieved at a 10-s resolution with a custom-made logging script \citep{fenclCommercialMicrowaveLinks2015} and then aggregated to a 1-min resolution.
 
@@ -555,9 +552,9 @@ In addition, we measured discharges at the stormwater drainage system outlet (Fi
 % \FloatBarrier
 \end{figure}
 
-During the observation period, we observed more than 100 relevant rainfall events with depths exceeding 2 mm. However, due to outages in data from the monitoring devices, it was possible to analyze data from only a considerably lower number of events. The exact number differs for each study presented due to using data from various sets of devices, the availability of the data at a given time, or differences in event definition. Details on rainfall characteristics for events as used in the study presented in chapter \ref{chap5} (see \ref{paperIIdatAval}) are provided in Appendix ???.
+During the observation period, we observed more than 100 relevant rainfall events with depths exceeding 2 mm. However, due to outages in data from the monitoring devices, it was possible to analyze data from only a considerably lower number of events. The exact number differs for each study presented due to using data from various sets of devices, the availability of the data at a given time, or differences in event definition. Details on rainfall characteristics for events as used in the study presented in chapter \ref{chap5} (see \ref{paperIdatAval}) are provided in Appendix (Table \ref{tab:App_1}).
 
-An overview of CML data availability during the monitoring period is shown in Appendix ???. Data from each CML were available, on average, during 80\% of the events. Six CMLs had data availability higher than 95\% and only two of them lower than 50\%. Due to long-term outages, data from CMLs  \#1, \#2, and \#10 were analyzed only in the study presented in chapter \ref{chap4}, which investigated only a shorter period during which the data from these CMLs were available.
+An overview of CML data availability during the monitoring period is shown in Appendix (Fig. \ref{fig:App_1}). Data from each CML were available, on average, during 80\% of the events. Six CMLs had data availability higher than 95\% and only two of them lower than 50\%. Due to long-term outages, data from CMLs  \#1, \#2, and \#10 are analyzed only in the study presented in chapter \ref{chap4}, which investigates only a shorter period for which the data from these CMLs are available.
 
 
 \section{Rainfall-runoff model and its reliability} \label{RRmodel}
@@ -566,7 +563,7 @@ To simulate discharges at the drainage system outlet, an EPA-SWMM model is used 
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=12.5cm]{figs/03paperI/Fig 3.jpg}
+\includegraphics[width=13cm]{figs/03paperI/Fig 3.jpg}
 \caption{Results of the rainfall-runoff model verification. Top: Histograms of the statistics for all evaluated events. Bottom: Scatter plots showing the statistics for single events with respect to the maximal 10-minute rainfall intensity ($R_{max,10}$) observed by the local rain gauges during these events.} \label{3fig3}
 \end{center}
 % \FloatBarrier
@@ -574,7 +571,7 @@ To simulate discharges at the drainage system outlet, an EPA-SWMM model is used 
 
 In the cases of all rainfall data sets studied, except for the local rain gauges, the rainfall model input is always implemented as areal rainfall in the model, meaning that rainfall intensity in a given time step has a constant value over all model subcatchments. For the local rain gauges, the catchment is divided into three Thiessen polygons, corresponding to the local gauges at three locations. This means that every subcatchment is assigned the same rainfall intensity as measured at the closest local rain gauge.
 
-The reliability of model predictions was tested using rainfall data from the three local rain gauges, i.e. the same devices that were used for the model calibration. This verification was performed for 59 rainfall-runoff events (see \ref{paperIIdatAval}) from the observed period between July 2014 and October 2016. Hydrographs for all analyzed events are provided in Appendix ???.  Results of this verification are summarized in Fig. \ref{3fig3}. These results suggest that the model predicts very realistic rainfall runoff. First, on average 78\% of simulated discharges fall within the 95\% confidence bands of observed runoff defined by 2.5\% and 97.5\% quantiles of observation errors (see section \ref{Quncer}), i.e. the mean containing ratio \mbox{$CR$~[-]} is 0.78, and its st. dev. is 0.15. Second, the relative error in volume on average is only -0.7\%, and modelled discharge shows a~0.95 Pearson's correlation coefficient in relation to the observed values. The Nash–Sutcliffe efficiency is also high (mean 0.77 and st. dev. 0.3). The model performs less satisfactorily in terms of predicting peak flows during heavy rainfalls, they are often substantially overestimated (on average by 40\%). This is probably related to errors associated with the rainfall measurement or strong assumptions regarding rainfall spatial variability over the catchment area. For some of the heaviest rainfalls, peak flows are overestimated by more than 100\%, which is probably also due to the model structural deficiencies, e.g. unmodelled overland flows during extreme events. In summary, the rainfall-runoff model performs very well except for extreme events. 
+The reliability of model predictions was tested using rainfall data from the three local rain gauges, i.e. the same devices that were used for the model calibration. This verification was performed for 56 rainfall-runoff events (see section \ref{paperIdatAval}) from the observed period between July 2014 and October 2016. Hydrographs for all analyzed events are provided in the Supplementary Data appended to the study of \cite{pastorekCommercialMicrowaveLinks2019}. Results of this verification are summarized in Fig. \ref{3fig3}. These results suggest that the model predicts very realistic rainfall runoff. First, on average 78\% of simulated discharges fall within the 95\% confidence bands of observed runoff defined by 2.5\% and 97.5\% quantiles of observation errors (see section \ref{Quncer}), i.e. the mean containing ratio \mbox{$CR$~[-]} is 0.78, and its st. dev. is 0.15. Second, the relative error in volume on average is only -0.7\%, and modelled discharge shows a~0.95 Pearson's correlation coefficient in relation to the observed values. The Nash–Sutcliffe efficiency is also high (mean 0.77 and st. dev. 0.3). The model performs less satisfactorily in terms of predicting peak flows during heavy rainfalls, they are often substantially overestimated (on average by 40\%). This is probably related to errors associated with the rainfall measurement or strong assumptions regarding rainfall spatial variability over the catchment area. For some of the heaviest rainfalls, peak flows are overestimated by more than 100\%, which is probably also due to the model structural deficiencies, e.g. unmodelled overland flows during extreme events. In summary, the rainfall-runoff model performs very well except for extreme events. 
 
 
 
@@ -588,7 +585,7 @@ The reliability of model predictions was tested using rainfall data from the thr
 \chapter{On the value of CML QPEs for urban rainfall-runoff modelling: The pilot study} \label{chap4}
 
 \rule{\textwidth}{0.4pt}
-Rainfall-runoff modelling in urban catchments requires reliable rainfall data with high temporal and spatial resolution. Such data are often not available and, thus, unmeasured spatial rainfall variability is an important source of uncertainty in urban rainfall-runoff modelling. Recently, commercial microwave links (CMLs) have been introduced as a new source of rainfall data with the necessary resolution. We compare rainfall data from CMLs with more conventional data from point rain gauges on the basis of rainfall-runoff modelling of a small urbanized catchment performed with the researched rainfall data sets and evaluated against observed runoffs. We employ a method based on Bayesian inference to calibrate our rainfall-runoff model and to estimate the uncertainty of modelling outputs. Results of the performed analyses show that CML rainfall data, when a suitable adjustment is applied (e.g. using information from nearby rain gauges), allow for better detection of dynamics of precipitation and subsequent runoff than data from point rain gauges alone, especially in the case of heavy rainfalls which are highly variable in space and time. Thus, CMLs seem to represent a relevant rainfall data source, which can conveniently complement existing rainfall monitoring networks.
+Rainfall-runoff modelling in urban catchments requires reliable rainfall data with high temporal and spatial resolution. Such data are often not available and, thus, unmeasured spatial rainfall variability is an important source of uncertainty in urban rainfall-runoff modelling. Recently, commercial microwave links (CMLs) have been introduced as a new source of rainfall data with the necessary resolution. We compare rainfall data from CMLs with more conventional observations from rain gauges on the basis of rainfall-runoff modelling of a small urbanized catchment, performed with the investigated rainfall data sets and evaluated against observed runoffs. We employ a method based on Bayesian inference to calibrate our rainfall-runoff model and to estimate the uncertainty of modelling outputs. Results of the performed analyses show that CML rainfall data, when a suitable adjustment is applied (e.g. using information from nearby rain gauges), allow for better detection of dynamics of precipitation and subsequent runoff than data from point rain gauges alone, especially in the case of heavy rainfalls which are highly variable in space and time. Thus, CMLs seem to represent a relevant rainfall data source, which can conveniently complement existing rainfall monitoring networks.
 \rule[0.2cm]{\textwidth}{0.4pt}
 {\footnotesize The bulk of this chapter was originally published in: \newline
 \-\hspace{0.5cm}
@@ -845,7 +842,7 @@ QPEs from real-world CMLs (\ref{DatRet}) are used as inputs in a calibrated urba
 
 \subsection{Data availability} \label{paperIdatAval}
 
-Due to outages in data from the monitoring devices, it was possible to perform and evaluate rainfall-runoff simulations for 71 events from the monitoring period (\ref{DatRet}). For each of the events, there were data available from between 9 and 17 CMLs (47\%--89\%). To improve the robustness of the statistical evaluation, we have excluded from the analysis 12 rainfall events with less than two thirds of the CMLs available. Also, we excluded three extreme rainfall events for which runoff predictions were unsatisfactory, i.e. maximal discharges were overestimated by more than 100\% when modelled using high-quality rainfall data from the three local rain gauges (Fig. \ref{3fig1}). Similarly, three CMLs (\#1, \#2, \#10), which experienced long outages during the experimental period, are not analyzed in the study. In summary, after rigorous quality control, the analysis is performed for 16 CMLs and 56 events. Details on the rainfall event characteristics are provided in Appendix ??.
+Due to outages in data from the monitoring devices, it was possible to perform and evaluate rainfall-runoff simulations for 71 events from the monitoring period (\ref{DatRet}). For each of the events, there were data available from between 9 and 17 CMLs (47\%--89\%). To improve the robustness of the statistical evaluation, we have excluded from the analysis 12 rainfall events with less than two thirds of the CMLs available. Also, we excluded three extreme rainfall events for which runoff predictions were unsatisfactory, i.e. maximal discharges were overestimated by more than 100\% when modelled using high-quality rainfall data from the three local rain gauges (Fig. \ref{3fig1}). Similarly, three CMLs (\#1, \#2, \#10), which experienced long outages during the experimental period, are not analyzed in the study. In summary, after rigorous quality control, the analysis is performed for 16 CMLs and 56 events. Details on the rainfall event characteristics are provided in Appendix (Table \ref{tab:App_1}).
 
 
 \subsection{From signal levels to QPEs} \label{DerCML}
@@ -890,7 +887,7 @@ The model performance for the rainfall observation layouts is analyzed also with
         Defining $R_{max,10}$ [mm/h]  &  x $\leq$ 5  & 5 $<$ x $<$ 12 &  12 $\leq$ x     \\
             Number of events  &  20  & 20 &  16
 \end{tabular}
-\caption{Categorization of rainfall events. The defining maximal 10-min rainfall intensity $R_{max,10}$ as measured by the three rain gauges temporarily installed in the catchment. For detailed info see Supplementary material.}
+\caption{Categorization of rainfall events. The defining maximal 10-min rainfall intensity $R_{max,10}$ as measured by the three local rain gauges temporarily installed around the catchment. For detailed info, see Appendix (Table \ref{tab:App_1}).}
 \label{2tab2}
 \end{ctucolortab}
 \end{table}
@@ -903,7 +900,7 @@ To interpret correctly the study results, it is crucial to estimate expected err
 
 
 
-\section{Results}
+\section{Results} \label{chap5_res}
 
 Firstly, typical features of simulated discharge are illustrated on a hydrograph of one of the 56 events. Secondly, the performance of the rainfall-runoff model is investigated in relation to the CML lengths and frequencies. Afterwards, the model performance is evaluated separately for heavy rainfalls to understand the effect of CML lengths and positions during spatially more variable rainfalls. Finally, runoff simulations for CML QPEs adjusted to rain gauges are presented.
 
@@ -918,7 +915,7 @@ Firstly, typical features of simulated discharge are illustrated on a hydrograph
 
 \subsection{Characteristic features of simulated hydrographs}
 
-A hydrograph which illustrates well typical features of the rainfall-runoff process is shown in Fig. \ref{3fig4} (see Supplementary material for hydrographs of all rainfall-runoff events). Firstly, one can see that discharge simulations using unadjusted CML QPEs (in blue) can be highly biased, however, this bias varies substantially for various individual CMLs ($dV$ between -0.709 and 0.823). In contrast, the correlation with the observed runoff is relatively high ($PCC$ 0.878 in mean) and much more stable among various CMLs (0.15 in st. dev.). Secondly, the efficiency of adjusting CML QPEs to rain gauge observations (in red) is highly conditional on the rain gauge data. The adjustment reduces the bias in simulated discharges ($dV$ between -0.280 and 0.066), but it does not always outperform simulations based on the mean of the rain gauges ($dV$ -0.152). Moreover, if the rain gauges do not capture rainfall temporal dynamics well, adjusted CML QPEs also perform poorly, and the correlation of predicted and observed runoff is lower than without the adjustment (see Appendix ???, events from 2014-10-16 or 2015-09-09).
+A hydrograph which illustrates well typical features of the rainfall-runoff process is shown in Fig. \ref{3fig4}. Firstly, one can see that discharge simulations using unadjusted CML QPEs (in blue) can be highly biased, however, this bias varies substantially for various individual CMLs ($dV$ between -0.709 and 0.823). In contrast, the correlation with the observed runoff is relatively high ($PCC$ 0.878 in mean) and much more stable among various CMLs (0.15 in st. dev.). Secondly, the efficiency of adjusting CML QPEs to rain gauge observations (in red) is highly conditional on the rain gauge data. The adjustment reduces the bias in simulated discharges ($dV$ between -0.280 and 0.066), but it does not always outperform simulations based on the mean of the rain gauges ($dV$ -0.152).
 
 
 
@@ -956,7 +953,17 @@ Fig. \ref{3fig6} summarizes the rainfall-runoff modelling performance for heavy 
 
 \subsection{Discharge simulations from adjusted CML QPEs}
 
-Although the adjustment of CML QPEs to rain gauges greatly reduces the bias (median $dV$ between 0.01 and 0.12; boxplots presented in Fig. S3 in the Supplementary material), it does not outperform the rain gauge data (median $dV$ 0.01). There are no clear trends associated with CML path length, neither in terms of the $dV$ median nor the $dV$ inter-event variability (st. dev. between 0.37 and 0.61). Similarly, for all CML QPEs, correlations of simulated and observed discharges are in similar ranges as for the rain gauges used alone ($PCC$ medians around 0.9, st. dev. around 0.27). For six of the individual CMLs (including short ones) and for the mean of all CMLs, the adjusted QPEs lead to slightly less variable $NSE$ values than the rain gauges (st. dev. between 0.6 and 0.73). However, no CML QPEs lead to decisively higher median $NSE$ values.
+Although the adjustment of CML QPEs to rain gauges greatly reduces the bias (median $dV$ between 0.01 and 0.12; Fig. \ref{Fig:App_2}), it does not outperform the rain gauge data (median $dV$ 0.01). There are no clear trends associated with CML path length, neither in terms of the $dV$ median nor the $dV$ inter-event variability (st. dev. between 0.37 and 0.61). Similarly, for all CML QPEs, correlations of simulated and observed discharges are in similar ranges as for the rain gauges used alone ($PCC$ medians around 0.9, st. dev. around 0.27). For six of the individual CMLs (including short ones) and for the mean of all CMLs, the adjusted QPEs lead to slightly less variable $NSE$ values than the rain gauges (st. dev. between 0.6 and 0.73). However, no CML QPEs lead to decisively higher median $NSE$ values.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=13cm]{figs/App/Fig S3.png}
+\caption{Boxplots of performance metrics obtained using the adjusted CML QPEs, summarized for all available rainfall events (left) and only for heavy rainfalls (right). ”Mean 16” stands for the mean of all QPEs from all 16 individual CMLs, “RGs” stands for the mean of the three municipal rain gauges. Boxes represent the interquartile range, whiskers extend to the most extreme data point which is no more than 1.5 times the interquartile range from the box, and circles represent outliers.} 
+\label{Fig:App_2}
+\end{center}
+\end{figure}
+
+Adjusting CML QPEs to rain gauge data effectively minimizes the bias in the CML QPEs, though it is considerably constrained by the reliability of the rain gauge data. This is especially critical during heavy rainfalls when observations from rain gauges located 2--3 km from the catchment often do not represent rainfall intensities directly in the catchment. In these cases, adjusted CML QPEs tend to be unreliable and can even worsen CML performance, especially in terms of their ability to capture temporal dynamics of rainfall and subsequent runoff. This is demonstrated in Fig. \ref{3fig7}, where discharge simulations based on \emph{i)} only rain gauges, \emph{ii)} the mean of all unadjusted CML QPEs, and \emph{iii)} the mean of all adjusted CML QPEs are evaluated in terms of $PCC$ and compared with each other. For heavy rainfall events, the unadjusted CML QPEs clearly outperform the rain gauge data (Fig. \ref{3fig7}, left). Adjusting CML QPEs to rain gauges improves the $PCC$ performance for light and moderate rainfall events, but it also worsens the results for heavy (and a few moderate) rainfall events (Fig. \ref{3fig7}, right). When comparing the adjusted CML QPEs and the rain gauge data (Fig. \ref{3fig7}, middle), there is no clear difference between the respective $PCC$ values.
 
 
 \begin{figure}[h]
@@ -966,14 +973,24 @@ Although the adjustment of CML QPEs to rain gauges greatly reduces the bias (med
 \end{center}
 \end{figure}
 
-Adjusting CML QPEs to rain gauge data effectively minimizes the bias in the CML QPEs, though it is considerably constrained by the reliability of the rain gauge data. This is especially critical during heavy rainfalls when observations from rain gauges located 2--3 km from the catchment often do not represent rainfall intensities directly in the catchment. In these cases, adjusted CML QPEs tend to be unreliable and can even worsen CML performance, especially in terms of their ability to capture temporal dynamics of rainfall and subsequent runoff. This is demonstrated in Fig. \ref{3fig7}, where discharge simulations based on \emph{i)} only rain gauges, \emph{ii)} the mean of all unadjusted CML QPEs, and \emph{iii)} the mean of all adjusted CML QPEs are evaluated in terms of $PCC$ and compared with each other. For heavy rainfall events, the unadjusted CML QPEs clearly outperform the rain gauge data (Fig. \ref{3fig7}, left). Adjusting CML QPEs to rain gauges improves the $PCC$ performance for light and moderate rainfall events, but it also worsens the results for heavy (and a few moderate) rainfall events (Fig. \ref{3fig7}, right). When comparing the adjusted CML QPEs and the rain gauge data (Fig. \ref{3fig7}, middle), there is no clear difference between the respective $PCC$ values.
 
 
 \section{Discussion}
 
-Our experimental results on using QPEs from CMLs for urban rainfall-runoff predictions suggest that CMLs can indeed provide valuable rainfall data. However, if CML QPEs are not adjusted to rain gauges, the large bias in CML QPEs leads to unsatisfactory performance, especially for short CMLs. Nevertheless, the results strongly depend on the reliability of the rainfall-runoff model and discharge observations, the pre-processing method applied to obtain CML QPEs, and the quality and availability of the CML data. Therefore, to better interpret our results, it is necessary to discuss \emph{i)}~the combined effect of uncertainty in measured discharges and the rainfall-runoff model on overall performance of CML-based discharge simulations, \emph{ii)} CML preprocessing with a special focus on eliminating the bias in CML QPEs, and \emph{iii)} the effect of the quality and availability of CML QPEs on the representativeness of the results and their transferability to different catchments.
+Our experimental results on using QPEs from CMLs for urban rainfall-runoff predictions suggest that CMLs can indeed provide valuable rainfall data. However, if CML QPEs are not adjusted to rain gauges, the large bias in CML QPEs leads to unsatisfactory performance, especially for short CMLs. Nevertheless, the results strongly depend on the reliability of the rainfall-runoff model and discharge observations, the pre-processing method applied to obtain CML QPEs, and the quality and availability of the CML data. Therefore, to better interpret our results, it is necessary to discuss:
 
-The rainfall-runoff model was validated using independent rainfall observations from three rain gauges located within or close to the catchment boundaries (Fig. \ref{3fig1}, left) for all events analyzed in this study. This enables us to directly quantify the reliability of the model (see section \ref{RRmodel}). The validation shows that the model reproduces runoff very well in terms of both discharge volumes ($dV$) and temporal dynamics ($PCC$, partly $NSE$). The relative error in $dV$ is small for most of the evaluated events (mean -0.007, st. dev. 0.153). These values are more than a magnitude lower than those obtained using unadjusted QPEs from short CML, and about two times lower in comparison to those of the best performing CML. Therefore, the bias in CML-based discharge simulations can be attributed mostly to the uncertainty (the bias) in CML QPEs and not to the combined uncertainty of observed discharges and the rainfall-runoff model. The validation also shows that the simulated discharges are highly correlated with the observed ones (mean 0.95, st. dev. 0.06). The mean $PCC$ for CML-based discharge simulations is between 0.49 and 0.86, with st. dev. between 0.15 and 0.43. Thus, the deficit in reproducing runoff dynamics can also be attributed predominantly to uncertainties in CML QPEs. The only exception are discharge simulations for heavy rainfalls obtained from the mean of all unadjusted CML QPEs (Fig. \ref{3fig6}, boxplot ‘mean 16’), for which $PCC$ values are comparable (mean 0.94, st. dev. 0.04) to the excellent runoff predictions using the local rain gauges (mean 0.96, st. dev. 0.02). In summary, the validation of the rainfall-runoff model demonstrates that the combined uncertainty related to measured discharges and the rainfall-runoff model introduces only very little variability and, most importantly, no systematic errors into the performance assessment.
+\begin{samepage}
+\begin{itemize}
+\itemsep0em 
+        \item the combined effect of uncertainty in measured discharges and the rainfall-runoff model on overall performance of CML-based discharge simulations, 
+        \item CML preprocessing with a special focus on eliminating the bias in CML QPEs, and
+        \item the effect of the quality and availability of CML QPEs on the representativeness of the results and their transferability to different catchments.
+\end{itemize}
+\end{samepage}
+
+The rainfall-runoff model was validated using independent rainfall observations from three rain gauges located within or close to the catchment boundaries (Fig. \ref{3fig1}, left) for all events analyzed in this study. This enables us to directly quantify the reliability of the model (see section \ref{RRmodel}). The validation shows that the model reproduces runoff very well in terms of both discharge volumes ($dV$) and temporal dynamics ($PCC$, partly $NSE$). The relative error in $dV$ is small for most of the evaluated events (mean -0.007, st. dev. 0.153). These values are more than a magnitude lower than those obtained using unadjusted QPEs from short CML, and about two times lower in comparison to those of the best performing CML. Therefore, the bias in CML-based discharge simulations can be attributed mostly to the uncertainty (the bias) in CML QPEs and not to the combined uncertainty of observed discharges and the rainfall-runoff model. 
+
+The validation also shows that the simulated discharges are highly correlated with the observed ones (mean 0.95, st. dev. 0.06). The mean $PCC$ for CML-based discharge simulations is between 0.49 and 0.86, with st. dev. between 0.15 and 0.43. Thus, the deficit in reproducing runoff dynamics can also be attributed predominantly to uncertainties in CML QPEs. The only exception are discharge simulations for heavy rainfalls obtained from the mean of all unadjusted CML QPEs (Fig. \ref{3fig6}, boxplot ‘mean 16’), for which $PCC$ values are comparable (mean 0.94, st. dev. 0.04) to the excellent runoff predictions using the local rain gauges (mean 0.96, st. dev. 0.02). In summary, the validation of the rainfall-runoff model demonstrates that the combined uncertainty related to measured discharges and the rainfall-runoff model introduces only very little variability and, most importantly, no systematic errors into the performance assessment.
 
 Results of this study show that bias in unadjusted CML QPEs negatively affects their usefulness for rainfall-runoff modelling, especially in terms of volume-related statistics. Most importantly, unadjusted QPEs were increasingly overestimated as CML path length decreased since shorter CMLs are relatively more sensitive to errors in $A_r$ estimation (\ref{InstErr}) due to, e.g. inaccurate WAA correction (Eq. \ref{eq:2eq2}). In our pragmatic rainfall retrieval approach, WAA $A_{wa}$ was considered constant and its value was taken from literature \citep{overeemMeasuringUrbanRainfall2011}. It can be expected that calibrating the WAA model using independent rainfall data, or stormwater runoff measurements which reflect transformed rainfall aggregated for a whole catchment well \citep{pastorekCalibratingMicrowaveLink2019},  would result in less biased QPEs, on average. However, the large inter-event variability indicates that the simple wet antenna correction with a constant threshold is not satisfactory, and more precise WAA models (e.g. with WAA $A_{wa}$ proportional to rainfall intensity) are necessary to obtain unbiased CML QPEs.
  
@@ -1029,7 +1046,7 @@ This study analyzes, for the first time, six empirical WAA models, including a n
  
 \section{Methods} \label{paperIIMeth}
 
-Attenuation data from 16 CMLs collected over a 3-year period (\ref{DatRet}) are processed (\ref{paperIIMethA}) and corrected for WAA using six empirical WAA models (\ref{paperIIMethB}). The resulting CML QPEs are evaluated against the rain gauge data from the municipal network (\ref{paperIIMethC}). 
+Attenuation data from 16 CMLs collected over a 3-year period (see section \ref{DatRet}) are processed (section \ref{paperIIMethA}) and corrected for WAA using six empirical WAA models (sections \ref{paperIIMethB} and \ref{paperIIfromAppend}). The resulting CML QPEs are evaluated against the rain gauge data from the municipal network (section \ref{paperIIMethC}). 
 
 
 \subsection{From signal levels to QPEs} \label{paperIIMethA}
@@ -1048,7 +1065,7 @@ Next, we evaluate models where $A_{wa}$ depends on $R$.  \cite{valtrExcessAttenu
         \begin{equation} \label{eq:II_1}
         A_{wa} = 2 k' R^{\alpha'}
         \end{equation}
-where $k'$ and $\alpha'$ are the power law parameters. We also analyze a model (KR) suggested by \cite{kharadlyEffectWetAntenna2001} deriving $A_{wa}$ from observed attenuation $A$~[dB], i.e. depending on $R$ implicitly. However, as $A$ is dependent on CML path length, optimal parameters of the KR model would differ for two CMLs with the same hardware but with different path lengths. To eliminate this feature, we propose a model (KR-alt) in which $A_{wa}$ is bounded by an upper limit, as in \cite{kharadlyEffectWetAntenna2001}, but derived from $R$ explicitly through a power law
+where $k'$ and $\alpha'$ are the power law parameters. We also analyze a model (KR) suggested by \cite{kharadlyEffectWetAntenna2001} deriving $A_{wa}$ from observed attenuation after baseline separation $A$~[dB] (see Eq. \ref{eq:2eq2}), i.e. depending on $R$ implicitly. However, as $A$ is dependent on CML path length, optimal parameters of the KR model would differ for two CMLs with the same hardware but with different path lengths. To eliminate this feature, we propose a model (KR-alt) in which $A_{wa}$ is bounded by an upper limit, as in \cite{kharadlyEffectWetAntenna2001}, but derived from $R$ explicitly through a power law
         \begin{equation} \label{eq:II_2}
         A_{wa} = C ( 1 - \exp(-d R^z)  )
         \end{equation}
@@ -1060,9 +1077,8 @@ WAA models with parameters independent of CML path length can also be formulated
         \end{equation}
 where $p$ and $q$ are the power law parameters. 
 
-As neither $R$ nor $\gamma$ can be observed directly using CMLs, the V, V-alt, and KR-alt model equations must be rearranged to include only one unknown variable, $A_{wa}$, which can thus be quantified from $A$ (details in Appendix). The rearranged equations are then solved numerically.
+As neither $R$ nor $\gamma$ can be observed directly using CMLs, the V, V-alt, and KR-alt model equations must be rearranged to include only one unknown variable, $A_{wa}$, which can thus be quantified from $A$ (details in the next section). The rearranged equations are then solved numerically.
 
-        
 
 
 \begin{table}[h]
@@ -1093,6 +1109,53 @@ As neither $R$ nor $\gamma$ can be observed directly using CMLs, the V, V-alt, a
 
 
 
+\subsection{Practical details on WWA model equations} \label{paperIIfromAppend}
+
+Herein we show how WAA models dependent on rainfall intensity can be used during the CML data processing routine without the need for auxiliary rainfall observations. In particular, we formulate single-unknown equation forms of the models which relate WAA $A_{wa}$ [dB] explicitly to the rainfall intensity $R$ [mm/h] and to the specific raindrop attenuation $\gamma$ [dB/km]. Using these rearranged equations, $A_{wa}$ can be quantified directly from the observed attenuation after baseline separation $A$ [dB], e.g. by solving the equations numerically. The relation between V and V-alt models is also provided.
+
+
+\subsubsection{V model}
+The original equation of V model \citep[Eq. \ref{eq:II_1};][]{valtrExcessAttenuationCaused2019}, where $k'$ and $\alpha'$ are the WAA model’s power law parameters, requires independent observation of the rainfall intensity $R$ [mm/h] as its input. However, it holds that:
+\begin{equation} \label{eq:IIA_1}
+        R = \alpha \gamma^{\beta}
+\end{equation}
+where $\alpha$ and $\beta$ are the power law parameters with values depending on the CML frequency and polarization. Moreover, if $L$ [km] is the CML path length, then 
+\begin{equation} \label{eq:IIA_2}
+        \gamma = (A - A_{wa})  / L.
+\end{equation}
+Therefore, using Eq. \ref{eq:IIA_1} and \ref{eq:IIA_2}, the original Eq. \ref{eq:II_1} can be rearranged into the following single-unknown form which can be used to quantify $A_{wa}$~from~$A$:
+\begin{equation} \label{eq:IIA_3}
+        A_{wa} = 2 k' (\alpha ((A - A_{wa}) / L) ^\beta )^{\alpha'}.
+\end{equation}
+
+
+\subsubsection{V-alt model}
+Starting from its original equation in which $A_{wa}$ is explicitly dependent on $R$ (Eq. \ref{eq:II_1}), V model can be reformulated using Eq. \ref{eq:IIA_1} in the following manner:
+\begin{equation} \label{eq:IIA_4}
+        A_{wa} = 2 k' R^{\alpha'} = 2 k' (\alpha \gamma ^\beta )^{\alpha'} = 2 k' \alpha ^{\alpha'}  \gamma^{\beta \alpha'}.
+\end{equation}
+If  $ (p = k' \alpha^{\alpha'} $  and  $ q = \beta \alpha' ) $, then the V-alt model (Eq. \ref{eq:II_3}) represents a reformulation of the V model in which $A_{wa}$ is explicitly dependent on $\gamma$.
+
+Similarly as the original V model, also the V-alt model (Eq. \ref{eq:II_3}) can be rearranged using Eq. \ref{eq:IIA_2} into a single-unknown form which can be used to quantify $A_{wa}$ from $A$:
+\begin{equation} \label{eq:IIA_6}
+        A_{wa} = 2 p  ((A - A_{wa}) / L) ^q. 
+\end{equation}
+
+
+\subsubsection{KR-alt model}
+The following original KR model \citep{kharadlyEffectWetAntenna2001}, where $C$~[dB] and $d$ are the model parameters, relates $A_{wa}$ explicitly to $A$:
+\begin{equation} \label{eq:IIA_7}
+        A_{wa} = C ( 1 - \exp (-dA) ). 
+\end{equation}
+However, as $A$ is affected by CML path length, optimal parameters of the KR model would differ for two CMLs with the same hardware but different path lengths. To eliminate this feature, we have proposed a WAA model (Eq. \ref{eq:II_2}; KR-alt) in which $A_{wa}$ is, similar to Eq. \ref{eq:IIA_7}, bounded by an upper limit, but derived from $R$ explicitly through a power law.
+
+Analogically to the V model (Eq. \ref{eq:II_1}), also the KR-alt model (Eq. \ref{eq:II_2}) can be rearranged, by applying Eq. \ref{eq:IIA_1} and \ref{eq:IIA_2}, into a single-unknown form which can be used to quantify $A_{wa}$ from $A$:
+\begin{equation} \label{eq:IIA_8}
+        A_{wa} = C (1 - \exp (-d(\alpha ((A - A_{wa} )  / L)^\beta )^z )  ).
+\end{equation}
+
+
+
 \subsection{Calibration and performance of WAA models} \label{paperIIMethC}
 
 The WAA models studied are evaluated when using parameter values taken from the literature, if available, and when calibrated to rainfall data from the three municipal rain gauges. Moreover, for each WAA model, calibration is done in three scenarios:
@@ -1102,8 +1165,6 @@ The WAA models studied are evaluated when using parameter values taken from the 
                 \item{separately for each frequency band; and}
                 \item{for all CMLs at once.}
         \end{itemize}
-        
-
 In total, data from 53 rainfall events (360 hours) are available for WAA model  calibration and evaluation. From these, we randomly select 25 events (281 hours) for the calibration. Model parameters are optimized by comparing the CML QPEs with the mean $R$ of the three municipal rain gauges. Both data sets are aggregated from a 1-min to a 15-min resolution to reduce observation noise. The root mean square error ($R\!M\!S\!E$) is used as the objective function and optimized with simulated annealing, an optimization method designed for complicated non-linear functions with many local minima \citep{xiangGeneralizedSimulatedAnnealing2013}. For calibration scenarios using multiple CMLs at once, the mean RMSE of the CMLs is optimized.
 
 Once the optimal WAA model parameters are identified, they are used to derive CML QPEs for the remaining 28 events (349 hours) not used for calibration. The CML QPEs are aggregated from the 1-min to the 15-min resolution and evaluated by direct comparison with the rain gauge data (the mean of the three gauges in the 15-min resolution). The QPEs are evaluated individually for each CML using a time series consisting of all 28 events, the performance for individual events is not quantified. Performance metrics employed are: 
@@ -1127,7 +1188,7 @@ Firstly, the performance of the estimated CML QPEs summarized for all CMLs is pr
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=10cm]{figs/paperII/Fig 2.png}
+\includegraphics[width=11cm]{figs/paperII/Fig 2.png}
 \caption{Boxplots showing variation in the performance of the QPEs from the 16 individual CMLs quantified by the performance metrics $d\!H$ (top), $R\!M\!S\!E$ (middle), and $S\!C\!C$ (bottom). CML QPEs have been derived without WAA correction (Zero) and using the six WAA models. Sub-boxplots show the effect of WAA model calibration (lit. \,--\, parameter values from literature, perAll \,--\, calibrated for all CMLs at once, perFreq \,--\, calibrated separately for CMLs operating at the three various frequency bands, perLink \,--\, calibrated separately for each CML). Note the different ranges of the y-axes for the Zero model.} 
 \label{fig:II_2}
 \end{center}
@@ -1142,7 +1203,7 @@ The correlation in terms of $S\!C\!C$ (Fig. \ref{fig:II_2} bottom) reaches very 
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=12cm]{figs/paperII/Fig 3.png}
+\includegraphics[width=13cm]{figs/paperII/Fig 3.png}
 \caption{Scatter plots comparing rain gauge data (RGs) with CML QPEs for the O model with parameters from the literature. Note that the axes are in logarithmic scales. The presented 15-minute data from the 28 rainfall events used for the evaluation represent 349 hours of observations. In 835 out of the 1,401 time steps, rain gauge data contain non-zero records. Most points with RG rainfall intensity below 0.3 mm/h are out of the plotting range, as the respective CML QPEs are below 0.05 mm/h.} 
 \label{fig:II_3}
 \end{center}
@@ -1157,7 +1218,7 @@ In addition, we analyze the estimated QPEs on the level of individual CMLs for t
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=12cm]{figs/paperII/Fig 4.png}
+\includegraphics[width=13cm]{figs/paperII/Fig 4.png}
 \caption{Scatter plots comparing rain gauge data (RGs) with CML QPEs for the V model with the same parameters used for all the CMLs (obtained by optimizing for all CMLs at once). Note that the axes are in logarithmic scales. The presented 15-minute data from the 28 rainfall events used for the evaluation represent 349 hours of observations. In 835 out of the 1,401 time steps, rain gauge data contain non-zero records.} 
 \label{fig:II_4}
 \end{center}
@@ -1188,7 +1249,7 @@ The results of calibrating the O and S models resemble each other in terms of es
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=8cm]{figs/paperII/Fig 6.jpg}
-\caption{WAA levels obtained using the O and S WAA models when calibrated separately for each CML in relation to the respective CML QPEs. The vertical line in the left panel at $R =$ 0 mm/h is caused by the nature of the O model. If observed attenuation $A$ is lower than a given parameter value of the O model, WAA is considered equal to $A$, i.e. there is no rainfall observed.} 
+\caption{WAA levels obtained using the O and S WAA models when calibrated separately for each CML in relation to the respective CML QPEs. The vertical line in the left panel at $R =$ 0 mm/h is caused by the nature of the O model. If observed attenuation after baseline separation $A$ is lower than a given parameter value of the O model, WAA is considered equal to $A$, i.e. there is no rainfall observed.} 
 \label{fig:II_6}
 \end{center}
 \end{figure}
@@ -1449,34 +1510,79 @@ the position of CMLs in respect to the small urban catchment affects their abili
 
 CMLs with short paths, which typically correspond well to (sub-)catchment scales are often considerably biased, what compromises their usability for urban hydrology
         
-        %------------------------------------------------------ dummy chapter
+        %------------------------------------------------------ Appendices
 
 % !Rnw root = dis.Rnw
 
-\chapter{Dummy chapter}
-This is the analysis.
+\setcounter{chapter}{10}
+\renewcommand{\thechapter}{A}
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlkwd{summary}\hlstd{(cars)}
-\end{alltt}
-\begin{verbatim}
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
+\chapter*{Appendix}    \label{Append}
+\chapterstarmark{Appendix}
+
+
+Both the CML QPEs and traditional rainfall data are used for rainfall-runoff modelling in a small urban catchment, the performance of which is evaluated against observed discharge measurements. The study's results suggest that CMLs could represent a relevant rainfall data source, especially for monitoring of heavy rainfalls, if local rain gauge data in high spatial resolution are not available in a given catchment.
+
+
+\FloatBarrier
+
+\begin{table}[h]
+\begin{center}
+\includegraphics[width=13cm]{figs/App/rains overview table part1.png}
+Table continues on the next page.
+%\label{fig:App_1}
+\end{center}
+\end{table}
+
+\FloatBarrier
+
+\begin{table}[h]
+\begin{center}
+Table starts on the previous page.
+\includegraphics[width=13cm]{figs/App/rains overview table part2.png}
+\caption{Rainfall } 
+\label{tab:App_1}
+\end{center}
+\end{table}
+
+\FloatBarrier
+
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=13cm]{figs/App/Fig S2.png}
+\caption{Rainfall } 
+\label{fig:App_1}
+\end{center}
+\end{figure}
+
+
+
+
+
+
+
+
+\newpage
+\clearpage
+\clearpage
+\cleardoublepage
+\afterpage{\blankpage}
+\afterpage{\blankpage}
+
+
+
+
+\FloatBarrier
+\chapterstarmark{Appendix}
       
     
-
-        \bibliographystyle{apalike2} %apalike2 myacmtrans3  ieeetr  % pri vacsine vypnut natbib! apa-good
+        
+        
+        \setcounter{chapter}{11}
+        \bibliographystyle{apalike2} % myacmtrans3  ieeetr  % pri vacsine vypnut natbib! apa-good
         \small
+        \chapterstarmark{Bibliography}
         \bibliography{fromZotero} 
         
     

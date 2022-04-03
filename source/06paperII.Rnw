@@ -20,7 +20,7 @@ This study analyzes, for the first time, six empirical WAA models, including a n
  
 \section{Methods} \label{paperIIMeth}
 
-Attenuation data from 16 CMLs collected over a 3-year period (\ref{DatRet}) are processed (\ref{paperIIMethA}) and corrected for WAA using six empirical WAA models (\ref{paperIIMethB}). The resulting CML QPEs are evaluated against the rain gauge data from the municipal network (\ref{paperIIMethC}). 
+Attenuation data from 16 CMLs collected over a 3-year period (see section \ref{DatRet}) are processed (section \ref{paperIIMethA}) and corrected for WAA using six empirical WAA models (sections \ref{paperIIMethB} and \ref{paperIIfromAppend}). The resulting CML QPEs are evaluated against the rain gauge data from the municipal network (section \ref{paperIIMethC}). 
 
 
 \subsection{From signal levels to QPEs} \label{paperIIMethA}
@@ -39,7 +39,7 @@ Next, we evaluate models where $A_{wa}$ depends on $R$.  \cite{valtrExcessAttenu
         \begin{equation} \label{eq:II_1}
         A_{wa} = 2 k' R^{\alpha'}
         \end{equation}
-where $k'$ and $\alpha'$ are the power law parameters. We also analyze a model (KR) suggested by \cite{kharadlyEffectWetAntenna2001} deriving $A_{wa}$ from observed attenuation $A$~[dB], i.e. depending on $R$ implicitly. However, as $A$ is dependent on CML path length, optimal parameters of the KR model would differ for two CMLs with the same hardware but with different path lengths. To eliminate this feature, we propose a model (KR-alt) in which $A_{wa}$ is bounded by an upper limit, as in \cite{kharadlyEffectWetAntenna2001}, but derived from $R$ explicitly through a power law
+where $k'$ and $\alpha'$ are the power law parameters. We also analyze a model (KR) suggested by \cite{kharadlyEffectWetAntenna2001} deriving $A_{wa}$ from observed attenuation after baseline separation $A$~[dB] (see Eq. \ref{eq:2eq2}), i.e. depending on $R$ implicitly. However, as $A$ is dependent on CML path length, optimal parameters of the KR model would differ for two CMLs with the same hardware but with different path lengths. To eliminate this feature, we propose a model (KR-alt) in which $A_{wa}$ is bounded by an upper limit, as in \cite{kharadlyEffectWetAntenna2001}, but derived from $R$ explicitly through a power law
         \begin{equation} \label{eq:II_2}
         A_{wa} = C ( 1 - \exp(-d R^z)  )
         \end{equation}
@@ -51,9 +51,8 @@ WAA models with parameters independent of CML path length can also be formulated
         \end{equation}
 where $p$ and $q$ are the power law parameters. 
 
-As neither $R$ nor $\gamma$ can be observed directly using CMLs, the V, V-alt, and KR-alt model equations must be rearranged to include only one unknown variable, $A_{wa}$, which can thus be quantified from $A$ (details in Appendix). The rearranged equations are then solved numerically.
+As neither $R$ nor $\gamma$ can be observed directly using CMLs, the V, V-alt, and KR-alt model equations must be rearranged to include only one unknown variable, $A_{wa}$, which can thus be quantified from $A$ (details in the next section). The rearranged equations are then solved numerically.
 
-        
 
 
 \begin{table}[h]
@@ -84,6 +83,53 @@ As neither $R$ nor $\gamma$ can be observed directly using CMLs, the V, V-alt, a
 
 
 
+\subsection{Practical details on WWA model equations} \label{paperIIfromAppend}
+
+Herein we show how WAA models dependent on rainfall intensity can be used during the CML data processing routine without the need for auxiliary rainfall observations. In particular, we formulate single-unknown equation forms of the models which relate WAA $A_{wa}$ [dB] explicitly to the rainfall intensity $R$ [mm/h] and to the specific raindrop attenuation $\gamma$ [dB/km]. Using these rearranged equations, $A_{wa}$ can be quantified directly from the observed attenuation after baseline separation $A$ [dB], e.g. by solving the equations numerically. The relation between V and V-alt models is also provided.
+
+
+\subsubsection{V model}
+The original equation of V model \citep[Eq. \ref{eq:II_1};][]{valtrExcessAttenuationCaused2019}, where $k'$ and $\alpha'$ are the WAA model’s power law parameters, requires independent observation of the rainfall intensity $R$ [mm/h] as its input. However, it holds that:
+\begin{equation} \label{eq:IIA_1}
+        R = \alpha \gamma^{\beta}
+\end{equation}
+where $\alpha$ and $\beta$ are the power law parameters with values depending on the CML frequency and polarization. Moreover, if $L$ [km] is the CML path length, then 
+\begin{equation} \label{eq:IIA_2}
+        \gamma = (A - A_{wa})  / L.
+\end{equation}
+Therefore, using Eq. \ref{eq:IIA_1} and \ref{eq:IIA_2}, the original Eq. \ref{eq:II_1} can be rearranged into the following single-unknown form which can be used to quantify $A_{wa}$~from~$A$:
+\begin{equation} \label{eq:IIA_3}
+        A_{wa} = 2 k' (\alpha ((A - A_{wa}) / L) ^\beta )^{\alpha'}.
+\end{equation}
+
+
+\subsubsection{V-alt model}
+Starting from its original equation in which $A_{wa}$ is explicitly dependent on $R$ (Eq. \ref{eq:II_1}), V model can be reformulated using Eq. \ref{eq:IIA_1} in the following manner:
+\begin{equation} \label{eq:IIA_4}
+        A_{wa} = 2 k' R^{\alpha'} = 2 k' (\alpha \gamma ^\beta )^{\alpha'} = 2 k' \alpha ^{\alpha'}  \gamma^{\beta \alpha'}.
+\end{equation}
+If  $ (p = k' \alpha^{\alpha'} $  and  $ q = \beta \alpha' ) $, then the V-alt model (Eq. \ref{eq:II_3}) represents a reformulation of the V model in which $A_{wa}$ is explicitly dependent on $\gamma$.
+
+Similarly as the original V model, also the V-alt model (Eq. \ref{eq:II_3}) can be rearranged using Eq. \ref{eq:IIA_2} into a single-unknown form which can be used to quantify $A_{wa}$ from $A$:
+\begin{equation} \label{eq:IIA_6}
+        A_{wa} = 2 p  ((A - A_{wa}) / L) ^q. 
+\end{equation}
+
+
+\subsubsection{KR-alt model}
+The following original KR model \citep{kharadlyEffectWetAntenna2001}, where $C$~[dB] and $d$ are the model parameters, relates $A_{wa}$ explicitly to $A$:
+\begin{equation} \label{eq:IIA_7}
+        A_{wa} = C ( 1 - \exp (-dA) ). 
+\end{equation}
+However, as $A$ is affected by CML path length, optimal parameters of the KR model would differ for two CMLs with the same hardware but different path lengths. To eliminate this feature, we have proposed a WAA model (Eq. \ref{eq:II_2}; KR-alt) in which $A_{wa}$ is, similar to Eq. \ref{eq:IIA_7}, bounded by an upper limit, but derived from $R$ explicitly through a power law.
+
+Analogically to the V model (Eq. \ref{eq:II_1}), also the KR-alt model (Eq. \ref{eq:II_2}) can be rearranged, by applying Eq. \ref{eq:IIA_1} and \ref{eq:IIA_2}, into a single-unknown form which can be used to quantify $A_{wa}$ from $A$:
+\begin{equation} \label{eq:IIA_8}
+        A_{wa} = C (1 - \exp (-d(\alpha ((A - A_{wa} )  / L)^\beta )^z )  ).
+\end{equation}
+
+
+
 \subsection{Calibration and performance of WAA models} \label{paperIIMethC}
 
 The WAA models studied are evaluated when using parameter values taken from the literature, if available, and when calibrated to rainfall data from the three municipal rain gauges. Moreover, for each WAA model, calibration is done in three scenarios:
@@ -93,8 +139,6 @@ The WAA models studied are evaluated when using parameter values taken from the 
                 \item{separately for each frequency band; and}
                 \item{for all CMLs at once.}
         \end{itemize}
-        
-
 In total, data from 53 rainfall events (360 hours) are available for WAA model  calibration and evaluation. From these, we randomly select 25 events (281 hours) for the calibration. Model parameters are optimized by comparing the CML QPEs with the mean $R$ of the three municipal rain gauges. Both data sets are aggregated from a 1-min to a 15-min resolution to reduce observation noise. The root mean square error ($R\!M\!S\!E$) is used as the objective function and optimized with simulated annealing, an optimization method designed for complicated non-linear functions with many local minima \citep{xiangGeneralizedSimulatedAnnealing2013}. For calibration scenarios using multiple CMLs at once, the mean RMSE of the CMLs is optimized.
 
 Once the optimal WAA model parameters are identified, they are used to derive CML QPEs for the remaining 28 events (349 hours) not used for calibration. The CML QPEs are aggregated from the 1-min to the 15-min resolution and evaluated by direct comparison with the rain gauge data (the mean of the three gauges in the 15-min resolution). The QPEs are evaluated individually for each CML using a time series consisting of all 28 events, the performance for individual events is not quantified. Performance metrics employed are: 
@@ -118,7 +162,7 @@ Firstly, the performance of the estimated CML QPEs summarized for all CMLs is pr
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=10cm]{figs/paperII/Fig 2.png}
+\includegraphics[width=11cm]{figs/paperII/Fig 2.png}
 \caption{Boxplots showing variation in the performance of the QPEs from the 16 individual CMLs quantified by the performance metrics $d\!H$ (top), $R\!M\!S\!E$ (middle), and $S\!C\!C$ (bottom). CML QPEs have been derived without WAA correction (Zero) and using the six WAA models. Sub-boxplots show the effect of WAA model calibration (lit. \,--\, parameter values from literature, perAll \,--\, calibrated for all CMLs at once, perFreq \,--\, calibrated separately for CMLs operating at the three various frequency bands, perLink \,--\, calibrated separately for each CML). Note the different ranges of the y-axes for the Zero model.} 
 \label{fig:II_2}
 \end{center}
@@ -133,7 +177,7 @@ The correlation in terms of $S\!C\!C$ (Fig. \ref{fig:II_2} bottom) reaches very 
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=12cm]{figs/paperII/Fig 3.png}
+\includegraphics[width=13cm]{figs/paperII/Fig 3.png}
 \caption{Scatter plots comparing rain gauge data (RGs) with CML QPEs for the O model with parameters from the literature. Note that the axes are in logarithmic scales. The presented 15-minute data from the 28 rainfall events used for the evaluation represent 349 hours of observations. In 835 out of the 1,401 time steps, rain gauge data contain non-zero records. Most points with RG rainfall intensity below 0.3 mm/h are out of the plotting range, as the respective CML QPEs are below 0.05 mm/h.} 
 \label{fig:II_3}
 \end{center}
@@ -148,7 +192,7 @@ In addition, we analyze the estimated QPEs on the level of individual CMLs for t
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=12cm]{figs/paperII/Fig 4.png}
+\includegraphics[width=13cm]{figs/paperII/Fig 4.png}
 \caption{Scatter plots comparing rain gauge data (RGs) with CML QPEs for the V model with the same parameters used for all the CMLs (obtained by optimizing for all CMLs at once). Note that the axes are in logarithmic scales. The presented 15-minute data from the 28 rainfall events used for the evaluation represent 349 hours of observations. In 835 out of the 1,401 time steps, rain gauge data contain non-zero records.} 
 \label{fig:II_4}
 \end{center}
@@ -179,7 +223,7 @@ The results of calibrating the O and S models resemble each other in terms of es
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=8cm]{figs/paperII/Fig 6.jpg}
-\caption{WAA levels obtained using the O and S WAA models when calibrated separately for each CML in relation to the respective CML QPEs. The vertical line in the left panel at $R =$ 0 mm/h is caused by the nature of the O model. If observed attenuation $A$ is lower than a given parameter value of the O model, WAA is considered equal to $A$, i.e. there is no rainfall observed.} 
+\caption{WAA levels obtained using the O and S WAA models when calibrated separately for each CML in relation to the respective CML QPEs. The vertical line in the left panel at $R =$ 0 mm/h is caused by the nature of the O model. If observed attenuation after baseline separation $A$ is lower than a given parameter value of the O model, WAA is considered equal to $A$, i.e. there is no rainfall observed.} 
 \label{fig:II_6}
 \end{center}
 \end{figure}
