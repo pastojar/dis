@@ -29,7 +29,7 @@ The CML QPEs, as well as traditional data from rain gauges, are propagated throu
  
 \section{Methods} \label{pilotMnM}
 
-The defined problem is addrresses using rainfall and runoff data collected in~a small urban catchment in Prague-Letňany, Czech Republic (details in chapter \ref{chap3}) during three months (August\,--\,October) of 2014. Precipitation time series from six rainfall observation layouts are propagated through a rainfall-runoff model (chapter \ref{RRmodel}) and evaluated against observed runoffs. In order to quantify the associated uncertainties, the hydrological model is operated by means of prediction uncertainty quantification as first used in~a~similar context by \cite{giudice2013improving} and introduced in~chapter~\ref{delGiudTheor}.
+The defined problem is addrresses using rainfall and runoff data collected in~a small urban catchment in Prague-Letňany, Czech Republic (details in chapter \ref{chap3}) during three months (August\,--\,October) of 2014. Precipitation time series from six rainfall observation layouts are propagated through a rainfall-runoff model (chapter \ref{RRmodel}) and evaluated against observed runoffs. In order to quantify the associated uncertainties, the hydrological model is operated by means of prediction uncertainty quantification as first used in~an urban hydrology context by \cite{giudice2013improving} and theoretically introduced in~chapter~\ref{delGiudTheor}.
 
 
 \subsection{Rainfall observation layouts} 
@@ -72,7 +72,7 @@ In the cases of all CML data, prior to applying the correction for $A_{wa}$, bas
 
 
 
-\subsection{Rainfall-runoff modelling and uncertainty analysis}
+\subsection{Rainfall-runoff modelling and uncertainty analysis} \label{Pilot_UncAn}
 
 Rainfall time series retrieved using all the five observation layouts are propagated through a rainfall-runoff model (\ref{RRmodel}) and evaluated against discharges observed at the outlet from the local stormwater drainage system. When using rainfall data from the three local rain gauges, the rainfall input is implemented in the model using three Thiessen polygons. This means that the rainfall intensity above a given model subcatchment is assumed to be the same as measured at the closest gauge. In all other cases, rainfall input is implemented as areal rainfall, meaning that rainfall intensity in a given time step has a constant value over all subcatchments of the model. 
 
@@ -180,14 +180,14 @@ Heavy rainfall events are analyzed in more detail in terms of their peak flows i
 
 The main findings of the study are that CML QPEs derived using a standard approach, which are often biased, lead to biased rainfall-runoff predictions, especially their underestimation during light rainfall events. However, for heavy rainfalls, which are often associated with convective events, the bias is notably lower, and runoff temporal dynamic are captured similarly well as when using high-resolution local rain gauge data. Moreover, compared to traditional rain gauge data (a single local rain gauge or three municipal gauges) used alone, adjusting CML QPEs to these gauge data has lead to an improvement in the reproduction of peak discharges and the overall modelling performance in terms of $N\!S\!E$ for heavy rainfalls, for which CMLs play out the advantage of excellent spatial coverage. 
 
-Theses findings suggests that CML QPEs can be regarded as a viable additional rainfall data source for the field of urban rainfall-runoff modelling, especially for the monitoring of heavy rainfalls when the availability of traditional rain gauge data is limited. This is in agreement with \cite{smiatekPotentialCommercialMicrowave2017} who investigated the potential of CML QPEs for streamflow prediction in an orographically complex mountainous region. They found that, during an extreme flooding period with many local heavy rainfall events, a considerable improvement in hydrograph reproduction can be achieved when CML QPEs are employed. Our findings are also in agreement with those of \cite{fenclGaugeadjustedRainfallEstimates2017}, who found that adjusting CML QPEs to rain gauge data reduces the bias in the QPEs, which can then outperform each of the rainfall data types used individually.
+These findings suggest that CML QPEs can be regarded as a viable additional rainfall data source for the field of urban rainfall-runoff modelling, especially for the monitoring of heavy rainfalls when the availability of traditional rain gauge data is limited. This is in agreement with \cite{smiatekPotentialCommercialMicrowave2017} who investigated the potential of CML QPEs for streamflow prediction in an orographically complex mountainous region. They found that, during an extreme flooding period with many local heavy rainfall events, a considerable improvement in hydrograph reproduction can be achieved when CML QPEs are employed. Our findings are also in agreement with those of \cite{fenclGaugeadjustedRainfallEstimates2017}, who found that adjusting CML QPEs to rain gauge data reduces the bias in the QPEs, which can then outperform each of the rainfall data types used individually.
 
 Nevertheless, the relevance of our findings should be subject to further research using more extensive data sets ideally from multiple locations, since our data set only covers three consecutive months in the area of a single urban catchment. Next, it should be stressed out that the observation layouts of unadjusted CML QPEs consists of data from all 19 CMLs available in the area in that time. However, due to high computational demands, the CML QPEs adjusting to rain gauge data has been done only for four rather short CMLs which were assumed to correspond well to the catchment topology. Therefore, a similar analysis should be performed where data from CMLs of more variable path lengths and other relevant characteristics (e.g. frequency) would be evaluated, and the potential role of these characteristics on the results would be studied.
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=6cm]{figs/pilot/reliab.png}
-\caption{Discharge prediction reliability for all 10 events.} \label{pil_fig4}
+\caption{Discharge prediction reliability for all 10 events evaluated as a whole.} \label{pil_fig4}
 \end{center}
 \end{figure}
 

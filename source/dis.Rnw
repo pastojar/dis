@@ -15,7 +15,7 @@
     xfaculty = F1,
     mainlanguage = english,
     titlelanguage = english,
-    title-english = {CML R-R modelling},
+    title-english = {Value of precipitation estimates \\ from commercial microwave links \\ for rainfall-runoff modelling \\ in small urban catchments},
     title-czech = {nejaky cesky text},
     department-english = {Department of Hydraulics and Hydrology},
     author = {Ing. Jaroslav Pastorek},

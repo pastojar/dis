@@ -5,13 +5,9 @@
 
 
 \begin{thanks}
-        I would like to thank everyone who supported my work on this project. In particular, I would like to thank Vojtěch Bareš,
-        Martin Fencl, and David Stránský from CTU in Prague, and also Jörg Rieckermann, Andreas Scheidegger, and others from Eawag. \par
+        I would like to thank everyone who supported my work on this project. In particular, I would like to thank Vojtěch Bareš, Martin Fencl, and David Stránský from CTU in Prague, and also Jörg Rieckermann, Andreas Scheidegger, and others from Eawag. \par
         
-        I would also like to thank T-Mobile Czech Republic, a.s., for providing the CML data, and especially Pavel Kubík
-        for assisting with our numerous requests. I would also like to thank Pražská vodohospodářská společnost, a.s., for
-        providing rainfall data from their rain gauge network, and Pražské vodovody a kanalizace, a.s., for carefully 
-        maintaining the flow meter and the rain gauges inside the experimental catchment.
+        I would also like to thank T-Mobile Czech Republic, a.s., for providing the CML data, and especially Pavel Kubík for assisting with our numerous requests. I would also like to thank Pražská vodohospodářská společnost, a.s., for  providing rainfall data from their rain gauge network, and Pražské vodovody a kanalizace, a.s., for carefully maintaining the flow meter and the rain gauges inside the experimental catchment.
         
         I would like to thank the team around the \textsf{ctuthesis} \LaTeX\@ package which provided a~template for this document. 
 
@@ -41,20 +37,27 @@
          
 \end{thanks}
 
+
+
 \begin{declaration}
-        I hereby declare that this thesis has been composed by myself under the guidance of the supervisor Ing. Vojtěch Bareš, Ph.D. \par
+        I hereby declare that this thesis has been composed by myself under the guidance of the tutor Ing. Vojtěch Bareš, Ph.D. \par
         
-        I confirm that the thesis submitted is my own work and effort, except where work which has formed part of jointly-authored publications 
-        is included. My contribution and those of the other authors to such work are explicitly indicated in the thesis.\par
+        I confirm that the thesis submitted is my own work and effort, except where work which has formed part of jointly-authored publications is included. Any additional sources of information from which I have quoted or drawn reference have been referenced fully in the text and in the list of references. \par
+
+        \bigskip
+        \bigskip
+        In Prague, on 22\textsuperscript{nd} April 2022 \newline
         
-        Any additional sources of information from which I have quoted or drawn reference have been referenced fully in the text and in the
-        list of references. \par
         
         \bigskip
         \bigskip
         ............................ \newline
         Jaroslav Pastorek
+
+
 \end{declaration}
+
+
 
 \begin{abstract-english}
     We develop \ldots
