@@ -101,7 +101,8 @@
         \bibliographystyle{apalike2} % myacmtrans3  ieeetr  % pri vacsine vypnut natbib! apa-good
         \small
         \chapterstarmark{Bibliography}
-        \bibliography{fromZotero} 
+        \bibliography{fromZotero.bib} 
         
-    
+        
+        
 \end{document}

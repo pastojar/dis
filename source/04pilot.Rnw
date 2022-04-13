@@ -11,7 +11,7 @@ Pastorek, J., Fencl, M., Stránský, D., Rieckermann, J., \& Bareš, V. 2017. \t
 of microwave link rainfall data for urban runoff modelling}. In \emph{Proceedings of the
 14th IWA/IAHR International Conference on Urban Drainage} (pp. 1340--1343). Prague, Czech Republic.
 \newline \-\hspace{0.5cm}
-Pastorek, J., Fencl, M., Rieckermann, J., Sýkora, P., Stránský, D., Dohnal, M., \& Bareš, V. 2018. \textbf{Posouzení srážkových dat z mikrovlnných spojů v městském povodí pomocí analýzy nejistot hydrologického modelu}. [The Evaluation of CML Rainfall Data in Urban Catchment by Means of Hydrologic Model Uncertainty]. \emph{SOVAK: Časopis oboru vodovodů a kanalizací}, 27, 16--22.
+Pastorek, J., Fencl, M., Rieckermann, J., Sýkora, P., Stránský, D., Dohnal, M., \& Bareš, V. 2018. \textbf{Posouzení srážkových dat z mikrovlnných spojů v městském povodí pomocí analýzy nejistot hydrologického modelu}. [The Evaluation of CML Rainfall Data in Urban Catchment by Means of Hydrologic Model Uncertainty]. \emph{SOVAK: Časopis oboru vodovodů a kanalizací} 27, 16--22.
 }
 
 

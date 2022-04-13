@@ -1,6 +1,6 @@
 % !Rnw root = dis.Rnw
 
-\chapter{Conclusions}    \label{chap_concl}
+\chapter{Summary}    \label{chap_concl}
 
 
 This thesis has aimed, in general, to robustly evaluate the potential of quantitative precipitation estimates (QPEs) obtained from commercial microwave links (CMLs) for rainfall-runoff modelling in small urban catchments. Furthermore, it has investigated which factors (e.g. position relative to the catchment, liability to bias) most affect the suitability of individual CMLs to be used as a source of rainfall data for rainfall-runoff modeling. In order to reach the highest quality of CML QPEs, possibilities of reducing the bias common in CML QPE retrieval have also been addressed. Moreover, as CML QPEs could be most useful in areas where the availability of traditional rainfall observations is limited \citep{gossetImprovingRainfallMeasurement2016}, a special attention has been payed to CML QPE retrieval in such data-scarce conditions.
