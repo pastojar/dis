@@ -8,6 +8,7 @@
 \usepackage{makecell}      % break line in tables
 \usepackage{placeins}      % enables \FloatBarrier
 \usepackage{afterpage}
+\usepackage{pdfpages}      % to include external pdf
 
 
 \ctusetup{
@@ -16,7 +17,7 @@
     mainlanguage = english,
     titlelanguage = english,
     title-english = {Experimental evaluation \\ of precipitation estimates \\ from commercial microwave links \\ for rainfall-runoff modelling \\ in a small urban catchment},
-    title-czech = {nejaky cesky text},
+    title-czech = {Experimentální vyhodnocení srážkových měření z~komerčních mikrovlnných spojů pro~srážko-odtokové modelování v~malém městském povodí},
     department-english = {Department of Hydraulics and Hydrology},
     author = {Jaroslav Pastorek},
     fieldofstudy-english = {Stavební inženýrství}, 

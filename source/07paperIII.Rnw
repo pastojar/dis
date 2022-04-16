@@ -1,15 +1,15 @@
 % !Rnw root = dis.Rnw
 
-\chapter{Assesing CML QPEs by quantifying uncertainties in rainfall-runoff predictions in a small urban catchment: The~final~study} \label{chap7}
+\chapter{Assesing CML QPEs by quantifying uncertainties in runoff predictions in a small urban catchment: The~final~study} \label{chap7}
+\chapterstarmark{Assesing CML QPEs by quantifying uncertainties ... : The~final~study}
 
 %On the value of CML QPEs for urban rainfall-runoff modelling: The final study
 
 \rule{\textwidth}{0.4pt}
-blabla
-bla bla         DOPLNIT ABSTRAKT !
+DOPLNIT ABSTRAKT ! bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla DOPLNIT ABSTRAKT ! bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla DOPLNIT ABSTRAKT ! bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla DOPLNIT ABSTRAKT ! bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla DOPLNIT ABSTRAKT ! bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla DOPLNIT ABSTRAKT ! bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla DOPLNIT ABSTRAKT ! bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla DOPLNIT ABSTRAKT ! bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla DOPLNIT ABSTRAKT ! bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla DOPLNIT ABSTRAKT ! bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla DOPLNIT ABSTRAKT ! bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla DOPLNIT ABSTRAKT ! bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
 \newline
 \rule[0.2cm]{\textwidth}{0.4pt}
-{\footnotesize The bulk of this chapter represents a paper manuscript which is about to be submitted to be considered for publication in ... }
+{\footnotesize The bulk of this chapter represents a paper manuscript which is about to be submitted to be considered for publication in \emph{Journal of Hydrology}. }
 
 
 
@@ -36,7 +36,7 @@ The study is performed using rainfall and runoff data collected during 46 rainfa
 \subsection{Data used} \label{dataAcq}
 Both rainfall and runoff observations collected in the investigated small urban catchment (details in chapter \ref{chap3}) are employed in this study. Most importantly, we use signal-level data collected from 16 CMLs located within the catchment and its surroundings (Fig. \ref{3fig2}). We also use rain gauge data from a permanent monitoring network operated by the municipal sewer authority with the density of 1 gauge per 20–25 km\textsuperscript{2} (Fig. \ref{3fig2}). These gauges are referred to as “municipal”. Moreover, we observed rainfall using additional rain gauges temporarily installed at three locations around the catchment with the intention of increasing the rain gauge network density in the area (Fig. \ref{3fig1}). These gauges are referred to as “local”. All the rain gauge observations were recorded at a 1-min resolution. For the sake of this study, when the rain gauge data are used as the reference for WAA model optimization, their resolution is aggregated to 60 min. In addition, we use discharges measured at the stormwater drainage system outlet (Fig. \ref{3fig2}). The temporal resolution of the discharge measurements is 2 min for wet periods and 10 min for dry periods. More details regarding the data retrieval are available in chapter \ref{DatRet}.
 
-From the three-year observation period, we select data from hydrologically relevant rainfall events (rainfall depth $H$ > 2 mm) and only use these in the presented study. After eliminating events with substantial data gaps, 46 rainfall-runoff events (670 hours) are available, from which we randomly select 23 (340 hours) to be used for the WAA model calibration (section \ref{pIII_cal}). The remaining 23 events (330 hours) are used in the validation stage (section\ref{pIII_val}).
+From the three-year observation period, we select data from hydrologically relevant rainfall events (rainfall depth $H$ > 2 mm) and only use these in the presented study. After eliminating events with substantial data gaps, 46 rainfall-runoff events (670 hours) are available, from which we randomly select 23 (340 hours) to be used for the WAA model calibration (section \ref{pIII_cal}). The remaining 23 events (330 hours; basic characteristics are summarized in Table \ref{tab:App_2} in Appendix) are then used in the validation stage (section\ref{pIII_val}).
 
 
 \subsection{Deriving CML QPEs} \label{pIII_derivQPEs}
@@ -70,11 +70,14 @@ Next, to provide a comparison with capabilities of traditional rain gauge observ
 
 \subsection{Rainfall data validation by rainfall-runoff modelling} \label{pIII_val}
 
-Rainfall data retrieved using the above observation layouts are propagated through a rainfall-runoff model, and the model outputs are evaluated against observed discharges. We decide to quantify uncertainties of the rainfall-runoff model predictions and employ the Bayesian uncertainty analysis framework of  \cite{kennedy2001bayesian} as formulated by \cite{reichert2012linking} and first used in an urban hydrology context by \cite{giudice2013improving}. More recently, this approach has been successfully applied by \cite{sikorskaValueDifferentPrecipitation2018} to analyze the value of different precipitation data for flood prediction in an alpine catchment. The basic principle of the method is to extend the deterministic rainfall-runoff model by a stochastic error model which explicitly accounts for systematic model errors, i.e. bias. More information on the principles or particular details of this uncertainty quantification method can be found in chapters \ref{delGiudTheor} and \ref{Pilot_UncAn} respectively.
+Rainfall data retrieved using the above observation layouts are propagated through a rainfall-runoff model, and the model outputs are evaluated against observed discharges. The deterministic rainfall-runoff model was built in the EPA-SWMM software. It was calibrated in the past and has shown to perform well, except for extreme rainfalls. A detailed description of the rainfall-runoff model and an analysis of its performance can be found in chapter \ref{RRmodel}. We use the model to simulate discharges at the outlet of the local stormwater drainage system. Except for data from the local rain gauges, rainfall input is implemented in the model as areal rainfall, meaning that rainfall intensity in a given time step has a constant value over all model subcatchments. For the local rain gauges, the catchment is divided into three Thiessen polygons, corresponding to the local gauges at three locations (Fig \ref{3fig1}).
 
-The deterministic rainfall-runoff model was built in the EPA-SWMM software. It was calibrated in the past and has shown to perform well, except for extreme rainfalls. A detailed description of the rainfall-runoff model and an analysis of its performance can be found in chapter \ref{RRmodel}. We use the model to simulate discharges at the outlet of the local stormwater drainage system. Except for data from the local rain gauges, rainfall input is implemented in the model as areal rainfall, meaning that rainfall intensity in a given time step has a constant value over all model subcatchments. For the local rain gauges, the catchment is divided into three Thiessen polygons, corresponding to the local gauges at three locations (Fig \ref{3fig1}).
+We decide to quantify uncertainties of the rainfall-runoff model predictions and employ the Bayesian uncertainty analysis framework of  \cite{kennedy2001bayesian} as formulated by \cite{reichert2012linking} and first used in an urban hydrology context by \cite{giudice2013improving}, as introduced in chapter \ref{delGiudTheor}. More recently, this approach has been successfully applied by \cite{sikorskaValueDifferentPrecipitation2018} to analyze the value of different precipitation data for flood prediction in an alpine catchment. The basic principle of the method is to extend the deterministic rainfall-runoff model by a stochastic error model which explicitly accounts for systematic model errors, i.e. bias. 
 
-To maximize the accuracy of rainfall-runoff predictions and the reliability of the associated uncertainty quantification, the whole extended model should be calibrated. Nevertheless, we only optimize the stochastic error model parameters in this study, since the deterministic rainfall-runoff model has been calibrated in the past and has shown to perform well (chapter \ref{RRmodel}). As the model is to be calibrated in a Bayesian framework, prior probability distribution of the model parameters must be first defined (Table \ref{pIII_tab1}). The part of the error model representing the random noise only has a single parameter - the asymptotic stand. dev. of the random errors $\sigma_E$ [l/s]. The part of the stochastic model representing the bias is formulated in this study as an autoregressive stationary random process with a long-term equilibrium value of zero and a constant variance \citep{giudice2013improving}. Two parameters associated with the bias model are calibrated -- the asymptotic stand. dev. of the random fluctuations around the equilibrium $\sigma_B$ [l/s] and the associated correlation time $\tau$ [h]. To better fulfill underlying statistical assumptions, discharge data are transformed using a transformation function $g$(), which is the Box-Cox transformation \citep{box1964analysis} with parameters $\lambda_1 =$ 0.45 and $\lambda_2 =$~1. Therefore, error model parameters $\sigma_E$ and $\sigma_B$ (Table \ref{pIII_tab1}) are also employed in the transformed space with units [$g$(l/s)]. 
+When performing the uncertainty analysis, we follow the same steps as described in chapter \ref{Pilot_UncAn_Details}, although there are some differences. Most importantly, in this study, we do not calibrate the whole extended (deterministic + stochastic) model. In contrast, we only optimize the stochastic error model parameters, since the deterministic rainfall-runoff model has been calibrated in the past and has shown to perform well (chapter \ref{RRmodel}). The calibration is performed individually for each rainfall observation layout evaluated.
+
+As the model is to be calibrated in a Bayesian framework, prior probability distribution of the model parameters must be first defined (Table \ref{pIII_tab1}). The part of the error model representing the random noise only has a single parameter - the asymptotic stand. dev. of the random errors $\sigma_E$ [l/s]. The part of the stochastic model representing the bias (Eq. \ref{error_model}) has two parameters that are calibrated -- the asymptotic stand. dev. of the random fluctuations around the equilibrium $\sigma_B$ [l/s] and the associated correlation time $\tau$ [h]. 
+Compared to the prior distributions used in chapter \ref{Pilot_UncAn_Details}, the below defined priors aim to better reflect the random measurement errors in our system. Similarly, they address the \enquote{severe identifiability problem} between the deterministic model and the bias \citep[][chapter \ref{delGiudTheor}]{reichert2012linking} and specify that we are seeking for the smallest bias possible. 
 
 \begin{table}[h]
 \begin{ctucolortab}
@@ -87,13 +90,12 @@ To maximize the accuracy of rainfall-runoff predictions and the reliability of t
 	$\sigma_{B}$ [l/s]	&	0.001	&	25		&	0			        &	1000 \\
 	$\tau$ [h]      	&	0.5		&	0.25		&	0.01			&	3
 \end{tabular}
-\caption{Marginal prior distribution of the error model parameters defined as truncated normal distributions with four defining parameters - mean $\mu$, standard deviation $\sigma$, minimum, and maximum.}
+\caption{Marginal prior distribution of the error model parameters defined as truncated normal distributions with four defining parameters - mean $\mu$, standard deviation $\sigma$, minimum, and maximum. Same as in chapter \ref{Pilot_UncAn_Details}, $\sigma_E$ and $\sigma_B$ are employed in the analysis in a transformed space (Box-Cox transformation with parameters $\lambda_1 =$ 0.45 and $\lambda_2 =$~1) with units [$g$(l/s)].}
 \label{pIII_tab1}
 \end{ctucolortab}
 \end{table}
 
-When calibrating the stochastic error model, data from the same 23 events as when optimizing the WAA estimation model are employed. The calibration by means of Bayesian inference (details in in chapter \ref{delGiudTheor}) is performed in two steps (similarly to chapter \ref{priors_calibr}). First, we use a generalized simulated annealing function which was designed to “search for a global minimum of a very complex non-linear objective function with a very large number of optima” \citep{xiangGeneralizedSimulatedAnnealing2013}. Second, we use a numerical Monte Carlo Markov Chain sampler which “achieves often a high efficiency by tuning the proposal distributions to a user defined acceptance rate” as implemented by \cite{scheideggerAdaptMCMCImplementationGeneric2012} according to the proposal of \cite{vihola2012robust}.
-
+The calibration by means of Bayesian inference, as well as all the subsequent steps necessary for quantifying the uncertainties in runoff predictions, are performed in the same manner as described in chapter \ref{Pilot_UncAn_Details}. When calibrating the stochastic error model, data from the same 23 events as when optimizing the WAA estimation model are employed. 
 
 To validate the rainfall-runoff modelling performance associated with a given rainfall observation layout, we use data from the 23 events not employed in the calibration stage. We produce hydrographs of each event showing median predictions and 90\% confidence intervals. For the median prediction, as well as for every single stochastic model prediction associated with a given event, we quantify the normalized Nash–Sutcliffe efficiency $N\!N\!S\!E$ [-] summarizing the overall performance, the relative error of the total runoff volume $dV$ [-], the Spearman rank correlation coefficient $S\!C\!C$ which quantifies the strength of a monotonic relationship between two variables and is independent of both linear and nonlinear bias, and $dQ_{max}$ [-] which is the relative error of the sum of discharges during eight minutes around the observed maximal discharge (four minutes before and four after). The uncertainty of the performance metrics is analyzed by visualizing the most favorable 90\% intervals within their distributions. Next, the discharge prediction reliability is quantified for each event as the fraction of discharge observations falling into the 90\% confidence intervals. We also use a metric which takes into account both the prediction accuracy and precision - normalized mean interval skill score $N\!M\!I\!S\!S$ [-]. It is based on the interval score \citep{gneiting2007strictly, breinholtFormalStatisticalApproach2012} which rewards the forecaster for narrow prediction intervals and, depending on a predefined confidence level, penalizes the forecaster if the observation misses the prediction interval (Eq. \ref{eq:IS}). This concept has been extended into mean interval skill score $M\!I\!S\!S$ [-] \citep{bourginTransferringGlobalUncertainty2015, bockQuantifyingUncertaintySimulated2018} which benchmarks the prediction confidence bounds by reference bounds obtained, e.g., from long-term climatological data (Eq. \ref{eq:MISS}). We apply this approach and determine $M\!I\!S\!S$ for each event, however, we benchmark the 90\% confidence bounds by the 90\% range of the runoff observations for the given event. To confine its values to the interval of [-1, 1], we transform $M\!I\!S\!S$ into $N\!M\!I\!S\!S$ using the equation
 \begin{equation} \label{eq:pIIIeq1}
@@ -112,7 +114,9 @@ We briefly present precipitation estimates retrieved using all six evaluated rai
 
 
 \subsection{Retrieved rainfall} \label{paperIIIRes1}
-First, we briefly compare precipitation estimates retrieved using all six evaluated rainfall observation layouts (chapter \ref{pIII_rainfall_scen}). Data from the 23 validation events capturing the highest 30\% of the records for the individual layouts are plotted in Fig. \ref{fig:III_1}. Unsurprisingly, 1-min rain gauge data from three local gauges and from three municipal ones resemble each other much more than 60-min data from the single gauge at the WWTP. Due to the coarser temporal resolution, records from the WWTP rain gauge contain, relative to the 1-min data from the other gagues, more data points with low (< 2 mm/h) rainfall intensities and fewer with high ones (> 5 mm/h). Analogically, CML QPEs derived using the WAA model calibrated to the WWTP gauge data, compared to the other two CML QPE layouts which are more alike, tend to overestimate intensities below ca. 0.7 mm/h and underestimate higher ones. 
+First, we briefly compare precipitation estimates retrieved using all six evaluated rainfall observation layouts (chapter \ref{pIII_rainfall_scen}). Data from the 23 validation events capturing the highest 30\% of the records for the individual layouts are plotted in Fig. \ref{fig:III_1}. Unsurprisingly, 1-min rain gauge data from three local gauges and from three municipal ones resemble each other much more than 60-min data from the single gauge at the wastewater treatment plant (WWTP). Due to the coarser temporal resolution, records from the WWTP rain gauge contain, relative to the 1-min data from the other gauges, more data points with low (< 2 mm/h) rainfall intensities and fewer with high ones (> 5 mm/h). Reflecting these imperfections of the WWTP gauge data, CML QPEs derived using a WAA model calibrated to these records also tend to overestimate intensities below ca. 0.7 mm/h and underestimate higher ones, even when compared to the other two CML QPE layouts, which are more alike. Nevertheless, all three CML QPE layouts contain considerably more records of very low (ca. < 0.3 mm/h) non-zero intensities than the 1-min gauge data. This is probably due to the high uncertainties when sensing low-intensity rainfall (see chapter \ref{InstErr}), and to the CML QPE retrieval implemented in this study which does not eliminate such low-intensity \ebquote{false positives} caused by, e.g., baseline oscillation. However, if not recorded in continual bursts, such low-intensity observations are not likely to affect the runoff above the level of baseflow oscillation at the discharge measuring profile. Thus, as demonstrated in next chapters, CML QPEs retrieved using a WAA model calibrated to records from the three closest municipal gauges, or to the observed discharges, do not lead to practically any bias in runoff predictions.
+
+
 
 
 \FloatBarrier
@@ -125,20 +129,37 @@ First, we briefly compare precipitation estimates retrieved using all six evalua
 \end{center}
 \end{figure}
 
+
+
+
 \FloatBarrier
 
 \subsection{Deterministic rainfall-runoff predictions} \label{Scatter}
 
 Discharges predicted using the deterministic rainfall-runoff model only are summarized in Fig. \ref{fig:III_2}. Although this is only a brief analysis, it clearly shows some tendencies present throughout the results. From the four evaluated rainfall observation layouts, records from the local rain gauges lead to the best performance, in terms of both $dV$ (0.009) reflecting the bias and $S\!C\!C$ (0.930) reflecting the temporal dynamics reproduction. Next, corresponding to the above rainfall data analysis, CML QPEs derived using the WAA model calibrated to 60-min records from the 8-km distant rain gauge at the WWTP have resulted in the most biased runoff volumes ($dV$ 0.129). When using 1-min data from the three municipal rain gauges, or CML QPEs with the WAA model calibrated to 60-min data from these gauges, the resulting bias is notably lower ($dV$ -0.052 and 0.040 respectively). 
-\FloatBarrier
 
-\begin{figure}
+
+Compared to the records from the municipal rain gauges, both CML QPE observation layouts seem to reduce both the amount of outliers associated with rainfall events with high spatial variability and the general point spread perpendicular to the line $x=y$. These is reflected also in the respective values of the $S\!C\!C$ performance metric, which are higher for both CML QPE observation layouts (0.893 and 0.908) than for the municipal rain gauges (0.868), suggesting better reproduction of runoff temporal dynamics by the CML QPEs. This is analyzed more closely in the next section. 
+
+
+\begin{figure}[h]
 \begin{center}
-\includegraphics[width=12.2cm]{figs/paperIII/Scatter w stats.png}
+\includegraphics[width=12.5cm]{figs/paperIII/Scatter w stats.png}
 \caption{Scatterplots comparing observed and modelled (using the deterministic rainfall-runoff model only) discharge $Q$ [l/s] at the level of individual data points (time steps) for four rainfall observation layouts: 1-min records from the three local rain gauges (top left), 1-min records from the three municipal gauges at distances of 2--3 km (top right), CML QPEs retrieved with WAA model calibrated to the 60-min records from the gauge at the WWTP (bottom left), and CML QPEs retrieved with WAA model calibrated to the 60-min records from the three municipal gauges (bottom right). Each of the 23 events is displayed in a different colour which represents the rainfall spatial variability during the given event (blue – low variability, red – high variability). Note that the axes are in logarithmic scales. Metrics $dV$ and $SCC$ evaluate the perofrmance for whole time series consisting of all 23 events.} 
 \label{fig:III_2}
 \end{center}
 \end{figure}
+
+\FloatBarrier
+
+
+
+\subsection{Stochastic predictions: Rainfalls with the highest spatial variability} \label{Summary_mostvar}
+
+In this section, rainfall-runoff modelling performance when using data from eight events with the highest rainfall spatial variability (see Table \ref{tab:App_2} in Appendix) is analyzed. First, we compare the uncertainty of rainfall-runoff modelling predictions only for two rainfall observation layouts: 1-min data from the three nearest municipal rain gauges and QPEs derived from the best-located CMLs with the WAA model calibrated to the 60-min data from the same gauges. For a chosen rainfall-runoff event (Fig. \ref{fig:III_3}) with a high spatial rainfall variability, the discharge peak is considerably better reproduced, in terms of both amplitude and timing, when using the CML QPEs. In fact, all modelling performance metrics we quantify reach, in general, better values, in terms of their medians, for the CML QPEs. However, it should be noted that the performance of median discharge  predictions (in purple) in terms of $S\!C\!C$, reflecting the temporal dynamics, is remarkable in both cases, only slightly higher for the CML QPEs (0.91 vs. 0.87). On the other hand, when the overall uncertainty bound prediction ($N\!M\!I\!S\!S$) is considered and compared with other events, it is above-median for the CML QPEs (0.74), but quite inferior for the rain gauge data (0.53).  
+
+
+\FloatBarrier
 
 
 
@@ -151,37 +172,20 @@ Discharges predicted using the deterministic rainfall-runoff model only are summ
 \end{figure}
 
 
-Compared to the records from the municipal rain gauges, both CML QPE observation layouts seem to reduce both the amount of outliers associated with rainfall events with high spatial variability and the general point spread perpendicular to the line $x=y$. These is reflected also in the respective values of the $S\!C\!C$ performance metric, which are higher for both CML QPE observation layouts (0.893 and 0.908) than for the municipal rain gauges (0.868), suggesting better reproduction of runoff temporal dynamics by the CML QPEs. This is analyzed more closely in the next section. 
 
+If comparing the same two rainfall observation layouts for another event with a high spatial rainfall variability (Fig. \ref{fig:III_3_b}), the aptitude of CML QPEs for rainfall-runoff model predictions is further confirmed. In contrast to the previous event, the rain gauge records rather overestimate the discharges. Most interestingly, they predict a small runoff peak at the event beginning, which is not actually present in the observed discharges. The CML QPEs, correctly, do not predict this peak and, although providing slightly biased predictions ($dV$ median 0.15, $dQ_{max}$ median -0.07), they still lead to considerably better overall performance than the rain gauge data (median $N\!N\!S\!E$ 0.74 vs. 0.58). Hydrographs obtained with these two rainfall observation layouts, for all remaining 21 events evaluated, are presented in Appendix \ref{App_chap8}. 
 
+%Although the volumes are considerably underestimated and the hydrograph rising limb is delayed when using the CML QPEs, the municipal rain gauges have actually not registered practically any precipitation at all. 
 
-
-
-\subsection{Stochastic predictions: Most-spatialy-variable rainfalls} \label{Summary_mostvar}
-
-In this section, rainfall-runoff modelling performance when using data from eight events with the highest rainfall spatial variability (see Table \ref{tab:App_2} in Appendix) is analyzed. First, we compare the uncertainty of rainfall-runoff modelling predictions only for two rainfall observation layouts: 1-min data from the three nearest municipal rain gauges and QPEs derived from the best-located CMLs with the WAA model calibrated to the 60-min data from the same gauges. For a chosen rainfall-runoff event (Fig. \ref{fig:III_3}) with a high spatial rainfall variability, the discharge peak is considerably better reproduced, in terms of both amplitude and timing, when using the CML QPEs. In fact, all modelling performance metrics we quantify reach, in general, better values, in terms of their medians, for the CML QPEs. However, it should be noted that the performance of median discharge  predictions (in purple) in terms of $S\!C\!C$, reflecting the temporal dynamics, is remarkable in both cases, only slightly higher for the CML QPEs (0.91 vs. 0.87). On the other hand, when the overall uncertainty bound prediction ($N\!M\!I\!S\!S$) is considered and compared with other events, it is above-median for the CML QPEs (0.74), but quite inferior for the rain gauge data (0.53).  
-
-
-\FloatBarrier
-
-
-If comparing the same two rainfall observation layouts for another event (Fig. \ref{fig:III_3_b}), the aptitude of CML QPEs for rainfall-runoff model predictions is further confirmed. Although the volumes are considerably underestimated and the hydrograph rising limb is delayed when using the CML QPEs, the municipal rain gauges have actually not registered practically any precipitation at all. Hydrographs obtained with these two rainfall observation layouts for the remaining six events with the most spatially variable rainfall are presented in Appendix (Figs. \ref{fig:App_2} and \ref{fig:App_3}). In all six cases, the CML QPEs lead to the same- or better-quality overall rainfall-runoff modelling performance.
 
 
 \begin{figure}[p]
 \begin{center}
 \includegraphics[width=11cm]{figs/paperIII/hydrograph_2.png}
-\caption{Hydrographs showing 90\% prediction bounds for a chosen rainfall-runoff event (2014-10-16, 15:32) obtained using 1-min data from the three municipal rain gauges (top) and CML QPEs retrieved with the WAA model calibrated using 60-min data from the same gauges (bottom). The violin-plots show the metrics ($dV, dQ_{max}, N\!N\!S\!E, S\!C\!C$) which can be evaluated for each individual model prediction within the uncertainty ensemble. The other two metrics (reliability, $N\!M\!I\!S\!S$) show the only value associated with the given event (in black) whereas the background boxplots (in light gray) show the variability among all 23 events used in the validation stage.} 
+\caption{Hydrographs showing 90\% prediction bounds for a chosen rainfall-runoff event (2015-07-25, 03:06) obtained using 1-min data from the three municipal rain gauges (top) and CML QPEs retrieved with the WAA model calibrated using 60-min data from the same gauges (bottom). The violin-plots show the metrics ($dV, dQ_{max}, N\!N\!S\!E, S\!C\!C$) which can be evaluated for each individual model prediction within the uncertainty ensemble. The other two metrics (reliability, $N\!M\!I\!S\!S$) show the only value associated with the given event (in black) whereas the background boxplots (in light gray) show the variability among all 23 events used in the validation stage.} 
 \label{fig:III_3_b} 
 \end{center}
 \end{figure}
-
-
-
-
-The rainfall-runoff modelling performance for all eight events with the highest rainfall spatial variability is summarized in Fig. \ref{fig:III_5}. Moreover, the performance of all CML QPE observation layouts is compared with the performance of 1-min records from the three local rain gauges. The best-case-scenario rain gauge data outperform the CML QPEs in terms of $S\!C\!C$, both for medians (0.72 vs. 0.63--0.667) and variability. Systematic errors in CML QPEs with the WAA model calibrated to records from the rain gauge at the WWTP affect the relative error of maximal discharges $dQ_{max}$, which is -0.292 for this observation layout. However, for the  two other CML QPE layouts, $dQ_{max}$ is, in absolute values, lower (-0.127 for calibration to three municipal gauges; -0.103 for calibration to observed discharges) than for the rain gauge records (0.167). The overall uncertainty bound performance in terms of $N\!M\!I\!S\!S$ is also very similar for these three layouts, reaching practically the same medians of roughly 0.7 and varying between 0.5 and 0.85. Moreover, the rain gauge observations lead to a lower prediction reliability, only 0.95 in median, compared to the medians of circa 0.97 for the CML QPEs.
-
-
 
 
 
@@ -192,6 +196,11 @@ The rainfall-runoff modelling performance for all eight events with the highest 
 \label{fig:III_5}
 \end{center}
 \end{figure}
+
+
+
+Summarizing data from all eight events with the highest rainfall spatial variability, the rainfall-runoff modeling performance of all CML QPE observation layouts is compared with the performance of 1-min records from the three local rain gauges in Fig. \ref{fig:III_5}. The best-case-scenario rain gauge data outperform the CML QPEs in terms of $S\!C\!C$, both for medians (0.72 vs. 0.63--0.667) and variability. Systematic errors in CML QPEs with the WAA model calibrated to records from the rain gauge at the WWTP affect the relative error of maximal discharges $dQ_{max}$, which is -0.292 for this observation layout. However, for the  two other CML QPE layouts, $dQ_{max}$ is, in absolute values, lower (-0.127 for calibration to three municipal gauges; -0.103 for calibration to observed discharges) than for the rain gauge records (0.167). The overall uncertainty bound performance in terms of $N\!M\!I\!S\!S$ is also very similar for these three layouts, reaching practically the same medians of roughly 0.7 and varying between 0.5 and 0.85. Moreover, the rain gauge observations lead to a lower prediction reliability, only 0.95 in median, compared to the medians of circa 0.97 for the CML QPEs.
+
 
 
 
@@ -230,6 +239,9 @@ The above results also imply that CML QPEs are promising not only for catchments
 
 Several choices regarding the implemented methods should also be discussed. Firstly, it was concluded that the position of CMLs within a small urban catchment affects their ability to capture rainfall-runoff dynamics and, thus, CMLs used to derive areal rainfall should be selected very carefully \citep[][chapter \ref{chap5}]{fenclCommercialMicrowaveLinks2015, pastorekCommercialMicrowaveLinks2019}. Therefore, from the 16 CMLs available, we have only evaluated the mean QPEs of CMLs the paths of which best cover the catchment of interest, i.e. CMLs \#3, \#7, \#8, \#12, and \#15 (Fig. \ref{3fig2}). However, to confirm the validity of this choice, we have analyzed more than 450 additional CML subsets. Due to the high number of all possible subsets of the 16 CMLs (65 535), we have not evaluated each possible combination. Since the effect of adding/subtracting a single CML to a subset is likely to decrease with an increasing number of CMLs in the subset, we have focused primarily on subsets with low numbers of CMLs. In particular, we have evaluated each CML individually (16), all subsets consisting of two CMLs (120), and a randomly selected half of the subsets with three CMLs (280). Next, after having evaluated all individual CMLs, we have sorted them according to their performance in terms of $N\!N\!S\!E$, $dV$, and $S\!C\!C$. For each of the metrics, we have created additional CML subsets consisting of two, three, four, (…), fifteen best performing CMLs. Lastly, we have analyzed mean QPEs from all CMLs available. None of the additional CML subsets tested has led to clearly better rainfall-runoff modelling performance than the subset of the \enquote{best-located} CMLs. However, several subsets have reached very similar performance, including the mean QPEs from all CMLs. This is in agreement with conclusions of \cite{fenclCommercialMicrowaveLinks2015} that combining QPEs from all available CMLs can very well capture the rainfall and is recommended when no prior information on CML data quality is available. Performance of the subset consisting of all CMLs, in terms of $dV$ and $N\!N\!SE\!$, as well as the performance of QPEs from individual CMLs, is presented in Fig. \ref{fig:III_6}. The best performing individual CMLs in terms of $N\!N\!SE\!$ are \#8, \#12, and \#15 which all make part of the \enquote{best-located} subset. When the $dV$ metric is concerned, in contrast to previous studies  \citep[][chapter \ref{chap5}]{pastorekCommercialMicrowaveLinks2019}, no dependence on CML path length is observed, showing that the implemented WAA model can reduce systematic errors  also in QPEs from CMLs otherwise prone to bias.
 
+
+Next, we have quantified the rainfall-runoff modelling output uncertainty by extend the deterministic rainfall-runoff model by a stochastic error model. Prior to that, to ensure reliable uncertainty estimates, we have calibrated stochastic error model parameters for each of the rainfall observation layouts evaluated. However, unlike in chapter \ref{chap4}, the deterministic rainfall-runoff has not been calibrated within this study. In fact, it has been used in the form as resulted from its original calibration to measurements collected from the three local rain gauges before the observation period used in the presented study (see chapter \ref{RRmodel}). It is thus possible that, if the model was calibrated to other data, especially to the CML QPEs themselves, the modelling performance of individual rainfall observation layouts might change, probably for the worse for the local rain gauges, and for the better for CML QPEs. %We have not tested this hypothesis, however, if it was proven, it would most likely only improve the attractiveness of CML QPEs relative to that of the gauge data. 
+
 \FloatBarrier
 
 \begin{figure}[h]
@@ -243,10 +255,10 @@ Several choices regarding the implemented methods should also be discussed. Firs
 
 \FloatBarrier
 
-Next, we have quantified the rainfall-runoff modelling output uncertainty by extend the deterministic rainfall-runoff model by a stochastic error model. Prior to that, to ensure reliable uncertainty estimates, we have calibrated stochastic error model parameters for each of the rainfall observation layouts evaluated. However, unlike in chapter \ref{chap4}, the deterministic rainfall-runoff has not been calibrated within this study. In fact, it has been used in the form as resulted from its original calibration to measurements collected from the three local rain gauges before the observation period used in the presented study (see chapter \ref{RRmodel}). It is thus possible that, if the model was calibrated to other data, especially to the CML QPEs themselves, the modelling performance of individual rainfall observation layouts might change, probably for the worse for the local rain gauges, and for the better for CML QPEs. %We have not tested this hypothesis, however, if it was proven, it would most likely only improve the attractiveness of CML QPEs relative to that of the gauge data. 
-
 
 Nonetheless, the relevance of our findings for other small urban catchments should be subject to further research. Firstly, based on our previous study where we had analyzed several WAA models \cite[][chapter~\ref{chap6}]{pastorekPrecipitationEstimatesCommercial2022}, we have tested only the WAA model originally derived by using one of our 16 CMLs and data from one of the three summer seasons investigated herein \citep{valtrExcessAttenuationCaused2019}. Moreover, all CMLs used in this study are from the same product family of the same manufacturer (Ericsson, Mini-Link) and have aged similarly due to exposure to similar climatic conditions. Nevertheless, CML networks in other areas can consist of antennas of different hardware characteristics exposed to different climates for different time periods. Identifying optimal WAA models might be more complicated in such conditions, especially if the reference data are available only in low resolutions. 
+
+
 
 
 

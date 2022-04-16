@@ -6,9 +6,11 @@
 \chapter*{Appendix}    \label{Append}
 \chapterstarmark{Appendix}
 
-\subsubsection{Rainfall from chapter 6} 
+This Appendix contains additional information on rainfall data as used in chapter \ref{chap5} as well as information on rainfall characteristics and hydrographs with simulated and observed discharges from chapter \ref{chap7}. More additional material is available in the \enquote{Supplementary material} document published with the study of \cite[][chapter  \ref{chap5}]{pastorekCommercialMicrowaveLinks2019}, where hydrographs for all rainfall layouts evaluated in that study are presented, including those for rainfall data from the local rain gauges, which were used to verify the rainfall-runoff model reliability.
 
-The following material presents additional information on  rainfall event characteristics (Table \ref{tab:App_1}) and CML data availability (Fig. \ref{fig:App_1}). Although the underlying observations are the same (see chapter \ref{DatRet}), the exact number of rainfall (or rainfall-runoff) events differs for each study presented in the thesis due to various availability of data from various devices used, or differences in the event definition. The following material is based on rainfall-runoff events as used for the study presented in chapter \ref{chap5} (see \ref{paperIdatAval}).
+\section{Rainfall from chapter 6} 
+
+The following material presents additional information on  rainfall event characteristics (Table \ref{tab:App_1}) and CML data availability (Fig. \ref{fig:App_1}). It is based on rainfall-runoff events as defined and used for the study presented in chapter \ref{chap5} (see \ref{paperIdatAval}). Although the underlying observations are the same (see chapter \ref{DatRet}), the exact number of rainfall (or rainfall-runoff) events differs for each study presented in the thesis due to various availability of data from various devices used, or differences in the event definition. 
 
 
 \FloatBarrier
@@ -47,12 +49,12 @@ Table starts on the previous page.
 
 
 
-\subsubsection{Rainfall events and hydrographs from chapter 9} 
+\section{Rainfall events and hydrographs from~chapter~8} \label{App_chap8}
+
+The following material presents additional information on  rainfall event characteristics (Table \ref{tab:App_2}) based on rainfall-runoff events as defined and used for the study presented in chapter \ref{chap7}. Next, hydrographs showing 90\% prediction bounds obtained with two rainfall observation layouts for all 23 events evaluated, are also presented. The selected  rainfall layouts are 1-min data from the three nearest municipal rain gauges and QPEs derived from the best-located CMLs with the WAA model calibrated to the 60-min data from the same gauges.
 
 
-\FloatBarrier
-
-\begin{table}[h]
+\begin{table}[p]
 \begin{center}
 \includegraphics[width=12cm]{figs/App/rains overview table paperIII.png}
 \caption{Basic characteristics of the 23 rainfalls events used to validate the rainfall observation layouts in chapter \ref{chap7}. $R_{max}$ stands for the maximal 1-min rainfall intensity and $R_{max,10}$ for the maximal 10-min rainfall intensity. Except for the last column reflecting the spatial rainfall variability, the characteristics were estimated on the basis of data from the local rain gauges, in particular, a single time series obtained as the mean value of the three gauges.  The spatial variability is determined by estimating the variability among 60-min rainfall data from six rain gauges around the catchment - three local and three nearest municipal gauges. In particular, we quantify the arithmetic mean of the coefficients of variation determined for each 60-min time step. Higher values indicate higher spatial variability.} 
@@ -60,21 +62,14 @@ Table starts on the previous page.
 \end{center}
 \end{table}
 
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=14cm]{figs/App/hydro6_remRGs_1min.png}
-\caption{Hydrographs showing 90\% prediction bounds for six events with high spatial rainfall variability obtained using 1-min data from the three municipal rain gauges, not presented in the main text.} 
-\label{fig:App_2}
-\end{center}
-\end{figure}
 
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=14cm]{figs/App/hydro6_CMLQPEs_remRGs.png}
-\caption{Hydrographs showing 90\% prediction bounds for six events with high spatial rainfall variability obtained using CML QPEs retrieved with the WAA model calibrated using 60-min data from the three municipal rain gauges, not presented in the main text.} 
-\label{fig:App_3}
-\end{center}
-\end{figure}
+\FloatBarrier
+
+% include external pdf
+\includepdf[pages=-]{figs/App/hydro+stats_Pre remRGs_mean 1min EDITED.pdf}
+\includepdf[pages=-]{figs/App/hydro+stats_Pre CMLQPEs WAA_remRGs_mean60 EDITED.pdf}
+
+
 
 
 

@@ -1,6 +1,7 @@
 % !Rnw root = dis.Rnw
 
-\chapter{Assesing CML QPEs by quantifying uncertainties in rainfall-runoff predictions in a small urban catchment: The~pilot~study} \label{chap4}
+\chapter{Assesing CML QPEs by quantifying uncertainties in runoff predictions in a small urban catchment: The~pilot~study} \label{chap4}
+\chapterstarmark{Assesing CML QPEs by quantifying uncertainties ... : The~pilot~study}
 
 % On the value of CML QPEs for urban rainfall-runoff modelling
 
@@ -81,23 +82,27 @@ In the cases of all CML data, prior to applying the correction for $A_{wa}$, bas
 
 Rainfall time series retrieved using all the five observation layouts are propagated through a rainfall-runoff model (\ref{RRmodel}) and evaluated against discharges observed at the outlet from the local stormwater drainage system. When using rainfall data from the three local rain gauges, the rainfall input is implemented in the model using three Thiessen polygons. This means that the rainfall intensity above a given model subcatchment is assumed to be the same as measured at the closest gauge. In all other cases, rainfall input is implemented as areal rainfall, meaning that rainfall intensity in a given time step has a constant value over all subcatchments of the model. 
 
-In order to acknowledge uncertainties of the rainfall-runoff model predictions, we employ uncertainty analysis framework of \cite{kennedy2001bayesian} as formulated by \cite{reichert2012linking} and first used in a context similar to ours by \cite{giudice2013improving}. The basic principle of the method (details in section \ref{delGiudTheor}) is the extension (Eq. \ref{eq:ext_model}) of a deterministic (i.e., in our case, rainfall-runoff) model by a stochastic error model which explicitly accounts for systematic model errors, i.e. bias. 
+In order to acknowledge uncertainties of the rainfall-runoff model predictions, we employ uncertainty analysis framework of \cite{kennedy2001bayesian} as formulated by \cite{reichert2012linking} and first used in a context similar to ours by \cite{giudice2013improving}, as introduced in chapter \ref{delGiudTheor}. This method, among other features, enables quantification of uncertainties in model output, i.e. in discharge predictions. By varying the input rainfall data while keeping the rainfall-runoff model structure unchanged, we are able to trace the associated changes in the prediction uncertainty back to the respective rainfall data. Details regarding the application of this framework in the presented study are provided below.
 
-\cite{giudice2013improving} investigated various formulations of the model bias and various transformation functions. Based on their recommendations and our previous analyses \citep{pastorekEffectDifferentRainfall2016}, as transformation $g()$, we use the Box-Cox transformation \citep{box1964analysis} with parameters $\lambda_1 =$ 0.45 and $\lambda_2 =$~1. Moreover,   we formulate the bias $B (\psi)$ as an autoregressive stationary random process with a long-term equilibrium value of zero and a constant variance. It is a mean-reverting Ornstein–Uhlenbeck process \citep{uhlenbeck1930theory}, \enquote{the discretisation of which would be a first-order autoregressive process with Gaussian independent and identically distributed noise} \citep{giudice2013improving}. It can be expressed using the following differential equation:
-\begin{equation} 
+
+
+\subsection{Uncertainty analysis implementation} \label{Pilot_UncAn_Details}
+
+The basic idea behind this uncertainty analysis method is the extension (Eq. \ref{eq:ext_model}) of a deterministic (i.e., in our case, rainfall-runoff) model by a stochastic error model which explicitly accounts not only for the random errors (\enquote{white noise}), but also for systematic model errors, i.e. bias. \cite{giudice2013improving} investigated various formulations of the model bias. Based on their recommendations and our previous analyses \citep{pastorekEffectDifferentRainfall2016}, we formulate the bias $B (\psi)$ (Eq. \ref{eq:ext_model}) as an autoregressive stationary random process with a long-term equilibrium value of zero and a constant variance. It is a mean-reverting Ornstein–Uhlenbeck process \citep{uhlenbeck1930theory}, \enquote{the discretisation of which would be a first-order autoregressive process with Gaussian independent and identically distributed noise} \citep{giudice2013improving}. It can be expressed using the following differential equation:
+\begin{equation} \label{error_model}
 dB (t)= - \frac{B (t)}{\tau}dt + \sqrt{\frac{2}{\tau}} \sigma_{B}  dW(t),
 \end{equation}
-where $\tau$ represents the correlation time, $\sigma_{B}$ the asymptotic standard deviation of the random fluctuations around the equilibrium, and $dW(t)$ a Wiener process, i.e. standard Brownian motion.
+where $\tau$ represents the correlation time, $\sigma_{B}$ the asymptotic standard deviation of the random fluctuations around the equilibrium, and $dW(t)$ a Wiener process, i.e. standard Brownian motion. The following steps are then required to calibrate the extended (deterministic + stochastic) model formulated as described above, and to perform the subsequent uncertainty analysis \citep{giudice2013improving}:
+\begin{enumerate}
+        %--------------------------------------------------
+	\item  Definition of marginal distributions of the prior joint probability distribution of the both the deterministic rainfall-runoff model parameters $\theta$  and  the stochastic error model parameters $\psi$.
+        
+         \cite{giudice2013improving} suggest that completely uninformative prior distributions should not be used for parameters of neither the deterministic rainfall-runoff model ($\theta$) nor  the stochastic error model ($\psi$). Considering the chosen error model (Eq. \ref{error_model}), $\sigma_{B}$ is unlikely to be higher than the variability of observed discharge, $\tau$ should represent the characteristic correlation length of the residuals, and  $\sigma_E$ should mirror the measurement noise of the system output \cite{giudice2013improving}. The priors are, thus, chosen based on our knowledge of the urban catchment and on consultations with experts who have already used the method.
 
-
-By varying the input rainfall data while keeping the rainfall-runoff model structure unchanged, we are able to trace the associated changes in the prediction uncertainty back to the respective rainfall data. However, to achieve accurate rainfall-runoff predictions and reliable quantification of their uncertainty, the extended model should be calibrated first. Although the deterministc rainfall-runoff model has been calibrated in the past, we optimize its parameters also here, together with the stochastic error model parameters, as we aim to maximize both the discharge prediction accuracy and precision.
-
-
-\subsubsection{Prior distribution definition and model calibration} \label{priors_calibr}
-
-Since the extended model has to be calibrated in a Bayesian framework, prior probability distribution of the model parameters which are to be calibrated must be first defined. \cite{giudice2013improving} suggest that completely uninformative prior distributions should not be used for parameters of neither the deterministic rainfall-runoff model ($\theta$) nor  the stochastic error model ($\psi$). Furthermore, it is \enquote{important that the prior of the bias reflects the desire to avoid model inadequacy as much as possible}. Considering the chosen bias model, $\sigma_{B}$ is unlikely to be higher than the variability of observed discharge, $\tau$ should represent the characteristic correlation length of the residuals, and  $\sigma_E$ should mirror the measurement noise of the system output \cite{giudice2013improving}.
-
-In accordance with \cite{giudice2013improving} (see \ref{delGiudTheor}), we do not use completely uninformative prior parameter distributions. In contrast, the priors are chosen based on knowledge of the urban catchment and consultations with experts who have already used the method. For all the parameters, marginals of the prior joint distribution are defined (Table \ref{kalibracia_tab}) as truncated normal distributions with four defining parameters - mean ($\mu$), standard deviation ($\sigma$), minimum, and maximum. It should be noted that $\psi$ parameters $\sigma_B$ and  $\sigma_E$ are defined in a transformed space via a transformation $g()$.  When $\theta$ parameters are concerned, they represent multiplicative (scaling) values of the actual model parameters. This means that when a given parameter, e.g. $imp$, is set to $1.1$, the respective $imp$ values for all 195 subcatchments are multiplied by $1.1$.
+        For all the parameters, marginals of the prior joint distribution are defined (Table \ref{kalibracia_tab}) as truncated normal distributions with four defining parameters - mean ($\mu$), standard deviation ($\sigma$), minimum, and maximum. When $\theta$ parameters are concerned, they represent multiplicative (scaling) values of the actual model parameters. This means that when a given parameter, e.g. $imp$, is set to $1.1$, the respective $imp$ values for all 195 subcatchments are multiplied by $1.1$.
+             
+        Before the next step, a transformation $g()$  should be applied on simulation results and output data to account for the variance increasing with the discharge and to reduce the heteroscedascity of residuals (details in \ref{transfTheor}). Thus, $\psi$ parameters $\sigma_B$ and  $\sigma_E$ are also defined in the transformed space. Based on our previous analyses \citep{pastorekEffectDifferentRainfall2016}, as transformation $g()$, we use the Box-Cox transformation \citep{box1964analysis} with parameters $\lambda_1 =$ 0.45 and $\lambda_2 =$~1.  
+   
 
 \begin{table}[h]
 \begin{ctucolortab}
@@ -125,8 +130,41 @@ In accordance with \cite{giudice2013improving} (see \ref{delGiudTheor}), we do n
 \end{table}
 
 
+        %--------------------------------------------------
+	\item  Bayesian inference of the posterior parameter distribution.
+        
+        The extended model is calibrated by the means of Bayesian inference. To obtain posterior parameter distribution, the joint probability density, a product of the prior $f(\theta, \psi)$ and the likelihood function $f(Y_o | \theta, \psi, x)$ (Eq. \ref{likelih}), gets conditioned on the observed discharge data:
+                \begin{equation}
+f (\theta, \psi | Y_o, x) = \frac{ f(\theta, \psi) \, f(Y_o | \theta, \psi, x) } { \iint f(\theta' , \psi') \, f(Y_o | \theta', \psi', x) \text{d}\theta' \text{d}\psi'} \; .
+                \end{equation}
 
-Data from five out of the 15 available rainfall-runoff events are used to calibrate the extended model. The calibration itself is performed in two steps. First, we use the generalized simulated annealing function of the \textsf{GenSA} package \citep{xiangGeneralizedSimulatedAnnealing2013}, which was designed to \enquote{search for global minimum of a very complex non-linear objective function with a very large number of optima}. Second, we use a numerical Monte Carlo Markov Chain sampler as implemented by \cite{scheideggerAdaptMCMCImplementationGeneric2012} according to the proposal of \cite{vihola2012robust}. This function first  tunes the covariance matrix of the jump distribution to achieve a desired acceptance rate. Next, a non-adaptive Metropolis sampling is employed to draw from the posterior distribution.
+Solving this problem analytically would include dealing with multidimensional integrals. This can be avoided by employing a numerical method such as Markov Chain Monte Carlo (MCMC) to approximate properties of the posterior distribution.
+        
+        Although the deterministc rainfall-runoff model has been calibrated in the past, we optimize its parameters also here, together with the stochastic error model parameters, as we aim to maximize both the discharge prediction accuracy and precision. Data from five out of the 15 available rainfall-runoff events are used to calibrate the extended model. 
+        
+        The calibration itself is performed in two steps. First, we use a generalized simulated annealing function which was designed to \enquote{search for a global minimum of a very complex non-linear objective function with a very large number of optima} \citep{xiangGeneralizedSimulatedAnnealing2013}. Second, we use a numerical Monte Carlo Markov Chain sampler which \enquote{achieves often a high efficiency by tuning the proposal distributions to a user defined acceptance rate} as implemented by \cite{scheideggerAdaptMCMCImplementationGeneric2012} according to the proposal of \cite{vihola2012robust}.
+   
+        
+        %--------------------------------------------------
+	\item  Probabilistic predictions for the data set used for calibration
+        
+        Samples from the joint posterior parameter distribution are taken and used to obtain predictions from the extended model. We re-use the last 2000 samples from the calibration. Probabilistic predictions for multivariate normal distributions related to the random variables of this type are performed as recommended by \cite{kendall1994vol} and \cite{kollo2006advanced}.
+	
+	
+	%--------------------------------------------------
+	\item  Probabilistic predictions for unseen temporal points (validation)
+	
+        It is possible to proceed  above. However, \cite{giudice2013improving} suggest to take advantage of using bias formulated as an Ornstein–Uhlenbeck process and to \enquote{draw a realization for the entire period by iteratively drawing the realization for the next time step at time   $t_ j$ from that of a previous time step at time $t_ {j-1}$ from a normal distribution}. 
+	
+	
+	%--------------------------------------------------
+	\item Verification of the statistical assumptions
+	
+        In many similar cases, it is usual to confirm the statistical assumptions of the error model by residual analysis \citep{reichert2012linking}. However, the Bayesian approach implemented in this method allows us to test only the observation error $E$, which is the only purely frequentist term. However, since these errors are likely to constitute only a small portion of the residuals of the deterministic simulator, the informative value of this analysis might be limited.
+        
+	
+\end{enumerate}
+
 
 
 
