@@ -1,0 +1,95 @@
+% !Rnw root = dis.Rnw
+
+\setcounter{chapter}{12}
+
+\chapter*{Author's publications}    \label{myPubl}
+\chapterstarmark{Author's publications}
+
+The following list includes all author's publications associated with the research presented in the doctoral thesis. References to the most relevant citing research works are also included.
+
+\subsubsection*{Peer-reviewed journal papers}
+
+\begin{description}
+
+\item Pastorek, J., Fencl, M., Rieckermann, J., Sýkora, P., Stránský, D., Dohnal, M., and Bareš, V. (2018). \textbf{Posouzení srážkových dat z mikrovlnných spojů v městském povodí pomocí analýzy nejistot hydrologického modelu}. [The Evaluation of CML Rainfall Data in an Urban Catchment by Means of Hydrological Model Uncertainty]. \emph{SOVAK: Časopis oboru vodovodů a kanalizací} 27, 16--22.
+
+\item  Pastorek, J., Fencl, M., Rieckermann, J., and Bareš, V. (2019).  \textbf{Commercial microwave links for urban drainage modelling: The effect of link characteristics and their position on runoff simulations}. \emph{Journal of Environmental Management} 251, 109522. https://doi.org/10.1016/j.jenvman.2019.109522.
+Cited by:
+        \begin{description}
+                \item Diba, F., Samad, M., Ghimire, J., and Choi, D. (2021). \textbf{Wireless Telecommunication Links for Rainfall Monitoring: Deep Learning Approach and Experimental Results}. \emph{IEEE Access} 9, 66769--66780.
+                \item Polz, J., Chwala, C., Graf, M., and Kunstmann, H. (2020). \textbf{Rain event detection in commercial microwave link attenuation data using convolutional neural networks}. \emph{Atmospheric Measurement Techniques} 13, 3835--3853.
+                \item Pudashine, J., Guyot, A., Overeem, A., Pauwels, Valentijn R. N., Seed, A., Uijlenhoet, R., Prakash, M., Walker, and Jeffrey P. (2021). \textbf{Rainfall retrieval using commercial microwave links: Effect of sampling strategy on retrieval accuracy}. \emph{Journal of Hydrology} 603, 126909.
+                \item Troemel, S., Chwala, C., Furusho-Percot, C., Henken, C., Polz, J., Potthast, R., Reinoso-Rondinel, R., and Simmer, C. (2021). \textbf{Near-Realtime Quantitative Precipitation Estimation and Prediction (RealPEP)}. \emph{Bulletin of the American Meteorological Society} 102, E1591--E1596.
+                \item Turko, M., Gosset, M., Kacou, M., Bouvier, C., Chahinian, N., Boone, A., and Alcoba, M. (2021). \textbf{Rainfall Measurement from Commercial Microwave Links for Urban Hydrology in Africa: A Simulation Framework for Sensitivity Analysis}. \emph{Journal of Hydrometeorology} 22, 1819--1834. 
+                \item Moroder, C. (2021). \textbf{Untersuchung des Wet-Antenna-Effekts bei Richtfunkstrecken}. Doctoral thesis, Technische Universität München. [online] \newline http://mediatum.ub.tum.de/?id=1559781.
+                \item Riechel, M. (2022). \textbf{Integrated Modelling of Stormwater Management
+Strategies and CSO Impacts on Urban Rivers}. Doctoral thesis, Technische Universität Berlin. [online] \newline https://doi.org/10.14279/depositonce-15263.
+                \item Cazzaniga, G., De Michele, C., D'Amico, M., Deidda, C., Ghezzi, A. and Nebuloni, R. \textbf{Hydrological response of a peri-urban catchment exploiting conventional and unconventional rainfall observations: the case study of Lambro catchment}. Accepted for publication in \emph{Hydrology and Earth System Sciences}. [online] \newline https://doi.org/10.5194/hess-2021-389.
+                \item Eshel, A., Alpert., P., and Messer, H. \textbf{Estimating the Parameters of the Spatial Autocorrelation of Rainfall Fields by Measurements from Commercial Microwave Links}. Accepted for publication in \emph{IEEE Transactions on Geoscience and Remote Sensing}. [online] \newline https://doi.org/10.1109/TGRS.2022.3165309.
+        \end{description}
+
+
+\item  Pastorek, J., Fencl, M., Rieckermann, J., and Bareš, V. (2022). \textbf{Precipitation Estimates from Commercial Microwave Links: Practical Approaches to Wet-Antenna Correction}. \emph{IEEE Transactions on Geoscience and Remote Sensing} 60, 1--9. https://doi.org/10.1109/TGRS.2021.3110004.
+Cited by:
+        \begin{description}
+                \item Špačková, A., Bareš, V., Fencl, M., Schleiss, M., Jaffrain, J., Berne, A., and Rieckermann, J. (2021). \textbf{A year of attenuation data from a commercial dual-polarized duplex microwave link with concurrent disdrometer, rain gauge, and weather observations}.  \emph{Earth System Science Data} 13, 4219--4240.
+        \end{description}
+        
+\end{description}
+
+
+
+\subsubsection*{Conference contributions}
+
+\begin{description}
+
+\item Pastorek, J., Fencl, M., Rieckermann, J., Sýkora, P., Stránský, D., Dohnal, M., and Bareš, V. (2016). “The effect of innovative rainfall data on urban drainage modelling by means of model uncertainty” in Sborník přednášek konference s mezinárodní učastí Městské vody 2016. Brno, Czech Rep., ARDEC s.r.o.
+
+\item Pastorek, J., Fencl, M., Stránský, D., Rieckermann, J., and Bareš, V. (2017). “Predicting urban stormwater runoff with quantitative precipitation estimates from commercial microwave links” in Geophysical Research Abstracts. EGU General Assembly 2017. Goettingen, Germany, Copernicus GmbH. [online] http://meetingorganizer.copernicus.org/EGU2017/EGU2017-1525.pdf.
+Cited~by:
+        \begin{description}
+                \item Disch, A., Scheidegger, A., Wani, O., Rieckermann, J. (2018). “Impact of different sources of precipitation data on urban rainfall-runoff predictions: A comparison of rain gauges, commercial microwave links and radar” in Proceedings of 11th International Workshop on Precipitation in Urban Areas. Zurich, Switzerland, ETH Zurich. [online] https://www.research-collection.ethz.ch/handle/20.500.11850/347531.
+        \end{description}
+
+\item Pastorek, J., Fencl, M., Stránský, D., Rieckermann, J., and Bareš, V. (2017). “Použitie zrážkových dát z mikrovlnných spojov v zrážko-odtokovom modelovaní mestských povodí” in Sborník konference Hydrologie malého povodí 2017. Praha, Czech Rep., Ústav pro hydrodynamiku AV ČR, v. v. i.
+
+\item Pastorek, J., Fencl, M., Stránský, D., Rieckermann, J., and Bareš, V. (2017). “Reliability of microwave link rainfall data for urban runoff modelling” in Conference Proceedings - 14th IWA/IAHR International Conference on Urban Drainage (ICUD). Praha, Czech Rep., C-IN.
+Cited by:
+        \begin{description}
+                \item Ochoa-Rodriguez, S., Wang, L. -P., Willems, P., and Onof, C. (2019). \textbf{A Review of Radar-Rain Gauge Data Merging Methods and Their Potential for Urban Hydrological Applications}. \emph{Water Resources Research} 55, 6356--6391.
+                \item Zheng, F., Tao, R., Maier, Holger R., See, L., Savic, D., Zhang, T., Chen, Q., Assumpcao, Thaine H. et al. (2018). \textbf{Crowdsourcing Methods for Data Collection in Geophysics: State of the Art, Issues, and Future Directions}. \emph{Reviews of Geophysics} 56, 698--740. 
+        \end{description}
+
+
+\item Pastorek, J., Fencl, M., Stránský, D., Rieckermann, J., and Bareš, V. (2018). “CML precipitation estimates for hydrological modelling: A three-year experiment” in Geophysical Research Abstracts. EGU General Assembly 2018. Munich, Germany, European Geosciences Union. [online] \newline https://meetingorganizer.copernicus.org/EGU2018 /EGU2018-18667.pdf.
+
+\item Pastorek, J., Fencl, M., Rieckermann, J., and Bareš, V. (2018). “Commercial Microwave Links in Urban Drainage Modelling: On Deriving Precipitation Estimates for Various Link Lengths” in Proceedings of 11th International Conference on Urban Drainage Modelling. Palermo, Italy, Ingegneria Civile, Amb., Aerosp., dei Materiali University of Palermo.
+
+\item Bareš, V., Fencl, M., Stránský, D., and Pastorek, J. (2018). “Validace srážkových dat z  mikrovlnných spojů pro potřeby městské hydrologie: Výsledky z pilotních lokalit” in Sborník přednášek konference s mezinárodní učastí Městské vody 2018. Brno, Czech Rep., ARDEC s.r.o.
+
+\item Pastorek, J., Fencl, M., and Bareš, V. (2018). “The suitability of precipitation estimates from short CMLs for urban hydrological predictions” in Proceedings of 11th International Workshop on Precipitation in Urban Areas. Zurich, Switzerland, ETH Zurich. [online] \newline https://www.research-collection.ethz.ch/handle/20.500.11850/347556.
+Cited~by:
+        \begin{description}
+                \item Špačková, A., Bareš, V., Fencl, M., Schleiss, M., Jaffrain, J., Berne, A., and Rieckermann, J. (2021). \textbf{A year of attenuation data from a commercial dual-polarized duplex microwave link with concurrent disdrometer, rain gauge, and weather observations}.  \emph{Earth System Science Data} 13, 4219--4240.
+        \end{description}
+
+\item Pastorek, J., Fencl, M., and Bareš, V. (2019). “Calibrating microwave link rainfall retrieval model using runoff observations” in Geophysical Research Abstracts. EGU General Assembly 2019. Goettingen, Germany, Copernicus GmbH. [online] \newline https://meetingorganizer.copernicus.org/EGU2019/EGU2019-10072.pdf.
+
+\item Pastorek, J., Fencl, M., Rieckermann, J., and Bareš, V. (2019). “Long-term rainfall-runoff experiment at a small urban catchment using dense CML network” in Proceedings of Symposium on the hydrometeorological usage of data from commercial microwave link networks. Garmisch-
+Partenkirchen, Germany, Karlsruhe Institute of Technology. [online] \newline https://indico.scc.kit.edu/event/570/contributions/5713/contribution.pdf.
+
+\item Pastorek, J., Fencl, M., Rieckermann, J., and Bareš, V. (2020). “Commercial microwave links in urban rainfall-runoff modelling: Two different approaches to removing the bias” in EGU General Assembly 2020. Goettingen, Germany, Copernicus Publications. [online]  \newline https://meetingorganizer.copernicus.org/EGU2020/EGU2020-9384.html.
+
+\item Fencl, M., Bareš, V., Pastorek, J., Mudroch, M., and Pechač, P. (2020). “Commercial Microwave Links forUrban Rainfall-runoff Modelling” in RealPeP - Precipitation and Flash Flood Prediction from Minutes to Days. Berlin, Germany, European Meteorological Society. [online]  \newline https://indico.scc.kit.edu/event/883/contributions/7568.
+
+\item Pastorek, J., Fencl, M., Rieckermann, J., and Bareš, V. (2020). “The importance of adequate correction for the wet antenna effect when predicting urban rainfall-runoff using microwave link data” in AGU Fall Meeting 2020 Abstracts. Washington, USA, American Geophysical Union.
+
+\item Pastorek, J., Fencl, M., Rieckermann, J., and Bareš, V. (2021). “Microwave link rainfall data for urban drainage modelling: Reducing the systematic errors under data-scarce conditions” in Conference Proceedings - 15th International Conference on Urban Drainage. Oxford, GB, International Water Association.
+
+\item Pastorek, J., Fencl, M., Rieckermann, J., and Bareš, V. (2021). “Precipitation Estimates from Microwave Links for Urban Hydrology: Improving the Accuracy Using Wet-Antenna Calibration” in Proceedings of CELLular ENvironment MONitoring (CELLENMON) Workshop. Tel-Aviv, Israel, Tel-Aviv University.
+
+\end{description}
+
+
+\FloatBarrier
+\chapterstarmark{Author's publications}

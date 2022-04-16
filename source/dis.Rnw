@@ -15,10 +15,10 @@
     xfaculty = F1,
     mainlanguage = english,
     titlelanguage = english,
-    title-english = {Value of precipitation estimates \\ from commercial microwave links \\ for rainfall-runoff modelling \\ in small urban catchments},
+    title-english = {Experimental evaluation \\ of precipitation estimates \\ from commercial microwave links \\ for rainfall-runoff modelling \\ in a small urban catchment},
     title-czech = {nejaky cesky text},
     department-english = {Department of Hydraulics and Hydrology},
-    author = {Ing. Jaroslav Pastorek},
+    author = {Jaroslav Pastorek},
     fieldofstudy-english = {Stavební inženýrství}, 
     subfieldofstudy-english = {Vodní hospodářství a vodní stavby},
     supervisor = {Ing. Vojtěch Bareš, Ph.D.},
@@ -103,6 +103,11 @@
         \chapterstarmark{Bibliography}
         \bibliography{fromZotero.bib} 
         
+        
+        %------------------------------------------------------ My publications
+        <<append, child='11_myPubl.Rnw'>>=
+        @
+
         
         
 \end{document}

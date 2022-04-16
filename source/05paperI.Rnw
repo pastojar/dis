@@ -8,14 +8,14 @@ This study addresses the ability of individual commercial microwave links (CMLs)
 
 {\footnotesize The bulk of this chapter was originally published in:  \newline
 \-\hspace{0.5cm}
-Pastorek, J., Fencl, M., Rieckermann, J., \& Bareš, V. 2019.  \textbf{Commercial microwave links for urban drainage modelling: The effect of link characteristics and their position on runoff simulations}. \emph{Journal of Environmental Management} 251, 109522. https://doi.org/10.1016/j.jenvman.2019.109522.
+Pastorek, J., Fencl, M., Rieckermann, J., \& Bareš, V. (2019).  \textbf{Commercial microwave links for urban drainage modelling: The effect of link characteristics and their position on runoff simulations}. \emph{Journal of Environmental Management} 251, 109522. https://doi.org/10.1016/j.jenvman.2019.109522.
 }
 
 \section{Introduction}
 
 Inaccuracies in quantitative precipitation estimates (QPEs) from commercial microwave links (CMLs) are very much dependent on CML's sensitivity to inaccurate estimation of raindrop-induced attenuation $A_r$ [dB] which is largely determined (see \ref{InstErr}) by its characteristics such as transmission frequency and path length \citep{leijnseMicrowaveLinkRainfall2008}.
        
-Path lengths of CMLs typically range from a few hundred meters up to a few kilometers. Longer CMLs are less prone to bias in CML QPEs caused by inaccurate $A_r$ estimation due to, e.g., imprecise correction for wet antenna attenuation (WAA). However, their path lengths often do not correspond well to relatively small scales of urban (sub)catchments and, thus, they cannot capture rainfall spatial variability at corresponding scales. On the other hand, shorter path lengths, fitting the typical urban catchment scale well, make CMLs more prone to bias. Nonetheless, shorter CMLs typically operate at higher frequencies which are associated with a lower liability to bias. 
+Path lengths of CMLs typically range from a few hundred meters up to a few kilometers. Longer CMLs are less prone to bias in CML QPEs caused by inaccurate $A_r$ estimation due to, e.g., imprecise correction for wet antenna attenuation (WAA). However, their path lengths often do not correspond well to relatively small scales of urban (sub)catchments and, thus, they cannot capture rainfall spatial variability at corresponding scales. On the other hand, shorter path lengths, fitting the typical urban catchment scale well, make CMLs more prone to bias. Nonetheless, shorter CMLs usually operate at higher frequencies which are associated with a lower liability to bias. 
 
 Unfortunately, very little is known about the combined effect of the CML characteristics and their spatial representativeness on efficient use of CML QPEs for hydrological applications such as rainfall-runoff modeling. This study addresses the above knowledge gap and investigates in how far CML instrumental parameters and network topology influence the performance of CMLs as rainfall sensors for hydrological modelling. This complex problem is addressed in three steps: 
         \begin{enumerate}

@@ -1,17 +1,22 @@
 % !Rnw root = dis.Rnw
 
-\chapter{On the value of CML QPEs for urban rainfall-runoff modelling: The pilot study} \label{chap4}
+\chapter{Assesing CML QPEs by quantifying uncertainties in rainfall-runoff predictions in a small urban catchment: The~pilot~study} \label{chap4}
+
+% On the value of CML QPEs for urban rainfall-runoff modelling
+
+% Rainfall-runoff modelling in urban catchments requires reliable rainfall data with high temporal and spatial resolution. Such data are often not available and, thus, unmeasured spatial rainfall variability is an important source of uncertainty in urban rainfall-runoff modelling. Recently, commercial microwave links (CMLs) have been introduced as a new source of rainfall data with the necessary resolution
 
 \rule{\textwidth}{0.4pt}
-Rainfall-runoff modelling in urban catchments requires reliable rainfall data with high temporal and spatial resolution. Such data are often not available and, thus, unmeasured spatial rainfall variability is an important source of uncertainty in urban rainfall-runoff modelling. Recently, commercial microwave links (CMLs) have been introduced as a new source of rainfall data with the necessary resolution. We compare rainfall data from CMLs with more conventional observations from rain gauges on the basis of rainfall-runoff modelling of a small urbanized catchment, performed with the investigated rainfall data sets and evaluated against observed runoffs. We employ a method based on Bayesian inference to calibrate our rainfall-runoff model and to estimate the uncertainty of modelling outputs. Results of the performed analyses show that CML rainfall data, when a suitable adjustment is applied (e.g. using information from nearby rain gauges), allow for better detection of dynamics of precipitation and subsequent runoff than data from point rain gauges alone, especially in the case of heavy rainfalls which are highly variable in space and time. Thus, CMLs seem to represent a relevant rainfall data source, which can conveniently complement existing rainfall monitoring networks.
+This study represents a first assessment of applying quantitative precipitation estimates (QPEs) retrieved from commercial microwave links (CMLs) for hydrological modelling in urban catchments. We compare rainfall data from CMLs with more conventional observations from rain gauges by evaluating rainfall-runoff modelling predictions against observed runoffs. We employ a method based on Bayesian inference to calibrate our rainfall-runoff model and to estimate the uncertainty of modelling outputs. Results of the performed analyses show that CML rainfall data, when a suitable adjustment is applied (e.g. using information from nearby rain gauges), allow for better detection of dynamics of precipitation and subsequent runoff than data from rain gauges alone, especially in the case of heavy rainfalls which are highly variable in space and time. Thus, CMLs seem to represent a relevant rainfall data source, which can conveniently complement existing rainfall monitoring networks.
 \rule[0.2cm]{\textwidth}{0.4pt}
+
 {\footnotesize The bulk of this chapter was originally published in: \newline
 \-\hspace{0.5cm}
-Pastorek, J., Fencl, M., Stránský, D., Rieckermann, J., \& Bareš, V. 2017. \textbf{Reliability
+Pastorek, J., Fencl, M., Stránský, D., Rieckermann, J., \& Bareš, V. (2017). \textbf{Reliability
 of microwave link rainfall data for urban runoff modelling}. In \emph{Proceedings of the
 14th IWA/IAHR International Conference on Urban Drainage} (pp. 1340--1343). Prague, Czech Republic.
 \newline \-\hspace{0.5cm}
-Pastorek, J., Fencl, M., Rieckermann, J., Sýkora, P., Stránský, D., Dohnal, M., \& Bareš, V. 2018. \textbf{Posouzení srážkových dat z mikrovlnných spojů v městském povodí pomocí analýzy nejistot hydrologického modelu}. [The Evaluation of CML Rainfall Data in Urban Catchment by Means of Hydrologic Model Uncertainty]. \emph{SOVAK: Časopis oboru vodovodů a kanalizací} 27, 16--22.
+Pastorek, J., Fencl, M., Rieckermann, J., Sýkora, P., Stránský, D., Dohnal, M., \& Bareš, V. (2018). \textbf{Posouzení srážkových dat z mikrovlnných spojů v městském povodí pomocí analýzy nejistot hydrologického modelu}. [The Evaluation of CML Rainfall Data in Urban Catchment by Means of Hydrologic Model Uncertainty]. \emph{SOVAK: Časopis oboru vodovodů a kanalizací} 27, 16--22.
 }
 
 
@@ -68,7 +73,7 @@ We investigate rainfall data observed during 15 rainfall-runoff events from the 
                 \end{quote}
 \end{enumerate}
 
-In the cases of all CML data, prior to applying the correction for $A_{wa}$, baseline $B$ [dB] (Eq. \ref{eq:2eq2}) is separated in the same manner as in \cite{fenclGaugeadjustedRainfallEstimates2017}.
+In the cases of all CML data, prior to applying the correction for $A_{wa}$, baseline $B$ [dB] (Eq. \ref{eq:2eq2}) is separated in the same manner as in \cite{fenclGaugeadjustedRainfallEstimates2017}. In particular, the unprocessed data are first classified into dry and wet periods according to \cite{schleissIdentificationDryRainy2010} using a moving window of the length of 15 min. The baseline for a given wet period is then assumed to equal the 10\% quantile in the preceding dry weather period.
 
 
 

@@ -8,7 +8,7 @@ This study analyzes how, when deriving quantitative precipitation estimates (QPE
 
 {\footnotesize The bulk of this chapter was originally published in: \newline
 \-\hspace{0.5cm}
-Pastorek, J., Fencl, M., Rieckermann, J., \& Bareš, V. 2022. \textbf{Precipitation Estimates from Commercial Microwave Links: Practical Approaches to Wet-Antenna Correction}. \emph{IEEE Transactions on Geoscience and Remote Sensing} 60, 1--9. \newline https://doi.org/10.1109/TGRS.2021.3110004.
+Pastorek, J., Fencl, M., Rieckermann, J., \& Bareš, V. (2022). \textbf{Precipitation Estimates from Commercial Microwave Links: Practical Approaches to Wet-Antenna Correction}. \emph{IEEE Transactions on Geoscience and Remote Sensing} 60, 1--9. \newline https://doi.org/10.1109/TGRS.2021.3110004.
 }
 
 \section{Introduction}
