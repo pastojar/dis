@@ -60,9 +60,16 @@
 
 
 \begin{abstract-english}
-    We develop \ldots
+    Quantitative precipitation estimates (QPEs) from commercial microwave links (CMLs)  represent a promising source of innovative rainfall data which, however, has not been yet extensively investigated in hydrological modelling. We mean to experimentally evaluate the potential of CML QPEs for rainfall-runoff modelling in small urban catchments. We address the ability of individual CMLs of various characteristics to provide relevant QPEs for urban hydrology. We analyze how wet-antenna attenuation, a major source of bias in CML QPEs, can be adequately estimated without dedicated rainfall monitoring. Using discharge observations, we evaluate the performance of rainfall-runoff modelling with state-of-the-art CML QPEs and compare it with the performance of traditional rain gauge data. We employ stochastic error model calibrated by Bayesian inference to quantify uncertainties of the runoff predictions. The presented results show that QPEs from CMLs spatially corresponding to the catchment area can very well reproduce runoff dynamics. However, the bias common in QPEs from short CMLs, typically best fitting small urban catchments, has to be reduced to make the best use of this data. It is then presented how high-quality QPEs can be derived from CMLs of all path lengths, even when no additional rainfall data are available. Lastly, it is shown that, for rainfall-runoff modelling in small urban catchments covered by 1 rain gauge per roughly 20--25 km\textsuperscript{2}, CML QPEs represent a notable improvement. For networks with 1~gauge per 0.5--1 km\textsuperscript{2}, CML QPEs are a satisfying alternative.
+
+\vfill
+
 \end{abstract-english}
 
+
+
+
 \begin{abstract-czech}
-    Rozvíjíme \ldots
+        Kvantitativní srážkové odhady (QPE) z komerčních mikrovlnných spojů (CML) představují slibná inovativní srážková data, která však dosud nebyla intenzivněji prozkoumána v hydrologickém modelování. Cílem této práce  je experimentálně vyhodnotit potenciál CML QPE pro srážko-odtokové modelování  v malých městských povodích. Zabýváme se schopností jednotlivých CML různých charakteristik poskytovat relevantní QPE pro městskou hydrologii. Analyzujeme, jak lze útlum na mokré anténě, jeden z hlavních zdrojů chyb v CML QPE, věrohodně kvantifikovat bez monitorování srážek speciálně pro tento účel. Pomocí měření průtoků vyhodnocujeme kvalitu srážko-odtokového modelování za použití CML QPE odvozených nejaktuálnějšími metodami a porovnáváme ji s kvalitou  modelování za použití tradičních dat ze srážkoměru. Ke kvantifikaci nejistot předpovězených průtoků používáme stochastický model chyb kalibrovaný pomocí Bayesovské inference. Prezentované výsledky ukazují, že QPE z CML které prostorově odpovídají ploše povodí, mohou velmi dobře reprodukovat dynamiku odtoku. Nicméně, aby se tato data co nejlépe využila, systematické chyby běžné v QPE z krátkých CML, které typicky nejlépe vystihují velikost malých městských povodím, musí být korigovány. Dále je prezentováno, jak lze získat vysoce kvalitní QPE z CML všech délek, i za okolností kdy nejsou k dispozici žádné další údaje o srážkách. Nakonec je ukázáno, že CML QPE mají potenciál značně vylepšit výsledky srážko-odtokového modelování v malých městských povodích pokrytých 1 srážkoměrem na přibližně 20--25 km\textsuperscript{2}. V porovnáni se srážkoměrnými sítěmi o hustotě 1 srážkoměr na zhruba 0,5--1 km\textsuperscript{2}, CML QPE představují uspokojivou alternativu.
+
 \end{abstract-czech}

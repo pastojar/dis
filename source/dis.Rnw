@@ -26,7 +26,9 @@
     month = 4,
     year = 2022,
     front-list-of-figures = false,
-    front-list-of-tables = false
+    front-list-of-tables = false,
+    keywords-english = {commercial microwave links, rainfall-runoff modelling, uncertainties, urban hydrology, wet-antenna attenuation},
+    keywords-czech = {komerční mikrovlnné spoje, městská hydrologie, nejistoty, srážko-odtokové modelování, útlum na mokré anténě}
 }
 
 

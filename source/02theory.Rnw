@@ -33,10 +33,10 @@ Rainfall data from new types of devices which could conveniently complement trad
 
 Commercial microwave links (CMLs) are point-to-point radio connections widely used as cellular backhaul. A substantial part of CML networks is operated at frequencies between 20 and 40 GHz where radio wave attenuation caused by raindrops is almost proportional to rainfall intensity. These CMLs can, therefore, be used as unintended rainfall sensors providing path-integrated quantitative precipitation estimates (QPEs). Although deriving precipitation estimates from the attenuation of microwaves was originally suggested several decades ago \citep{atlasPathAreaIntegratedRainfall1977}, the idea has experienced a renaissance in recent years, thanks to the extensive growth of cellular networks \citep{messer2006environmental, leijnseRainfallMeasurementUsing2007} which frequently incorporate CMLs.
 
-The relationship between raindrop-induced attenuation $A_r$ [dB] and rainfall intensity $R$ [mm/h] is robust and well-understood. For a given rainfall intensity, $A_r$ is proportional to CML length and frequency. The relation can be expressed using the following approximation:
+The relationship between raindrop-induced attenuation $A_r$ [dB] and rainfall intensity $R$ [mm/h] is robust and well-understood. For a given rainfall intensity, $A_r$ is proportional to CML path length and frequency. The relation can be expressed using the following approximation:
         \begin{equation} \label{eq:2eq1}
         % \tilde{Y}_o (x,\theta, \psi) = \tilde{y}_M (x, \theta) + B_M (\psi) + E (\psi)
-        R = \alpha (A_r / L)^\beta,
+        R = \alpha (A_r / L)^\beta
         \end{equation}
 where $L$ [m] is the length of a given CML, and $\alpha$ [mm/h km$^\beta$ dB$^{-\beta}$] and $\beta$ [-] are empirical parameters dependent upon CML frequency and polarization, and drop size distribution \citep{olsenARbRelationCalculation1978}. The fraction $A_r / L$ can be expressed as a single variable -- specific raindrop attenuation $\gamma$ [dB/km].
 

@@ -1,16 +1,18 @@
 % !Rnw root = dis.Rnw
 
 \chapter{Assesing CML QPEs by quantifying uncertainties in runoff predictions in a small urban catchment: The~final~study} \label{chap7}
-\chapterstarmark{Assesing CML QPEs by quantifying uncertainties ... : The~final~study}
+\chapterstarmark{8. Assesing CML QPEs by quantifying uncertainties ... : The~final~study}
 
 %On the value of CML QPEs for urban rainfall-runoff modelling: The final study
 
+\vspace*{-0.4cm}
 \rule{\textwidth}{0.4pt}
-DOPLNIT ABSTRAKT ! bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla DOPLNIT ABSTRAKT ! bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla DOPLNIT ABSTRAKT ! bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla DOPLNIT ABSTRAKT ! bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla DOPLNIT ABSTRAKT ! bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla DOPLNIT ABSTRAKT ! bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla DOPLNIT ABSTRAKT ! bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla DOPLNIT ABSTRAKT ! bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla DOPLNIT ABSTRAKT ! bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla DOPLNIT ABSTRAKT ! bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla DOPLNIT ABSTRAKT ! bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla DOPLNIT ABSTRAKT ! bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-\newline
+This study analyzes the value of state-of-the-art quantitative precipitation estimates (QPEs) from commercial microwave links (CMLs) for rainfall-runoff modelling in a small urban catchment. A model for wet-antenna attenuation (WAA) is calibrated to data which could be commonly available to urban hydrologists. CML QPEs retrieved using such  WAA model are then used for runoff predictions. The uncertainty of the predicted runoff is quantified using a stochastic error model. Predictions with CML QPEs derived using the WAA model calibrated to 60-min data from an 8-km distant rain gauge are notably biased. However, such CML QPEs perform better than 1-min data from rain gauges at 2--3 km distances. Calibrating the WAA model to 60-min records from the 3 above gauges, or to observed discharges, leads to CML QPEs predicting discharges almost as well as 1-min records from 3 gauges at the catchment boundaries. These results imply that, for rainfall-runoff modelling in small urban catchments covered by roughly 1 rain gauge per 20--25 km\textsuperscript{2}, CML QPEs represent a notable improvement. For networks with roughly  1~gauge per 0.5--1 km\textsuperscript{2}, CML QPEs are  a satisfying alternative. 
+\newline  \vspace*{-0.2cm}
 \rule[0.2cm]{\textwidth}{0.4pt}
 {\footnotesize The bulk of this chapter represents a paper manuscript which is about to be submitted to be considered for publication in \emph{Journal of Hydrology}. }
 
+\vspace*{-0.3cm}
 
 
 \section{Introduction}
