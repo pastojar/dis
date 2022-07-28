@@ -1,7 +1,7 @@
 % !Rnw root = dis.Rnw
 
-\chapter{Assesing CML QPEs by quantifying uncertainties in runoff predictions in a small urban catchment: The~final~study} \label{chap7}
-\chapterstarmark{8. Assesing CML QPEs by quantifying uncertainties ... : The~final~study}
+\chapter{Assessing CML QPEs by quantifying uncertainties in runoff predictions in a small urban catchment: The~final~study} \label{chap7}
+\chapterstarmark{8. Assessing CML QPEs by quantifying uncertainties ... : The~final~study}
 
 %On the value of CML QPEs for urban rainfall-runoff modelling: The final study
 
@@ -10,7 +10,7 @@
 This study analyzes the value of state-of-the-art quantitative precipitation estimates (QPEs) from commercial microwave links (CMLs) for rainfall-runoff modelling in a small urban catchment. A model for wet-antenna attenuation (WAA) is calibrated to data which could be commonly available to urban hydrologists. CML QPEs retrieved using such  WAA model are then used for runoff predictions. The uncertainty of the predicted runoff is quantified using a stochastic error model. Predictions with CML QPEs derived using the WAA model calibrated to 60-min data from an 8-km distant rain gauge are notably biased. However, such CML QPEs perform better than 1-min data from rain gauges at 2--3 km distances. Calibrating the WAA model to 60-min records from the 3 above gauges, or to observed discharges, leads to CML QPEs predicting discharges almost as well as 1-min records from 3 gauges at the catchment boundaries. These results imply that, for rainfall-runoff modelling in small urban catchments covered by roughly 1 rain gauge per 20--25 km\textsuperscript{2}, CML QPEs represent a notable improvement. For networks with roughly  1~gauge per 0.5--1 km\textsuperscript{2}, CML QPEs are  a satisfying alternative. 
 \newline  \vspace*{-0.2cm}
 \rule[0.2cm]{\textwidth}{0.4pt}
-{\footnotesize The bulk of this chapter represents a paper manuscript which is about to be submitted to be considered for publication in \emph{Journal of Hydrology}. }
+{\footnotesize The bulk of this chapter represents a paper manuscript which has been submitted to be considered for publication in \emph{Journal of Hydrology}. }
 
 \vspace*{-0.3cm}
 
@@ -67,7 +67,7 @@ When employing the discharge measurements, we repeatedly propagate the CML QPEs 
 
 In the validation stage, we evaluate several rainfall observation layouts using data collected over 23 rainfall-runoff events not employed in the calibration stage (basic characteristics are summarized in Table \ref{tab:App_2} in Appendix). We asses three sets of CML QPEs derived using the calibrated WAA models, corresponding to the three reference datasets used for WAA calibration (section \ref{pIII_cal}). It has been concluded that only a few very precise CMLs are expected to deliver the most accurate areal QPEs \citep{fenclCommercialMicrowaveLinks2015} and that the position of CMLs within a small urban catchment affects their ability to capture rainfall-runoff dynamics \citep[][chapter \ref{chap5}]{pastorekCommercialMicrowaveLinks2019}. Therefore, for all three CML QPE observation layouts, we evaluate areal QPEs computed as the mean of data from CMLs the paths of which best cover the catchment of interest, i.e. CMLs \#3, \#7, \#8, \#12, and \#15 (Fig. \ref{3fig2}). The potential of other CML subsets is discussed in chapter \ref{paperIIIDis}.
 
-Next, to provide a comparison with capabilities of traditional rain gauge observations, we also asses data from the rain gauges used for the WAA model calibration. In particular, we evaluate 60-min records from the single gauge at an 8-km distance and data from the three gauges at 2--3 km distances (Fig. \ref{3fig2}) in the original resolution of 1 min. The former layout represents a observations potentially available in data-scarce conditions but clearly not sufficient for urban hydrological modelling, whereas the latter corresponds to the best data usually available in long-term in the context of the Czech Republic. Additionally, we evaluate as well the performance of 1-min observations from the three local rain gauges representing the best-case-scenario regarding the availability of traditional rainfall data (Fig. \ref{3fig1}).
+Next, to provide a comparison with capabilities of traditional rain gauge observations, we also assess data from the rain gauges used for the WAA model calibration. In particular, we evaluate 60-min records from the single gauge at an 8-km distance and data from the three gauges at 2--3 km distances (Fig. \ref{3fig2}) in the original resolution of 1 min. The former layout represents a observations potentially available in data-scarce conditions but clearly not sufficient for urban hydrological modelling, whereas the latter corresponds to the best data usually available in long-term in the context of the Czech Republic. Additionally, we evaluate as well the performance of 1-min observations from the three local rain gauges representing the best-case-scenario regarding the availability of traditional rainfall data (Fig. \ref{3fig1}).
 
 
 \subsection{Rainfall data validation by rainfall-runoff modelling} \label{pIII_val}

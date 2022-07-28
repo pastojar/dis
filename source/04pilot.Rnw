@@ -1,7 +1,7 @@
 % !Rnw root = dis.Rnw
 
-\chapter{Assesing CML QPEs by quantifying uncertainties in runoff predictions in a small urban catchment: The~pilot~study} \label{chap4}
-\chapterstarmark{5. Assesing CML QPEs by quantifying uncertainties ... : The~pilot~study}
+\chapter{Assessing CML QPEs by quantifying uncertainties in runoff predictions in a small urban catchment: The~pilot~study} \label{chap4}
+\chapterstarmark{5. Assessing CML QPEs by quantifying uncertainties ... : The~pilot~study}
 
 % On the value of CML QPEs for urban rainfall-runoff modelling
 
